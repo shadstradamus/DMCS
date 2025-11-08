@@ -2,8 +2,6 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-# DMCS — Dynamic Multi-Dimensional Classification Standard
-
 **Version 1.0.1** · Effective Date: 2025-11-08
 
 ## Overview
@@ -175,3 +173,4 @@ For questions, feedback, or mapping support, open an issue or discussion.
 - [ ] Mapping tables (GICS/ICB/TRBC/NAICS → DMCS)
 - [ ] API endpoints for classification lookup
 - [ ] Community governance model
+
