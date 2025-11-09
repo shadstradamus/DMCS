@@ -2,7 +2,7 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.0.1** · Effective Date: 2025-11-08 · **License:** Apache 2.0
+**Version 1.0.0** · Effective Date: 2025-11-08 · **License:** Apache 2.0
 
 ## Overview
 
@@ -198,5 +198,6 @@ This repository (https://github.com/shadstradamus/DMCS) is the **canonical sourc
 5. Official releases happen as needed based on the governance model
 
 **Goal:** Keep DMCS open, collaborative, trustworthy and anyone can use it, everyone can contribute, and there's one stable reference version.
+
 
 
