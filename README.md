@@ -136,25 +136,67 @@ Custom:    09.01.C03 — Financial Services SaaS (DMCS-CUST, parent: 09.01.002)
 
 **Diversified Conglomerate Example: "Global Industries Corp"**
 
-A fictional conglomerate with multiple business units:
+A fictional conglomerate demonstrating multi-industry operations and custom extensions:
 
-| Business Unit | DMCS Primary | DMCS-CUST Extension | Revenue % |
-|---------------|--------------|---------------------|-----------|
-| **Consumer Electronics** | 09.02.002 | — | 35% |
-| **Cloud Infrastructure** | 09.01.004 | 09.01.C10 (Hybrid Cloud) | 28% |
-| **Retail Stores** | 04.05.001 | 04.05.C05 (Experience Stores) | 15% |
-| **Financial Services** | 07.01.001 | 07.01.C20 (Digital-Only Banking) | 12% |
-| **Content Streaming** | 10.01.003 | 10.01.C08 (Interactive Streaming) | 10% |
+#### Business Unit Breakdown
 
-**Entity-level classification:**
-- Primary: `09.02.002` (Consumer Devices & Ecosystems) — 35% revenue
-- Secondary: `09.01.004` (Cloud Platforms / PaaS) — 28% revenue, meets materiality threshold
+| Business Unit | Revenue % | DMCS Classification | DMCS-CUST Extension |
+|---------------|-----------|---------------------|---------------------|
+| **Consumer Electronics** | 35% | 09.02.002 (Consumer Devices & Ecosystems) | — |
+| **Cloud Infrastructure** | 28% | 09.01.004 (Cloud Platforms / PaaS) | 09.01.C10 (Hybrid Cloud) |
+| **Retail Stores** | 15% | 04.05.001 (Department & General Stores) | 04.05.C05 (Experience Stores) |
+| **Digital Banking** | 12% | 07.01.001 (Retail Banking) | 07.01.C20 (Digital-Only Banking) |
+| **Content Streaming** | 10% | 10.01.003 (Video Streaming) | 10.01.C08 (Interactive Streaming) |
 
-**Division-level custom classifications:**
-- Cloud unit uses custom `09.01.C10` to distinguish their hybrid cloud focus from pure public cloud
-- Retail uses `04.05.C05` to highlight experiential retail vs. traditional stores
-- Finance uses `07.01.C20` for digital-only banking without physical branches
-- Content uses `10.01.C08` for interactive/gaming-hybrid streaming
+#### Company-Level DMCS Classification
+
+**Primary Classification:**
+- **09.02.002** — Consumer Devices & Ecosystems
+- **Rationale:** Largest revenue contributor at 35%
+- **Industry:** 09 (Technology)
+
+**Secondary Classification:**
+- **09.01.004** — Cloud Platforms / PaaS  
+- **Rationale:** 28% revenue from Cloud Infrastructure, meets materiality threshold (≥25%)
+- **Industry:** 09 (Technology)
+- **Note:** Both primary and secondary are in the same industry (Technology), so secondary is assigned due to materiality and strategic importance
+
+#### Why Custom Extensions? (DMCS-CUST Usage)
+
+Each division uses DMCS-CUST to capture business model nuances:
+
+1. **Cloud (09.01.C10 - Hybrid Cloud)**
+   - Parent: 09.01.004 (Cloud Platforms / PaaS)
+   - Why: Distinguishes hybrid cloud (on-prem + public cloud) from pure public cloud providers
+   
+2. **Retail (04.05.C05 - Experience Stores)**
+   - Parent: 04.05.001 (Department & General Stores)
+   - Why: Flagship experiential retail with live demos differs from traditional department stores
+
+3. **Banking (07.01.C20 - Digital-Only Banking)**
+   - Parent: 07.01.001 (Retail Banking)
+   - Why: No physical branches; app-only model differs from traditional retail banking
+
+4. **Streaming (10.01.C08 - Interactive Streaming)**
+   - Parent: 10.01.003 (Video Streaming)
+   - Why: Hybrid of video streaming + interactive gaming elements
+
+#### Internal Reporting Hierarchy
+
+```
+Global Industries Corp
+├─ Primary: 09.02.002 (Consumer Devices & Ecosystems)
+├─ Secondary: 09.01.004 (Cloud Platforms / PaaS)
+│
+└─ Divisions (with DMCS-CUST granularity)
+   ├─ Consumer Electronics: 09.02.002
+   ├─ Cloud Infrastructure: 09.01.004 → 09.01.C10
+   ├─ Retail Stores: 04.05.001 → 04.05.C05
+   ├─ Digital Banking: 07.01.001 → 07.01.C20
+   └─ Content Streaming: 10.01.003 → 10.01.C08
+```
+
+**Key Takeaway:** DMCS standard codes classify the entity at the company level, while DMCS-CUST extensions providedivision-level granularity for internal analytics and reporting without requiring changes to the official taxonomy.
 
 ### Rules for DMCS-CUST
 
@@ -344,4 +386,5 @@ This repository (https://github.com/shadstradamus/DMCS) is the **canonical sourc
 5. Official releases happen as needed based on the governance model
 
 **Goal:** Keep DMCS open, collaborative, trustworthy and anyone can use it, everyone can contribute, and there's one stable reference version.
+
 
