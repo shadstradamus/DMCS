@@ -9,8 +9,8 @@
 DMCS (Dynamic Multi-Dimensional Classification Standard) is an open-source, hierarchical classification system for the modern economy. It provides:
 
 - **13 industries**, **55 sectors**, and **191 subsectors** covering traditional and digital business models
-- **P-TAX** (01-12): Primary Taxonomy for the traditional economy
-- **D-TAX** (13): Digital Asset Taxonomy for blockchain and crypto-native companies
+- **GIC** (01-12): General Industry Classification for the traditional economy
+- **DIC** (13): Digital Industry Classification for blockchain and crypto-native companies
 - **Materiality rules** for classifying diversified conglomerates with multiple business lines
 - **Stable IDs** that never change, with predictable evolution via public changelogs
 
@@ -27,7 +27,7 @@ DMCS solves this with:
 1. **Explicit materiality threshold** (≥25-30% revenue or strategic) for secondary classifications
 2. **Digital-first design** treating blockchain/crypto as a first-class economic sector
 3. **Extensible namespace** (DMCS-CUST) so implementers can add detail without forking
-4. **Predictable releases** (structural: 2×/year; thematic: monthly/quarterly) with full changelogs
+4. **Predictable releases** (structural: 2×/year; thematic: monthly/quarterly) with full changelogs and as needed.
 
 ## Structure
 
@@ -50,21 +50,21 @@ Industry (II) → Sector (II.SS) → Subsector (II.SS.SSS)
 
 ### Industries (13)
 
-| ID | Industry |
-|----|----------|
-| 01 | Energy |
-| 02 | Basic Materials |
-| 03 | Industrials |
-| 04 | Consumer Discretionary |
-| 05 | Consumer Staples |
-| 06 | Healthcare |
-| 07 | Financial Services |
-| 08 | Real Estate |
-| 09 | Technology |
-| 10 | Communications & Media |
-| 11 | Utilities |
-| 12 | Government / Public / Education |
-| 13 | Digital Assets & Blockchain |
+| ID | Industry | Classification |
+|----|----------|----------------|
+| 01 | Energy | GIC |
+| 02 | Basic Materials | GIC |
+| 03 | Industrials | GIC |
+| 04 | Consumer Discretionary | GIC |
+| 05 | Consumer Staples | GIC |
+| 06 | Healthcare | GIC |
+| 07 | Financial Services | GIC |
+| 08 | Real Estate | GIC |
+| 09 | Technology | GIC |
+| 10 | Communications & Media | GIC |
+| 11 | Utilities | GIC |
+| 12 | Government / Public / Education | GIC |
+| 13 | Digital Assets & Blockchain | DIC |
 
 ## Quick Examples
 
@@ -118,42 +118,114 @@ All changes are versioned and documented. Community proposals via pull requests 
 ## Data Access
 
 ### Human-Readable
-- **[TAXONOMY.md](./TAXONOMY.md)** — Complete reference with all 13 industries, 55 sectors, and 190 subsectors
+- **[CLASSIFICATION.md](./CLASSIFICATION.md)** — Complete reference with all 13 industries, 55 sectors, and 191 subsectors
 
 ### Machine-Readable
-- **[data/taxonomy.json](./data/taxonomy.json)** — Hierarchical JSON structure for programmatic access
-- **[data/taxonomy.csv](./data/taxonomy.csv)** — Flat CSV table for database imports and analytics
+- **[data/classification.json](./data/classification.json)** — Hierarchical JSON structure for programmatic access
+- **[data/classification.csv](./data/classification.csv)** — Flat CSV table for database imports and analytics
+
+### SDKs
+
+**Python SDK:**
+```bash
+pip install "git+https://github.com/shadstradamus/DMCS.git#subdirectory=python-sdk"
+```
+
+**TypeScript/JavaScript SDK:**
+```bash
+npm install dmcs-sdk
+```
+
+Or install from repository:
+```bash
+npm install git+https://github.com/shadstradamus/DMCS.git#subdirectory=typescript-sdk
+```
+
+See [python-sdk/README.md](./python-sdk/README.md) and [typescript-sdk/README.md](./typescript-sdk/README.md) for detailed documentation.
 
 ### Usage Examples
 
 **Python:**
 ```python
-import json
+from dmcs_sdk import classification
 
-with open('data/taxonomy.json') as f:
-    dmcs = json.load(f)
-    
-# Find all Technology subsectors
-tech = next(i for i in dmcs['industries'] if i['id'] == '09')
-for sector in tech['sectors']:
-    print(f"{sector['id']}: {sector['label']}")
+# Load the classification
+dmcs = classification()
+
+# Get stats
+print(dmcs.stats())
+# {'version': '1.0.4', 'release_date': '2025-11-09', 'industries': 13, 'sectors': 55, 'subsectors': 191}
+
+# Lookup by ID
+tech = dmcs.get_by_id('09')
+print(tech)
+# 09 — Technology (4 sectors, GIC)
+
+saas = dmcs.get_by_id('09.01.002')
+print(saas)
+# 09.01.002 — Enterprise SaaS
+
+# Search by text
+results = dmcs.search('blockchain')
+for result in results:
+    print(result)
+
+# Filter by classification
+gic_industries = dmcs.get_GIC()  # Traditional economy (01-12)
+dic_industries = dmcs.get_DIC()  # Digital assets (13)
+```
+
+**TypeScript/JavaScript:**
+```typescript
+import { Classification } from 'dmcs-sdk';
+
+const dmcs = new Classification();
+
+// Get stats
+console.log(dmcs.stats());
+// {
+//   version: '1.0.4',
+//   release_date: '2025-11-09',
+//   industries: 13,
+//   sectors: 55,
+//   subsectors: 191,
+//   gic_industries: 12,
+//   dic_industries: 1
+// }
+
+// Lookup by ID
+const tech = dmcs.getById('09');
+console.log(tech);
+// { id: '09', label: 'Technology', classification: 'GIC', sectors: [...] }
+
+const saas = dmcs.getById('09.01.002');
+console.log(saas);
+// { id: '09.01.002', label: 'Enterprise SaaS', ... }
+
+// Search by text
+const results = dmcs.search('blockchain');
+results.forEach(result => console.log(result));
+
+// Filter by classification
+const gic = dmcs.getGIC();  // Traditional economy (01-12)
+const dic = dmcs.getDIC();  // Digital assets (13)
 ```
 
 **SQL (PostgreSQL):**
 ```sql
-COPY dmcs_taxonomy(level, id, label, parent_id, industry_id, sector_id, taxonomy)
-FROM '/path/to/taxonomy.csv' 
+COPY dmcs_classification(level, id, label, parent_id, industry_id, sector_id, classification)
+FROM '/path/to/classification.csv' 
 DELIMITER ',' 
 CSV HEADER;
 ```
 
-**JavaScript:**
+**Direct JSON/CSV:**
 ```javascript
-fetch('data/taxonomy.json')
+fetch('data/classification.json')
   .then(res => res.json())
   .then(dmcs => {
-    const dtax = dmcs.industries.find(i => i.taxonomy === 'D-TAX');
-    console.log('Digital Assets Sectors:', dtax.sectors.length);
+    const dic = dmcs.industries.find(i => i.classification === 'DIC');
+    console.log('Digital Assets Sectors:', dic.sectors.length);
   });
 ```
 
@@ -198,7 +270,3 @@ This repository (https://github.com/shadstradamus/DMCS) is the **canonical sourc
 5. Official releases happen as needed based on the governance model
 
 **Goal:** Keep DMCS open, collaborative, trustworthy and anyone can use it, everyone can contribute, and there's one stable reference version.
-
-
-
-

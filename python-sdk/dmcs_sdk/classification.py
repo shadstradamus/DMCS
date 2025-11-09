@@ -46,7 +46,7 @@ class Industry:
     sectors: List[Sector]
 
     def __repr__(self):
-        return f"{self.id} — {self.label} ({len(self.sectors)} sectors, {self.Classification})"
+        return f"{self.id} — {self.label} ({len(self.sectors)} sectors, {self.classification})"
 
     def get_sector(self, sector_id: str) -> Optional[Sector]:
         """Get sector by ID"""
@@ -77,12 +77,12 @@ class classification:
 
     @staticmethod
     def _load_packaged_Classification() -> Dict[str, Any]:
-        """Load Classification JSON bundled with the package."""
+        """Load classification JSON bundled with the package."""
 
         try:
-            json_text = resources.files('dmcs_sdk.data').joinpath('Classification.json').read_text(encoding='utf-8')
+            json_text = resources.files('dmcs_sdk.data').joinpath('classification.json').read_text(encoding='utf-8')
         except AttributeError:  # Python 3.8 compatibility
-            with resources.open_text('dmcs_sdk.data', 'Classification.json', encoding='utf-8') as f:
+            with resources.open_text('dmcs_sdk.data', 'classification.json', encoding='utf-8') as f:
                 return json.load(f)
 
         return json.loads(json_text)
@@ -99,7 +99,7 @@ class classification:
                         label=sub['label'],
                         sector_id=sec_data['id'],
                         industry_id=ind_data['id'],
-                        Classification=ind_data['Classification']
+                        classification=ind_data['classification']
                     )
                     for sub in sec_data['subsectors']
                 ]
@@ -107,13 +107,13 @@ class classification:
                     id=sec_data['id'],
                     label=sec_data['label'],
                     industry_id=ind_data['id'],
-                    Classification=ind_data['Classification'],
+                    classification=ind_data['classification'],
                     subsectors=subsectors
                 ))
             industries.append(Industry(
                 id=ind_data['id'],
                 label=ind_data['label'],
-                Classification=ind_data['Classification'],
+                classification=ind_data['classification'],
                 sectors=sectors
             ))
         return industries
@@ -179,9 +179,9 @@ class classification:
         
         return results
 
-    def filter_by_Classification(self, classification: str) -> List[Industry]:
+    def filter_by_classification(self, classification: str) -> List[Industry]:
         """
-        Get all industries in a specific Classification
+        Get all industries in a specific classification
         
         Args:
             classification: "GIC" or "DIC"
@@ -189,15 +189,15 @@ class classification:
         Returns:
             List of Industry objects
         """
-        return [i for i in self.industries if i.Classification == Classification]
+        return [i for i in self.industries if i.classification == classification]
 
-    def get_p_tax(self) -> List[Industry]:
-        """Get all P-TAX (General Industry Classification) industries (01-12)"""
-        return self.filter_by_Classification("GIC")
+    def get_GIC(self) -> List[Industry]:
+        """Get all GIC (General Industry Classification) industries (01-12)"""
+        return self.filter_by_classification("GIC")
 
-    def get_d_tax(self) -> List[Industry]:
-        """Get all D-TAX (Digital Industry Classification) industries (13)"""
-        return self.filter_by_Classification("DIC")
+    def get_DIC(self) -> List[Industry]:
+        """Get all DIC (Digital Industry Classification) industries (13)"""
+        return self.filter_by_classification("DIC")
 
     @property
     def total_industries(self) -> int:
@@ -215,15 +215,15 @@ class classification:
         return sum(i.subsector_count for i in self.industries)
 
     def stats(self) -> Dict[str, int]:
-        """Get Classification statistics"""
+        """Get classification statistics"""
         return {
             "version": self.version,
             "release_date": self.release_date,
             "industries": self.total_industries,
             "sectors": self.total_sectors,
             "subsectors": self.total_subsectors,
-            "p_tax_industries": len(self.get_p_tax()),
-            "d_tax_industries": len(self.get_d_tax())
+            "gic_industries": len(self.get_GIC()),
+            "dic_industries": len(self.get_DIC())
         }
 
     def __repr__(self):

@@ -17,9 +17,9 @@ npm install git+https://github.com/shadstradamus/DMCS.git#subdirectory=typescrip
 ## Quick Start
 
 ```typescript
-import { classification } from 'dmcs-sdk';
+import { Classification } from 'dmcs-sdk';
 
-const dmcs = new classification();
+const dmcs = new Classification();
 
 // Get stats
 console.log(dmcs.stats());
@@ -47,19 +47,19 @@ const results = dmcs.search('blockchain');
 results.forEach(result => console.log(result));
 
 // Filter by classification
-const pTax = dmcs.getGIC();  // Traditional economy (01-12)
-const dTax = dmcs.getDIC();  // Digital assets (13)
+const gic = dmcs.getGIC();  // Traditional economy (01-12)
+const dic = dmcs.getDIC();  // Digital assets (13)
 
-console.log(`GIC has ${pTax.length} industries`);
-console.log(`DIC has ${dTax.length} industries`);
+console.log(`GIC has ${gic.length} industries`);
+console.log(`DIC has ${dic.length} industries`);
 ```
 
 ## JavaScript (CommonJS)
 
 ```javascript
-const { classification } = require('dmcs-sdk');
+const { Classification } = require('dmcs-sdk');
 
-const dmcs = new classification();
+const dmcs = new Classification();
 
 // Get all Technology subsectors
 const tech = dmcs.getById('09');
@@ -70,14 +70,14 @@ tech.sectors.forEach(sector => {
 
 ## API Reference
 
-### `classification`
+### `Classification`
 
 Main class for loading and querying DMCS data.
 
 **Properties:**
 - `version: string` - DMCS version
 - `releaseDate: string` - Release date
-- `description: string` - classification description
+- `description: string` - Classification description
 - `industries: Industry[]` - All industries
 
 **Methods:**
@@ -86,7 +86,7 @@ Main class for loading and querying DMCS data.
 - `filterByClassification(classification: 'GIC' | 'DIC'): Industry[]` - Get industries by classification
 - `getGIC(): Industry[]` - Get all GIC industries
 - `getDIC(): Industry[]` - Get all DIC industries
-- `stats(): classificationStats` - Get classification statistics
+- `stats(): ClassificationStats` - Get classification statistics
 
 ### Types
 
@@ -127,9 +127,9 @@ interface Subsector {
 ### Classify a company
 
 ```typescript
-import { classification } from 'dmcs-sdk';
+import { Classification } from 'dmcs-sdk';
 
-const dmcs = new classification();
+const dmcs = new Classification();
 
 // Amazon: Primary = Online Marketplaces, Secondary = Cloud Platforms
 const primary = dmcs.getById('04.05.002');
@@ -142,9 +142,9 @@ console.log(`Amazon Secondary: ${secondary?.label}`);
 ### Iterate through all classifications
 
 ```typescript
-import { classification } from 'dmcs-sdk';
+import { Classification } from 'dmcs-sdk';
 
-const dmcs = new classification();
+const dmcs = new Classification();
 
 for (const industry of dmcs.industries) {
   console.log(`\n${industry.id} — ${industry.label}`);
@@ -160,9 +160,9 @@ for (const industry of dmcs.industries) {
 ### Find all blockchain-related classifications
 
 ```typescript
-import { classification } from 'dmcs-sdk';
+import { Classification } from 'dmcs-sdk';
 
-const dmcs = new classification();
+const dmcs = new Classification();
 
 const blockchain = dmcs.search('blockchain');
 blockchain.forEach(item => {

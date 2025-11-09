@@ -80,11 +80,11 @@ for result in results:
 # ...
 
 # Filter by classification
-p_tax = dmcs.get_gic()  # Traditional economy (01-12)
-d_tax = dmcs.get_dic()  # Digital assets (13)
+gic = dmcs.get_GIC()  # Traditional economy (01-12)
+dic = dmcs.get_DIC()  # Digital assets (13)
 
-print(f"GIC has {len(p_tax)} industries")
-print(f"DIC has {len(d_tax)} industries")
+print(f"GIC has {len(gic)} industries")
+print(f"DIC has {len(dic)} industries")
 ```
 
 ## API Reference
@@ -93,58 +93,56 @@ print(f"DIC has {len(d_tax)} industries")
 
 Main class for loading and querying DMCS data.
 
-**Methods:**
-- `get_by_id(classification_id: str)` - Lookup industry, sector, or subsector by ID
-- `search(query: str, case_sensitive: bool = False)` - Search classifications by label
-- `filter_by_classification(classification: str)` - Get industries by GIC or DIC
-- `get_gic()` - Get all GIC industries
-- `get_dic()` - Get all DIC industries
-- `stats()` - Get classification statistics
-
 **Properties:**
-- `total_industries` - Count of industries
-- `total_sectors` - Count of sectors
-- `total_subsectors` - Count of subsectors
-- `version` - DMCS version
-- `release_date` - Release date
-
-### `Industry`
-
-Represents a top-level industry classification.
-
-**Attributes:**
-- `id` - Industry ID (e.g., "09")
-- `label` - Industry name
-- `classification` - "GIC" or "DIC"
-- `sectors` - List of Sector objects
+- `version: str` - DMCS version
+- `release_date: str` - Release date
+- `description: str` - Classification description
+- `industries: List[Industry]` - All industries
+- `total_industries: int` - Count of all industries
+- `total_sectors: int` - Count of all sectors
+- `total_subsectors: int` - Count of all subsectors
 
 **Methods:**
-- `get_sector(sector_id: str)` - Get sector by ID
+- `get_by_id(classification_id: str) -> Industry | Sector | Subsector | None` - Lookup by ID
+- `search(query: str, case_sensitive: bool = False) -> List` - Search by text
+- `filter_by_classification(classification: str) -> List[Industry]` - Filter by GIC or DIC
+- `get_GIC() -> List[Industry]` - Get all GIC industries (01-12)
+- `get_DIC() -> List[Industry]` - Get all DIC industries (13)
+- `stats() -> Dict` - Get classification statistics
 
-### `Sector`
+### Data Classes
 
-Represents a sector within an industry.
+**Industry**
+```python
+@dataclass
+class Industry:
+    id: str
+    label: str
+    classification: str  # "GIC" or "DIC"
+    sectors: List[Sector]
+```
 
-**Attributes:**
-- `id` - Sector ID (e.g., "09.01")
-- `label` - Sector name
-- `industry_id` - Parent industry ID
-- `classification` - "GIC" or "DIC"
-- `subsectors` - List of Subsector objects
+**Sector**
+```python
+@dataclass
+class Sector:
+    id: str
+    label: str
+    industry_id: str
+    classification: str  # "GIC" or "DIC"
+    subsectors: List[Subsector]
+```
 
-**Methods:**
-- `get_subsector(subsector_id: str)` - Get subsector by ID
-
-### `Subsector`
-
-Represents a subsector (most granular classification).
-
-**Attributes:**
-- `id` - Subsector ID (e.g., "09.01.002")
-- `label` - Subsector name
-- `sector_id` - Parent sector ID
-- `industry_id` - Parent industry ID
-- `classification` - "GIC" or "DIC"
+**Subsector**
+```python
+@dataclass
+class Subsector:
+    id: str
+    label: str
+    sector_id: str
+    industry_id: str
+    classification: str  # "GIC" or "DIC"
+```
 
 ## Examples
 
@@ -159,8 +157,8 @@ dmcs = classification()
 primary = dmcs.get_by_id('04.05.002')
 secondary = dmcs.get_by_id('09.01.004')
 
-print(f"Amazon Primary: {primary}")
-print(f"Amazon Secondary: {secondary}")
+print(f"Amazon Primary: {primary.label}")
+print(f"Amazon Secondary: {secondary.label}")
 ```
 
 ### Iterate through all classifications
@@ -171,11 +169,11 @@ from dmcs_sdk import classification
 dmcs = classification()
 
 for industry in dmcs.industries:
-    print(f"\n{industry}")
+    print(f"\n{industry.id} — {industry.label} ({industry.classification})")
     for sector in industry.sectors:
-        print(f"  {sector}")
+        print(f"  {sector.id} — {sector.label}")
         for subsector in sector.subsectors:
-            print(f"    {subsector}")
+            print(f"    {subsector.id} — {subsector.label}")
 ```
 
 ### Find all blockchain-related classifications
@@ -187,7 +185,53 @@ dmcs = classification()
 
 blockchain = dmcs.search('blockchain')
 for item in blockchain:
-    print(item)
+    print(f"{item.id} — {item.label}")
+```
+
+### Get all Digital Asset industries
+
+```python
+from dmcs_sdk import classification
+
+dmcs = classification()
+
+# Get DIC (Digital Industry Classification) industries
+dic = dmcs.get_DIC()
+for industry in dic:
+    print(f"{industry.id} — {industry.label}")
+    print(f"  Sectors: {len(industry.sectors)}")
+    print(f"  Subsectors: {industry.subsector_count}")
+```
+
+### Load from custom file
+
+```python
+from dmcs_sdk import classification
+from pathlib import Path
+
+# Load from a custom JSON file
+custom_path = Path('/path/to/custom/classification.json')
+dmcs = classification(data_path=custom_path)
+
+print(dmcs.stats())
+```
+
+## Development
+
+### Run tests
+```bash
+pip install -e ".[dev]"
+pytest
+```
+
+### Type checking
+```bash
+mypy dmcs_sdk
+```
+
+### Code formatting
+```bash
+black dmcs_sdk
 ```
 
 ## License
