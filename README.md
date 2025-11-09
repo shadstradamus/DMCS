@@ -197,5 +197,6 @@ This repository (https://github.com/shadstradamus/DMCS) is the **canonical sourc
 4. Quality contributions that align with DMCS design principles are merged
 5. Official releases happen as needed based on the governance model
 
-**Goal:** Keep DMCS open, collaborative, and trustworthy—anyone can use it, everyone can contribute, and there's one stable reference version.
+**Goal:** Keep DMCS open, collaborative, trustworthy and anyone can use it, everyone can contribute, and there's one stable reference version.
+
 
