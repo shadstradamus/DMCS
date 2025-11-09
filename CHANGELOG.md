@@ -9,11 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **10.03.003** – Messaging & Communications Apps (subsector under Digital Platforms & Social)
+- TypeScript SDK with normalized taxonomy types and metadata derivation
+- GICS to DMCS mapping documentation (`mappings/gics-to-dmcs.md`)
+- ICB to DMCS mapping documentation (`mappings/icb-to-dmcs.md`)
+- TRBC to DMCS mapping documentation (`mappings/trbc-to-dmcs.md`)
+- NAICS to DMCS mapping documentation (`mappings/naics-to-dmcs.md`)
 
-### Changed
+### Fixed
 
-- Updated subsector count from 190 to 191
+- Corrected telecom subsector codes in all mapping files (`mappings/*.md`) so 10.01.001 = Mobile and 10.01.002 = Fixed-Line
+- Updated design documentation (`Documentation/DMCS Documentation.txt`) to reflect the correct 191 subsectors and release notes for 1.0.1
+- Verified every mapping example against the official DMCS design specification and taxonomy data (no structural changes)
+
+### Notes
+
+- Taxonomy structure remains 13 industries, 55 sectors, 191 subsectors; this patch release focuses on tooling and documentation accuracy
 
 ## [1.0.0] - 2025-11-08
 
@@ -50,14 +60,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Immutable IDs with hierarchical structure (II.SS.SSS)
 - Digital-native design with first-class blockchain/crypto support
-- Predictable governance with structural (2×/year) and thematic (monthly/quarterly) releases
+- Predictable governance model with structural releases as needed (typically 1-2×/year) and thematic updates as needed
 - Full changelog commitment for version tracking
+- Extension namespace (DMCS-CUST) for custom organization-specific classifications
+
+#### SDKs and Tools
+
+- Python SDK (`python-sdk/`) with bundled taxonomy data
+- FastAPI reference implementation (`api/`) for local use
+- JSON and CSV exports of the full taxonomy
 
 #### Documentation
 
 - Complete taxonomy reference (TAXONOMY.md)
 - README with examples, materiality rules, and migration guidance
-- MIT License for open-source distribution
+- Contributing guidelines (CONTRIBUTING.md)
+- Apache 2.0 License for open-source distribution
 
 ### Notes
 
@@ -74,4 +92,5 @@ DMCS uses **semantic versioning**:
   - **MINOR**: New industries, sectors, or subsectors (structural releases)
   - **PATCH**: Label updates, documentation fixes, thematic additions
 
+[1.0.1]: https://github.com/yourusername/dmcs/releases/tag/v1.0.1
 [1.0.0]: https://github.com/yourusername/dmcs/releases/tag/v1.0.0

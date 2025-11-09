@@ -1,0 +1,163 @@
+# DMCS Python SDK
+
+Python library for working with the Dynamic Multi-Dimensional Classification Standard (DMCS).
+
+## Installation
+
+The SDK is not published to PyPI yet. Install directly from the repository:
+
+```bash
+pip install "git+https://github.com/shadstradamus/DMCS.git#subdirectory=python-sdk"
+```
+
+Or clone the repo and install in editable mode:
+
+```bash
+git clone https://github.com/shadstradamus/DMCS.git
+cd DMCS/python-sdk
+pip install -e .
+```
+
+## Quick Start
+
+```python
+from dmcs_sdk import Taxonomy
+
+# Load the taxonomy
+dmcs = Taxonomy()
+
+# Get stats
+print(dmcs.stats())
+# {'version': '1.0.1', 'release_date': '2025-11-08', 'industries': 13, 'sectors': 55, 'subsectors': 191, ...}
+
+# Lookup by ID
+tech = dmcs.get_by_id('09')
+print(tech)
+# 09 — Technology (4 sectors, P-TAX)
+
+saas = dmcs.get_by_id('09.01.002')
+print(saas)
+# 09.01.002 — Enterprise SaaS
+
+# Search by text
+results = dmcs.search('blockchain')
+for result in results:
+    print(result)
+# 13 — Digital Assets & Blockchain (4 sectors, D-TAX)
+# 13.01 — Blockchain Infra & Protocols (4 subsectors)
+# ...
+
+# Filter by taxonomy
+p_tax = dmcs.get_p_tax()  # Traditional economy (01-12)
+d_tax = dmcs.get_d_tax()  # Digital assets (13)
+
+print(f"P-TAX has {len(p_tax)} industries")
+print(f"D-TAX has {len(d_tax)} industries")
+```
+
+## API Reference
+
+### `Taxonomy`
+
+Main class for loading and querying DMCS data.
+
+**Methods:**
+- `get_by_id(classification_id: str)` - Lookup industry, sector, or subsector by ID
+- `search(query: str, case_sensitive: bool = False)` - Search classifications by label
+- `filter_by_taxonomy(taxonomy: str)` - Get industries by P-TAX or D-TAX
+- `get_p_tax()` - Get all P-TAX industries
+- `get_d_tax()` - Get all D-TAX industries
+- `stats()` - Get taxonomy statistics
+
+**Properties:**
+- `total_industries` - Count of industries
+- `total_sectors` - Count of sectors
+- `total_subsectors` - Count of subsectors
+- `version` - DMCS version
+- `release_date` - Release date
+
+### `Industry`
+
+Represents a top-level industry classification.
+
+**Attributes:**
+- `id` - Industry ID (e.g., "09")
+- `label` - Industry name
+- `taxonomy` - "P-TAX" or "D-TAX"
+- `sectors` - List of Sector objects
+
+**Methods:**
+- `get_sector(sector_id: str)` - Get sector by ID
+
+### `Sector`
+
+Represents a sector within an industry.
+
+**Attributes:**
+- `id` - Sector ID (e.g., "09.01")
+- `label` - Sector name
+- `industry_id` - Parent industry ID
+- `taxonomy` - "P-TAX" or "D-TAX"
+- `subsectors` - List of Subsector objects
+
+**Methods:**
+- `get_subsector(subsector_id: str)` - Get subsector by ID
+
+### `Subsector`
+
+Represents a subsector (most granular classification).
+
+**Attributes:**
+- `id` - Subsector ID (e.g., "09.01.002")
+- `label` - Subsector name
+- `sector_id` - Parent sector ID
+- `industry_id` - Parent industry ID
+- `taxonomy` - "P-TAX" or "D-TAX"
+
+## Examples
+
+### Classify a company
+
+```python
+from dmcs_sdk import Taxonomy
+
+dmcs = Taxonomy()
+
+# Amazon: Primary = Online Marketplaces, Secondary = Cloud Platforms
+primary = dmcs.get_by_id('04.05.002')
+secondary = dmcs.get_by_id('09.01.004')
+
+print(f"Amazon Primary: {primary}")
+print(f"Amazon Secondary: {secondary}")
+```
+
+### Iterate through all classifications
+
+```python
+from dmcs_sdk import Taxonomy
+
+dmcs = Taxonomy()
+
+for industry in dmcs.industries:
+    print(f"\n{industry}")
+    for sector in industry.sectors:
+        print(f"  {sector}")
+        for subsector in sector.subsectors:
+            print(f"    {subsector}")
+```
+
+### Find all blockchain-related classifications
+
+```python
+from dmcs_sdk import Taxonomy
+
+dmcs = Taxonomy()
+
+blockchain = dmcs.search('blockchain')
+for item in blockchain:
+    print(item)
+```
+
+## License
+
+Apache 2.0 License - see [LICENSE](../LICENSE)

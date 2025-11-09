@@ -1,0 +1,32 @@
+{
+  "name": "dmcs-sdk",
+  "version": "1.0.1",
+  "description": "TypeScript SDK for Dynamic Multi-Dimensional Classification Standard",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "dmcs",
+    "classification",
+    "taxonomy",
+    "industry",
+    "sector"
+  ],
+  "author": "DMCS",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shadstradamus/DMCS.git",
+    "directory": "typescript-sdk"
+  },
+  "files": [
+    "dist",
+    "src/data"
+  ],
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
