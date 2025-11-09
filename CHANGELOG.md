@@ -5,25 +5,37 @@ All notable changes to the DMCS (Dynamic Multi-Dimensional Classification Standa
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.1] - 2025-11-08
+## [1.0.3] - 2025-11-08
 
-### Added
+### Changed
 
-- TypeScript SDK with normalized taxonomy types and metadata derivation
-- GICS to DMCS mapping documentation (`mappings/gics-to-dmcs.md`)
-- ICB to DMCS mapping documentation (`mappings/icb-to-dmcs.md`)
-- TRBC to DMCS mapping documentation (`mappings/trbc-to-dmcs.md`)
-- NAICS to DMCS mapping documentation (`mappings/naics-to-dmcs.md`)
+- Repository-wide version and packaging metadata bumped to 1.0.3 (README, SDK manifests, taxonomy data)
+- Rebuilt SDK packages and updated distribution metadata to mark the patch release
 
 ### Fixed
 
-- Corrected telecom subsector codes in all mapping files (`mappings/*.md`) so 10.01.001 = Mobile and 10.01.002 = Fixed-Line
-- Updated design documentation (`Documentation/DMCS Documentation.txt`) to reflect the correct 191 subsectors and release notes for 1.0.1
-- Verified every mapping example against the official DMCS design specification and taxonomy data (no structural changes)
+- Minor documentation and metadata consistency fixes surfaced after 1.0.2
+
+
+## [1.0.2] - 2025-11-08
+
+### Added
+
+- README and documentation clarifications and examples
+
+### Changed
+
+- Taxonomy metadata and bundled data updated (dmcs_version and release_date normalized across data exports)
+- SDK packaging and metadata updates (Python and TypeScript SDK version fields prepared for release)
+- API server metadata bump and documentation alignment
+
+### Fixed
+
+- Minor data corrections and consistency fixes in taxonomy CSV/JSON exports and mapping docs
 
 ### Notes
 
-- Taxonomy structure remains 13 industries, 55 sectors, 191 subsectors; this patch release focuses on tooling and documentation accuracy
+- This patch focuses on documentation, packaging, and published metadata; no structural taxonomy changes.
 
 ## [1.0.0] - 2025-11-08
 
@@ -92,5 +104,7 @@ DMCS uses **semantic versioning**:
   - **MINOR**: New industries, sectors, or subsectors (structural releases)
   - **PATCH**: Label updates, documentation fixes, thematic additions
 
+[1.0.3]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.3
+[1.0.2]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.2
 [1.0.1]: https://github.com/yourusername/dmcs/releases/tag/v1.0.1
 [1.0.0]: https://github.com/yourusername/dmcs/releases/tag/v1.0.0

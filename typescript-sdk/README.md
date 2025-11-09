@@ -24,7 +24,7 @@ const dmcs = new Taxonomy();
 // Get stats
 console.log(dmcs.stats());
 // {
-//   version: '1.0.1',
+//   version: '1.0.3',
 //   release_date: '2025-11-08',
 //   industries: 13,
 //   sectors: 55,
