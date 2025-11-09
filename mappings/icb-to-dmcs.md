@@ -1,6 +1,6 @@
 # ICB to DMCS Mapping
 
-Mapping from Industry Classification Benchmark (ICB) to DMCS taxonomy.
+Mapping from Industry Classification Benchmark (ICB) to DMCS classification.
 
 ## About ICB
 
@@ -172,7 +172,7 @@ When converting from ICB to DMCS:
 ## Resources
 
 - [ICB Structure](https://www.ftserussell.com/data/industry-classification-benchmark-icb)
-- [DMCS Taxonomy](../TAXONOMY.md)
+- [DMCS classification](../classification.md)
 - [DMCS Materiality Rules](../README.md#materiality-rule)
 
 For questions or suggested improvements, open a [GitHub issue](https://github.com/shadstradamus/DMCS/issues).

@@ -1,4 +1,4 @@
-export type TaxonomyCode = 'P-TAX' | 'D-TAX';
+export type ClassificationCode = 'GIC' | 'DIC';
 
 export interface RawSubsector {
   id: string;
@@ -14,11 +14,11 @@ export interface RawSector {
 export interface RawIndustry {
   id: string;
   label: string;
-  taxonomy: TaxonomyCode;
+  classification: ClassificationCode;
   sectors: RawSector[];
 }
 
-export interface RawTaxonomyData {
+export interface RawclassificationData {
   dmcs_version: string;
   release_date: string;
   description: string;
@@ -28,37 +28,37 @@ export interface RawTaxonomyData {
 export interface Subsector extends RawSubsector {
   sector_id: string;
   industry_id: string;
-  taxonomy: TaxonomyCode;
+  classification: ClassificationCode;
 }
 
 export interface Sector extends RawSector {
   industry_id: string;
-  taxonomy: TaxonomyCode;
+  classification: ClassificationCode;
   subsectors: Subsector[];
 }
 
 export interface Industry {
   id: string;
   label: string;
-  taxonomy: TaxonomyCode;
+  classification: ClassificationCode;
   sectors: Sector[];
 }
 
-export interface TaxonomyData {
+export interface classificationData {
   dmcs_version: string;
   release_date: string;
   description: string;
   industries: Industry[];
 }
 
-export interface TaxonomyStats {
+export interface classificationStats {
   version: string;
   release_date: string;
   industries: number;
   sectors: number;
   subsectors: number;
-  p_tax_industries: number;
-  d_tax_industries: number;
+  gic_industries: number;
+  dic_industries: number;
 }
 
 export type Classification = Industry | Sector | Subsector;

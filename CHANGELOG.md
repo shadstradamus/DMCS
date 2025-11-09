@@ -5,37 +5,70 @@ All notable changes to the DMCS (Dynamic Multi-Dimensional Classification Standa
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.3] - 2025-11-08
+## [1.0.4] - 2025-11-09
 
 ### Changed
 
-- Repository-wide version and packaging metadata bumped to 1.0.3 (README, SDK manifests, taxonomy data)
-- Rebuilt SDK packages and updated distribution metadata to mark the patch release
+- **Major terminology update**: Renamed "Taxonomy" → "Classification" across entire codebase
+- Renamed field names: `P-TAX` → `GIC` (General Industry Classification), `D-TAX` → `DIC` (Digital Industry Classification)
+- Updated TypeScript SDK: `getPTax()` → `getGIC()`, `getDTax()` → `getDIC()`
+- Updated stats fields: `p_tax_industries` → `gic_industries`, `d_tax_industries` → `dic_industries`
+- Renamed all files: `taxonomy.json` → `classification.json`, `taxonomy.py` → `classification.py`, `TAXONOMY.md` → `CLASSIFICATION.md`
+- Updated all documentation, READMEs, and code comments to reflect new terminology
+- Rebuilt browser bundle with corrected classification field structure
 
 ### Fixed
 
-- Minor documentation and metadata consistency fixes surfaced after 1.0.2
+- TypeScript SDK compilation errors due to type capitalization inconsistencies
+- Website badge display now correctly shows purple DIC badges for Digital Assets industry
+- Data flow alignment between JSON schema and consuming code
 
+## [1.0.3] - 2025-11-08
+
+### Added
+
+- Security policy (`SECURITY.md`) with GitHub private vulnerability reporting workflow
+- GitHub issue templates for general issues, classification proposals, mapping updates, and docs/SDK enhancements
+
+### Changed
+
+- Bumped all published artifacts (classification data, SDK metadata, documentation) to version 1.0.3 for consistency with public releases
+- Aligned governance wording across README and contributing guide with current release cadence
+
+### Notes
+
+- No structural classification changes; classification remains 13 industries, 55 sectors, 191 subsectors
 
 ## [1.0.2] - 2025-11-08
 
 ### Added
 
-- README and documentation clarifications and examples
-
-### Changed
-
-- Taxonomy metadata and bundled data updated (dmcs_version and release_date normalized across data exports)
-- SDK packaging and metadata updates (Python and TypeScript SDK version fields prepared for release)
-- API server metadata bump and documentation alignment
-
-### Fixed
-
-- Minor data corrections and consistency fixes in taxonomy CSV/JSON exports and mapping docs
+- Public DMCS website (`Website/`) with live market data feeds, AI-assisted classification demo, and product overview
+- Additional documentation highlighting web experience features and usage guidance
 
 ### Notes
 
-- This patch focuses on documentation, packaging, and published metadata; no structural taxonomy changes.
+- classification data unchanged; release focused on outreach and reference experience
+
+## [1.0.1] - 2025-11-08
+
+### Added
+
+- TypeScript SDK with normalized classification types and metadata derivation
+- GICS to DMCS mapping documentation (`mappings/gics-to-dmcs.md`)
+- ICB to DMCS mapping documentation (`mappings/icb-to-dmcs.md`)
+- TRBC to DMCS mapping documentation (`mappings/trbc-to-dmcs.md`)
+- NAICS to DMCS mapping documentation (`mappings/naics-to-dmcs.md`)
+
+### Fixed
+
+- Corrected telecom subsector codes in all mapping files (`mappings/*.md`) so 10.01.001 = Mobile and 10.01.002 = Fixed-Line
+- Updated design documentation (`Documentation/DMCS Documentation.txt`) to reflect the correct 191 subsectors and release notes for 1.0.1
+- Verified every mapping example against the official DMCS design specification and classification data (no structural changes)
+
+### Notes
+
+- classification structure remains 13 industries, 55 sectors, 191 subsectors; this patch release focuses on tooling and documentation accuracy
 
 ## [1.0.0] - 2025-11-08
 
@@ -46,8 +79,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **13 Industries** covering traditional and digital economy
 - **55 Sectors** providing coherent activity groupings
 - **191 Subsectors** representing concrete business models
-- **P-TAX (01-12)**: Primary Taxonomy for traditional/real economy
-- **D-TAX (13)**: Digital Asset Taxonomy for blockchain and crypto-native organizations
+- **GIC (01-12)**: General Industry Classification for traditional/real economy
+- **DIC (13)**: Digital Industry Classification for blockchain and crypto-native organizations
 - **Materiality rule**: Secondary classification threshold (≥25-30% revenue or strategic designation)
 - **Extension namespace** (DMCS-CUST): Custom nodes under official parents
 - **Migration guidance**: Mapping principles from GICS, ICB, TRBC, NAICS
@@ -78,13 +111,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### SDKs and Tools
 
-- Python SDK (`python-sdk/`) with bundled taxonomy data
+- Python SDK (`python-sdk/`) with bundled classification data
 - FastAPI reference implementation (`api/`) for local use
-- JSON and CSV exports of the full taxonomy
+- JSON and CSV exports of the full classification
 
 #### Documentation
 
-- Complete taxonomy reference (TAXONOMY.md)
+- Complete classification reference (classification.md)
 - README with examples, materiality rules, and migration guidance
 - Contributing guidelines (CONTRIBUTING.md)
 - Apache 2.0 License for open-source distribution
@@ -106,5 +139,5 @@ DMCS uses **semantic versioning**:
 
 [1.0.3]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.3
 [1.0.2]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.2
-[1.0.1]: https://github.com/yourusername/dmcs/releases/tag/v1.0.1
-[1.0.0]: https://github.com/yourusername/dmcs/releases/tag/v1.0.0
+[1.0.1]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.1
+[1.0.0]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.0

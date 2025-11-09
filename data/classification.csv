@@ -1,0 +1,260 @@
+level,id,label,parent_id,industry_id,sector_id,classification
+industry,01,Energy,,,01,GIC
+sector,01.01,Upstream & Exploration,01,,01,GIC
+subsector,01.01.001,Conventional Oil & Gas,01.01,01,01.01,GIC
+subsector,01.01.002,Unconventional / Shale,01.01,01,01.01,GIC
+subsector,01.01.003,Offshore E&P,01.01,01,01.01,GIC
+subsector,01.01.004,Oilfield Services & Drilling,01.01,01,01.01,GIC
+sector,01.02,Midstream & Transport,01,,01,GIC
+subsector,01.02.001,Pipelines,01.02,01,01.02,GIC
+subsector,01.02.002,LNG & Storage,01.02,01,01.02,GIC
+subsector,01.02.003,Marine Energy Transport,01.02,01,01.02,GIC
+sector,01.03,Refining & Marketing,01,,01,GIC
+subsector,01.03.001,Refineries,01.03,01,01.03,GIC
+subsector,01.03.002,Fuel Retail & Stations,01.03,01,01.03,GIC
+subsector,01.03.003,Lubricants & Specialties,01.03,01,01.03,GIC
+sector,01.04,Renewables & Clean Power,01,,01,GIC
+subsector,01.04.001,Utility-Scale Solar,01.04,01,01.04,GIC
+subsector,01.04.002,Wind & Offshore Wind,01.04,01,01.04,GIC
+subsector,01.04.003,Bioenergy & Waste-to-Energy,01.04,01,01.04,GIC
+subsector,01.04.004,Storage & Grid Integrators,01.04,01,01.04,GIC
+industry,02,Basic Materials,,,02,GIC
+sector,02.01,Metals & Mining,02,,02,GIC
+subsector,02.01.001,Diversified Mining,02.01,02,02.01,GIC
+subsector,02.01.002,Precious Metals,02.01,02,02.01,GIC
+subsector,02.01.003,Steel & Ferrous,02.01,02,02.01,GIC
+subsector,02.01.004,Mining Services,02.01,02,02.01,GIC
+sector,02.02,Chemicals & Fertilizers,02,,02,GIC
+subsector,02.02.001,Commodity Chemicals,02.02,02,02.02,GIC
+subsector,02.02.002,Specialty Chemicals,02.02,02,02.02,GIC
+subsector,02.02.003,Agrochemicals & Fertilizers,02.02,02,02.02,GIC
+sector,02.03,Construction Materials,02,,02,GIC
+subsector,02.03.001,Cement & Aggregates,02.03,02,02.03,GIC
+subsector,02.03.002,Glass & Ceramics,02.03,02,02.03,GIC
+subsector,02.03.003,Asphalt & Paving,02.03,02,02.03,GIC
+sector,02.04,"Forestry, Paper & Packaging",02,,02,GIC
+subsector,02.04.001,Forestry & Timber,02.04,02,02.04,GIC
+subsector,02.04.002,Pulp & Paper,02.04,02,02.04,GIC
+subsector,02.04.003,Containers & Packaging,02.04,02,02.04,GIC
+industry,03,Industrials,,,03,GIC
+sector,03.01,"Aerospace, Defense & Security",03,,03,GIC
+subsector,03.01.001,Aerospace OEMs,03.01,03,03.01,GIC
+subsector,03.01.002,Defense Systems,03.01,03,03.01,GIC
+subsector,03.01.003,Space & Launch Services,03.01,03,03.01,GIC
+sector,03.02,Machinery & Industrial Equipment,03,,03,GIC
+subsector,03.02.001,Heavy Machinery,03.02,03,03.02,GIC
+subsector,03.02.002,Electrical Equipment,03.02,03,03.02,GIC
+subsector,03.02.003,Automation Components,03.02,03,03.02,GIC
+subsector,03.02.004,Diversified Industrials,03.02,03,03.02,GIC
+sector,03.03,Transportation & Logistics,03,,03,GIC
+subsector,03.03.001,Rail & Transit,03.03,03,03.03,GIC
+subsector,03.03.002,Trucking & Haulage,03.03,03,03.03,GIC
+subsector,03.03.003,Air Freight & Cargo,03.03,03,03.03,GIC
+subsector,03.03.004,Parcel & Courier,03.03,03,03.03,GIC
+subsector,03.03.005,Airlines,03.03,03,03.03,GIC
+subsector,03.03.006,Container & Liner Shipping,03.03,03,03.03,GIC
+sector,03.04,"Engineering, Construction & Services",03,,03,GIC
+subsector,03.04.001,EPC & Infrastructure,03.04,03,03.04,GIC
+subsector,03.04.002,Commercial Contractors,03.04,03,03.04,GIC
+subsector,03.04.003,Facility & Industrial Services,03.04,03,03.04,GIC
+industry,04,Consumer Discretionary,,,04,GIC
+sector,04.01,Auto & Mobility,04,,04,GIC
+subsector,04.01.001,Automakers,04.01,04,04.01,GIC
+subsector,04.01.002,Auto Parts & Components,04.01,04,04.01,GIC
+subsector,04.01.003,EV & New Mobility,04.01,04,04.01,GIC
+sector,04.02,Consumer Durables & Home,04,,04,GIC
+subsector,04.02.001,Home Appliances,04.02,04,04.02,GIC
+subsector,04.02.002,Furniture & Home Décor,04.02,04,04.02,GIC
+subsector,04.02.003,Consumer Electronics,04.02,04,04.02,GIC
+sector,04.03,"Apparel, Footwear & Luxury",04,,04,GIC
+subsector,04.03.001,Apparel Brands,04.03,04,04.03,GIC
+subsector,04.03.002,Sportswear & Footwear,04.03,04,04.03,GIC
+subsector,04.03.003,Luxury Goods,04.03,04,04.03,GIC
+sector,04.04,"Leisure, Travel & Entertainment",04,,04,GIC
+subsector,04.04.001,Hotels & Resorts,04.04,04,04.04,GIC
+subsector,04.04.002,Travel Services,04.04,04,04.04,GIC
+subsector,04.04.003,Gaming & Casinos,04.04,04,04.04,GIC
+subsector,04.04.004,Experience & Ticketing Platforms,04.04,04,04.04,GIC
+sector,04.05,Retail & E-Commerce,04,,04,GIC
+subsector,04.05.001,Multiline Retail,04.05,04,04.05,GIC
+subsector,04.05.002,Online Marketplaces,04.05,04,04.05,GIC
+subsector,04.05.003,Specialty Retail,04.05,04,04.05,GIC
+sector,04.06,Restaurants & Food Service,04,,04,GIC
+subsector,04.06.001,Quick Service Restaurants,04.06,04,04.06,GIC
+subsector,04.06.002,Casual / Full-Service,04.06,04,04.06,GIC
+subsector,04.06.003,Foodservice Franchising,04.06,04,04.06,GIC
+sector,04.07,Mobility Platforms,04,,04,GIC
+subsector,04.07.001,Ridehailing & Delivery Platforms,04.07,04,04.07,GIC
+subsector,04.07.002,Mobility Marketplaces,04.07,04,04.07,GIC
+subsector,04.07.003,Last-Mile Delivery Platforms,04.07,04,04.07,GIC
+industry,05,Consumer Staples,,,05,GIC
+sector,05.01,Food & Beverage Producers,05,,05,GIC
+subsector,05.01.001,Packaged Foods,05.01,05,05.01,GIC
+subsector,05.01.002,Beverages & Brewers,05.01,05,05.01,GIC
+subsector,05.01.003,Meat & Protein,05.01,05,05.01,GIC
+subsector,05.01.004,Snacks & Confectionery,05.01,05,05.01,GIC
+sector,05.02,Household & Personal Care,05,,05,GIC
+subsector,05.02.001,Household Products,05.02,05,05.02,GIC
+subsector,05.02.002,Personal Care & Beauty,05.02,05,05.02,GIC
+sector,05.03,Staples Retail,05,,05,GIC
+subsector,05.03.001,Supermarkets & Hypermarkets,05.03,05,05.03,GIC
+subsector,05.03.002,Discount & Club Stores,05.03,05,05.03,GIC
+subsector,05.03.003,Convenience & Drug Retail,05.03,05,05.03,GIC
+sector,05.04,Agriculture & Food Supply,05,,05,GIC
+subsector,05.04.001,Agri Processing,05.04,05,05.04,GIC
+subsector,05.04.002,Farm & Produce,05.04,05,05.04,GIC
+industry,06,Healthcare,,,06,GIC
+sector,06.01,Pharma & Biotech,06,,06,GIC
+subsector,06.01.001,Branded Pharma,06.01,06,06.01,GIC
+subsector,06.01.002,Generics & Biosimilars,06.01,06,06.01,GIC
+subsector,06.01.003,Biotech & Cell/Gene,06.01,06,06.01,GIC
+subsector,06.01.004,Diversified Healthcare,06.01,06,06.01,GIC
+sector,06.02,Medical Devices & Supplies,06,,06,GIC
+subsector,06.02.001,Diagnostic Devices,06.02,06,06.02,GIC
+subsector,06.02.002,Surgical & Ortho,06.02,06,06.02,GIC
+subsector,06.02.003,Consumables & Supplies,06.02,06,06.02,GIC
+sector,06.03,Healthcare Providers & Services,06,,06,GIC
+subsector,06.03.001,Hospitals & Clinics,06.03,06,06.03,GIC
+subsector,06.03.002,Managed Care & Payers,06.03,06,06.03,GIC
+subsector,06.03.003,Labs & Imaging,06.03,06,06.03,GIC
+sector,06.04,Health Tech & Digital Care,06,,06,GIC
+subsector,06.04.001,Telehealth Platforms,06.04,06,06.04,GIC
+subsector,06.04.002,Healthcare Data & Analytics,06.04,06,06.04,GIC
+subsector,06.04.003,Clinical Data & RWE Platforms,06.04,06,06.04,GIC
+subsector,06.04.004,Revenue Cycle / Admin Tech,06.04,06,06.04,GIC
+industry,07,Financial Services,,,07,GIC
+sector,07.01,Banking & Lending,07,,07,GIC
+subsector,07.01.001,Retail Banking,07.01,07,07.01,GIC
+subsector,07.01.002,Commercial / SME Lending,07.01,07,07.01,GIC
+subsector,07.01.003,Consumer Finance / Cards,07.01,07,07.01,GIC
+subsector,07.01.004,Embedded / BaaS Lending,07.01,07,07.01,GIC
+sector,07.02,Insurance,07,,07,GIC
+subsector,07.02.001,Life & Health Insurance,07.02,07,07.02,GIC
+subsector,07.02.002,Property & Casualty,07.02,07,07.02,GIC
+subsector,07.02.003,Reinsurance & Specialty,07.02,07,07.02,GIC
+sector,07.03,Investment & Capital Markets,07,,07,GIC
+subsector,07.03.001,Asset & Wealth Management,07.03,07,07.03,GIC
+subsector,07.03.002,Brokerage & Trading Venues,07.03,07,07.03,GIC
+subsector,07.03.003,Investment Banking,07.03,07,07.03,GIC
+subsector,07.03.004,Holding / Investment Companies,07.03,07,07.03,GIC
+subsector,07.03.005,Digital Wealth / Robo,07.03,07,07.03,GIC
+sector,07.04,FinTech & Payments,07,,07,GIC
+subsector,07.04.001,Payment Networks,07.04,07,07.04,GIC
+subsector,07.04.002,Digital Wallets / Neobanks,07.04,07,07.04,GIC
+subsector,07.04.003,Merchant Acquiring,07.04,07,07.04,GIC
+subsector,07.04.004,Digital Payments,07.04,07,07.04,GIC
+subsector,07.04.005,Issuer / Wallet Infrastructure,07.04,07,07.04,GIC
+industry,08,Real Estate,,,08,GIC
+sector,08.01,Listed & Nonlisted REITs,08,,08,GIC
+subsector,08.01.001,Office REITs,08.01,08,08.01,GIC
+subsector,08.01.002,Retail REITs,08.01,08,08.01,GIC
+subsector,08.01.003,Industrial / Logistics REITs,08.01,08,08.01,GIC
+subsector,08.01.004,Residential REITs,08.01,08,08.01,GIC
+sector,08.02,Real Estate Development,08,,08,GIC
+subsector,08.02.001,Residential Development,08.02,08,08.02,GIC
+subsector,08.02.002,Commercial Development,08.02,08,08.02,GIC
+subsector,08.02.003,Mixed-Use Projects,08.02,08,08.02,GIC
+sector,08.03,Real Estate Services,08,,08,GIC
+subsector,08.03.001,Brokerage & Advisory,08.03,08,08.03,GIC
+subsector,08.03.002,Property Management,08.03,08,08.03,GIC
+subsector,08.03.003,Facilities Services,08.03,08,08.03,GIC
+sector,08.04,Specialized Real Estate,08,,08,GIC
+subsector,08.04.001,Data Centers,08.04,08,08.04,GIC
+subsector,08.04.002,Student / Senior Housing,08.04,08,08.04,GIC
+subsector,08.04.003,Cell Towers & Digital Infra,08.04,08,08.04,GIC
+industry,09,Technology,,,09,GIC
+sector,09.01,Software & Platforms,09,,09,GIC
+subsector,09.01.001,Application Software,09.01,09,09.01,GIC
+subsector,09.01.002,Enterprise SaaS,09.01,09,09.01,GIC
+subsector,09.01.003,Cybersecurity Software,09.01,09,09.01,GIC
+subsector,09.01.004,Cloud Platforms / PaaS,09.01,09,09.01,GIC
+subsector,09.01.005,Data & Database Platforms,09.01,09,09.01,GIC
+subsector,09.01.006,CRM & Customer Platforms,09.01,09,09.01,GIC
+subsector,09.01.007,AI & ML Platforms,09.01,09,09.01,GIC
+sector,09.02,Hardware & Devices,09,,09,GIC
+subsector,09.02.001,Semiconductors,09.02,09,09.02,GIC
+subsector,09.02.002,Consumer Devices & Ecosystems,09.02,09,09.02,GIC
+subsector,09.02.003,Network & Telecom Equipment,09.02,09,09.02,GIC
+subsector,09.02.004,"Imaging, Sensors & Components",09.02,09,09.02,GIC
+sector,09.03,IT Services,09,,09,GIC
+subsector,09.03.001,IT Consulting,09.03,09,09.03,GIC
+subsector,09.03.002,Managed Services,09.03,09,09.03,GIC
+subsector,09.03.003,Data Center Services,09.03,09,09.03,GIC
+subsector,09.03.004,Cybersecurity Services,09.03,09,09.03,GIC
+sector,09.04,Emerging Tech & Automation,09,,09,GIC
+subsector,09.04.001,Robotics & Automation,09.04,09,09.04,GIC
+subsector,09.04.002,IoT Platforms,09.04,09,09.04,GIC
+subsector,09.04.003,Advanced / Experimental Tech,09.04,09,09.04,GIC
+subsector,09.04.004,Spatial / XR Platforms,09.04,09,09.04,GIC
+industry,10,Communications & Media,,,10,GIC
+sector,10.01,Telecom & Connectivity,10,,10,GIC
+subsector,10.01.001,Mobile Network Operators,10.01,10,10.01,GIC
+subsector,10.01.002,Fixed-Line & Broadband,10.01,10,10.01,GIC
+subsector,10.01.003,Satellite & Edge Networks,10.01,10,10.01,GIC
+sector,10.02,Media & Entertainment,10,,10,GIC
+subsector,10.02.001,TV & Streaming,10.02,10,10.02,GIC
+subsector,10.02.002,Digital Media Platforms,10.02,10,10.02,GIC
+subsector,10.02.003,"Music, Gaming & Esports",10.02,10,10.02,GIC
+subsector,10.02.004,Diversified Entertainment,10.02,10,10.02,GIC
+sector,10.03,Digital Platforms & Social,10,,10,GIC
+subsector,10.03.001,Social Networks,10.03,10,10.03,GIC
+subsector,10.03.002,Creator / UGC Platforms,10.03,10,10.03,GIC
+subsector,10.03.003,Messaging & Communications Apps,10.03,10,10.03,GIC
+subsector,10.03.004,Search & Digital Platforms,10.03,10,10.03,GIC
+sector,10.04,Advertising & Marketing Services,10,,10,GIC
+subsector,10.04.001,Ad Networks & Exchanges,10.04,10,10.04,GIC
+subsector,10.04.002,Agencies & Brand Services,10.04,10,10.04,GIC
+industry,11,Utilities,,,11,GIC
+sector,11.01,Electric Utilities,11,,11,GIC
+subsector,11.01.001,Generation,11.01,11,11.01,GIC
+subsector,11.01.002,Transmission & Distribution,11.01,11,11.01,GIC
+subsector,11.01.003,Retail Electric,11.01,11,11.01,GIC
+sector,11.02,Gas Utilities,11,,11,GIC
+subsector,11.02.001,Gas Distribution,11.02,11,11.02,GIC
+subsector,11.02.002,LNG Utility Services,11.02,11,11.02,GIC
+sector,11.03,Water Utilities,11,,11,GIC
+subsector,11.03.001,Water Supply,11.03,11,11.03,GIC
+subsector,11.03.002,Wastewater Services,11.03,11,11.03,GIC
+sector,11.04,Multi-Utilities & Environmental,11,,11,GIC
+subsector,11.04.001,Multi-Utility Operations,11.04,11,11.04,GIC
+subsector,11.04.002,Waste & Recycling,11.04,11,11.04,GIC
+industry,12,Government / Public / Education,,,12,GIC
+sector,12.01,Public Administration,12,,12,GIC
+subsector,12.01.001,Central / Federal,12.01,12,12.01,GIC
+subsector,12.01.002,State / Regional,12.01,12,12.01,GIC
+subsector,12.01.003,Municipal Services,12.01,12,12.01,GIC
+sector,12.02,Education & Training,12,,12,GIC
+subsector,12.02.001,K-12 Operators,12.02,12,12.02,GIC
+subsector,12.02.002,Higher Education,12.02,12,12.02,GIC
+subsector,12.02.003,EdTech Providers,12.02,12,12.02,GIC
+sector,12.03,Public Safety & Defense Services,12,,12,GIC
+subsector,12.03.001,Emergency & Response,12.03,12,12.03,GIC
+subsector,12.03.002,Contracted Gov Services,12.03,12,12.03,GIC
+subsector,12.03.003,Private Defense / Public Safety Contractors,12.03,12,12.03,GIC
+sector,12.04,NGOs & Multilaterals,12,,12,GIC
+subsector,12.04.001,Nonprofits,12.04,12,12.04,GIC
+subsector,12.04.002,Development Agencies,12.04,12,12.04,GIC
+industry,13,Digital Assets & Blockchain,,,13,DIC
+sector,13.01,Blockchain Infra & Protocols,13,,13,DIC
+subsector,13.01.001,Layer-1 Protocols,13.01,13,13.01,DIC
+subsector,13.01.002,Layer-2 / Rollup Infra,13.01,13,13.01,DIC
+subsector,13.01.003,Mining / Staking Providers,13.01,13,13.01,DIC
+subsector,13.01.004,Node / Infra Services,13.01,13,13.01,DIC
+sector,13.02,Crypto Finance & Exchanges,13,,13,DIC
+subsector,13.02.001,Centralized Exchanges (CEX),13.02,13,13.02,DIC
+subsector,13.02.002,OTC & Market Making,13.02,13,13.02,DIC
+subsector,13.02.003,Digital Asset Custody,13.02,13,13.02,DIC
+subsector,13.02.004,Stablecoin Issuers,13.02,13,13.02,DIC
+subsector,13.02.005,RWA Tokenization Platforms,13.02,13,13.02,DIC
+sector,13.03,Decentralized Applications,13,,13,DIC
+subsector,13.03.001,DEX / AMM,13.03,13,13.03,DIC
+subsector,13.03.002,On-Chain Lending & Yield,13.03,13,13.03,DIC
+subsector,13.03.003,NFT Marketplaces,13.03,13,13.03,DIC
+subsector,13.03.004,Metaverse / Web3 Social,13.03,13,13.03,DIC
+subsector,13.03.005,Blockchain Gaming / GameFi,13.03,13,13.03,DIC
+sector,13.04,Blockchain Services & Security,13,,13,DIC
+subsector,13.04.001,Blockchain Analytics,13.04,13,13.04,DIC
+subsector,13.04.002,Smart Contract Auditing,13.04,13,13.04,DIC
+subsector,13.04.003,Compliance / Onchain Risk,13.04,13,13.04,DIC
+subsector,13.04.004,Enterprise Blockchain Solutions,13.04,13,13.04,DIC
+subsector,13.04.005,Onchain Identity / KYC,13.04,13,13.04,DIC

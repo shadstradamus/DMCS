@@ -8,12 +8,12 @@ import sys
 
 # Add parent directory to path to import dmcs_sdk
 sys.path.insert(0, str(Path(__file__).parent.parent / "python-sdk"))
-from dmcs_sdk import Taxonomy
+from dmcs_sdk import Classification
 
 app = FastAPI(
     title="DMCS API",
     description="Dynamic Multi-Dimensional Classification Standard REST API",
-    version="1.0.3",
+    version="1.0.4",
     docs_url="/",
     redoc_url="/docs"
 )
@@ -27,31 +27,31 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load taxonomy on startup
-taxonomy = Taxonomy()
+# Load Classification on startup
+Classification = Classification()
 
 
 @app.get("/api/v1/stats")
 def get_stats() -> Dict[str, Any]:
-    """Get DMCS taxonomy statistics"""
-    return taxonomy.stats()
+    """Get DMCS Classification statistics"""
+    return Classification.stats()
 
 
 @app.get("/api/v1/industries")
-def get_industries(taxonomy_filter: Optional[str] = Query(None, description="Filter by P-TAX or D-TAX")):
-    """Get all industries, optionally filtered by taxonomy"""
-    if taxonomy_filter:
-        if taxonomy_filter not in ["P-TAX", "D-TAX"]:
-            raise HTTPException(status_code=400, detail="taxonomy_filter must be P-TAX or D-TAX")
-        industries = taxonomy.filter_by_taxonomy(taxonomy_filter)
+def get_industries(classification_filter: Optional[str] = Query(None, description="Filter by GIC or DIC")):
+    """Get all industries, optionally filtered by Classification"""
+    if classification_filter:
+        if classification_filter not in ["GIC", "DIC"]:
+            raise HTTPException(status_code=400, detail="classification_filter must be GIC or DIC")
+        industries = Classification.filter_by_Classification(classification_filter)
     else:
-        industries = taxonomy.industries
+        industries = Classification.industries
     
     return [
         {
             "id": ind.id,
             "label": ind.label,
-            "taxonomy": ind.taxonomy,
+            "Classification": ind.Classification,
             "sector_count": len(ind.sectors),
             "subsector_count": ind.subsector_count
         }
@@ -69,7 +69,7 @@ def get_classification(classification_id: str):
     - Sector: II.SS (e.g., "09.01")
     - Subsector: II.SS.SSS (e.g., "09.01.002")
     """
-    result = taxonomy.get_by_id(classification_id)
+    result = Classification.get_by_id(classification_id)
     
     if result is None:
         raise HTTPException(status_code=404, detail=f"Classification {classification_id} not found")
@@ -80,7 +80,7 @@ def get_classification(classification_id: str):
             "type": "industry",
             "id": result.id,
             "label": result.label,
-            "taxonomy": result.taxonomy,
+            "Classification": result.Classification,
             "sectors": [
                 {
                     "id": sec.id,
@@ -96,7 +96,7 @@ def get_classification(classification_id: str):
             "id": result.id,
             "label": result.label,
             "industry_id": result.industry_id,
-            "taxonomy": result.taxonomy,
+            "Classification": result.Classification,
             "subsectors": [
                 {
                     "id": sub.id,
@@ -112,7 +112,7 @@ def get_classification(classification_id: str):
             "label": result.label,
             "sector_id": result.sector_id,
             "industry_id": result.industry_id,
-            "taxonomy": result.taxonomy
+            "Classification": result.Classification
         }
 
 
@@ -122,31 +122,31 @@ def search_classifications(
     case_sensitive: bool = Query(False, description="Case-sensitive search")
 ):
     """Search classifications by label text"""
-    results = taxonomy.search(q, case_sensitive=case_sensitive)
+    results = Classification.search(q, case_sensitive=case_sensitive)
     
     return [
         {
             "type": "industry" if hasattr(r, 'sectors') else "sector" if hasattr(r, 'subsectors') else "subsector",
             "id": r.id,
             "label": r.label,
-            "taxonomy": r.taxonomy
+            "Classification": r.Classification
         }
         for r in results
     ]
 
 
-@app.get("/api/v1/taxonomy/full")
-def get_full_taxonomy():
-    """Get complete taxonomy hierarchy"""
+@app.get("/api/v1/Classification/full")
+def get_full_Classification():
+    """Get complete Classification hierarchy"""
     return {
-        "version": taxonomy.version,
-        "release_date": taxonomy.release_date,
-        "description": taxonomy.description,
+        "version": Classification.version,
+        "release_date": Classification.release_date,
+        "description": Classification.description,
         "industries": [
             {
                 "id": ind.id,
                 "label": ind.label,
-                "taxonomy": ind.taxonomy,
+                "Classification": ind.Classification,
                 "sectors": [
                     {
                         "id": sec.id,
@@ -162,7 +162,7 @@ def get_full_taxonomy():
                     for sec in ind.sectors
                 ]
             }
-            for ind in taxonomy.industries
+            for ind in Classification.industries
         ]
     }
 

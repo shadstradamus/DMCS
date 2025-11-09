@@ -1,28 +1,28 @@
-import * as taxonomyData from './data/taxonomy.json';
+import * as ClassificationData from './data/classification.json';
 import {
   Industry,
   Sector,
   Subsector,
-  TaxonomyData,
-  TaxonomyStats,
-  Classification,
-  RawTaxonomyData,
+  classificationData as ClassificationDataType,
+  classificationStats,
+  ClassificationCode,
+  RawclassificationData,
 } from './types';
 
-function normalizeTaxonomy(raw: RawTaxonomyData): TaxonomyData {
-  const industries: Industry[] = raw.industries.map(industry => {
-    const sectors: Sector[] = industry.sectors.map(sector => {
-      const subsectors: Subsector[] = sector.subsectors.map(subsector => ({
+function normalizeClassification(raw: RawclassificationData): ClassificationDataType {
+  const industries: Industry[] = raw.industries.map((industry: any) => {
+    const sectors: Sector[] = industry.sectors.map((sector: any) => {
+      const subsectors: Subsector[] = sector.subsectors.map((subsector: any) => ({
         ...subsector,
         sector_id: sector.id,
         industry_id: industry.id,
-        taxonomy: industry.taxonomy,
+        classification: industry.classification,
       }));
 
       return {
         ...sector,
         industry_id: industry.id,
-        taxonomy: industry.taxonomy,
+        classification: industry.classification,
         subsectors,
       };
     });
@@ -41,15 +41,15 @@ function normalizeTaxonomy(raw: RawTaxonomyData): TaxonomyData {
   };
 }
 
-export class Taxonomy {
-  private data: TaxonomyData;
+export class Classification {
+  private data: ClassificationDataType;
 
   constructor() {
-    this.data = normalizeTaxonomy(taxonomyData as RawTaxonomyData);
+    this.data = normalizeClassification(ClassificationData as RawclassificationData);
   }
 
   /**
-   * Get taxonomy version
+   * Get Classification version
    */
   get version(): string {
     return this.data.dmcs_version;
@@ -80,7 +80,7 @@ export class Taxonomy {
    * Lookup classification by ID
    * @param id - Industry (II), Sector (II.SS), or Subsector (II.SS.SSS) ID
    */
-  getById(id: string): Classification | null {
+  getById(id: string): Industry | Sector | Subsector | null {
     const parts = id.split('.');
 
     // Industry lookup
@@ -110,8 +110,8 @@ export class Taxonomy {
    * @param query - Search query
    * @param caseSensitive - Whether search should be case-sensitive (default: false)
    */
-  search(query: string, caseSensitive = false): Classification[] {
-    const results: Classification[] = [];
+  search(query: string, caseSensitive = false): Array<Industry | Sector | Subsector> {
+    const results: Array<Industry | Sector | Subsector> = [];
     const searchQuery = caseSensitive ? query : query.toLowerCase();
 
     for (const industry of this.industries) {
@@ -139,31 +139,31 @@ export class Taxonomy {
   }
 
   /**
-   * Filter industries by taxonomy
-   * @param taxonomy - "P-TAX" or "D-TAX"
+   * Filter industries by classification
+   * @param classification - "GIC" or "DIC"
    */
-  filterByTaxonomy(taxonomy: 'P-TAX' | 'D-TAX'): Industry[] {
-    return this.industries.filter(i => i.taxonomy === taxonomy);
+  filterByClassification(classification: 'GIC' | 'DIC'): Industry[] {
+    return this.industries.filter(i => i.classification === classification);
   }
 
   /**
-   * Get all P-TAX industries
+   * Get all GIC (General Industry Classification) industries
    */
-  getPTax(): Industry[] {
-    return this.filterByTaxonomy('P-TAX');
+  getGIC(): Industry[] {
+    return this.filterByClassification('GIC');
   }
 
   /**
-   * Get all D-TAX industries
+   * Get all DIC (Digital Industry Classification) industries
    */
-  getDTax(): Industry[] {
-    return this.filterByTaxonomy('D-TAX');
+  getDIC(): Industry[] {
+    return this.filterByClassification('DIC');
   }
 
   /**
-   * Get taxonomy statistics
+   * Get Classification statistics
    */
-  stats(): TaxonomyStats {
+  stats(): classificationStats {
     const totalSectors = this.industries.reduce((sum, ind) => sum + ind.sectors.length, 0);
     const totalSubsectors = this.industries.reduce(
       (sum, ind) => sum + ind.sectors.reduce((s, sec) => s + sec.subsectors.length, 0),
@@ -176,8 +176,8 @@ export class Taxonomy {
       industries: this.industries.length,
       sectors: totalSectors,
       subsectors: totalSubsectors,
-      p_tax_industries: this.getPTax().length,
-      d_tax_industries: this.getDTax().length,
+      gic_industries: this.getGIC().length,
+      dic_industries: this.getDIC().length,
     };
   }
 }

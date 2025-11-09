@@ -2,7 +2,7 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.0.3** · Effective Date: 2025-11-08 · **License:** Apache 2.0
+**Version 1.0.4** · Effective Date: 2025-11-09 · **License:** Apache 2.0
 
 ## Overview
 

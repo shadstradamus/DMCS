@@ -2,11 +2,10 @@ MANIFEST.in
 README.md
 setup.py
 dmcs_sdk/__init__.py
-dmcs_sdk/taxonomy.py
+dmcs_sdk/classification.py
 dmcs_sdk.egg-info/PKG-INFO
 dmcs_sdk.egg-info/SOURCES.txt
 dmcs_sdk.egg-info/dependency_links.txt
 dmcs_sdk.egg-info/requires.txt
 dmcs_sdk.egg-info/top_level.txt
-dmcs_sdk/data/taxonomy.csv
-dmcs_sdk/data/taxonomy.json
+dmcs_sdk/data/classification.json

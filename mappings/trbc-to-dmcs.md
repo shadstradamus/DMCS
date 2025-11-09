@@ -1,6 +1,6 @@
 # TRBC to DMCS Mapping
 
-Mapping from Refinitiv Business Classification (TRBC) to DMCS taxonomy.
+Mapping from Refinitiv Business Classification (TRBC) to DMCS classification.
 
 ## About TRBC
 
@@ -131,7 +131,7 @@ TRBC is maintained by Refinitiv (now LSEG) and used across financial data platfo
 | TRBC Code | TRBC Industry | DMCS Primary | DMCS Secondary | Notes |
 |-----------|---------------|--------------|----------------|-------|
 | 5910101010 | Conventional Electricity | 11.01.001 - Generation | 11.01.002 - Transmission & Distribution | Add secondary when owning wires |
-| 5910101011 | Alternative Electricity | 11.01.001 - Generation | 01.04.xxx - Renewables & Clean Power | Use D-TAX only for digital-first assets |
+| 5910101011 | Alternative Electricity | 11.01.001 - Generation | 01.04.xxx - Renewables & Clean Power | Use DIC only for digital-first assets |
 | 5910101012 | Multi-Utilities | 11.04.001 - Multi-Utility Operations | 11.04.002 - Waste & Recycling | Secondary if environmental services significant |
 | 5910201011 | Gas Distribution | 11.02.001 - Gas Utilities | - | Regulated gas utilities |
 | 5910301011 | Water & Related Utilities | 11.03.001 - Water Supply | 11.03.002 - Wastewater Services | Add wastewater secondary when present |
@@ -177,7 +177,7 @@ When converting from TRBC to DMCS:
 ## Resources
 
 - [TRBC Structure](https://www.lseg.com/en/data-analytics/financial-data/trbc)
-- [DMCS Taxonomy](../TAXONOMY.md)
+- [DMCS classification](../classification.md)
 - [DMCS Materiality Rules](../README.md#materiality-rule)
 
 For questions or suggested improvements, open a [GitHub issue](https://github.com/shadstradamus/DMCS/issues).

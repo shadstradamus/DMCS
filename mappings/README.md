@@ -68,7 +68,7 @@ Found an issue or have a better mapping suggestion?
 These mappings are provided as **guidance only**. DMCS and the legacy systems have different philosophies and granularity levels. Always:
 - Review actual company business models
 - Apply DMCS materiality rules
-- Consult official DMCS taxonomy documentation when uncertain
+- Consult official DMCS classification documentation when uncertain
 - Document classification decisions for audit purposes
 
 For questions about specific mappings, open a GitHub discussion or issue.

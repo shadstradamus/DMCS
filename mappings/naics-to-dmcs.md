@@ -1,6 +1,6 @@
 # NAICS to DMCS Mapping
 
-Mapping from North American Industry Classification System (NAICS) to DMCS taxonomy.
+Mapping from North American Industry Classification System (NAICS) to DMCS classification.
 
 ## About NAICS
 
@@ -78,7 +78,7 @@ NAICS is the standard used by US, Canada, and Mexico for classifying business es
 | 221112 | Fossil Fuel Electric Power Generation | 11.01.001 - Generation | 11.01.003 - Retail Electric | Secondary when retail supply is ≥25% |
 | 221113 | Nuclear Electric Power Generation | 11.01.001 - Generation | - | Nuclear generation assets |
 | 221114 | Solar Electric Power Generation | 11.01.001 - Generation | 01.04.001 - Utility-Scale Solar | Solar operators combine utility + renewables |
-| 221115 | Wind Electric Power Generation | 11.01.001 - Generation | 01.04.002 - Wind & Offshore Wind |  |
+| 221115 | Wind Electric Power Generation | 11.01.001 - Generation | 01.04.002 - Wind & Offshore Wind | Add DIC mapping for digital-native assets |
 | 221116 | Geothermal Electric Power Generation | 11.01.001 - Generation | 01.04.003 - Bioenergy & Waste-to-Energy | Use geothermal-specific DMCS subsector |
 | 221117 | Biomass Electric Power Generation | 11.01.001 - Generation | 01.04.003 - Bioenergy & Waste-to-Energy | Biomass aligns with DMCS bioenergy |
 | 221210 | Natural Gas Distribution | 11.02.001 - Gas Utilities | 11.01.002 - Transmission & Distribution | Add secondary if owning electric wires |
@@ -280,8 +280,7 @@ When converting from NAICS to DMCS:
 ## Resources
 
 - [NAICS Official Site](https://www.census.gov/naics/)
-- [DMCS Taxonomy](../TAXONOMY.md)
+- [DMCS classification](../classification.md)
 - [DMCS Materiality Rules](../README.md#materiality-rule)
 
 For questions or suggested improvements, open a [GitHub issue](https://github.com/shadstradamus/DMCS/issues).
-

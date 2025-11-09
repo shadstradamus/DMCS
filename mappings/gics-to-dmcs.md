@@ -1,6 +1,6 @@
 # GICS to DMCS Mapping
 
-Mapping from Global Industry Classification Standard (GICS) to DMCS taxonomy.
+Mapping from Global Industry Classification Standard (GICS) to DMCS classification.
 
 ## About GICS
 
@@ -126,7 +126,7 @@ When converting from GICS to DMCS:
 ## Resources
 
 - [GICS Methodology](https://www.msci.com/our-solutions/indexes/gics)
-- [DMCS Taxonomy](../TAXONOMY.md)
+- [DMCS classification](../classification.md)
 - [DMCS Materiality Rules](../README.md#materiality-rule)
 
 For questions or suggested improvements, open a [GitHub issue](https://github.com/shadstradamus/DMCS/issues).
