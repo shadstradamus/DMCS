@@ -94,16 +94,90 @@ DMCS provides mapping guidance from:
 
 Store both the DMCS ID and the source classification for audit trails.
 
-## Extension Namespace
+## Extension Namespace (DMCS-CUST)
 
-Need more granularity? Use **DMCS-CUST** nodes under official parents:
+Need more granularity for your specific use case? Use **DMCS-CUST** custom nodes under official parents. Custom nodes use **C** + numbers (e.g., C01, C02) in the subsector position.
 
+### Structure
+
+```
+Official Parent:  II.SS.SSS
+Custom Child:     II.SS.CXXX (where C = Custom, XXX = your sequential ID)
+```
+
+### Real-World Examples
+
+**Financial Services Conglomerate**
+```
+Official:  07.01.001 — Retail Banking
+Custom:    07.01.C01 — Private Banking (DMCS-CUST, parent: 07.01.001)
+Custom:    07.01.C02 — Corporate Banking (DMCS-CUST, parent: 07.01.001)
+
+Official:  07.02.001 — Investment Banking
+Custom:    07.02.C01 — Equity Capital Markets (DMCS-CUST, parent: 07.02.001)
+Custom:    07.02.C02 — Debt Capital Markets (DMCS-CUST, parent: 07.02.001)
+```
+
+**Healthcare System**
+```
+Official:  06.02.001 — Hospitals
+Custom:    06.02.C01 — Specialty Hospitals (DMCS-CUST, parent: 06.02.001)
+Custom:    06.02.C02 — Outpatient Surgery Centers (DMCS-CUST, parent: 06.02.001)
+Custom:    06.02.C03 — Emergency Care Centers (DMCS-CUST, parent: 06.02.001)
+```
+
+**Technology Platform**
 ```
 Official:  09.01.002 — Enterprise SaaS
 Custom:    09.01.C01 — Public Sector SaaS (DMCS-CUST, parent: 09.01.002)
+Custom:    09.01.C02 — Healthcare SaaS (DMCS-CUST, parent: 09.01.002)
+Custom:    09.01.C03 — Financial Services SaaS (DMCS-CUST, parent: 09.01.002)
 ```
 
-Popular CUST nodes can be promoted to DMCS-STD in future releases.
+**Diversified Conglomerate Example: "Global Industries Corp"**
+
+A fictional conglomerate with multiple business units:
+
+| Business Unit | DMCS Primary | DMCS-CUST Extension | Revenue % |
+|---------------|--------------|---------------------|-----------|
+| **Consumer Electronics** | 09.02.002 | — | 35% |
+| **Cloud Infrastructure** | 09.01.004 | 09.01.C10 (Hybrid Cloud) | 28% |
+| **Retail Stores** | 04.05.001 | 04.05.C05 (Experience Stores) | 15% |
+| **Financial Services** | 07.01.001 | 07.01.C20 (Digital-Only Banking) | 12% |
+| **Content Streaming** | 10.01.003 | 10.01.C08 (Interactive Streaming) | 10% |
+
+**Entity-level classification:**
+- Primary: `09.02.002` (Consumer Devices & Ecosystems) — 35% revenue
+- Secondary: `09.01.004` (Cloud Platforms / PaaS) — 28% revenue, meets materiality threshold
+
+**Division-level custom classifications:**
+- Cloud unit uses custom `09.01.C10` to distinguish their hybrid cloud focus from pure public cloud
+- Retail uses `04.05.C05` to highlight experiential retail vs. traditional stores
+- Finance uses `07.01.C20` for digital-only banking without physical branches
+- Content uses `10.01.C08` for interactive/gaming-hybrid streaming
+
+### Rules for DMCS-CUST
+
+1. **Always specify parent:** Custom nodes must reference their official parent subsector
+2. **Sequential numbering:** Use C01, C02, C03... within your organization
+3. **Document clearly:** Maintain internal documentation of what each custom node represents
+4. **No ID conflicts:** Coordinate custom IDs within your organization to avoid duplicates
+5. **Promotion path:** Widely-used custom nodes can be proposed for inclusion in DMCS-STD
+
+### When to Use DMCS-CUST
+
+✅ **Use custom nodes when:**
+- You need industry-specific granularity (e.g., "Islamic Banking" under Retail Banking)
+- Internal reporting requires finer segments than DMCS provides
+- Regional variations matter (e.g., "EU Financial Services" vs. "US Financial Services")
+- Business model innovations don't fit existing categories
+
+❌ **Don't create custom nodes when:**
+- Official DMCS subsectors already cover your need
+- You're trying to reclassify entities across industries (use secondary classification instead)
+- The distinction is purely organizational rather than business-model based
+
+Popular CUST nodes can be promoted to DMCS-STD in future releases through the governance process.
 
 ## Governance
 
@@ -270,3 +344,4 @@ This repository (https://github.com/shadstradamus/DMCS) is the **canonical sourc
 5. Official releases happen as needed based on the governance model
 
 **Goal:** Keep DMCS open, collaborative, trustworthy and anyone can use it, everyone can contribute, and there's one stable reference version.
+
