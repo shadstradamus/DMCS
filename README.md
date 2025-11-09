@@ -113,17 +113,17 @@ Official:  07.01.001 — Retail Banking
 Custom:    07.01.C01 — Private Banking (DMCS-CUST, parent: 07.01.001)
 Custom:    07.01.C02 — Corporate Banking (DMCS-CUST, parent: 07.01.001)
 
-Official:  07.02.001 — Investment Banking
-Custom:    07.02.C01 — Equity Capital Markets (DMCS-CUST, parent: 07.02.001)
-Custom:    07.02.C02 — Debt Capital Markets (DMCS-CUST, parent: 07.02.001)
+Official:  07.03.003 — Investment Banking
+Custom:    07.03.C01 — Equity Capital Markets (DMCS-CUST, parent: 07.03.003)
+Custom:    07.03.C02 — Debt Capital Markets (DMCS-CUST, parent: 07.03.003)
 ```
 
 **Healthcare System**
 ```
-Official:  06.02.001 — Hospitals
-Custom:    06.02.C01 — Specialty Hospitals (DMCS-CUST, parent: 06.02.001)
-Custom:    06.02.C02 — Outpatient Surgery Centers (DMCS-CUST, parent: 06.02.001)
-Custom:    06.02.C03 — Emergency Care Centers (DMCS-CUST, parent: 06.02.001)
+Official:  06.03.001 — Hospitals & Clinics
+Custom:    06.03.C01 — Specialty Hospitals (DMCS-CUST, parent: 06.03.001)
+Custom:    06.03.C02 — Outpatient Surgery Centers (DMCS-CUST, parent: 06.03.001)
+Custom:    06.03.C03 — Emergency Care Centers (DMCS-CUST, parent: 06.03.001)
 ```
 
 **Technology Platform**
@@ -144,9 +144,9 @@ A fictional conglomerate demonstrating multi-industry operations and custom exte
 |---------------|-----------|---------------------|---------------------|
 | **Consumer Electronics** | 35% | 09.02.002 (Consumer Devices & Ecosystems) | — |
 | **Cloud Infrastructure** | 28% | 09.01.004 (Cloud Platforms / PaaS) | 09.01.C10 (Hybrid Cloud) |
-| **Retail Stores** | 15% | 04.05.001 (Department & General Stores) | 04.05.C05 (Experience Stores) |
+| **Retail Stores** | 15% | 04.05.001 (Multiline Retail) | 04.05.C05 (Experience Stores) |
 | **Digital Banking** | 12% | 07.01.001 (Retail Banking) | 07.01.C20 (Digital-Only Banking) |
-| **Content Streaming** | 10% | 10.01.003 (Video Streaming) | 10.01.C08 (Interactive Streaming) |
+| **Content Streaming** | 10% | 10.02.001 (TV & Streaming) | 10.02.C08 (Interactive Streaming) |
 
 #### Company-Level DMCS Classification
 
@@ -170,15 +170,15 @@ Each division uses DMCS-CUST to capture business model nuances:
    - Why: Distinguishes hybrid cloud (on-prem + public cloud) from pure public cloud providers
    
 2. **Retail (04.05.C05 - Experience Stores)**
-   - Parent: 04.05.001 (Department & General Stores)
+   - Parent: 04.05.001 (Multiline Retail)
    - Why: Flagship experiential retail with live demos differs from traditional department stores
 
 3. **Banking (07.01.C20 - Digital-Only Banking)**
    - Parent: 07.01.001 (Retail Banking)
    - Why: No physical branches; app-only model differs from traditional retail banking
 
-4. **Streaming (10.01.C08 - Interactive Streaming)**
-   - Parent: 10.01.003 (Video Streaming)
+4. **Streaming (10.02.C08 - Interactive Streaming)**
+   - Parent: 10.02.001 (TV & Streaming)
    - Why: Hybrid of video streaming + interactive gaming elements
 
 #### Internal Reporting Hierarchy
@@ -193,10 +193,10 @@ Global Industries Corp
    ├─ Cloud Infrastructure: 09.01.004 → 09.01.C10
    ├─ Retail Stores: 04.05.001 → 04.05.C05
    ├─ Digital Banking: 07.01.001 → 07.01.C20
-   └─ Content Streaming: 10.01.003 → 10.01.C08
+   └─ Content Streaming: 10.02.001 → 10.02.C08
 ```
 
-**Key Takeaway:** DMCS standard codes classify the entity at the company level, while DMCS-CUST extensions providedivision-level granularity for internal analytics and reporting without requiring changes to the official taxonomy.
+**Key Takeaway:** DMCS standard codes classify the entity at the company level, while DMCS-CUST extensions provide division-level granularity for internal analytics and reporting without requiring changes to the official taxonomy.
 
 ### Rules for DMCS-CUST
 
@@ -386,5 +386,3 @@ This repository (https://github.com/shadstradamus/DMCS) is the **canonical sourc
 5. Official releases happen as needed based on the governance model
 
 **Goal:** Keep DMCS open, collaborative, trustworthy and anyone can use it, everyone can contribute, and there's one stable reference version.
-
-
