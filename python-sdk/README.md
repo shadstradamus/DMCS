@@ -28,7 +28,7 @@ dmcs = Taxonomy()
 
 # Get stats
 print(dmcs.stats())
-# {'version': '1.0.1', 'release_date': '2025-11-08', 'industries': 13, 'sectors': 55, 'subsectors': 191, ...}
+# {'version': '1.0.3', 'release_date': '2025-11-08', 'industries': 13, 'sectors': 55, 'subsectors': 191, ...}
 
 # Lookup by ID
 tech = dmcs.get_by_id('09')

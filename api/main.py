@@ -13,7 +13,7 @@ from dmcs_sdk import Taxonomy
 app = FastAPI(
     title="DMCS API",
     description="Dynamic Multi-Dimensional Classification Standard REST API",
-    version="1.0.1",
+    version="1.0.3",
     docs_url="/",
     redoc_url="/docs"
 )
