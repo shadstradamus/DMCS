@@ -1,6 +1,6 @@
 # DMCS Taxonomy — Full Classification Tree
 
-**Version:** 1.0.1  
+**Version:** 1.0.3 
 **Effective Date:** 2025-11-08  
 **Total:** 13 Industries · 55 Sectors · 191 Subsectors
 
@@ -357,4 +357,5 @@
 - **Extension namespace** (DMCS-CUST) — add custom nodes under official parents without collision
 
 For usage, materiality rules, governance, and migration from GICS/ICB/NAICS/TRBC, see [README.md](./README.md).
+
 
