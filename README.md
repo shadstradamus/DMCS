@@ -2,7 +2,7 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.0.1** · Effective Date: 2025-11-08
+**Version 1.0.1** · Effective Date: 2025-11-08 · **License:** Apache 2.0
 
 ## Overview
 
@@ -74,6 +74,8 @@ Industry (II) → Sector (II.SS) → Subsector (II.SS.SSS)
 | Amazon | 04.05.002 (Online Marketplaces) | 09.01.004 (Cloud Platforms / PaaS) |
 | Meta | 10.03.001 (Social Networks) | 09.04.004 (Spatial / XR Platforms) |
 | Tether (USDT) | 13.02.004 (Stablecoin Issuers) | — |
+| Bitcoin (BTC) | 13.01.001 (Layer-1 Protocols) | — |
+| Chainlink (LINK) | 13.01.004 (Node / Infra Services) | — |
 
 ## Materiality Rule
 
@@ -107,11 +109,11 @@ Popular CUST nodes can be promoted to DMCS-STD in future releases.
 
 | Release Type | Frequency | Contents |
 |--------------|-----------|----------|
-| Structural | 2×/year | New sectors, moves, expansions |
-| Thematic | Monthly/Quarterly | Theme updates, no ID changes |
-| Changelog | Every release | Added, retired, renamed, effective dates |
+| Structural | As needed (typically 1-2×/year) | New sectors/subsectors, taxonomy expansions |
+| Thematic | As needed | Label refinements, no ID changes |
+| Changelog | Every release | All additions, changes, effective dates |
 
-All changes are versioned and documented.
+All changes are versioned and documented. Community proposals via pull requests are reviewed openly.
 
 ## Data Access
 
@@ -157,7 +159,7 @@ fetch('data/taxonomy.json')
 
 ## License
 
-MIT License — see [LICENSE](./LICENSE)
+Apache 2.0 License — see [LICENSE](./LICENSE)
 
 ## Contributing
 
@@ -165,12 +167,35 @@ This is the initial public release (v1.0). Contribution guidelines and governanc
 
 For questions, feedback, or mapping support, open an issue or discussion.
 
-## Roadmap
+## Open Source & Governance
 
-- [x] Full taxonomy reference (TAXONOMY.md)
-- [x] JSON/CSV exports
-- [ ] Python/JavaScript SDKs
-- [ ] Mapping tables (GICS/ICB/TRBC/NAICS → DMCS)
-- [ ] API endpoints for classification lookup
-- [ ] Community governance model
+**DMCS is fully open source under the Apache 2.0 License.**
+
+### What You Can Do (No Permission Required)
+
+- ✅ **Use DMCS freely** in any project, commercial or non-commercial
+- ✅ **Fork and modify** the taxonomy for your own purposes
+- ✅ **Create derivative works** and custom classification systems based on DMCS
+- ✅ **Build products and services** that implement DMCS (APIs, databases, analytics tools, etc.)
+- ✅ **Extend DMCS** using the DMCS-CUST namespace for organization-specific classifications
+- ✅ **Redistribute** in any format (JSON, CSV, SQL, API endpoints, etc.)
+- ✅ **Contribute improvements** via pull requests - all constructive contributions are welcome!
+
+### Official DMCS Standard
+
+This repository (https://github.com/shadstradamus/DMCS) is the **canonical source** for the official DMCS taxonomy. 
+
+**Trademark usage:** The "DMCS" name refers specifically to the taxonomy maintained in this repository. If you fork and significantly modify the standard:
+- You're free to use the data and ID structure
+- Please clearly indicate it's a derivative/modified version (e.g., "Based on DMCS" or "MyCompany Custom Classification derived from DMCS")
+- Don't imply your fork is the "official DMCS" standard
+
+**Contributing to the official standard:**
+1. Fork this repository
+2. Submit a pull request with proposed additions or improvements
+3. Community discussion and review happens in the open
+4. Quality contributions that align with DMCS design principles are merged
+5. Official releases happen as needed based on the governance model
+
+**Goal:** Keep DMCS open, collaborative, and trustworthy—anyone can use it, everyone can contribute, and there's one stable reference version.
 
