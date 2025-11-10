@@ -3,1258 +3,3403 @@
   
   // Embed classification data
   const classificationData = {
-  "dmcs_version": "1.1.0",
-  "release_date": "2025-11-09",
+  "dmcs_version": "1.1.1",
+  "release_date": "2025-11-10",
   "description": "Dynamic Multi-Dimensional Classification Standard - Full Classification",
   "industries": [
     {
-      "id": "01",
       "label": "Energy",
+      "id": "01",
+      "level": "industry",
+      "parent_id": null,
       "classification": "GIC",
       "sectors": [
         {
-          "id": "01.01",
           "label": "Upstream & Exploration",
+          "id": "01.01",
+          "level": "sector",
+          "parent_id": "01",
+          "industry_id": "01",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Conventional Oil & Gas",
               "id": "01.01.001",
-              "label": "Conventional Oil & Gas"
+              "level": "subsector",
+              "parent_id": "01.01",
+              "sector_id": "01.01",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Unconventional / Shale",
               "id": "01.01.002",
-              "label": "Unconventional / Shale"
+              "level": "subsector",
+              "parent_id": "01.01",
+              "sector_id": "01.01",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Offshore E&P",
               "id": "01.01.003",
-              "label": "Offshore E&P"
+              "level": "subsector",
+              "parent_id": "01.01",
+              "sector_id": "01.01",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Oilfield Services & Drilling",
               "id": "01.01.004",
-              "label": "Oilfield Services & Drilling"
+              "level": "subsector",
+              "parent_id": "01.01",
+              "sector_id": "01.01",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "01.02",
           "label": "Midstream & Transport",
+          "id": "01.02",
+          "level": "sector",
+          "parent_id": "01",
+          "industry_id": "01",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Pipelines",
               "id": "01.02.001",
-              "label": "Pipelines"
+              "level": "subsector",
+              "parent_id": "01.02",
+              "sector_id": "01.02",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "LNG & Storage",
               "id": "01.02.002",
-              "label": "LNG & Storage"
+              "level": "subsector",
+              "parent_id": "01.02",
+              "sector_id": "01.02",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Marine Energy Transport",
               "id": "01.02.003",
-              "label": "Marine Energy Transport"
+              "level": "subsector",
+              "parent_id": "01.02",
+              "sector_id": "01.02",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "01.03",
           "label": "Refining & Marketing",
+          "id": "01.03",
+          "level": "sector",
+          "parent_id": "01",
+          "industry_id": "01",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Refineries",
               "id": "01.03.001",
-              "label": "Refineries"
+              "level": "subsector",
+              "parent_id": "01.03",
+              "sector_id": "01.03",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Fuel Retail & Stations",
               "id": "01.03.002",
-              "label": "Fuel Retail & Stations"
+              "level": "subsector",
+              "parent_id": "01.03",
+              "sector_id": "01.03",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Lubricants & Specialties",
               "id": "01.03.003",
-              "label": "Lubricants & Specialties"
+              "level": "subsector",
+              "parent_id": "01.03",
+              "sector_id": "01.03",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "01.04",
           "label": "Renewables & Clean Power",
+          "id": "01.04",
+          "level": "sector",
+          "parent_id": "01",
+          "industry_id": "01",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Utility-Scale Solar",
               "id": "01.04.001",
-              "label": "Utility-Scale Solar"
+              "level": "subsector",
+              "parent_id": "01.04",
+              "sector_id": "01.04",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Wind & Offshore Wind",
               "id": "01.04.002",
-              "label": "Wind & Offshore Wind"
+              "level": "subsector",
+              "parent_id": "01.04",
+              "sector_id": "01.04",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Bioenergy & Waste-to-Energy",
               "id": "01.04.003",
-              "label": "Bioenergy & Waste-to-Energy"
+              "level": "subsector",
+              "parent_id": "01.04",
+              "sector_id": "01.04",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Storage & Grid Integrators",
               "id": "01.04.004",
-              "label": "Storage & Grid Integrators"
+              "level": "subsector",
+              "parent_id": "01.04",
+              "sector_id": "01.04",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     },
     {
-      "id": "02",
       "label": "Basic Materials",
+      "id": "02",
+      "level": "industry",
+      "parent_id": null,
       "classification": "GIC",
       "sectors": [
         {
-          "id": "02.01",
           "label": "Metals & Mining",
+          "id": "02.01",
+          "level": "sector",
+          "parent_id": "02",
+          "industry_id": "02",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Diversified Mining",
               "id": "02.01.001",
-              "label": "Diversified Mining"
+              "level": "subsector",
+              "parent_id": "02.01",
+              "sector_id": "02.01",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Precious Metals",
               "id": "02.01.002",
-              "label": "Precious Metals"
+              "level": "subsector",
+              "parent_id": "02.01",
+              "sector_id": "02.01",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Steel & Ferrous",
               "id": "02.01.003",
-              "label": "Steel & Ferrous"
+              "level": "subsector",
+              "parent_id": "02.01",
+              "sector_id": "02.01",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Mining Services",
               "id": "02.01.004",
-              "label": "Mining Services"
+              "level": "subsector",
+              "parent_id": "02.01",
+              "sector_id": "02.01",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "02.02",
           "label": "Chemicals & Fertilizers",
+          "id": "02.02",
+          "level": "sector",
+          "parent_id": "02",
+          "industry_id": "02",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Commodity Chemicals",
               "id": "02.02.001",
-              "label": "Commodity Chemicals"
+              "level": "subsector",
+              "parent_id": "02.02",
+              "sector_id": "02.02",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Specialty Chemicals",
               "id": "02.02.002",
-              "label": "Specialty Chemicals"
+              "level": "subsector",
+              "parent_id": "02.02",
+              "sector_id": "02.02",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Agrochemicals & Fertilizers",
               "id": "02.02.003",
-              "label": "Agrochemicals & Fertilizers"
+              "level": "subsector",
+              "parent_id": "02.02",
+              "sector_id": "02.02",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "02.03",
           "label": "Construction Materials",
+          "id": "02.03",
+          "level": "sector",
+          "parent_id": "02",
+          "industry_id": "02",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Cement & Aggregates",
               "id": "02.03.001",
-              "label": "Cement & Aggregates"
+              "level": "subsector",
+              "parent_id": "02.03",
+              "sector_id": "02.03",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Glass & Ceramics",
               "id": "02.03.002",
-              "label": "Glass & Ceramics"
+              "level": "subsector",
+              "parent_id": "02.03",
+              "sector_id": "02.03",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Asphalt & Paving",
               "id": "02.03.003",
-              "label": "Asphalt & Paving"
+              "level": "subsector",
+              "parent_id": "02.03",
+              "sector_id": "02.03",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "02.04",
           "label": "Forestry, Paper & Packaging",
+          "id": "02.04",
+          "level": "sector",
+          "parent_id": "02",
+          "industry_id": "02",
+          "classification": "active",
           "subsectors": [
             {
+              "label": "Forestry & Timber",
               "id": "02.04.001",
-              "label": "Forestry & Timber"
+              "level": "subsector",
+              "parent_id": "02.04",
+              "sector_id": "02.04",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Pulp & Paper",
               "id": "02.04.002",
-              "label": "Pulp & Paper"
+              "level": "subsector",
+              "parent_id": "02.04",
+              "sector_id": "02.04",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Containers & Packaging",
               "id": "02.04.003",
-              "label": "Containers & Packaging"
+              "level": "subsector",
+              "parent_id": "02.04",
+              "sector_id": "02.04",
+              "industry_id": "02",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     },
     {
-      "id": "03",
       "label": "Industrials",
+      "id": "03",
+      "level": "industry",
+      "parent_id": null,
       "classification": "GIC",
       "sectors": [
         {
-          "id": "03.01",
           "label": "Aerospace, Defense & Security",
+          "id": "03.01",
+          "level": "sector",
+          "parent_id": "03",
+          "industry_id": "03",
+          "classification": "active",
           "subsectors": [
             {
+              "label": "Aerospace OEMs",
               "id": "03.01.001",
-              "label": "Aerospace OEMs"
+              "level": "subsector",
+              "parent_id": "03.01",
+              "sector_id": "03.01",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Defense Systems",
               "id": "03.01.002",
-              "label": "Defense Systems"
+              "level": "subsector",
+              "parent_id": "03.01",
+              "sector_id": "03.01",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Space & Launch Services",
               "id": "03.01.003",
-              "label": "Space & Launch Services"
+              "level": "subsector",
+              "parent_id": "03.01",
+              "sector_id": "03.01",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "03.02",
           "label": "Machinery & Industrial Equipment",
+          "id": "03.02",
+          "level": "sector",
+          "parent_id": "03",
+          "industry_id": "03",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Heavy Machinery",
               "id": "03.02.001",
-              "label": "Heavy Machinery"
+              "level": "subsector",
+              "parent_id": "03.02",
+              "sector_id": "03.02",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Electrical Equipment",
               "id": "03.02.002",
-              "label": "Electrical Equipment"
+              "level": "subsector",
+              "parent_id": "03.02",
+              "sector_id": "03.02",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Automation Components",
               "id": "03.02.003",
-              "label": "Automation Components"
+              "level": "subsector",
+              "parent_id": "03.02",
+              "sector_id": "03.02",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Diversified Industrials",
               "id": "03.02.004",
-              "label": "Diversified Industrials"
+              "level": "subsector",
+              "parent_id": "03.02",
+              "sector_id": "03.02",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "03.03",
           "label": "Transportation & Logistics",
+          "id": "03.03",
+          "level": "sector",
+          "parent_id": "03",
+          "industry_id": "03",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Rail & Transit",
               "id": "03.03.001",
-              "label": "Rail & Transit"
+              "level": "subsector",
+              "parent_id": "03.03",
+              "sector_id": "03.03",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Trucking & Haulage",
               "id": "03.03.002",
-              "label": "Trucking & Haulage"
+              "level": "subsector",
+              "parent_id": "03.03",
+              "sector_id": "03.03",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Air Freight & Cargo",
               "id": "03.03.003",
-              "label": "Air Freight & Cargo"
+              "level": "subsector",
+              "parent_id": "03.03",
+              "sector_id": "03.03",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Parcel & Courier",
               "id": "03.03.004",
-              "label": "Parcel & Courier"
+              "level": "subsector",
+              "parent_id": "03.03",
+              "sector_id": "03.03",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Airlines",
               "id": "03.03.005",
-              "label": "Airlines"
+              "level": "subsector",
+              "parent_id": "03.03",
+              "sector_id": "03.03",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Container & Liner Shipping",
               "id": "03.03.006",
-              "label": "Container & Liner Shipping"
+              "level": "subsector",
+              "parent_id": "03.03",
+              "sector_id": "03.03",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "03.04",
           "label": "Engineering, Construction & Services",
+          "id": "03.04",
+          "level": "sector",
+          "parent_id": "03",
+          "industry_id": "03",
+          "classification": "active",
           "subsectors": [
             {
+              "label": "EPC & Infrastructure",
               "id": "03.04.001",
-              "label": "EPC & Infrastructure"
+              "level": "subsector",
+              "parent_id": "03.04",
+              "sector_id": "03.04",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Commercial Contractors",
               "id": "03.04.002",
-              "label": "Commercial Contractors"
+              "level": "subsector",
+              "parent_id": "03.04",
+              "sector_id": "03.04",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Facility & Industrial Services",
               "id": "03.04.003",
-              "label": "Facility & Industrial Services"
+              "level": "subsector",
+              "parent_id": "03.04",
+              "sector_id": "03.04",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     },
     {
-      "id": "04",
       "label": "Consumer Discretionary",
+      "id": "04",
+      "level": "industry",
+      "parent_id": null,
       "classification": "GIC",
       "sectors": [
         {
-          "id": "04.01",
           "label": "Auto & Mobility",
+          "id": "04.01",
+          "level": "sector",
+          "parent_id": "04",
+          "industry_id": "04",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Automakers",
               "id": "04.01.001",
-              "label": "Automakers"
+              "level": "subsector",
+              "parent_id": "04.01",
+              "sector_id": "04.01",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Auto Parts & Components",
               "id": "04.01.002",
-              "label": "Auto Parts & Components"
+              "level": "subsector",
+              "parent_id": "04.01",
+              "sector_id": "04.01",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "EV & New Mobility",
               "id": "04.01.003",
-              "label": "EV & New Mobility"
+              "level": "subsector",
+              "parent_id": "04.01",
+              "sector_id": "04.01",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "04.02",
           "label": "Consumer Durables & Home",
+          "id": "04.02",
+          "level": "sector",
+          "parent_id": "04",
+          "industry_id": "04",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Home Appliances",
               "id": "04.02.001",
-              "label": "Home Appliances"
+              "level": "subsector",
+              "parent_id": "04.02",
+              "sector_id": "04.02",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Furniture & Home Décor",
               "id": "04.02.002",
-              "label": "Furniture & Home Décor"
+              "level": "subsector",
+              "parent_id": "04.02",
+              "sector_id": "04.02",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Consumer Electronics",
               "id": "04.02.003",
-              "label": "Consumer Electronics"
+              "level": "subsector",
+              "parent_id": "04.02",
+              "sector_id": "04.02",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "04.03",
           "label": "Apparel, Footwear & Luxury",
+          "id": "04.03",
+          "level": "sector",
+          "parent_id": "04",
+          "industry_id": "04",
+          "classification": "active",
           "subsectors": [
             {
+              "label": "Apparel Brands",
               "id": "04.03.001",
-              "label": "Apparel Brands"
+              "level": "subsector",
+              "parent_id": "04.03",
+              "sector_id": "04.03",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Sportswear & Footwear",
               "id": "04.03.002",
-              "label": "Sportswear & Footwear"
+              "level": "subsector",
+              "parent_id": "04.03",
+              "sector_id": "04.03",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Luxury Goods",
               "id": "04.03.003",
-              "label": "Luxury Goods"
+              "level": "subsector",
+              "parent_id": "04.03",
+              "sector_id": "04.03",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "04.04",
           "label": "Leisure, Travel & Entertainment",
+          "id": "04.04",
+          "level": "sector",
+          "parent_id": "04",
+          "industry_id": "04",
+          "classification": "active",
           "subsectors": [
             {
+              "label": "Hotels & Resorts",
               "id": "04.04.001",
-              "label": "Hotels & Resorts"
+              "level": "subsector",
+              "parent_id": "04.04",
+              "sector_id": "04.04",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Travel Services",
               "id": "04.04.002",
-              "label": "Travel Services"
+              "level": "subsector",
+              "parent_id": "04.04",
+              "sector_id": "04.04",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Gaming & Casinos",
               "id": "04.04.003",
-              "label": "Gaming & Casinos"
+              "level": "subsector",
+              "parent_id": "04.04",
+              "sector_id": "04.04",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Experience & Ticketing Platforms",
               "id": "04.04.004",
-              "label": "Experience & Ticketing Platforms"
+              "level": "subsector",
+              "parent_id": "04.04",
+              "sector_id": "04.04",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "04.05",
           "label": "Retail & E-Commerce",
+          "id": "04.05",
+          "level": "sector",
+          "parent_id": "04",
+          "industry_id": "04",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Multiline Retail",
               "id": "04.05.001",
-              "label": "Multiline Retail"
+              "level": "subsector",
+              "parent_id": "04.05",
+              "sector_id": "04.05",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Online Marketplaces",
               "id": "04.05.002",
-              "label": "Online Marketplaces"
+              "level": "subsector",
+              "parent_id": "04.05",
+              "sector_id": "04.05",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Specialty Retail",
               "id": "04.05.003",
-              "label": "Specialty Retail"
+              "level": "subsector",
+              "parent_id": "04.05",
+              "sector_id": "04.05",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "04.06",
           "label": "Restaurants & Food Service",
+          "id": "04.06",
+          "level": "sector",
+          "parent_id": "04",
+          "industry_id": "04",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Quick Service Restaurants",
               "id": "04.06.001",
-              "label": "Quick Service Restaurants"
+              "level": "subsector",
+              "parent_id": "04.06",
+              "sector_id": "04.06",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Casual / Full-Service",
               "id": "04.06.002",
-              "label": "Casual / Full-Service"
+              "level": "subsector",
+              "parent_id": "04.06",
+              "sector_id": "04.06",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Foodservice Franchising",
               "id": "04.06.003",
-              "label": "Foodservice Franchising"
+              "level": "subsector",
+              "parent_id": "04.06",
+              "sector_id": "04.06",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "04.07",
           "label": "Mobility Platforms",
+          "id": "04.07",
+          "level": "sector",
+          "parent_id": "04",
+          "industry_id": "04",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Ridehailing & Delivery Platforms",
               "id": "04.07.001",
-              "label": "Ridehailing & Delivery Platforms"
+              "level": "subsector",
+              "parent_id": "04.07",
+              "sector_id": "04.07",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Mobility Marketplaces",
               "id": "04.07.002",
-              "label": "Mobility Marketplaces"
+              "level": "subsector",
+              "parent_id": "04.07",
+              "sector_id": "04.07",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Last-Mile Delivery Platforms",
               "id": "04.07.003",
-              "label": "Last-Mile Delivery Platforms"
+              "level": "subsector",
+              "parent_id": "04.07",
+              "sector_id": "04.07",
+              "industry_id": "04",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     },
     {
-      "id": "05",
       "label": "Consumer Staples",
+      "id": "05",
+      "level": "industry",
+      "parent_id": null,
       "classification": "GIC",
       "sectors": [
         {
-          "id": "05.01",
           "label": "Food & Beverage Producers",
+          "id": "05.01",
+          "level": "sector",
+          "parent_id": "05",
+          "industry_id": "05",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Packaged Foods",
               "id": "05.01.001",
-              "label": "Packaged Foods"
+              "level": "subsector",
+              "parent_id": "05.01",
+              "sector_id": "05.01",
+              "industry_id": "05",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Beverages & Brewers",
               "id": "05.01.002",
-              "label": "Beverages & Brewers"
+              "level": "subsector",
+              "parent_id": "05.01",
+              "sector_id": "05.01",
+              "industry_id": "05",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Meat & Protein",
               "id": "05.01.003",
-              "label": "Meat & Protein"
+              "level": "subsector",
+              "parent_id": "05.01",
+              "sector_id": "05.01",
+              "industry_id": "05",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Snacks & Confectionery",
               "id": "05.01.004",
-              "label": "Snacks & Confectionery"
+              "level": "subsector",
+              "parent_id": "05.01",
+              "sector_id": "05.01",
+              "industry_id": "05",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "05.02",
           "label": "Household & Personal Care",
+          "id": "05.02",
+          "level": "sector",
+          "parent_id": "05",
+          "industry_id": "05",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Household Products",
               "id": "05.02.001",
-              "label": "Household Products"
+              "level": "subsector",
+              "parent_id": "05.02",
+              "sector_id": "05.02",
+              "industry_id": "05",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Personal Care & Beauty",
               "id": "05.02.002",
-              "label": "Personal Care & Beauty"
+              "level": "subsector",
+              "parent_id": "05.02",
+              "sector_id": "05.02",
+              "industry_id": "05",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "05.03",
           "label": "Staples Retail",
+          "id": "05.03",
+          "level": "sector",
+          "parent_id": "05",
+          "industry_id": "05",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Supermarkets & Hypermarkets",
               "id": "05.03.001",
-              "label": "Supermarkets & Hypermarkets"
+              "level": "subsector",
+              "parent_id": "05.03",
+              "sector_id": "05.03",
+              "industry_id": "05",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Discount & Club Stores",
               "id": "05.03.002",
-              "label": "Discount & Club Stores"
+              "level": "subsector",
+              "parent_id": "05.03",
+              "sector_id": "05.03",
+              "industry_id": "05",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Convenience & Drug Retail",
               "id": "05.03.003",
-              "label": "Convenience & Drug Retail"
+              "level": "subsector",
+              "parent_id": "05.03",
+              "sector_id": "05.03",
+              "industry_id": "05",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "05.04",
           "label": "Agriculture & Food Supply",
+          "id": "05.04",
+          "level": "sector",
+          "parent_id": "05",
+          "industry_id": "05",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Agri Processing",
               "id": "05.04.001",
-              "label": "Agri Processing"
+              "level": "subsector",
+              "parent_id": "05.04",
+              "sector_id": "05.04",
+              "industry_id": "05",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Farm & Produce",
               "id": "05.04.002",
-              "label": "Farm & Produce"
+              "level": "subsector",
+              "parent_id": "05.04",
+              "sector_id": "05.04",
+              "industry_id": "05",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     },
     {
-      "id": "06",
       "label": "Healthcare",
+      "id": "06",
+      "level": "industry",
+      "parent_id": null,
       "classification": "GIC",
       "sectors": [
         {
-          "id": "06.01",
           "label": "Pharma & Biotech",
+          "id": "06.01",
+          "level": "sector",
+          "parent_id": "06",
+          "industry_id": "06",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Branded Pharma",
               "id": "06.01.001",
-              "label": "Branded Pharma"
+              "level": "subsector",
+              "parent_id": "06.01",
+              "sector_id": "06.01",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Generics & Biosimilars",
               "id": "06.01.002",
-              "label": "Generics & Biosimilars"
+              "level": "subsector",
+              "parent_id": "06.01",
+              "sector_id": "06.01",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Biotech & Cell/Gene",
               "id": "06.01.003",
-              "label": "Biotech & Cell/Gene"
+              "level": "subsector",
+              "parent_id": "06.01",
+              "sector_id": "06.01",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Diversified Healthcare",
               "id": "06.01.004",
-              "label": "Diversified Healthcare"
+              "level": "subsector",
+              "parent_id": "06.01",
+              "sector_id": "06.01",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "06.02",
           "label": "Medical Devices & Supplies",
+          "id": "06.02",
+          "level": "sector",
+          "parent_id": "06",
+          "industry_id": "06",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Diagnostic Devices",
               "id": "06.02.001",
-              "label": "Diagnostic Devices"
+              "level": "subsector",
+              "parent_id": "06.02",
+              "sector_id": "06.02",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Surgical & Ortho",
               "id": "06.02.002",
-              "label": "Surgical & Ortho"
+              "level": "subsector",
+              "parent_id": "06.02",
+              "sector_id": "06.02",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Consumables & Supplies",
               "id": "06.02.003",
-              "label": "Consumables & Supplies"
+              "level": "subsector",
+              "parent_id": "06.02",
+              "sector_id": "06.02",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "06.03",
           "label": "Healthcare Providers & Services",
+          "id": "06.03",
+          "level": "sector",
+          "parent_id": "06",
+          "industry_id": "06",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Hospitals & Clinics",
               "id": "06.03.001",
-              "label": "Hospitals & Clinics"
+              "level": "subsector",
+              "parent_id": "06.03",
+              "sector_id": "06.03",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Managed Care & Payers",
               "id": "06.03.002",
-              "label": "Managed Care & Payers"
+              "level": "subsector",
+              "parent_id": "06.03",
+              "sector_id": "06.03",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Labs & Imaging",
               "id": "06.03.003",
-              "label": "Labs & Imaging"
+              "level": "subsector",
+              "parent_id": "06.03",
+              "sector_id": "06.03",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "06.04",
           "label": "Health Tech & Digital Care",
+          "id": "06.04",
+          "level": "sector",
+          "parent_id": "06",
+          "industry_id": "06",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Telehealth Platforms",
               "id": "06.04.001",
-              "label": "Telehealth Platforms"
+              "level": "subsector",
+              "parent_id": "06.04",
+              "sector_id": "06.04",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Healthcare Data & Analytics",
               "id": "06.04.002",
-              "label": "Healthcare Data & Analytics"
+              "level": "subsector",
+              "parent_id": "06.04",
+              "sector_id": "06.04",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Clinical Data & RWE Platforms",
               "id": "06.04.003",
-              "label": "Clinical Data & RWE Platforms"
+              "level": "subsector",
+              "parent_id": "06.04",
+              "sector_id": "06.04",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Revenue Cycle / Admin Tech",
               "id": "06.04.004",
-              "label": "Revenue Cycle / Admin Tech"
+              "level": "subsector",
+              "parent_id": "06.04",
+              "sector_id": "06.04",
+              "industry_id": "06",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     },
     {
-      "id": "07",
       "label": "Financial Services",
+      "id": "07",
+      "level": "industry",
+      "parent_id": null,
       "classification": "GIC",
       "sectors": [
         {
-          "id": "07.01",
           "label": "Banking & Lending",
+          "id": "07.01",
+          "level": "sector",
+          "parent_id": "07",
+          "industry_id": "07",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Retail Banking",
               "id": "07.01.001",
-              "label": "Retail Banking"
+              "level": "subsector",
+              "parent_id": "07.01",
+              "sector_id": "07.01",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Commercial / SME Lending",
               "id": "07.01.002",
-              "label": "Commercial / SME Lending"
+              "level": "subsector",
+              "parent_id": "07.01",
+              "sector_id": "07.01",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Consumer Finance / Cards",
               "id": "07.01.003",
-              "label": "Consumer Finance / Cards"
+              "level": "subsector",
+              "parent_id": "07.01",
+              "sector_id": "07.01",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Embedded / BaaS Lending",
               "id": "07.01.004",
-              "label": "Embedded / BaaS Lending"
+              "level": "subsector",
+              "parent_id": "07.01",
+              "sector_id": "07.01",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "07.02",
           "label": "Insurance",
+          "id": "07.02",
+          "level": "sector",
+          "parent_id": "07",
+          "industry_id": "07",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Life & Health Insurance",
               "id": "07.02.001",
-              "label": "Life & Health Insurance"
+              "level": "subsector",
+              "parent_id": "07.02",
+              "sector_id": "07.02",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Property & Casualty",
               "id": "07.02.002",
-              "label": "Property & Casualty"
+              "level": "subsector",
+              "parent_id": "07.02",
+              "sector_id": "07.02",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Reinsurance & Specialty",
               "id": "07.02.003",
-              "label": "Reinsurance & Specialty"
+              "level": "subsector",
+              "parent_id": "07.02",
+              "sector_id": "07.02",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "07.03",
           "label": "Investment & Capital Markets",
+          "id": "07.03",
+          "level": "sector",
+          "parent_id": "07",
+          "industry_id": "07",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Asset & Wealth Management",
               "id": "07.03.001",
-              "label": "Asset & Wealth Management"
+              "level": "subsector",
+              "parent_id": "07.03",
+              "sector_id": "07.03",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Brokerage & Trading Venues",
               "id": "07.03.002",
-              "label": "Brokerage & Trading Venues"
+              "level": "subsector",
+              "parent_id": "07.03",
+              "sector_id": "07.03",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Investment Banking",
               "id": "07.03.003",
-              "label": "Investment Banking"
+              "level": "subsector",
+              "parent_id": "07.03",
+              "sector_id": "07.03",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Holding / Investment Companies",
               "id": "07.03.004",
-              "label": "Holding / Investment Companies"
+              "level": "subsector",
+              "parent_id": "07.03",
+              "sector_id": "07.03",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Digital Wealth / Robo",
               "id": "07.03.005",
-              "label": "Digital Wealth / Robo"
+              "level": "subsector",
+              "parent_id": "07.03",
+              "sector_id": "07.03",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "07.04",
           "label": "FinTech & Payments",
+          "id": "07.04",
+          "level": "sector",
+          "parent_id": "07",
+          "industry_id": "07",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Payment Networks",
               "id": "07.04.001",
-              "label": "Payment Networks"
+              "level": "subsector",
+              "parent_id": "07.04",
+              "sector_id": "07.04",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Digital Wallets / Neobanks",
               "id": "07.04.002",
-              "label": "Digital Wallets / Neobanks"
+              "level": "subsector",
+              "parent_id": "07.04",
+              "sector_id": "07.04",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Merchant Acquiring",
               "id": "07.04.003",
-              "label": "Merchant Acquiring"
+              "level": "subsector",
+              "parent_id": "07.04",
+              "sector_id": "07.04",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Digital Payments",
               "id": "07.04.004",
-              "label": "Digital Payments"
+              "level": "subsector",
+              "parent_id": "07.04",
+              "sector_id": "07.04",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Issuer / Wallet Infrastructure",
               "id": "07.04.005",
-              "label": "Issuer / Wallet Infrastructure"
+              "level": "subsector",
+              "parent_id": "07.04",
+              "sector_id": "07.04",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     },
     {
-      "id": "08",
       "label": "Real Estate",
+      "id": "08",
+      "level": "industry",
+      "parent_id": null,
       "classification": "GIC",
       "sectors": [
         {
-          "id": "08.01",
           "label": "Listed & Nonlisted REITs",
+          "id": "08.01",
+          "level": "sector",
+          "parent_id": "08",
+          "industry_id": "08",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Office REITs",
               "id": "08.01.001",
-              "label": "Office REITs"
+              "level": "subsector",
+              "parent_id": "08.01",
+              "sector_id": "08.01",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Retail REITs",
               "id": "08.01.002",
-              "label": "Retail REITs"
+              "level": "subsector",
+              "parent_id": "08.01",
+              "sector_id": "08.01",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Industrial / Logistics REITs",
               "id": "08.01.003",
-              "label": "Industrial / Logistics REITs"
+              "level": "subsector",
+              "parent_id": "08.01",
+              "sector_id": "08.01",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Residential REITs",
               "id": "08.01.004",
-              "label": "Residential REITs"
+              "level": "subsector",
+              "parent_id": "08.01",
+              "sector_id": "08.01",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "08.02",
           "label": "Real Estate Development",
+          "id": "08.02",
+          "level": "sector",
+          "parent_id": "08",
+          "industry_id": "08",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Residential Development",
               "id": "08.02.001",
-              "label": "Residential Development"
+              "level": "subsector",
+              "parent_id": "08.02",
+              "sector_id": "08.02",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Commercial Development",
               "id": "08.02.002",
-              "label": "Commercial Development"
+              "level": "subsector",
+              "parent_id": "08.02",
+              "sector_id": "08.02",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Mixed-Use Projects",
               "id": "08.02.003",
-              "label": "Mixed-Use Projects"
+              "level": "subsector",
+              "parent_id": "08.02",
+              "sector_id": "08.02",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "08.03",
           "label": "Real Estate Services",
+          "id": "08.03",
+          "level": "sector",
+          "parent_id": "08",
+          "industry_id": "08",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Brokerage & Advisory",
               "id": "08.03.001",
-              "label": "Brokerage & Advisory"
+              "level": "subsector",
+              "parent_id": "08.03",
+              "sector_id": "08.03",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Property Management",
               "id": "08.03.002",
-              "label": "Property Management"
+              "level": "subsector",
+              "parent_id": "08.03",
+              "sector_id": "08.03",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Facilities Services",
               "id": "08.03.003",
-              "label": "Facilities Services"
+              "level": "subsector",
+              "parent_id": "08.03",
+              "sector_id": "08.03",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "08.04",
           "label": "Specialized Real Estate",
+          "id": "08.04",
+          "level": "sector",
+          "parent_id": "08",
+          "industry_id": "08",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Data Centers",
               "id": "08.04.001",
-              "label": "Data Centers"
+              "level": "subsector",
+              "parent_id": "08.04",
+              "sector_id": "08.04",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Student / Senior Housing",
               "id": "08.04.002",
-              "label": "Student / Senior Housing"
+              "level": "subsector",
+              "parent_id": "08.04",
+              "sector_id": "08.04",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Cell Towers & Digital Infra",
               "id": "08.04.003",
-              "label": "Cell Towers & Digital Infra"
+              "level": "subsector",
+              "parent_id": "08.04",
+              "sector_id": "08.04",
+              "industry_id": "08",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     },
     {
-      "id": "09",
       "label": "Technology",
+      "id": "09",
+      "level": "industry",
+      "parent_id": null,
       "classification": "GIC",
       "sectors": [
         {
-          "id": "09.01",
           "label": "Software & Platforms",
+          "id": "09.01",
+          "level": "sector",
+          "parent_id": "09",
+          "industry_id": "09",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Application Software",
               "id": "09.01.001",
-              "label": "Application Software"
+              "level": "subsector",
+              "parent_id": "09.01",
+              "sector_id": "09.01",
+              "industry_id": "09",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "ERP / Finance Suites",
+                  "id": "09.01.001.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "09.01.001",
+                  "subsector_id": "09.01.001",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "CRM / CX",
+                  "id": "09.01.001.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "09.01.001",
+                  "subsector_id": "09.01.001",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "HCM / Workforce",
+                  "id": "09.01.001.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "09.01.001",
+                  "subsector_id": "09.01.001",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Enterprise SaaS",
               "id": "09.01.002",
-              "label": "Enterprise SaaS"
+              "level": "subsector",
+              "parent_id": "09.01",
+              "sector_id": "09.01",
+              "industry_id": "09",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "General PaaS",
+                  "id": "09.01.002.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "09.01.002",
+                  "subsector_id": "09.01.002",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Data / AI Platforms",
+                  "id": "09.01.002.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "09.01.002",
+                  "subsector_id": "09.01.002",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Cybersecurity Software",
               "id": "09.01.003",
-              "label": "Cybersecurity Software"
+              "level": "subsector",
+              "parent_id": "09.01",
+              "sector_id": "09.01",
+              "industry_id": "09",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Endpoint / XDR",
+                  "id": "09.01.003.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "09.01.003",
+                  "subsector_id": "09.01.003",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Identity / IAM",
+                  "id": "09.01.003.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "09.01.003",
+                  "subsector_id": "09.01.003",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Network / SASE",
+                  "id": "09.01.003.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "09.01.003",
+                  "subsector_id": "09.01.003",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Cloud Platforms / PaaS",
               "id": "09.01.004",
-              "label": "Cloud Platforms / PaaS"
+              "level": "subsector",
+              "parent_id": "09.01",
+              "sector_id": "09.01",
+              "industry_id": "09",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "DevTools / DevOps",
+                  "id": "09.01.004.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "09.01.004",
+                  "subsector_id": "09.01.004",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "API / Integration",
+                  "id": "09.01.004.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "09.01.004",
+                  "subsector_id": "09.01.004",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Analytics / BI",
+                  "id": "09.01.004.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "09.01.004",
+                  "subsector_id": "09.01.004",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Data & Database Platforms",
               "id": "09.01.005",
-              "label": "Data & Database Platforms"
+              "level": "subsector",
+              "parent_id": "09.01",
+              "sector_id": "09.01",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "CRM & Customer Platforms",
               "id": "09.01.006",
-              "label": "CRM & Customer Platforms"
+              "level": "subsector",
+              "parent_id": "09.01",
+              "sector_id": "09.01",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "AI & ML Platforms",
               "id": "09.01.007",
-              "label": "AI & ML Platforms"
+              "level": "subsector",
+              "parent_id": "09.01",
+              "sector_id": "09.01",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "09.02",
           "label": "Hardware & Devices",
+          "id": "09.02",
+          "level": "sector",
+          "parent_id": "09",
+          "industry_id": "09",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Semiconductors",
               "id": "09.02.001",
-              "label": "Semiconductors"
+              "level": "subsector",
+              "parent_id": "09.02",
+              "sector_id": "09.02",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Consumer Devices & Ecosystems",
               "id": "09.02.002",
-              "label": "Consumer Devices & Ecosystems"
+              "level": "subsector",
+              "parent_id": "09.02",
+              "sector_id": "09.02",
+              "industry_id": "09",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Smartphones",
+                  "id": "09.02.002.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "09.02.002",
+                  "subsector_id": "09.02.002",
+                  "sector_id": "09.02",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "PCs / Tablets",
+                  "id": "09.02.002.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "09.02.002",
+                  "subsector_id": "09.02.002",
+                  "sector_id": "09.02",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Wearables",
+                  "id": "09.02.002.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "09.02.002",
+                  "subsector_id": "09.02.002",
+                  "sector_id": "09.02",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Network & Telecom Equipment",
               "id": "09.02.003",
-              "label": "Network & Telecom Equipment"
+              "level": "subsector",
+              "parent_id": "09.02",
+              "sector_id": "09.02",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Imaging, Sensors & Components",
               "id": "09.02.004",
-              "label": "Imaging, Sensors & Components"
-            },
-            {
-              "id": "09.02.005",
-              "label": "Semiconductor Design Tools & IP"
+              "level": "subsector",
+              "parent_id": "09.02",
+              "sector_id": "09.02",
+              "industry_id": "09",
+              "classification": "active",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "09.03",
           "label": "IT Services",
+          "id": "09.03",
+          "level": "sector",
+          "parent_id": "09",
+          "industry_id": "09",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "IT Consulting",
               "id": "09.03.001",
-              "label": "IT Consulting"
+              "level": "subsector",
+              "parent_id": "09.03",
+              "sector_id": "09.03",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Managed Services",
               "id": "09.03.002",
-              "label": "Managed Services"
+              "level": "subsector",
+              "parent_id": "09.03",
+              "sector_id": "09.03",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Data Center Services",
               "id": "09.03.003",
-              "label": "Data Center Services"
+              "level": "subsector",
+              "parent_id": "09.03",
+              "sector_id": "09.03",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Cybersecurity Services",
               "id": "09.03.004",
-              "label": "Cybersecurity Services"
+              "level": "subsector",
+              "parent_id": "09.03",
+              "sector_id": "09.03",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "09.04",
           "label": "Emerging Tech & Automation",
+          "id": "09.04",
+          "level": "sector",
+          "parent_id": "09",
+          "industry_id": "09",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Robotics & Automation",
               "id": "09.04.001",
-              "label": "Robotics & Automation"
+              "level": "subsector",
+              "parent_id": "09.04",
+              "sector_id": "09.04",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "IoT Platforms",
               "id": "09.04.002",
-              "label": "IoT Platforms"
+              "level": "subsector",
+              "parent_id": "09.04",
+              "sector_id": "09.04",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Advanced / Experimental Tech",
               "id": "09.04.003",
-              "label": "Advanced / Experimental Tech"
+              "level": "subsector",
+              "parent_id": "09.04",
+              "sector_id": "09.04",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Spatial / XR Platforms",
               "id": "09.04.004",
-              "label": "Spatial / XR Platforms"
+              "level": "subsector",
+              "parent_id": "09.04",
+              "sector_id": "09.04",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     },
     {
-      "id": "10",
       "label": "Communications & Media",
+      "id": "10",
+      "level": "industry",
+      "parent_id": null,
       "classification": "GIC",
       "sectors": [
         {
-          "id": "10.01",
           "label": "Telecom & Connectivity",
+          "id": "10.01",
+          "level": "sector",
+          "parent_id": "10",
+          "industry_id": "10",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Mobile Network Operators",
               "id": "10.01.001",
-              "label": "Mobile Network Operators"
+              "level": "subsector",
+              "parent_id": "10.01",
+              "sector_id": "10.01",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Fixed-Line & Broadband",
               "id": "10.01.002",
-              "label": "Fixed-Line & Broadband"
+              "level": "subsector",
+              "parent_id": "10.01",
+              "sector_id": "10.01",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Satellite & Edge Networks",
               "id": "10.01.003",
-              "label": "Satellite & Edge Networks"
+              "level": "subsector",
+              "parent_id": "10.01",
+              "sector_id": "10.01",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "10.02",
           "label": "Media & Entertainment",
+          "id": "10.02",
+          "level": "sector",
+          "parent_id": "10",
+          "industry_id": "10",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "TV & Streaming",
               "id": "10.02.001",
-              "label": "TV & Streaming"
+              "level": "subsector",
+              "parent_id": "10.02",
+              "sector_id": "10.02",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Digital Media Platforms",
               "id": "10.02.002",
-              "label": "Digital Media Platforms"
+              "level": "subsector",
+              "parent_id": "10.02",
+              "sector_id": "10.02",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Music, Gaming & Esports",
               "id": "10.02.003",
-              "label": "Music, Gaming & Esports"
+              "level": "subsector",
+              "parent_id": "10.02",
+              "sector_id": "10.02",
+              "industry_id": "10",
+              "classification": "active",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Diversified Entertainment",
               "id": "10.02.004",
-              "label": "Diversified Entertainment"
+              "level": "subsector",
+              "parent_id": "10.02",
+              "sector_id": "10.02",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "10.03",
           "label": "Digital Platforms & Social",
+          "id": "10.03",
+          "level": "sector",
+          "parent_id": "10",
+          "industry_id": "10",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Social Networks",
               "id": "10.03.001",
-              "label": "Social Networks"
+              "level": "subsector",
+              "parent_id": "10.03",
+              "sector_id": "10.03",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Creator / UGC Platforms",
               "id": "10.03.002",
-              "label": "Creator / UGC Platforms"
+              "level": "subsector",
+              "parent_id": "10.03",
+              "sector_id": "10.03",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Messaging & Communications Apps",
               "id": "10.03.003",
-              "label": "Messaging & Communications Apps"
+              "level": "subsector",
+              "parent_id": "10.03",
+              "sector_id": "10.03",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Search & Digital Platforms",
               "id": "10.03.004",
-              "label": "Search & Digital Platforms"
+              "level": "subsector",
+              "parent_id": "10.03",
+              "sector_id": "10.03",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "10.04",
           "label": "Advertising & Marketing Services",
+          "id": "10.04",
+          "level": "sector",
+          "parent_id": "10",
+          "industry_id": "10",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Ad Networks & Exchanges",
               "id": "10.04.001",
-              "label": "Ad Networks & Exchanges"
+              "level": "subsector",
+              "parent_id": "10.04",
+              "sector_id": "10.04",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Agencies & Brand Services",
               "id": "10.04.002",
-              "label": "Agencies & Brand Services"
+              "level": "subsector",
+              "parent_id": "10.04",
+              "sector_id": "10.04",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     },
     {
-      "id": "11",
       "label": "Utilities",
+      "id": "11",
+      "level": "industry",
+      "parent_id": null,
       "classification": "GIC",
       "sectors": [
         {
-          "id": "11.01",
           "label": "Electric Utilities",
+          "id": "11.01",
+          "level": "sector",
+          "parent_id": "11",
+          "industry_id": "11",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Generation",
               "id": "11.01.001",
-              "label": "Generation"
+              "level": "subsector",
+              "parent_id": "11.01",
+              "sector_id": "11.01",
+              "industry_id": "11",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Transmission & Distribution",
               "id": "11.01.002",
-              "label": "Transmission & Distribution"
+              "level": "subsector",
+              "parent_id": "11.01",
+              "sector_id": "11.01",
+              "industry_id": "11",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Retail Electric",
               "id": "11.01.003",
-              "label": "Retail Electric"
+              "level": "subsector",
+              "parent_id": "11.01",
+              "sector_id": "11.01",
+              "industry_id": "11",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "11.02",
           "label": "Gas Utilities",
+          "id": "11.02",
+          "level": "sector",
+          "parent_id": "11",
+          "industry_id": "11",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Gas Distribution",
               "id": "11.02.001",
-              "label": "Gas Distribution"
+              "level": "subsector",
+              "parent_id": "11.02",
+              "sector_id": "11.02",
+              "industry_id": "11",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "LNG Utility Services",
               "id": "11.02.002",
-              "label": "LNG Utility Services"
+              "level": "subsector",
+              "parent_id": "11.02",
+              "sector_id": "11.02",
+              "industry_id": "11",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "11.03",
           "label": "Water Utilities",
+          "id": "11.03",
+          "level": "sector",
+          "parent_id": "11",
+          "industry_id": "11",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Water Supply",
               "id": "11.03.001",
-              "label": "Water Supply"
+              "level": "subsector",
+              "parent_id": "11.03",
+              "sector_id": "11.03",
+              "industry_id": "11",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Wastewater Services",
               "id": "11.03.002",
-              "label": "Wastewater Services"
+              "level": "subsector",
+              "parent_id": "11.03",
+              "sector_id": "11.03",
+              "industry_id": "11",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "11.04",
           "label": "Multi-Utilities & Environmental",
+          "id": "11.04",
+          "level": "sector",
+          "parent_id": "11",
+          "industry_id": "11",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Multi-Utility Operations",
               "id": "11.04.001",
-              "label": "Multi-Utility Operations"
+              "level": "subsector",
+              "parent_id": "11.04",
+              "sector_id": "11.04",
+              "industry_id": "11",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Waste & Recycling",
               "id": "11.04.002",
-              "label": "Waste & Recycling"
+              "level": "subsector",
+              "parent_id": "11.04",
+              "sector_id": "11.04",
+              "industry_id": "11",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     },
     {
-      "id": "12",
       "label": "Government / Public / Education",
+      "id": "12",
+      "level": "industry",
+      "parent_id": null,
       "classification": "GIC",
       "sectors": [
         {
-          "id": "12.01",
           "label": "Public Administration",
+          "id": "12.01",
+          "level": "sector",
+          "parent_id": "12",
+          "industry_id": "12",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Central / Federal",
               "id": "12.01.001",
-              "label": "Central / Federal"
+              "level": "subsector",
+              "parent_id": "12.01",
+              "sector_id": "12.01",
+              "industry_id": "12",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "State / Regional",
               "id": "12.01.002",
-              "label": "State / Regional"
+              "level": "subsector",
+              "parent_id": "12.01",
+              "sector_id": "12.01",
+              "industry_id": "12",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Municipal Services",
               "id": "12.01.003",
-              "label": "Municipal Services"
+              "level": "subsector",
+              "parent_id": "12.01",
+              "sector_id": "12.01",
+              "industry_id": "12",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "12.02",
           "label": "Education & Training",
+          "id": "12.02",
+          "level": "sector",
+          "parent_id": "12",
+          "industry_id": "12",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "K-12 Operators",
               "id": "12.02.001",
-              "label": "K-12 Operators"
+              "level": "subsector",
+              "parent_id": "12.02",
+              "sector_id": "12.02",
+              "industry_id": "12",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Higher Education",
               "id": "12.02.002",
-              "label": "Higher Education"
+              "level": "subsector",
+              "parent_id": "12.02",
+              "sector_id": "12.02",
+              "industry_id": "12",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "EdTech Providers",
               "id": "12.02.003",
-              "label": "EdTech Providers"
+              "level": "subsector",
+              "parent_id": "12.02",
+              "sector_id": "12.02",
+              "industry_id": "12",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "12.03",
           "label": "Public Safety & Defense Services",
+          "id": "12.03",
+          "level": "sector",
+          "parent_id": "12",
+          "industry_id": "12",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Emergency & Response",
               "id": "12.03.001",
-              "label": "Emergency & Response"
+              "level": "subsector",
+              "parent_id": "12.03",
+              "sector_id": "12.03",
+              "industry_id": "12",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Contracted Gov Services",
               "id": "12.03.002",
-              "label": "Contracted Gov Services"
+              "level": "subsector",
+              "parent_id": "12.03",
+              "sector_id": "12.03",
+              "industry_id": "12",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Private Defense / Public Safety Contractors",
               "id": "12.03.003",
-              "label": "Private Defense / Public Safety Contractors"
+              "level": "subsector",
+              "parent_id": "12.03",
+              "sector_id": "12.03",
+              "industry_id": "12",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
-          "id": "12.04",
           "label": "NGOs & Multilaterals",
+          "id": "12.04",
+          "level": "sector",
+          "parent_id": "12",
+          "industry_id": "12",
+          "classification": "GIC",
           "subsectors": [
             {
+              "label": "Nonprofits",
               "id": "12.04.001",
-              "label": "Nonprofits"
+              "level": "subsector",
+              "parent_id": "12.04",
+              "sector_id": "12.04",
+              "industry_id": "12",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Development Agencies",
               "id": "12.04.002",
-              "label": "Development Agencies"
+              "level": "subsector",
+              "parent_id": "12.04",
+              "sector_id": "12.04",
+              "industry_id": "12",
+              "classification": "GIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     },
     {
+      "label": "Digital & Onchain Economy",
       "id": "13",
-      "label": "Digital Assets & Blockchain",
+      "level": "industry",
+      "parent_id": null,
       "classification": "DIC",
       "sectors": [
         {
-          "id": "13.01",
           "label": "DLT & Blockchain Infrastructure",
+          "id": "13.01",
+          "level": "sector",
+          "parent_id": "13",
+          "industry_id": "13",
+          "classification": "DIC",
           "subsectors": [
             {
-              "id": "13.01.001",
               "label": "Public / Permissionless L1",
+              "id": "13.01.001",
+              "level": "subsector",
+              "parent_id": "13.01",
+              "sector_id": "13.01",
+              "industry_id": "13",
+              "classification": "DIC",
               "segments": [
                 {
+                  "label": "EVM L1",
                   "id": "13.01.001.01",
-                  "label": "EVM L1"
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "13.01.001",
+                  "subsector_id": "13.01.001",
+                  "sector_id": "13.01",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 },
                 {
+                  "label": "Non-EVM L1",
                   "id": "13.01.001.02",
-                  "label": "Non-EVM L1"
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "13.01.001",
+                  "subsector_id": "13.01.001",
+                  "sector_id": "13.01",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 }
-              ]
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "L2 / Rollup Infrastructure",
               "id": "13.01.002",
-              "label": "Layer-2 / Rollup Infra",
+              "level": "subsector",
+              "parent_id": "13.01",
+              "sector_id": "13.01",
+              "industry_id": "13",
+              "classification": "DIC",
               "segments": [
                 {
+                  "label": "Optimistic Rollups",
                   "id": "13.01.002.01",
-                  "label": "Optimistic Rollups"
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "13.01.002",
+                  "subsector_id": "13.01.002",
+                  "sector_id": "13.01",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 },
                 {
+                  "label": "ZK Rollups",
                   "id": "13.01.002.02",
-                  "label": "ZK Rollups"
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "13.01.002",
+                  "subsector_id": "13.01.002",
+                  "sector_id": "13.01",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 }
-              ]
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Validator / Staking Services",
               "id": "13.01.003",
-              "label": "Validator / Staking Services"
+              "level": "subsector",
+              "parent_id": "13.01",
+              "sector_id": "13.01",
+              "industry_id": "13",
+              "classification": "DIC",
+              "segments": [
+                {
+                  "label": "Node / Validator Ops",
+                  "id": "13.01.003.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "13.01.003",
+                  "subsector_id": "13.01.003",
+                  "sector_id": "13.01",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Liquid Staking",
+                  "id": "13.01.003.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "13.01.003",
+                  "subsector_id": "13.01.003",
+                  "sector_id": "13.01",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Interoperability & Data Indexing",
               "id": "13.01.004",
-              "label": "Chain Tooling & Infra Services"
+              "level": "subsector",
+              "parent_id": "13.01",
+              "sector_id": "13.01",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-08",
+              "status": "active"
+            },
+            {
+              "label": "Enterprise / Permissioned DLT",
+              "id": "13.01.005",
+              "level": "subsector",
+              "parent_id": "13.01",
+              "sector_id": "13.01",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-10",
+              "status": "active"
+            },
+            {
+              "label": "Cross-chain Infrastructure",
+              "id": "13.01.006",
+              "level": "subsector",
+              "parent_id": "13.01",
+              "sector_id": "13.01",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-10",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
+          "label": "Centralized Exchanges & Trading",
           "id": "13.02",
-          "label": "Digital Asset Services & Markets",
+          "level": "sector",
+          "parent_id": "13",
+          "industry_id": "13",
+          "classification": "DIC",
           "subsectors": [
             {
-              "id": "13.02.001",
               "label": "Centralized Exchanges (CEX)",
+              "id": "13.02.001",
+              "level": "subsector",
+              "parent_id": "13.02",
+              "sector_id": "13.02",
+              "industry_id": "13",
+              "classification": "DIC",
               "segments": [
                 {
+                  "label": "Spot CEX",
                   "id": "13.02.001.01",
-                  "label": "Spot CEX"
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "13.02.001",
+                  "subsector_id": "13.02.001",
+                  "sector_id": "13.02",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 },
                 {
+                  "label": "Derivatives CEX",
                   "id": "13.02.001.02",
-                  "label": "Derivatives CEX"
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "13.02.001",
+                  "subsector_id": "13.02.001",
+                  "sector_id": "13.02",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 },
                 {
+                  "label": "Fiat On/Off Ramp CEX",
                   "id": "13.02.001.03",
-                  "label": "Fiat On/Off-Ramp CEX"
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "13.02.001",
+                  "subsector_id": "13.02.001",
+                  "sector_id": "13.02",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 }
-              ]
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
-              "id": "13.02.002",
               "label": "Decentralized Exchanges (DEX/AMM)",
+              "id": "13.02.002",
+              "level": "subsector",
+              "parent_id": "13.02",
+              "sector_id": "13.02",
+              "industry_id": "13",
+              "classification": "DIC",
               "segments": [
                 {
+                  "label": "L1 DEX",
                   "id": "13.02.002.01",
-                  "label": "Layer-1 DEX"
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "13.02.002",
+                  "subsector_id": "13.02.002",
+                  "sector_id": "13.02",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 },
                 {
+                  "label": "L2 DEX",
                   "id": "13.02.002.02",
-                  "label": "Layer-2 DEX"
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "13.02.002",
+                  "subsector_id": "13.02.002",
+                  "sector_id": "13.02",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 }
-              ]
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
-              "id": "13.02.003",
               "label": "Custody & Key Management",
+              "id": "13.02.003",
+              "level": "subsector",
+              "parent_id": "13.02",
+              "sector_id": "13.02",
+              "industry_id": "13",
+              "classification": "DIC",
               "segments": [
                 {
+                  "label": "Institutional Custody",
                   "id": "13.02.003.01",
-                  "label": "Institutional Custody"
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "13.02.003",
+                  "subsector_id": "13.02.003",
+                  "sector_id": "13.02",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 },
                 {
+                  "label": "MPC / Wallet Infrastructure",
                   "id": "13.02.003.02",
-                  "label": "MPC / Wallet Infrastructure"
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "13.02.003",
+                  "subsector_id": "13.02.003",
+                  "sector_id": "13.02",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 }
-              ]
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Stablecoin / Digital Currency Platforms",
               "id": "13.02.004",
-              "label": "Stablecoin / Digital Currency",
+              "level": "subsector",
+              "parent_id": "13.02",
+              "sector_id": "13.02",
+              "industry_id": "13",
+              "classification": "DIC",
               "segments": [
                 {
+                  "label": "Fiat-backed Stablecoins",
                   "id": "13.02.004.01",
-                  "label": "Fiat-Backed Stablecoins"
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "13.02.004",
+                  "subsector_id": "13.02.004",
+                  "sector_id": "13.02",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 },
                 {
+                  "label": "Crypto-collateralized Stablecoins",
                   "id": "13.02.004.02",
-                  "label": "Crypto-Collateralized Stablecoins"
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "13.02.004",
+                  "subsector_id": "13.02.004",
+                  "sector_id": "13.02",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 },
                 {
+                  "label": "Platform-linked Stablecoins",
                   "id": "13.02.004.03",
-                  "label": "Platform-Linked Stablecoins"
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "13.02.004",
+                  "subsector_id": "13.02.004",
+                  "sector_id": "13.02",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
                 }
-              ]
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Tokenization & Digital Securities",
               "id": "13.02.005",
-              "label": "Tokenization & Digital Securities"
+              "level": "subsector",
+              "parent_id": "13.02",
+              "sector_id": "13.02",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-08",
+              "status": "active"
+            },
+            {
+              "label": "OTC / Prime Brokerage",
+              "id": "13.02.006",
+              "level": "subsector",
+              "parent_id": "13.02",
+              "sector_id": "13.02",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-10",
+              "status": "active"
+            },
+            {
+              "label": "Market Making",
+              "id": "13.02.007",
+              "level": "subsector",
+              "parent_id": "13.02",
+              "sector_id": "13.02",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-10",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
+          "label": "Onchain Applications & Experiences",
           "id": "13.03",
-          "label": "Onchain Apps & Experiences",
+          "level": "sector",
+          "parent_id": "13",
+          "industry_id": "13",
+          "classification": "DIC",
           "subsectors": [
             {
+              "label": "DeFi (non-exchange)",
               "id": "13.03.001",
-              "label": "DeFi (Non-Exchange)"
+              "level": "subsector",
+              "parent_id": "13.03",
+              "sector_id": "13.03",
+              "industry_id": "13",
+              "classification": "DIC",
+              "segments": [
+                {
+                  "label": "Lending Protocols",
+                  "id": "13.03.001.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "13.03.001",
+                  "subsector_id": "13.03.001",
+                  "sector_id": "13.03",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Derivatives Protocols",
+                  "id": "13.03.001.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "13.03.001",
+                  "subsector_id": "13.03.001",
+                  "sector_id": "13.03",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Yield Aggregators",
+                  "id": "13.03.001.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "13.03.001",
+                  "subsector_id": "13.03.001",
+                  "sector_id": "13.03",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Options Protocols",
+                  "id": "13.03.001.04",
+                  "level": "segment",
+                  "segment_code": "04",
+                  "parent_id": "13.03.001",
+                  "subsector_id": "13.03.001",
+                  "sector_id": "13.03",
+                  "industry_id": "13",
+                  "classification": "DIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "NFT / Digital Collectibles",
               "id": "13.03.002",
-              "label": "NFT / Digital Collectible Platforms"
+              "level": "subsector",
+              "parent_id": "13.03",
+              "sector_id": "13.03",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Onchain Gaming / GameFi",
               "id": "13.03.003",
-              "label": "Onchain Gaming / GameFi"
+              "level": "subsector",
+              "parent_id": "13.03",
+              "sector_id": "13.03",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Onchain Social",
               "id": "13.03.004",
-              "label": "Onchain Social"
+              "level": "subsector",
+              "parent_id": "13.03",
+              "sector_id": "13.03",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         },
         {
+          "label": "Onchain Services, Security & Compliance",
           "id": "13.04",
-          "label": "Onchain Services & Security",
+          "level": "sector",
+          "parent_id": "13",
+          "industry_id": "13",
+          "classification": "active",
           "subsectors": [
             {
+              "label": "Blockchain Data / Analytics",
               "id": "13.04.001",
-              "label": "Smart Contract Audit & Monitoring"
+              "level": "subsector",
+              "parent_id": "13.04",
+              "sector_id": "13.04",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Security / Audit Services",
               "id": "13.04.002",
-              "label": "Chain Analytics / AML / Forensics"
+              "level": "subsector",
+              "parent_id": "13.04",
+              "sector_id": "13.04",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Onchain Identity / Attestations",
               "id": "13.04.003",
-              "label": "Bridge & Oracle Security"
+              "level": "subsector",
+              "parent_id": "13.04",
+              "sector_id": "13.04",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-08",
+              "status": "active"
             },
             {
+              "label": "Compliance / Travel Rule Providers",
               "id": "13.04.004",
-              "label": "Compliance & Travel Rule"
+              "level": "subsector",
+              "parent_id": "13.04",
+              "sector_id": "13.04",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-08",
+              "status": "active"
             }
-          ]
+          ],
+          "since": "2025-11-08",
+          "status": "active"
         }
-      ]
+      ],
+      "since": "2025-11-08",
+      "status": "active"
     }
   ]
 };

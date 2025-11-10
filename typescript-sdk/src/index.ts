@@ -7,6 +7,7 @@ import {
   classificationData as ClassificationDataType,
   classificationStats,
   RawclassificationData,
+  NodeStatus,
 } from './types';
 
 function normalizeClassification(raw: RawclassificationData): ClassificationDataType {
@@ -222,6 +223,74 @@ export class Classification {
       gic_industries: this.getGIC().length,
       dic_industries: this.getDIC().length,
     };
+  }
+
+  /**
+   * Get all active nodes (status === 'active' or undefined)
+   */
+  getActive(): Array<Industry | Sector | Subsector | Segment> {
+    const results: Array<Industry | Sector | Subsector | Segment> = [];
+
+    for (const industry of this.industries) {
+      if (!industry.status || industry.status === 'active') {
+        results.push(industry);
+      }
+
+      for (const sector of industry.sectors) {
+        if (!sector.status || sector.status === 'active') {
+          results.push(sector);
+        }
+
+        for (const subsector of sector.subsectors) {
+          if (!subsector.status || subsector.status === 'active') {
+            results.push(subsector);
+          }
+
+          for (const segment of subsector.segments) {
+            if (!segment.status || segment.status === 'active') {
+              results.push(segment);
+            }
+          }
+        }
+      }
+    }
+
+    return results;
+  }
+
+  /**
+   * Get all nodes with a specific status
+   * @param status - The status to filter by ('active', 'deprecated', or 'retired')
+   */
+  getByStatus(status: NodeStatus): Array<Industry | Sector | Subsector | Segment> {
+    const results: Array<Industry | Sector | Subsector | Segment> = [];
+
+    for (const industry of this.industries) {
+      // Match specified status, or if status is 'active', also match undefined
+      if (industry.status === status || (status === 'active' && !industry.status)) {
+        results.push(industry);
+      }
+
+      for (const sector of industry.sectors) {
+        if (sector.status === status || (status === 'active' && !sector.status)) {
+          results.push(sector);
+        }
+
+        for (const subsector of sector.subsectors) {
+          if (subsector.status === status || (status === 'active' && !subsector.status)) {
+            results.push(subsector);
+          }
+
+          for (const segment of subsector.segments) {
+            if (segment.status === status || (status === 'active' && !segment.status)) {
+              results.push(segment);
+            }
+          }
+        }
+      }
+    }
+
+    return results;
   }
 }
 

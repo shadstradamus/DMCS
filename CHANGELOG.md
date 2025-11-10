@@ -5,6 +5,36 @@ All notable changes to the DMCS (Dynamic Multi-Dimensional Classification Standa
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2025-11-10
+
+### Added
+
+- **Node Lifecycle Tracking**: All 295 classification nodes now include temporal metadata
+  - `since` field: ISO date (YYYY-MM-DD) indicating when node entered DMCS
+  - `status` field: Enum of `'active'` | `'deprecated'` | `'retired'`
+  - Backfilled dates: 257 v1.0.4 nodes dated `2025-11-08`, 38 v1.1.0 nodes dated `2025-11-10`
+- **Python SDK lifecycle methods**:
+  - `is_active()` method on all dataclasses (Industry, Sector, Subsector, Segment)
+  - `get_active()` method returns all nodes with status='active' or undefined
+  - `get_by_status(status: str)` method filters nodes by lifecycle status
+- **TypeScript SDK lifecycle methods**:
+  - `getActive()` method returns all active nodes
+  - `getByStatus(status: NodeStatus)` method filters by status with type safety
+  - `NodeStatus` type: `'active' | 'deprecated' | 'retired'`
+
+### Changed
+
+- CSV format expanded from 7 to 9 columns: added `since` and `status` fields
+- Updated build scripts to handle optional lifecycle fields (backwards compatible)
+- Enhanced README with "Node Lifecycle Tracking" section explaining immutability guarantees
+
+### Technical
+
+- All nodes default to `status='active'` in current release
+- IDs remain immutable; lifecycle tracking enables future deprecation (e.g., dying industries like Cable TV)
+- Historical data validity preserved through temporal metadata
+- Both SDKs maintain full backwards compatibility with v1.1.0 structure
+
 ## [1.1.0] - 2025-11-10
 
 ### Added
@@ -167,6 +197,7 @@ DMCS uses **semantic versioning**:
   - **MINOR**: New industries, sectors, or subsectors (structural releases)
   - **PATCH**: Label updates, documentation fixes, thematic additions
 
+[1.1.1]: https://github.com/shadstradamus/DMCS/releases/tag/v1.1.1
 [1.1.0]: https://github.com/shadstradamus/DMCS/releases/tag/v1.1.0
 [1.0.4]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.4
 [1.0.3]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.3

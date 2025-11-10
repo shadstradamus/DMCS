@@ -1,5 +1,6 @@
 export type ClassificationCode = 'GIC' | 'DIC';
 export type ClassificationLevel = 'industry' | 'sector' | 'subsector' | 'segment';
+export type NodeStatus = 'active' | 'deprecated' | 'retired';
 export interface RawSegment {
     id: string;
     label: string;
@@ -10,6 +11,8 @@ export interface RawSegment {
     industry_id: string;
     classification: ClassificationCode;
     segment_code?: string;
+    since?: string;
+    status?: NodeStatus;
 }
 export interface RawSubsector {
     id: string;
@@ -20,6 +23,8 @@ export interface RawSubsector {
     industry_id: string;
     classification: ClassificationCode;
     segments?: RawSegment[];
+    since?: string;
+    status?: NodeStatus;
 }
 export interface RawSector {
     id: string;
@@ -29,6 +34,8 @@ export interface RawSector {
     industry_id: string;
     classification: ClassificationCode;
     subsectors: RawSubsector[];
+    since?: string;
+    status?: NodeStatus;
 }
 export interface RawIndustry {
     id: string;
@@ -37,6 +44,8 @@ export interface RawIndustry {
     parent_id: string | null;
     classification: ClassificationCode;
     sectors: RawSector[];
+    since?: string;
+    status?: NodeStatus;
 }
 export interface RawclassificationData {
     dmcs_version: string;

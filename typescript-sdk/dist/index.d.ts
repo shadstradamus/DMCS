@@ -1,4 +1,4 @@
-import { Industry, Sector, Subsector, Segment, classificationStats } from './types';
+import { Industry, Sector, Subsector, Segment, classificationStats, NodeStatus } from './types';
 export declare class Classification {
     private data;
     constructor();
@@ -46,5 +46,14 @@ export declare class Classification {
      * Get Classification statistics
      */
     stats(): classificationStats;
+    /**
+     * Get all active nodes (status === 'active' or undefined)
+     */
+    getActive(): Array<Industry | Sector | Subsector | Segment>;
+    /**
+     * Get all nodes with a specific status
+     * @param status - The status to filter by ('active', 'deprecated', or 'retired')
+     */
+    getByStatus(status: NodeStatus): Array<Industry | Sector | Subsector | Segment>;
 }
 export * from './types';

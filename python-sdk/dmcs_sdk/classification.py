@@ -19,9 +19,15 @@ class Segment:
     industry_id: str
     classification: str
     segment_code: Optional[str] = None
+    since: Optional[str] = None
+    status: str = "active"
 
     def __repr__(self):
         return f"{self.id} — {self.label}"
+    
+    def is_active(self) -> bool:
+        """Check if this segment is active"""
+        return self.status == "active"
 
 
 @dataclass
@@ -35,6 +41,8 @@ class Subsector:
     industry_id: str
     classification: str  # GIC or DIC
     segments: List[Segment] = field(default_factory=list)
+    since: Optional[str] = None
+    status: str = "active"
 
     def __repr__(self):
         return f"{self.id} — {self.label}"
@@ -42,6 +50,10 @@ class Subsector:
     def get_segment(self, segment_id: str) -> Optional[Segment]:
         """Get segment by ID"""
         return next((s for s in self.segments if s.id == segment_id), None)
+    
+    def is_active(self) -> bool:
+        """Check if this subsector is active"""
+        return self.status == "active"
 
 
 @dataclass
@@ -54,6 +66,8 @@ class Sector:
     industry_id: str
     classification: str  # GIC or DIC
     subsectors: List[Subsector]
+    since: Optional[str] = None
+    status: str = "active"
 
     def __repr__(self):
         return f"{self.id} — {self.label} ({len(self.subsectors)} subsectors)"
@@ -61,6 +75,10 @@ class Sector:
     def get_subsector(self, subsector_id: str) -> Optional[Subsector]:
         """Get subsector by ID"""
         return next((s for s in self.subsectors if s.id == subsector_id), None)
+    
+    def is_active(self) -> bool:
+        """Check if this sector is active"""
+        return self.status == "active"
 
 
 @dataclass
@@ -72,6 +90,8 @@ class Industry:
     parent_id: Optional[str]
     classification: str  # GIC or DIC
     sectors: List[Sector]
+    since: Optional[str] = None
+    status: str = "active"
 
     def __repr__(self):
         return f"{self.id} — {self.label} ({len(self.sectors)} sectors, {self.classification})"
@@ -84,6 +104,10 @@ class Industry:
     def subsector_count(self) -> int:
         """Total subsectors in this industry"""
         return sum(len(s.subsectors) for s in self.sectors)
+    
+    def is_active(self) -> bool:
+        """Check if this industry is active"""
+        return self.status == "active"
 
 
 class classification:
@@ -295,6 +319,40 @@ class classification:
             "gic_industries": len(self.get_GIC()),
             "dic_industries": len(self.get_DIC())
         }
+    
+    def get_active(self) -> List[Any]:
+        """Get all active nodes (industries, sectors, subsectors, segments)"""
+        active_nodes = []
+        for industry in self.industries:
+            if industry.is_active():
+                active_nodes.append(industry)
+            for sector in industry.sectors:
+                if sector.is_active():
+                    active_nodes.append(sector)
+                for subsector in sector.subsectors:
+                    if subsector.is_active():
+                        active_nodes.append(subsector)
+                    for segment in subsector.segments:
+                        if segment.is_active():
+                            active_nodes.append(segment)
+        return active_nodes
+    
+    def get_by_status(self, status: str) -> List[Any]:
+        """Get all nodes with the specified status ('active', 'deprecated', or 'retired')"""
+        nodes = []
+        for industry in self.industries:
+            if industry.status == status:
+                nodes.append(industry)
+            for sector in industry.sectors:
+                if sector.status == status:
+                    nodes.append(sector)
+                for subsector in sector.subsectors:
+                    if subsector.status == status:
+                        nodes.append(subsector)
+                    for segment in subsector.segments:
+                        if segment.status == status:
+                            nodes.append(segment)
+        return nodes
 
     def __repr__(self):
         return f"DMCS v{self.version} ({self.total_industries} industries, {self.total_sectors} sectors, {self.total_subsectors} subsectors)"
