@@ -24,11 +24,12 @@ const dmcs = new Classification();
 // Get stats
 console.log(dmcs.stats());
 // {
-//   version: '1.0.4',
+//   version: '1.1.0',
 //   release_date: '2025-11-09',
 //   industries: 13,
 //   sectors: 55,
-//   subsectors: 191,
+//   subsectors: 190,
+//   segments: 14,
 //   gic_industries: 12,
 //   dic_industries: 1
 // }
@@ -81,7 +82,7 @@ Main class for loading and querying DMCS data.
 - `industries: Industry[]` - All industries
 
 **Methods:**
-- `getById(id: string): Classification | null` - Lookup industry, sector, or subsector by ID
+- `getById(id: string): Classification | null` - Lookup industry, sector, subsector, or segment by ID
 - `search(query: string, caseSensitive?: boolean): Classification[]` - Search classifications by label
 - `filterByClassification(classification: 'GIC' | 'DIC'): Industry[]` - Get industries by classification
 - `getGIC(): Industry[]` - Get all GIC industries
@@ -116,6 +117,19 @@ interface Sector {
 interface Subsector {
   id: string;
   label: string;
+  sector_id: string;
+  industry_id: string;
+  classification: 'GIC' | 'DIC';
+  segments: Segment[];
+}
+```
+
+**Segment**
+```typescript
+interface Segment {
+  id: string;
+  label: string;
+  subsector_id: string;
   sector_id: string;
   industry_id: string;
   classification: 'GIC' | 'DIC';
