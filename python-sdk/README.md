@@ -28,7 +28,7 @@ dmcs = classification()
 
 # Get stats
 print(dmcs.stats())
-# {'version': '1.1.0', 'release_date': '2025-11-09', 'industries': 13, 'sectors': 55, 'subsectors': 193, 'segments': 34, ...}
+# {'version': '1.1.1', 'release_date': '2025-11-10', 'industries': 13, 'sectors': 55, 'subsectors': 193, 'segments': 34, ...}
 
 # Lookup by ID
 tech = dmcs.get_by_id('09')

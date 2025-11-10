@@ -8,12 +8,12 @@ import sys
 
 # Add parent directory to path to import dmcs_sdk
 sys.path.insert(0, str(Path(__file__).parent.parent / "python-sdk"))
-from dmcs_sdk import Classification
+from dmcs_sdk import classification, Industry, Sector, Subsector, Segment
 
 app = FastAPI(
     title="DMCS API",
     description="Dynamic Multi-Dimensional Classification Standard REST API",
-    version="1.0.4",
+    version="1.1.1",
     docs_url="/",
     redoc_url="/docs"
 )
@@ -28,13 +28,13 @@ app.add_middleware(
 )
 
 # Load Classification on startup
-Classification = Classification()
+dmcs = classification()
 
 
 @app.get("/api/v1/stats")
 def get_stats() -> Dict[str, Any]:
     """Get DMCS Classification statistics"""
-    return Classification.stats()
+    return dmcs.stats()
 
 
 @app.get("/api/v1/industries")
@@ -43,17 +43,18 @@ def get_industries(classification_filter: Optional[str] = Query(None, descriptio
     if classification_filter:
         if classification_filter not in ["GIC", "DIC"]:
             raise HTTPException(status_code=400, detail="classification_filter must be GIC or DIC")
-        industries = Classification.filter_by_Classification(classification_filter)
+        industries = dmcs.filter_by_classification(classification_filter)
     else:
-        industries = Classification.industries
+        industries = dmcs.industries
     
     return [
         {
             "id": ind.id,
             "label": ind.label,
-            "Classification": ind.Classification,
+            "classification": ind.classification,
             "sector_count": len(ind.sectors),
-            "subsector_count": ind.subsector_count
+            "subsector_count": ind.subsector_count,
+            "segment_count": sum(len(sub.segments) for sec in ind.sectors for sub in sec.subsectors)
         }
         for ind in industries
     ]
@@ -69,50 +70,70 @@ def get_classification(classification_id: str):
     - Sector: II.SS (e.g., "09.01")
     - Subsector: II.SS.SSS (e.g., "09.01.002")
     """
-    result = Classification.get_by_id(classification_id)
+    result = dmcs.get_by_id(classification_id)
     
     if result is None:
         raise HTTPException(status_code=404, detail=f"Classification {classification_id} not found")
     
-    # Determine type and return appropriate structure
-    if hasattr(result, 'sectors'):  # Industry
+    if isinstance(result, Industry):
         return {
             "type": "industry",
             "id": result.id,
             "label": result.label,
-            "Classification": result.Classification,
+            "classification": result.classification,
             "sectors": [
                 {
                     "id": sec.id,
                     "label": sec.label,
-                    "subsector_count": len(sec.subsectors)
+                    "subsector_count": len(sec.subsectors),
+                    "segment_count": sum(len(sub.segments) for sub in sec.subsectors)
                 }
                 for sec in result.sectors
-            ]
+            ],
+            "segment_count": sum(len(sub.segments) for sec in result.sectors for sub in sec.subsectors)
         }
-    elif hasattr(result, 'subsectors'):  # Sector
+    elif isinstance(result, Sector):
         return {
             "type": "sector",
             "id": result.id,
             "label": result.label,
             "industry_id": result.industry_id,
-            "Classification": result.Classification,
+            "classification": result.classification,
             "subsectors": [
                 {
                     "id": sub.id,
-                    "label": sub.label
+                    "label": sub.label,
+                    "segment_count": len(sub.segments)
                 }
                 for sub in result.subsectors
-            ]
+            ],
+            "segment_count": sum(len(sub.segments) for sub in result.subsectors)
         }
-    else:  # Subsector
+    elif isinstance(result, Subsector):
         return {
             "type": "subsector",
             "id": result.id,
             "label": result.label,
             "sector_id": result.sector_id,
             "industry_id": result.industry_id,
-            "Classification": result.Classification
+            "classification": result.classification,
+            "segments": [
+                {
+                    "id": seg.id,
+                    "label": seg.label
+                }
+                for seg in result.segments
+            ]
+        }
+    elif isinstance(result, Segment):
+        return {
+            "type": "segment",
+            "id": result.id,
+            "label": result.label,
+            "subsector_id": result.subsector_id,
+            "sector_id": result.sector_id,
+            "industry_id": result.industry_id,
+            "classification": result.classification
         }
 
 
@@ -122,14 +143,19 @@ def search_classifications(
     case_sensitive: bool = Query(False, description="Case-sensitive search")
 ):
     """Search classifications by label text"""
-    results = Classification.search(q, case_sensitive=case_sensitive)
+    results = dmcs.search(q, case_sensitive=case_sensitive)
     
     return [
         {
-            "type": "industry" if hasattr(r, 'sectors') else "sector" if hasattr(r, 'subsectors') else "subsector",
+            "type": (
+                "industry" if isinstance(r, Industry)
+                else "sector" if isinstance(r, Sector)
+                else "subsector" if isinstance(r, Subsector)
+                else "segment"
+            ),
             "id": r.id,
             "label": r.label,
-            "Classification": r.Classification
+            "classification": getattr(r, "classification", None)
         }
         for r in results
     ]
@@ -139,14 +165,14 @@ def search_classifications(
 def get_full_Classification():
     """Get complete Classification hierarchy"""
     return {
-        "version": Classification.version,
-        "release_date": Classification.release_date,
-        "description": Classification.description,
+        "version": dmcs.version,
+        "release_date": dmcs.release_date,
+        "description": dmcs.description,
         "industries": [
             {
                 "id": ind.id,
                 "label": ind.label,
-                "Classification": ind.Classification,
+                "classification": ind.classification,
                 "sectors": [
                     {
                         "id": sec.id,
@@ -154,7 +180,14 @@ def get_full_Classification():
                         "subsectors": [
                             {
                                 "id": sub.id,
-                                "label": sub.label
+                                "label": sub.label,
+                                "segments": [
+                                    {
+                                        "id": seg.id,
+                                        "label": seg.label
+                                    }
+                                    for seg in sub.segments
+                                ]
                             }
                             for sub in sec.subsectors
                         ]
@@ -162,7 +195,7 @@ def get_full_Classification():
                     for sec in ind.sectors
                 ]
             }
-            for ind in Classification.industries
+            for ind in dmcs.industries
         ]
     }
 

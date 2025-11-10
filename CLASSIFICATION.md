@@ -1,8 +1,8 @@
 # DMCS classification — Full Classification Tree
 
-**Version:** 1.0.4  
+**Version:** 1.1.1  
 **Effective Date:** 2025-11-09  
-**Total:** 13 Industries · 55 Sectors · 191 Subsectors
+**Total:** 13 Industries · 55 Sectors · 190 Subsectors · 14 Segments
 
 ---
 
@@ -81,10 +81,10 @@
 | 12.02 | Education & Training |
 | 12.03 | Public Safety & Defense Services |
 | 12.04 | NGOs & Multilaterals |
-| 13.01 | Blockchain Infra & Protocols |
-| 13.02 | Crypto Finance & Exchanges |
-| 13.03 | Decentralized Applications |
-| 13.04 | Blockchain Services & Security |
+| 13.01 | DLT & Blockchain Infrastructure |
+| 13.02 | Digital Asset Services & Markets |
+| 13.03 | Onchain Apps & Experiences |
+| 13.04 | Onchain Services & Security |
 
 ---
 
@@ -265,6 +265,7 @@
 | 09.02.002 | Consumer Devices & Ecosystems |
 | 09.02.003 | Network & Telecom Equipment |
 | 09.02.004 | Imaging, Sensors & Components |
+| 09.02.005 | Semiconductor Design Tools & IP |
 | 09.03.001 | IT Consulting |
 | 09.03.002 | Managed Services |
 | 09.03.003 | Data Center Services |
@@ -326,25 +327,42 @@
 
 | ID | Subsector |
 |----|-----------|
-| 13.01.001 | Layer-1 Protocols |
+| 13.01.001 | Public / Permissionless L1 |
 | 13.01.002 | Layer-2 / Rollup Infra |
-| 13.01.003 | Mining / Staking Providers |
-| 13.01.004 | Node / Infra Services |
+| 13.01.003 | Validator / Staking Services |
+| 13.01.004 | Chain Tooling & Infra Services |
 | 13.02.001 | Centralized Exchanges (CEX) |
-| 13.02.002 | OTC & Market Making |
-| 13.02.003 | Digital Asset Custody |
-| 13.02.004 | Stablecoin Issuers |
-| 13.02.005 | RWA Tokenization Platforms |
-| 13.03.001 | DEX / AMM |
-| 13.03.002 | On-Chain Lending & Yield |
-| 13.03.003 | NFT Marketplaces |
-| 13.03.004 | Metaverse / Web3 Social |
-| 13.03.005 | Blockchain Gaming / GameFi |
-| 13.04.001 | Blockchain Analytics |
-| 13.04.002 | Smart Contract Auditing |
-| 13.04.003 | Compliance / Onchain Risk |
-| 13.04.004 | Enterprise Blockchain Solutions |
-| 13.04.005 | Onchain Identity / KYC |
+| 13.02.002 | Decentralized Exchanges (DEX/AMM) |
+| 13.02.003 | Custody & Key Management |
+| 13.02.004 | Stablecoin / Digital Currency |
+| 13.02.005 | Tokenization & Digital Securities |
+| 13.03.001 | DeFi (Non-Exchange) |
+| 13.03.002 | NFT / Digital Collectible Platforms |
+| 13.03.003 | Onchain Gaming / GameFi |
+| 13.03.004 | Onchain Social |
+| 13.04.001 | Smart Contract Audit & Monitoring |
+| 13.04.002 | Chain Analytics / AML / Forensics |
+| 13.04.003 | Bridge & Oracle Security |
+| 13.04.004 | Compliance & Travel Rule |
+
+#### Segments (Industry 13)
+
+| ID | Parent Subsector | Label |
+|----|------------------|-------|
+| 13.01.001.01 | 13.01.001 | EVM L1 |
+| 13.01.001.02 | 13.01.001 | Non-EVM L1 |
+| 13.01.002.01 | 13.01.002 | Optimistic Rollups |
+| 13.01.002.02 | 13.01.002 | ZK Rollups |
+| 13.02.001.01 | 13.02.001 | Spot CEX |
+| 13.02.001.02 | 13.02.001 | Derivatives CEX |
+| 13.02.001.03 | 13.02.001 | Fiat On/Off-Ramp CEX |
+| 13.02.002.01 | 13.02.002 | Layer-1 DEX |
+| 13.02.002.02 | 13.02.002 | Layer-2 DEX |
+| 13.02.003.01 | 13.02.003 | Institutional Custody |
+| 13.02.003.02 | 13.02.003 | MPC / Wallet Infrastructure |
+| 13.02.004.01 | 13.02.004 | Fiat-Backed Stablecoins |
+| 13.02.004.02 | 13.02.004 | Crypto-Collateralized Stablecoins |
+| 13.02.004.03 | 13.02.004 | Platform-Linked Stablecoins |
 
 ---
 

@@ -32,7 +32,7 @@ curl http://127.0.0.1:8000/api/v1/stats
 **Response:**
 ```json
 {
-  "version": "1.1.0",
+  "version": "1.1.1",
   "release_date": "2025-11-09",
   "industries": 13,
   "sectors": 55,

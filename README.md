@@ -2,7 +2,7 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.1.0** · Effective Date: 2025-11-10 · **License:** Apache 2.0
+**Version 1.1.1** · Effective Date: 2025-11-10 · **License:** Apache 2.0
 
 ## Overview
 
@@ -291,33 +291,42 @@ Global Industries Corp
 
 Popular CUST nodes can be promoted to DMCS-STD in future releases through the governance process.
 
-## Node Annotation Schema
+## Node Lifecycle Tracking
 
-Every official node in DMCS v1.1.0 may publish the following annotation fields to clarify scope and governance:
+DMCS v1.1.1 tracks node lifecycle with `since` and `status` fields for all taxonomy nodes:
 
-`id, classification, level, label, criteria_inclusion, criteria_exclusion, border_with, canonical_examples, evidence_fields, review_cycle, aliases, since, status`
+**Fields:**
+- **since** (ISO 8601 date): When this node was added to DMCS
+- **status** (enum): Current lifecycle state
+  - `active` — Currently in use (default)
+  - `deprecated` — Discouraged but still valid
+  - `retired` — No longer assignable, ID reserved
 
+**Example:**
+```json
+{
+  "id": "09.01.003",
+  "label": "Cybersecurity Software",
+  "classification": "GIC",
+  "level": "subsector",
+  "since": "2025-11-08",
+  "status": "active"
+}
 ```
------------------------------------------------------------------------
-Field                         Value
------------------------------ -----------------------------------------
-id                            09.01.003
-classification                GIC
-level                         subsector
-label                         Cybersecurity Software
-criteria_inclusion            • >50% rev from software that prevents/detects/
-                                remediates security events (endpoint, IAM, SASE,
-                                SIEM, EDR/XDR, CNAPP)
-criteria_exclusion            • Primarily services/MSSP → 09.04.004
-                              • General IT suites where security <25% rev → 09.01.001
-border_with                   09.04.004; 09.01.005
-canonical_examples            CrowdStrike; Okta; Zscaler; SentinelOne; Palo Alto (software)
-evidence_fields               Product/segment revenue mix; ARR by module
-review_cycle                  Structural: 2×/yr; Labels: quarterly
-aliases                       SecOps Software; EDR/XDR; Identity Security
-since                         2025-11-09
-status                        active
------------------------------------------------------------------------
+
+**Immutability Guarantee:**
+- IDs never change or get reused
+- Status can evolve (active → deprecated → retired)
+- Labels may be refined over time
+- Historical data remains valid indefinitely
+
+**Query Examples:**
+```python
+# Get all active subsectors
+active = dmcs.get_active()
+
+# Historical lookup still works
+legacy = dmcs.get_by_id('10.02.005')  # Cable TV (status: retired)
 ```
 
 ## Segment Governance
@@ -490,7 +499,7 @@ dmcs = classification()
 
 # Get stats
 print(dmcs.stats())
-# {'version': '1.1.0', 'release_date': '2025-11-09', 'industries': 13, 'sectors': 55, 'subsectors': 193, 'segments': 34}
+# {'version': '1.1.1', 'release_date': '2025-11-10', 'industries': 13, 'sectors': 55, 'subsectors': 193, 'segments': 34}
 
 # Lookup by ID
 tech = dmcs.get_by_id('09')
@@ -520,7 +529,7 @@ const dmcs = new Classification();
 // Get stats
 console.log(dmcs.stats());
 // {
-//   version: '1.1.0',
+//   version: '1.1.1',
 //   release_date: '2025-11-09',
 //   industries: 13,
 //   sectors: 55,
@@ -572,7 +581,7 @@ Apache 2.0 License — see [LICENSE](./LICENSE)
 
 ## Contributing
 
-This is the current structural release (v1.1.0). Contribution guidelines and governance processes will be published in future updates.
+This is the current structural release (v1.1.1). Contribution guidelines and governance processes will be published in future updates.
 
 For questions, feedback, or mapping support, open an issue or discussion.
 

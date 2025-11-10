@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: dmcs-sdk
-Version: 1.1.0
+Version: 1.1.1
 Summary: Python SDK for Dynamic Multi-Dimensional Classification Standard
 Home-page: https://github.com/shadstradamus/DMCS
 Author: DMCS
@@ -60,7 +60,7 @@ dmcs = classification()
 
 # Get stats
 print(dmcs.stats())
-# {'version': '1.1.0', 'release_date': '2025-11-09', 'industries': 13, 'sectors': 55, 'subsectors': 190, 'segments': 14, ...}
+# {'version': '1.1.1', 'release_date': '2025-11-10', 'industries': 13, 'sectors': 55, 'subsectors': 193, 'segments': 34, ...}
 
 # Lookup by ID
 tech = dmcs.get_by_id('09')
@@ -75,13 +75,13 @@ print(saas)
 results = dmcs.search('blockchain')
 for result in results:
     print(result)
-# 13 — Digital Assets & Blockchain (4 sectors, DIC)
+# 13 — Digital & Onchain Economy (4 sectors, DIC)
 # 13.01 — DLT & Blockchain Infrastructure (4 subsectors)
 # ...
 
 # Filter by classification
 gic = dmcs.get_GIC()  # Traditional economy (01-12)
-dic = dmcs.get_DIC()  # Digital assets (13)
+dic = dmcs.get_DIC()  # Digital & onchain economy (13)
 
 print(f"GIC has {len(gic)} industries")
 print(f"DIC has {len(dic)} industries")
@@ -175,6 +175,29 @@ print(f"Amazon Primary: {primary.label}")
 print(f"Amazon Secondary: {secondary.label}")
 ```
 
+### Get a segment by ID
+
+```python
+from dmcs_sdk import classification
+
+dmcs = classification()
+
+# Get a specific segment
+crm_segment = dmcs.get_by_id('09.01.001.02')
+print(f"Segment: {crm_segment.label}")
+# Output: Segment: CRM Software
+
+# Access parent hierarchy
+print(f"Subsector: {crm_segment.subsector_id}")
+print(f"Sector: {crm_segment.sector_id}")
+print(f"Industry: {crm_segment.industry_id}")
+
+# Get stablecoin segment
+stablecoin = dmcs.get_by_id('13.02.004.01')
+print(f"{stablecoin.id} — {stablecoin.label}")
+# Output: 13.02.004.01 — Fiat-Backed Stablecoins
+```
+
 ### Iterate through all classifications
 
 ```python
@@ -188,6 +211,10 @@ for industry in dmcs.industries:
         print(f"  {sector.id} — {sector.label}")
         for subsector in sector.subsectors:
             print(f"    {subsector.id} — {subsector.label}")
+            # Display segments if they exist
+            if subsector.segments:
+                for segment in subsector.segments:
+                    print(f"      {segment.id} — {segment.label}")
 ```
 
 ### Find all blockchain-related classifications
