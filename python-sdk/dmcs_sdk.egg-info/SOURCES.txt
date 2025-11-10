@@ -8,4 +8,5 @@ dmcs_sdk.egg-info/SOURCES.txt
 dmcs_sdk.egg-info/dependency_links.txt
 dmcs_sdk.egg-info/requires.txt
 dmcs_sdk.egg-info/top_level.txt
+dmcs_sdk/data/classification.csv
 dmcs_sdk/data/classification.json

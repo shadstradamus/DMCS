@@ -3,7 +3,7 @@
   
   // Embed classification data
   const classificationData = {
-  "dmcs_version": "1.0.4",
+  "dmcs_version": "1.1.0",
   "release_date": "2025-11-09",
   "description": "Dynamic Multi-Dimensional Classification Standard - Full Classification",
   "industries": [
@@ -811,6 +811,10 @@
             {
               "id": "09.02.004",
               "label": "Imaging, Sensors & Components"
+            },
+            {
+              "id": "09.02.005",
+              "label": "Semiconductor Design Tools & IP"
             }
           ]
         },
@@ -1092,101 +1096,161 @@
       "sectors": [
         {
           "id": "13.01",
-          "label": "Blockchain Infra & Protocols",
+          "label": "DLT & Blockchain Infrastructure",
           "subsectors": [
             {
               "id": "13.01.001",
-              "label": "Layer-1 Protocols"
+              "label": "Public / Permissionless L1",
+              "segments": [
+                {
+                  "id": "13.01.001.01",
+                  "label": "EVM L1"
+                },
+                {
+                  "id": "13.01.001.02",
+                  "label": "Non-EVM L1"
+                }
+              ]
             },
             {
               "id": "13.01.002",
-              "label": "Layer-2 / Rollup Infra"
+              "label": "Layer-2 / Rollup Infra",
+              "segments": [
+                {
+                  "id": "13.01.002.01",
+                  "label": "Optimistic Rollups"
+                },
+                {
+                  "id": "13.01.002.02",
+                  "label": "ZK Rollups"
+                }
+              ]
             },
             {
               "id": "13.01.003",
-              "label": "Mining / Staking Providers"
+              "label": "Validator / Staking Services"
             },
             {
               "id": "13.01.004",
-              "label": "Node / Infra Services"
+              "label": "Chain Tooling & Infra Services"
             }
           ]
         },
         {
           "id": "13.02",
-          "label": "Crypto Finance & Exchanges",
+          "label": "Digital Asset Services & Markets",
           "subsectors": [
             {
               "id": "13.02.001",
-              "label": "Centralized Exchanges (CEX)"
+              "label": "Centralized Exchanges (CEX)",
+              "segments": [
+                {
+                  "id": "13.02.001.01",
+                  "label": "Spot CEX"
+                },
+                {
+                  "id": "13.02.001.02",
+                  "label": "Derivatives CEX"
+                },
+                {
+                  "id": "13.02.001.03",
+                  "label": "Fiat On/Off-Ramp CEX"
+                }
+              ]
             },
             {
               "id": "13.02.002",
-              "label": "OTC & Market Making"
+              "label": "Decentralized Exchanges (DEX/AMM)",
+              "segments": [
+                {
+                  "id": "13.02.002.01",
+                  "label": "Layer-1 DEX"
+                },
+                {
+                  "id": "13.02.002.02",
+                  "label": "Layer-2 DEX"
+                }
+              ]
             },
             {
               "id": "13.02.003",
-              "label": "Digital Asset Custody"
+              "label": "Custody & Key Management",
+              "segments": [
+                {
+                  "id": "13.02.003.01",
+                  "label": "Institutional Custody"
+                },
+                {
+                  "id": "13.02.003.02",
+                  "label": "MPC / Wallet Infrastructure"
+                }
+              ]
             },
             {
               "id": "13.02.004",
-              "label": "Stablecoin Issuers"
+              "label": "Stablecoin / Digital Currency",
+              "segments": [
+                {
+                  "id": "13.02.004.01",
+                  "label": "Fiat-Backed Stablecoins"
+                },
+                {
+                  "id": "13.02.004.02",
+                  "label": "Crypto-Collateralized Stablecoins"
+                },
+                {
+                  "id": "13.02.004.03",
+                  "label": "Platform-Linked Stablecoins"
+                }
+              ]
             },
             {
               "id": "13.02.005",
-              "label": "RWA Tokenization Platforms"
+              "label": "Tokenization & Digital Securities"
             }
           ]
         },
         {
           "id": "13.03",
-          "label": "Decentralized Applications",
+          "label": "Onchain Apps & Experiences",
           "subsectors": [
             {
               "id": "13.03.001",
-              "label": "DEX / AMM"
+              "label": "DeFi (Non-Exchange)"
             },
             {
               "id": "13.03.002",
-              "label": "On-Chain Lending & Yield"
+              "label": "NFT / Digital Collectible Platforms"
             },
             {
               "id": "13.03.003",
-              "label": "NFT Marketplaces"
+              "label": "Onchain Gaming / GameFi"
             },
             {
               "id": "13.03.004",
-              "label": "Metaverse / Web3 Social"
-            },
-            {
-              "id": "13.03.005",
-              "label": "Blockchain Gaming / GameFi"
+              "label": "Onchain Social"
             }
           ]
         },
         {
           "id": "13.04",
-          "label": "Blockchain Services & Security",
+          "label": "Onchain Services & Security",
           "subsectors": [
             {
               "id": "13.04.001",
-              "label": "Blockchain Analytics"
+              "label": "Smart Contract Audit & Monitoring"
             },
             {
               "id": "13.04.002",
-              "label": "Smart Contract Auditing"
+              "label": "Chain Analytics / AML / Forensics"
             },
             {
               "id": "13.04.003",
-              "label": "Compliance / Onchain Risk"
+              "label": "Bridge & Oracle Security"
             },
             {
               "id": "13.04.004",
-              "label": "Enterprise Blockchain Solutions"
-            },
-            {
-              "id": "13.04.005",
-              "label": "Onchain Identity / KYC"
+              "label": "Compliance & Travel Rule"
             }
           ]
         }

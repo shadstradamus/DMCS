@@ -3,32 +3,51 @@ import {
   Industry,
   Sector,
   Subsector,
+  Segment,
   classificationData as ClassificationDataType,
   classificationStats,
-  ClassificationCode,
   RawclassificationData,
 } from './types';
 
 function normalizeClassification(raw: RawclassificationData): ClassificationDataType {
   const industries: Industry[] = raw.industries.map((industry: any) => {
     const sectors: Sector[] = industry.sectors.map((sector: any) => {
-      const subsectors: Subsector[] = sector.subsectors.map((subsector: any) => ({
-        ...subsector,
-        sector_id: sector.id,
-        industry_id: industry.id,
-        classification: industry.classification,
-      }));
+      const subsectors: Subsector[] = sector.subsectors.map((subsector: any) => {
+        const segments: Segment[] = (subsector.segments ?? []).map((segment: any) => ({
+          ...segment,
+          level: segment.level ?? 'segment',
+          parent_id: segment.parent_id ?? subsector.id,
+          subsector_id: subsector.id,
+          sector_id: sector.id,
+          industry_id: industry.id,
+          classification: segment.classification ?? industry.classification,
+        }));
+
+        return {
+          ...subsector,
+          level: subsector.level ?? 'subsector',
+          parent_id: subsector.parent_id ?? sector.id,
+          sector_id: sector.id,
+          industry_id: industry.id,
+          classification: subsector.classification ?? industry.classification,
+          segments,
+        };
+      });
 
       return {
         ...sector,
+        level: sector.level ?? 'sector',
+        parent_id: sector.parent_id ?? industry.id,
         industry_id: industry.id,
-        classification: industry.classification,
+        classification: sector.classification ?? industry.classification,
         subsectors,
       };
     });
 
     return {
       ...industry,
+      level: industry.level ?? 'industry',
+      parent_id: industry.parent_id ?? null,
       sectors,
     };
   });
@@ -78,9 +97,9 @@ export class Classification {
 
   /**
    * Lookup classification by ID
-   * @param id - Industry (II), Sector (II.SS), or Subsector (II.SS.SSS) ID
+  * @param id - Industry (II), Sector (II.SS), Subsector (II.SS.SSS), or Segment (II.SS.SSS.SS) ID
    */
-  getById(id: string): Industry | Sector | Subsector | null {
+  getById(id: string): Industry | Sector | Subsector | Segment | null {
     const parts = id.split('.');
 
     // Industry lookup
@@ -102,6 +121,13 @@ export class Classification {
       return sector.subsectors.find(s => s.id === id) || null;
     }
 
+    // Segment lookup
+    if (parts.length === 4) {
+      const subsector = this.getById(`${parts[0]}.${parts[1]}.${parts[2]}`) as Subsector | null;
+      if (!subsector) return null;
+      return subsector.segments.find(s => s.id === id) || null;
+    }
+
     return null;
   }
 
@@ -110,8 +136,8 @@ export class Classification {
    * @param query - Search query
    * @param caseSensitive - Whether search should be case-sensitive (default: false)
    */
-  search(query: string, caseSensitive = false): Array<Industry | Sector | Subsector> {
-    const results: Array<Industry | Sector | Subsector> = [];
+  search(query: string, caseSensitive = false): Array<Industry | Sector | Subsector | Segment> {
+    const results: Array<Industry | Sector | Subsector | Segment> = [];
     const searchQuery = caseSensitive ? query : query.toLowerCase();
 
     for (const industry of this.industries) {
@@ -130,6 +156,13 @@ export class Classification {
           const subsectorLabel = caseSensitive ? subsector.label : subsector.label.toLowerCase();
           if (subsectorLabel.includes(searchQuery)) {
             results.push(subsector);
+          }
+
+          for (const segment of subsector.segments) {
+            const segmentLabel = caseSensitive ? segment.label : segment.label.toLowerCase();
+            if (segmentLabel.includes(searchQuery)) {
+              results.push(segment);
+            }
           }
         }
       }
@@ -169,6 +202,15 @@ export class Classification {
       (sum, ind) => sum + ind.sectors.reduce((s, sec) => s + sec.subsectors.length, 0),
       0
     );
+    const totalSegments = this.industries.reduce(
+      (sum, ind) =>
+        sum +
+        ind.sectors.reduce(
+          (secSum, sec) => secSum + sec.subsectors.reduce((subSum, sub) => subSum + sub.segments.length, 0),
+          0
+        ),
+      0
+    );
 
     return {
       version: this.version,
@@ -176,6 +218,7 @@ export class Classification {
       industries: this.industries.length,
       sectors: totalSectors,
       subsectors: totalSubsectors,
+      segments: totalSegments,
       gic_industries: this.getGIC().length,
       dic_industries: this.getDIC().length,
     };

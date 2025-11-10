@@ -41,21 +41,39 @@ const ClassificationData = __importStar(require("./data/classification.json"));
 function normalizeClassification(raw) {
     const industries = raw.industries.map((industry) => {
         const sectors = industry.sectors.map((sector) => {
-            const subsectors = sector.subsectors.map((subsector) => ({
-                ...subsector,
-                sector_id: sector.id,
-                industry_id: industry.id,
-                classification: industry.classification,
-            }));
+            const subsectors = sector.subsectors.map((subsector) => {
+                const segments = (subsector.segments ?? []).map((segment) => ({
+                    ...segment,
+                    level: segment.level ?? 'segment',
+                    parent_id: segment.parent_id ?? subsector.id,
+                    subsector_id: subsector.id,
+                    sector_id: sector.id,
+                    industry_id: industry.id,
+                    classification: segment.classification ?? industry.classification,
+                }));
+                return {
+                    ...subsector,
+                    level: subsector.level ?? 'subsector',
+                    parent_id: subsector.parent_id ?? sector.id,
+                    sector_id: sector.id,
+                    industry_id: industry.id,
+                    classification: subsector.classification ?? industry.classification,
+                    segments,
+                };
+            });
             return {
                 ...sector,
+                level: sector.level ?? 'sector',
+                parent_id: sector.parent_id ?? industry.id,
                 industry_id: industry.id,
-                classification: industry.classification,
+                classification: sector.classification ?? industry.classification,
                 subsectors,
             };
         });
         return {
             ...industry,
+            level: industry.level ?? 'industry',
+            parent_id: industry.parent_id ?? null,
             sectors,
         };
     });
@@ -96,7 +114,7 @@ class Classification {
     }
     /**
      * Lookup classification by ID
-     * @param id - Industry (II), Sector (II.SS), or Subsector (II.SS.SSS) ID
+    * @param id - Industry (II), Sector (II.SS), Subsector (II.SS.SSS), or Segment (II.SS.SSS.SS) ID
      */
     getById(id) {
         const parts = id.split('.');
@@ -117,6 +135,13 @@ class Classification {
             if (!sector)
                 return null;
             return sector.subsectors.find(s => s.id === id) || null;
+        }
+        // Segment lookup
+        if (parts.length === 4) {
+            const subsector = this.getById(`${parts[0]}.${parts[1]}.${parts[2]}`);
+            if (!subsector)
+                return null;
+            return subsector.segments.find(s => s.id === id) || null;
         }
         return null;
     }
@@ -142,6 +167,12 @@ class Classification {
                     const subsectorLabel = caseSensitive ? subsector.label : subsector.label.toLowerCase();
                     if (subsectorLabel.includes(searchQuery)) {
                         results.push(subsector);
+                    }
+                    for (const segment of subsector.segments) {
+                        const segmentLabel = caseSensitive ? segment.label : segment.label.toLowerCase();
+                        if (segmentLabel.includes(searchQuery)) {
+                            results.push(segment);
+                        }
                     }
                 }
             }
@@ -173,12 +204,15 @@ class Classification {
     stats() {
         const totalSectors = this.industries.reduce((sum, ind) => sum + ind.sectors.length, 0);
         const totalSubsectors = this.industries.reduce((sum, ind) => sum + ind.sectors.reduce((s, sec) => s + sec.subsectors.length, 0), 0);
+        const totalSegments = this.industries.reduce((sum, ind) => sum +
+            ind.sectors.reduce((secSum, sec) => secSum + sec.subsectors.reduce((subSum, sub) => subSum + sub.segments.length, 0), 0), 0);
         return {
             version: this.version,
             release_date: this.releaseDate,
             industries: this.industries.length,
             sectors: totalSectors,
             subsectors: totalSubsectors,
+            segments: totalSegments,
             gic_industries: this.getGIC().length,
             dic_industries: this.getDIC().length,
         };

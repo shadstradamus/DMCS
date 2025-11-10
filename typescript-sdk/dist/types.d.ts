@@ -1,16 +1,40 @@
 export type ClassificationCode = 'GIC' | 'DIC';
+export type ClassificationLevel = 'industry' | 'sector' | 'subsector' | 'segment';
+export interface RawSegment {
+    id: string;
+    label: string;
+    level: 'segment';
+    parent_id: string;
+    subsector_id: string;
+    sector_id: string;
+    industry_id: string;
+    classification: ClassificationCode;
+    segment_code?: string;
+}
 export interface RawSubsector {
     id: string;
     label: string;
+    level: 'subsector';
+    parent_id: string;
+    sector_id: string;
+    industry_id: string;
+    classification: ClassificationCode;
+    segments?: RawSegment[];
 }
 export interface RawSector {
     id: string;
     label: string;
+    level: 'sector';
+    parent_id: string;
+    industry_id: string;
+    classification: ClassificationCode;
     subsectors: RawSubsector[];
 }
 export interface RawIndustry {
     id: string;
     label: string;
+    level: 'industry';
+    parent_id: string | null;
     classification: ClassificationCode;
     sectors: RawSector[];
 }
@@ -20,20 +44,15 @@ export interface RawclassificationData {
     description: string;
     industries: RawIndustry[];
 }
+export interface Segment extends RawSegment {
+}
 export interface Subsector extends RawSubsector {
-    sector_id: string;
-    industry_id: string;
-    classification: ClassificationCode;
+    segments: Segment[];
 }
 export interface Sector extends RawSector {
-    industry_id: string;
-    classification: ClassificationCode;
     subsectors: Subsector[];
 }
-export interface Industry {
-    id: string;
-    label: string;
-    classification: ClassificationCode;
+export interface Industry extends RawIndustry {
     sectors: Sector[];
 }
 export interface classificationData {
@@ -48,7 +67,8 @@ export interface classificationStats {
     industries: number;
     sectors: number;
     subsectors: number;
+    segments: number;
     gic_industries: number;
     dic_industries: number;
 }
-export type Classification = Industry | Sector | Subsector;
+export type Classification = Industry | Sector | Subsector | Segment;

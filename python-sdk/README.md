@@ -28,7 +28,7 @@ dmcs = classification()
 
 # Get stats
 print(dmcs.stats())
-# {'version': '1.0.4', 'release_date': '2025-11-09', 'industries': 13, 'sectors': 55, 'subsectors': 191, ...}
+# {'version': '1.1.0', 'release_date': '2025-11-09', 'industries': 13, 'sectors': 55, 'subsectors': 190, 'segments': 14, ...}
 
 # Lookup by ID
 tech = dmcs.get_by_id('09')
@@ -44,7 +44,7 @@ results = dmcs.search('blockchain')
 for result in results:
     print(result)
 # 13 — Digital Assets & Blockchain (4 sectors, DIC)
-# 13.01 — Blockchain Infra & Protocols (4 subsectors)
+# 13.01 — DLT & Blockchain Infrastructure (4 subsectors)
 # ...
 
 # Filter by classification
@@ -69,14 +69,15 @@ Main class for loading and querying DMCS data.
 - `total_industries: int` - Count of all industries
 - `total_sectors: int` - Count of all sectors
 - `total_subsectors: int` - Count of all subsectors
+- `total_segments: int` - Count of all segments
 
 **Methods:**
-- `get_by_id(classification_id: str) -> Industry | Sector | Subsector | None` - Lookup by ID
+- `get_by_id(classification_id: str) -> Industry | Sector | Subsector | Segment | None` - Lookup by ID
 - `search(query: str, case_sensitive: bool = False) -> List` - Search by text
 - `filter_by_classification(classification: str) -> List[Industry]` - Filter by GIC or DIC
 - `get_GIC() -> List[Industry]` - Get all GIC industries (01-12)
 - `get_DIC() -> List[Industry]` - Get all DIC industries (13)
-- `stats() -> Dict` - Get classification statistics
+- `stats() -> Dict` - Get classification statistics (industries, sectors, subsectors, segments)
 
 ### Data Classes
 
@@ -107,6 +108,19 @@ class Sector:
 class Subsector:
     id: str
     label: str
+    sector_id: str
+    industry_id: str
+    classification: str  # "GIC" or "DIC"
+    segments: List[Segment]
+```
+
+**Segment**
+```python
+@dataclass
+class Segment:
+    id: str
+    label: str
+    subsector_id: str
     sector_id: str
     industry_id: str
     classification: str  # "GIC" or "DIC"

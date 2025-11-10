@@ -2,13 +2,13 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.0.4** · Effective Date: 2025-11-09 · **License:** Apache 2.0
+**Version 1.1.0** · Effective Date: 2025-11-10 · **License:** Apache 2.0
 
 ## Overview
 
 DMCS (Dynamic Multi-Dimensional Classification Standard) is an open-source, hierarchical classification system for the modern economy. It provides:
 
-- **13 industries**, **55 sectors**, and **191 subsectors** covering traditional and digital business models
+- **13 industries**, **55 sectors**, **193 subsectors**, and **34 segments** covering traditional and digital business models
 - **GIC** (01-12): General Industry Classification for the traditional economy
 - **DIC** (13): Digital Industry Classification for blockchain and crypto-native companies
 - **Materiality rules** for classifying diversified conglomerates with multiple business lines
@@ -34,19 +34,26 @@ DMCS solves this with:
 ### Hierarchy
 
 ```
-Industry (II) → Sector (II.SS) → Subsector (II.SS.SSS)
+Industry (II) → Sector (II.SS) → Subsector (II.SS.SSS) → Segment (II.SS.SSS.SS)
 ```
+
+- **Industry** (mandatory): two digits that define the broad economic domain.
+- **Sector** (mandatory): adds a two-digit suffix to separate adjacent business groups.
+- **Subsector** (mandatory): adds a three-digit suffix for distinct operating models or value chains.
+- **Segment** (optional): adds a two-digit suffix when a subsector contains clearly distinct commercial product lines or service models. Segments inherit governance from their parent subsector and only appear when the market recognises sustained differences in revenue drivers, customer bases, or delivery motions.
 
 **Example:**
 - `09` — Technology
 - `09.01` — Software & Platforms
-- `09.01.002` — Enterprise SaaS
+- `09.01.002` — Cloud Platforms / PaaS
+- `09.01.002.03` — Edge / Distributed Cloud (segment)
 
 ### ID Rules
 
 - **Immutable:** IDs never change; labels may evolve
 - **Hierarchical:** Trimming from the right gives the parent
 - **Numeric:** All official nodes use numeric codes
+- **Fixed-width:** All IDs conform to the regex `^\d{2}\.\d{2}\.\d{3}(\.\d{2})?$`
 
 ### Industries (13)
 
@@ -64,7 +71,7 @@ Industry (II) → Sector (II.SS) → Subsector (II.SS.SSS)
 | 10 | Communications & Media | GIC |
 | 11 | Utilities | GIC |
 | 12 | Government / Public / Education | GIC |
-| 13 | Digital Assets & Blockchain | DIC |
+| 13 | Digital & Onchain Economy | DIC |
 
 ## Quick Examples
 
@@ -221,6 +228,137 @@ Global Industries Corp
 
 Popular CUST nodes can be promoted to DMCS-STD in future releases through the governance process.
 
+## Node Annotation Schema
+
+Every official node in DMCS v1.1.0 may publish the following annotation fields to clarify scope and governance:
+
+`id, classification, level, label, criteria_inclusion, criteria_exclusion, border_with, canonical_examples, evidence_fields, review_cycle, aliases, since, status`
+
+```
+-----------------------------------------------------------------------
+Field                         Value
+----------------------------- -----------------------------------------
+id                            09.01.003
+classification                GIC
+level                         subsector
+label                         Cybersecurity Software
+criteria_inclusion            • >50% rev from software that prevents/detects/
+                                remediates security events (endpoint, IAM, SASE,
+                                SIEM, EDR/XDR, CNAPP)
+criteria_exclusion            • Primarily services/MSSP → 09.04.004
+                              • General IT suites where security <25% rev → 09.01.001
+border_with                   09.04.004; 09.01.005
+canonical_examples            CrowdStrike; Okta; Zscaler; SentinelOne; Palo Alto (software)
+evidence_fields               Product/segment revenue mix; ARR by module
+review_cycle                  Structural: 2×/yr; Labels: quarterly
+aliases                       SecOps Software; EDR/XDR; Identity Security
+since                         2025-11-09
+status                        active
+-----------------------------------------------------------------------
+```
+
+## Segment Governance
+
+- **ID format:** `II.SS.SSS.SS` (two-digit segment suffix appended to the parent subsector)
+- **Creation threshold:** Parent subsector must support ≥3 distinct market-recognised lines **and** each candidate segment must be ≥10% of global subsector revenue **or** represent ≥10 large issuers.
+- **Capacity cap:** Maximum of 20 active segments per subsector; beyond that, split or refactor the parent subsector.
+- **Naming rules:** Use concise noun phrases that describe the product, service, or usage model (avoid marketing slogans or geographic qualifiers).
+- **Materiality effect:** Segments do not alter primary/secondary classification rules; they refine analysis within the assigned subsector.
+- **Release cadence:** Segments are introduced or retired only in structural releases (2× per year) and all changes are enumerated in the public changelog.
+
+## Decision Tree – Technology (Industry 09)
+
+```
+Start
+├─ Software-led revenue? (Yes)
+│   ├─ Security-first? (Yes) → 09.01.003 Cybersecurity Software → select segment:
+│   │     Endpoint Protection / IAM / Cloud & Network Security
+│   ├─ Data platform core? (Yes) → 09.01.004 Data & Analytics Platforms → Databases / ETL / BI
+│   └─ Developer lifecycle focus? (Yes) → 09.01.005 Developer Tools & Observability → CI/CD / API / Observability
+├─ Hardware devices primary? (Yes)
+│   ├─ Personal/consumer? (Yes) → 09.03.001 Personal Computing & Mobile → PCs / Smartphones / Alt-OS
+│   ├─ Consumer electronics? (Yes) → 09.03.002 → Wearables / Smart Home / Audio & Imaging
+│   └─ Enterprise/datacenter? (Yes) → 09.03.003 → Servers / Storage / HCI
+├─ Network equipment core? (Yes) → 09.03.004 Networking Equipment → Enterprise / Data Center / Optical
+├─ Semiconductor production? (Yes)
+│   ├─ Logic/compute? → 09.02.001 → CPUs / GPUs / AI Accelerators
+│   ├─ Memory/storage? → 09.02.002 → DRAM / NAND / Controllers
+│   ├─ Analog/power? → 09.02.003 → PMIC / Signal Chain / RF
+│   ├─ Manufacturing services? → 09.02.004 → Foundry / IDM / OSAT
+│   └─ Design tools/IP? → 09.02.005 → EDA Tools / IP Licensing / Design Services
+├─ Services-led? (Yes)
+│   ├─ Consulting/Integration? → 09.04.001 → Strategy & Architecture / Implementation / Managed Apps
+│   ├─ Outsourcing/BPO? → 09.04.002 → App Outsourcing / Infra Outsourcing / BPO
+│   ├─ Managed cloud/MSP? → 09.04.003 → MSP SMB / MSP Enterprise / Cloud Migration & FinOps
+│   └─ Security services? → 09.04.004 → MDR-XDR / PenTest / Audit & GRC
+└─ Emerging tech focus? (Yes)
+   ├─ Robotics platforms? → 09.05.001 → Industrial Robots / AMRs / Controllers
+   ├─ Edge & IoT? → 09.05.002 → Gateways / Edge AI / Device Mgmt
+   ├─ Quantum/advanced compute? → 09.05.003 → Hardware / Software / Cryo & Control
+   └─ AR/VR/XR software? → 09.05.004 → AR SDKs / Spatial Mapping / 3D Content
+```
+
+## Industry 13 – Digital & Onchain Economy (DIC)
+
+| ID | Name | Notes |
+|----|------|-------|
+| 13 | Digital & Onchain Economy | DIC umbrella (all onchain/digital rails) |
+
+### 13.01 – DLT & Blockchain Infrastructure
+
+| ID | Level | Label | Parent |
+|----|--------|--------|--------|
+| 13.01 | sector | DLT & Blockchain Infrastructure | 13 |
+| 13.01.001 | subsector | Public / Permissionless L1 | 13.01 |
+| 13.01.001.01 | segment | EVM L1 | 13.01.001 |
+| 13.01.001.02 | segment | Non-EVM L1 | 13.01.001 |
+| 13.01.002 | subsector | L2 / Rollup Infra | 13.01 |
+| 13.01.002.01 | segment | Optimistic Rollups | 13.01.002 |
+| 13.01.002.02 | segment | ZK Rollups | 13.01.002 |
+| 13.01.003 | subsector | Validator / Staking Services | 13.01 |
+| 13.01.004 | subsector | Chain Tooling & Infra Services | 13.01 |
+
+### 13.02 – Digital Asset Services & Markets
+
+| ID | Level | Label | Parent |
+|----|--------|--------|--------|
+| 13.02 | sector | Digital Asset Services & Markets | 13 |
+| 13.02.001 | subsector | Centralized Exchanges (CEX) | 13.02 |
+| 13.02.001.01 | segment | Spot CEX | 13.02.001 |
+| 13.02.001.02 | segment | Derivatives CEX | 13.02.001 |
+| 13.02.001.03 | segment | Fiat / On–Off Ramp CEX | 13.02.001 |
+| 13.02.002 | subsector | Decentralized Exchanges (DEX/AMM) | 13.02 |
+| 13.02.002.01 | segment | L1 DEX | 13.02.002 |
+| 13.02.002.02 | segment | L2 DEX | 13.02.002 |
+| 13.02.003 | subsector | Custody & Key Management | 13.02 |
+| 13.02.003.01 | segment | Institutional Custody | 13.02.003 |
+| 13.02.003.02 | segment | MPC / Wallet Infra | 13.02.003 |
+| 13.02.004 | subsector | Stablecoin / Digital Currency | 13.02 |
+| 13.02.004.01 | segment | Fiat-backed Stablecoins | 13.02.004 |
+| 13.02.004.02 | segment | Crypto-collateralized Stablecoins | 13.02.004 |
+| 13.02.004.03 | segment | Platform-linked Stablecoins | 13.02.004 |
+| 13.02.005 | subsector | Tokenization & Digital Securities | 13.02 |
+
+### 13.03 – Onchain Applications & Experiences
+
+| ID | Level | Label | Parent |
+|----|--------|--------|--------|
+| 13.03 | sector | Onchain Apps & Experiences | 13 |
+| 13.03.001 | subsector | DeFi (non-exchange) | 13.03 |
+| 13.03.002 | subsector | NFT / Digital Collectible Platforms | 13.03 |
+| 13.03.003 | subsector | Onchain Gaming / GameFi | 13.03 |
+| 13.03.004 | subsector | Onchain Social | 13.03 |
+
+### 13.04 – Onchain Services, Security & Compliance
+
+| ID | Level | Label | Parent |
+|----|--------|--------|--------|
+| 13.04 | sector | Onchain Services & Security | 13 |
+| 13.04.001 | subsector | Smart Contract Audit/Monitoring | 13.04 |
+| 13.04.002 | subsector | Chain Analytics / AML / Forensics | 13.04 |
+| 13.04.003 | subsector | Bridge / Oracle Security | 13.04 |
+| 13.04.004 | subsector | Compliance / Travel Rule | 13.04 |
+
 ## Governance
 
 | Release Type | Frequency | Contents |
@@ -234,7 +372,7 @@ All changes are versioned and documented. Community proposals via pull requests 
 ## Data Access
 
 ### Human-Readable
-- **[CLASSIFICATION.md](./CLASSIFICATION.md)** — Complete reference with all 13 industries, 55 sectors, and 191 subsectors
+- **[CLASSIFICATION.md](./CLASSIFICATION.md)** — Complete reference with all 13 industries, 55 sectors, and 190 subsectors
 
 ### Machine-Readable
 - **[data/classification.json](./data/classification.json)** — Hierarchical JSON structure for programmatic access
@@ -270,7 +408,7 @@ dmcs = classification()
 
 # Get stats
 print(dmcs.stats())
-# {'version': '1.0.4', 'release_date': '2025-11-09', 'industries': 13, 'sectors': 55, 'subsectors': 191}
+# {'version': '1.1.0', 'release_date': '2025-11-09', 'industries': 13, 'sectors': 55, 'subsectors': 190, 'segments': 14}
 
 # Lookup by ID
 tech = dmcs.get_by_id('09')
@@ -300,11 +438,12 @@ const dmcs = new Classification();
 // Get stats
 console.log(dmcs.stats());
 // {
-//   version: '1.0.4',
+//   version: '1.1.0',
 //   release_date: '2025-11-09',
 //   industries: 13,
 //   sectors: 55,
 //   subsectors: 191,
+//   segments: 14,
 //   gic_industries: 12,
 //   dic_industries: 1
 // }
@@ -351,7 +490,7 @@ Apache 2.0 License — see [LICENSE](./LICENSE)
 
 ## Contributing
 
-This is the initial public release (v1.0). Contribution guidelines and governance processes will be published in future updates.
+This is the current structural release (v1.1.0). Contribution guidelines and governance processes will be published in future updates.
 
 For questions, feedback, or mapping support, open an issue or discussion.
 

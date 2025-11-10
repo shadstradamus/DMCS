@@ -5,6 +5,36 @@ All notable changes to the DMCS (Dynamic Multi-Dimensional Classification Standa
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2025-11-10
+
+### Added
+
+- Introduced **34 official segments** to form the optional fourth hierarchy level (`II.SS.SSS.SS`)
+  - **13 GIC segments** in Technology sector (09.01) covering enterprise software subsegments (ERP, CRM, HCM, Cybersecurity, DevTools, etc.)
+  - **18 DIC segments** across Digital & Onchain Economy covering L1/L2 infrastructure, exchanges, custody, stablecoins, and DeFi protocols
+  - **3 consumer device segments** (Smartphones, PCs/Tablets, Wearables) under 09.02.002
+- Added **2 new subsectors** to Industry 13:
+  - `13.01.005 - Enterprise / Permissioned DLT` for Hyperledger, Corda, Quorum deployments
+  - `13.01.006 - Cross-chain Infrastructure` for Polkadot, Cosmos, LayerZero, Wormhole
+
+### Changed
+
+- **Industry 13 renamed**: "Digital Assets & Blockchain" → **"Digital & Onchain Economy"**
+- **Sector structure enhanced** with detailed DIC taxonomy:
+  - `13.01 - DLT & Blockchain Infrastructure` (6 subsectors, 6 segments)
+  - `13.02 - Centralized Exchanges & Trading` (7 subsectors, 10 segments)
+  - `13.03 - Onchain Applications & Experiences` (4 subsectors, 4 segments)
+  - `13.04 - Onchain Services, Security & Compliance` (4 subsectors)
+- Expanded from **v1.0.4 base**: 13 industries, 55 sectors, 191 subsectors → **193 subsectors + 34 segments**
+- Updated JSON and CSV exports, Python/TypeScript SDKs to surface segment metadata with proper field ordering
+- Enhanced SDK statistics to report segment counts (now shows `segments: 34`)
+
+### Fixed
+
+- **Critical fix**: Moved consumer device segments (Smartphones, PCs/Tablets, Wearables) from incorrect subsector `09.03.001 IT Consulting` to correct subsector `09.02.002 Consumer Devices & Ecosystems`
+- Field ordering now strictly follows specification: `label → id → level → segment_code → parent_id → hierarchy → classification`
+- All 295 nodes validated with zero duplicates and proper parent-child relationships
+
 ## [1.0.4] - 2025-11-09
 
 ### Changed
@@ -137,6 +167,8 @@ DMCS uses **semantic versioning**:
   - **MINOR**: New industries, sectors, or subsectors (structural releases)
   - **PATCH**: Label updates, documentation fixes, thematic additions
 
+[1.1.0]: https://github.com/shadstradamus/DMCS/releases/tag/v1.1.0
+[1.0.4]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.4
 [1.0.3]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.3
 [1.0.2]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.2
 [1.0.1]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.1

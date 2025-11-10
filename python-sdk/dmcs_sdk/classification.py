@@ -4,7 +4,24 @@ import json
 from importlib import resources
 from pathlib import Path
 from typing import List, Optional, Dict, Any
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+
+
+@dataclass
+class Segment:
+    """Represents a DMCS segment (II.SS.SSS.SS)"""
+    id: str
+    label: str
+    level: str
+    parent_id: str
+    subsector_id: str
+    sector_id: str
+    industry_id: str
+    classification: str
+    segment_code: Optional[str] = None
+
+    def __repr__(self):
+        return f"{self.id} — {self.label}"
 
 
 @dataclass
@@ -12,12 +29,19 @@ class Subsector:
     """Represents a DMCS subsector (II.SS.SSS)"""
     id: str
     label: str
+    level: str
+    parent_id: str
     sector_id: str
     industry_id: str
     classification: str  # GIC or DIC
+    segments: List[Segment] = field(default_factory=list)
 
     def __repr__(self):
         return f"{self.id} — {self.label}"
+
+    def get_segment(self, segment_id: str) -> Optional[Segment]:
+        """Get segment by ID"""
+        return next((s for s in self.segments if s.id == segment_id), None)
 
 
 @dataclass
@@ -25,6 +49,8 @@ class Sector:
     """Represents a DMCS sector (II.SS)"""
     id: str
     label: str
+    level: str
+    parent_id: str
     industry_id: str
     classification: str  # GIC or DIC
     subsectors: List[Subsector]
@@ -42,6 +68,8 @@ class Industry:
     """Represents a DMCS industry (II)"""
     id: str
     label: str
+    level: str
+    parent_id: Optional[str]
     classification: str  # GIC or DIC
     sectors: List[Sector]
 
@@ -97,23 +125,43 @@ class classification:
                     Subsector(
                         id=sub['id'],
                         label=sub['label'],
+                        level=sub.get('level', 'subsector'),
+                        parent_id=sub.get('parent_id', sec_data['id']),
                         sector_id=sec_data['id'],
                         industry_id=ind_data['id'],
-                        classification=ind_data['classification']
+                        classification=sub.get('classification', ind_data['classification']),
+                        segments=[
+                            Segment(
+                                id=seg['id'],
+                                label=seg['label'],
+                                level=seg.get('level', 'segment'),
+                                parent_id=seg.get('parent_id', sub['id']),
+                                subsector_id=sub['id'],
+                                sector_id=sec_data['id'],
+                                industry_id=ind_data['id'],
+                                classification=seg.get('classification', ind_data['classification']),
+                                segment_code=seg.get('segment_code')
+                            )
+                            for seg in sub.get('segments', [])
+                        ]
                     )
                     for sub in sec_data['subsectors']
                 ]
                 sectors.append(Sector(
                     id=sec_data['id'],
                     label=sec_data['label'],
+                    level=sec_data.get('level', 'sector'),
+                    parent_id=sec_data.get('parent_id', ind_data['id']),
                     industry_id=ind_data['id'],
-                    classification=ind_data['classification'],
+                    classification=sec_data.get('classification', ind_data['classification']),
                     subsectors=subsectors
                 ))
             industries.append(Industry(
                 id=ind_data['id'],
                 label=ind_data['label'],
-                classification=ind_data['classification'],
+                level=ind_data.get('level', 'industry'),
+                parent_id=ind_data.get('parent_id'),
+                classification=ind_data.get('classification', 'GIC'),
                 sectors=sectors
             ))
         return industries
@@ -146,6 +194,12 @@ class classification:
             if sector:
                 return sector.get_subsector(classification_id)
         
+        # Segment lookup (e.g., "09.01.002.03")
+        elif len(parts) == 4:
+            subsector = self.get_by_id(f"{parts[0]}.{parts[1]}.{parts[2]}")
+            if isinstance(subsector, Subsector):
+                return subsector.get_segment(classification_id)
+
         return None
 
     def search(self, query: str, case_sensitive: bool = False) -> List[Any]:
@@ -176,6 +230,11 @@ class classification:
                     label = subsector.label if case_sensitive else subsector.label.lower()
                     if search_query in label:
                         results.append(subsector)
+
+                    for segment in subsector.segments:
+                        label = segment.label if case_sensitive else segment.label.lower()
+                        if search_query in label:
+                            results.append(segment)
         
         return results
 
@@ -214,6 +273,16 @@ class classification:
         """Total number of subsectors across all industries"""
         return sum(i.subsector_count for i in self.industries)
 
+    @property
+    def total_segments(self) -> int:
+        """Total number of segments across all industries"""
+        return sum(
+            len(sub.segments)
+            for ind in self.industries
+            for sec in ind.sectors
+            for sub in sec.subsectors
+        )
+
     def stats(self) -> Dict[str, int]:
         """Get classification statistics"""
         return {
@@ -222,6 +291,7 @@ class classification:
             "industries": self.total_industries,
             "sectors": self.total_sectors,
             "subsectors": self.total_subsectors,
+            "segments": self.total_segments,
             "gic_industries": len(self.get_GIC()),
             "dic_industries": len(self.get_DIC())
         }
