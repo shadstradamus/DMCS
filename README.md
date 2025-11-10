@@ -84,6 +84,26 @@ Industry (II) → Sector (II.SS) → Subsector (II.SS.SSS) → Segment (II.SS.SS
 | Bitcoin (BTC) | 13.01.001 (Layer-1 Protocols) | — |
 | Chainlink (LINK) | 13.01.004 (Node / Infra Services) | — |
 
+### Segment-Level Examples
+
+Segments provide additional granularity within subsectors for distinct product lines or service models:
+
+| Entity | Subsector | Segment | Why Segment? |
+|--------|-----------|---------|--------------|
+| Salesforce CRM | 09.01.001 (Enterprise SaaS) | 09.01.001.02 (CRM Software) | Distinct from ERP or HCM products |
+| Workday | 09.01.001 (Enterprise SaaS) | 09.01.001.03 (HCM / Workforce Mgmt) | Specialized in human capital management |
+| Palo Alto Networks | 09.01.003 (Cybersecurity Software) | 09.01.003.02 (Network Security) | Focus on firewall/SASE vs endpoint |
+| iPhone | 09.02.002 (Consumer Devices) | 09.02.002.01 (Smartphones & Accessories) | Different market from PCs/tablets |
+| Binance | 13.02.001 (Centralized Exchanges) | 13.02.001.01 (Spot Trading Platforms) | Core exchange vs derivatives/staking |
+| Uniswap | 13.02.002 (Decentralized Exchanges) | 13.02.002.01 (AMM DEX) | AMM model distinct from order book DEX |
+| USDC | 13.02.004 (Stablecoin Issuers) | 13.02.004.01 (Fiat-Backed Stablecoins) | Fiat reserves vs algorithmic/crypto-backed |
+
+**When to use segments:**
+- ✅ Product line has distinct revenue drivers and customer base
+- ✅ Market recognizes sustained differences in business model
+- ✅ Enables meaningful competitive analysis within a subsector
+- ❌ Don't use for minor product variations or SKU-level detail
+
 ## Materiality Rule
 
 - **Primary** (required): Largest revenue/activity line
