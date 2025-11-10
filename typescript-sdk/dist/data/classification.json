@@ -1811,7 +1811,7 @@
               "classification": "GIC",
               "segments": [
                 {
-                  "label": "Student Housing",
+                  "label": "Student Housing Communities",
                   "id": "08.04.002.01",
                   "level": "segment",
                   "segment_code": "01",
@@ -1824,7 +1824,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Senior & Assisted Living",
+                  "label": "Senior & Assisted Living Facilities",
                   "id": "08.04.002.02",
                   "level": "segment",
                   "segment_code": "02",
@@ -1837,7 +1837,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Institutional Housing",
+                  "label": "Government & Institutional Housing",
                   "id": "08.04.002.03",
                   "level": "segment",
                   "segment_code": "03",
@@ -1850,7 +1850,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Co-Living Communities",
+                  "label": "Co-Living & Shared Housing",
                   "id": "08.04.002.04",
                   "level": "segment",
                   "segment_code": "04",
@@ -2428,7 +2428,7 @@
               "status": "active"
             },
             {
-              "label": "Music & Audio",
+              "label": "Recorded & Digital Music",
               "id": "10.02.003",
               "level": "subsector",
               "parent_id": "10.02",
@@ -2437,7 +2437,7 @@
               "classification": "GIC",
               "segments": [
                 {
-                  "label": "Music Streaming",
+                  "label": "Music Streaming Services",
                   "id": "10.02.003.01",
                   "level": "segment",
                   "segment_code": "01",
@@ -2450,7 +2450,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Record Label",
+                  "label": "Recorded Music Rights & Labels",
                   "id": "10.02.003.02",
                   "level": "segment",
                   "segment_code": "02",
@@ -2463,7 +2463,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Music Tech",
+                  "label": "Music Technology Solutions",
                   "id": "10.02.003.03",
                   "level": "segment",
                   "segment_code": "03",
@@ -2476,7 +2476,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Live Music Services",
+                  "label": "Live Music Promotion & Services",
                   "id": "10.02.003.04",
                   "level": "segment",
                   "segment_code": "04",
@@ -2513,7 +2513,7 @@
               "classification": "GIC",
               "segments": [
                 {
-                  "label": "Video Game Studios",
+                  "label": "Video Game Content Studios",
                   "id": "10.02.005.01",
                   "level": "segment",
                   "segment_code": "01",
@@ -2526,7 +2526,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Interactive Platforms",
+                  "label": "Interactive Entertainment Platforms",
                   "id": "10.02.005.02",
                   "level": "segment",
                   "segment_code": "02",
@@ -2539,7 +2539,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Esports Organizations",
+                  "label": "Esports Teams & Leagues",
                   "id": "10.02.005.03",
                   "level": "segment",
                   "segment_code": "03",
@@ -2552,7 +2552,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Esports Infrastructure",
+                  "label": "Esports Venues & Infrastructure",
                   "id": "10.02.005.04",
                   "level": "segment",
                   "segment_code": "04",

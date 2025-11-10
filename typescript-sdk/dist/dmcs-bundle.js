@@ -1806,13 +1806,67 @@
               "status": "active"
             },
             {
-              "label": "Student / Senior Housing",
+              "label": "Demographic-Specific Properties",
               "id": "08.04.002",
               "level": "subsector",
               "parent_id": "08.04",
               "sector_id": "08.04",
               "industry_id": "08",
               "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Student Housing Communities",
+                  "id": "08.04.002.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "08.04.002",
+                  "subsector_id": "08.04.002",
+                  "sector_id": "08.04",
+                  "industry_id": "08",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Senior & Assisted Living Facilities",
+                  "id": "08.04.002.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "08.04.002",
+                  "subsector_id": "08.04.002",
+                  "sector_id": "08.04",
+                  "industry_id": "08",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Government & Institutional Housing",
+                  "id": "08.04.002.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "08.04.002",
+                  "subsector_id": "08.04.002",
+                  "sector_id": "08.04",
+                  "industry_id": "08",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Co-Living & Shared Housing",
+                  "id": "08.04.002.04",
+                  "level": "segment",
+                  "segment_code": "04",
+                  "parent_id": "08.04.002",
+                  "subsector_id": "08.04.002",
+                  "sector_id": "08.04",
+                  "industry_id": "08",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
               "since": "2025-11-08",
               "status": "active"
             },
@@ -2378,13 +2432,67 @@
               "status": "active"
             },
             {
-              "label": "Music, Gaming & Esports",
+              "label": "Recorded & Digital Music",
               "id": "10.02.003",
               "level": "subsector",
               "parent_id": "10.02",
               "sector_id": "10.02",
               "industry_id": "10",
-              "classification": "active",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Music Streaming Services",
+                  "id": "10.02.003.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "10.02.003",
+                  "subsector_id": "10.02.003",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Recorded Music Rights & Labels",
+                  "id": "10.02.003.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "10.02.003",
+                  "subsector_id": "10.02.003",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Music Technology Solutions",
+                  "id": "10.02.003.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "10.02.003",
+                  "subsector_id": "10.02.003",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Live Music Promotion & Services",
+                  "id": "10.02.003.04",
+                  "level": "segment",
+                  "segment_code": "04",
+                  "parent_id": "10.02.003",
+                  "subsector_id": "10.02.003",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
               "since": "2025-11-08",
               "status": "active"
             },
@@ -2397,6 +2505,71 @@
               "industry_id": "10",
               "classification": "GIC",
               "since": "2025-11-08",
+              "status": "active"
+            },
+            {
+              "label": "Interactive Entertainment",
+              "id": "10.02.005",
+              "level": "subsector",
+              "parent_id": "10.02",
+              "sector_id": "10.02",
+              "industry_id": "10",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Video Game Content Studios",
+                  "id": "10.02.005.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "10.02.005",
+                  "subsector_id": "10.02.005",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Interactive Entertainment Platforms",
+                  "id": "10.02.005.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "10.02.005",
+                  "subsector_id": "10.02.005",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Esports Teams & Leagues",
+                  "id": "10.02.005.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "10.02.005",
+                  "subsector_id": "10.02.005",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Esports Venues & Infrastructure",
+                  "id": "10.02.005.04",
+                  "level": "segment",
+                  "segment_code": "04",
+                  "parent_id": "10.02.005",
+                  "subsector_id": "10.02.005",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-10",
               "status": "active"
             }
           ],
@@ -3408,12 +3581,22 @@
   function normalizeClassification(raw) {
     const industries = raw.industries.map((industry) => {
       const sectors = industry.sectors.map((sector) => {
-        const subsectors = sector.subsectors.map((subsector) => ({
-          ...subsector,
-          sector_id: sector.id,
-          industry_id: industry.id,
-          classification: industry.classification,
-        }));
+        const subsectors = sector.subsectors.map((subsector) => {
+          const segments = subsector.segments?.map((segment) => ({
+            ...segment,
+            subsector_id: subsector.id,
+            sector_id: sector.id,
+            industry_id: industry.id,
+            classification: industry.classification,
+          })) || [];
+          return {
+            ...subsector,
+            sector_id: sector.id,
+            industry_id: industry.id,
+            classification: industry.classification,
+            segments,
+          };
+        });
         return {
           ...sector,
           industry_id: industry.id,
@@ -3470,6 +3653,12 @@
         if (!sector) return null;
         return sector.subsectors.find(s => s.id === id) || null;
       }
+      if (parts.length === 4) {
+        // Handle segment ID (II.SS.SSS.SS)
+        const subsector = this.getById(parts[0] + '.' + parts[1] + '.' + parts[2]);
+        if (!subsector) return null;
+        return subsector.segments?.find(s => s.id === id) || null;
+      }
       return null;
     }
     
@@ -3490,6 +3679,12 @@
             const subsectorLabel = caseSensitive ? subsector.label : subsector.label.toLowerCase();
             if (subsectorLabel.includes(searchQuery)) {
               results.push(subsector);
+            }
+            for (const segment of subsector.segments || []) {
+              const segmentLabel = caseSensitive ? segment.label : segment.label.toLowerCase();
+              if (segmentLabel.includes(searchQuery)) {
+                results.push(segment);
+              }
             }
           }
         }
@@ -3515,12 +3710,23 @@
         (sum, ind) => sum + ind.sectors.reduce((s, sec) => s + sec.subsectors.length, 0),
         0
       );
+      const totalSegments = this.industries.reduce(
+        (sum, ind) => sum + ind.sectors.reduce(
+          (s, sec) => s + sec.subsectors.reduce(
+            (ss, sub) => ss + (sub.segments?.length || 0),
+            0
+          ),
+          0
+        ),
+        0
+      );
       return {
         version: this.version,
         release_date: this.releaseDate,
         industries: this.industries.length,
         sectors: totalSectors,
         subsectors: totalSubsectors,
+        segments: totalSegments,
         gic_industries: this.getGIC().length,
         dic_industries: this.getDIC().length,
       };
