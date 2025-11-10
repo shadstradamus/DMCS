@@ -18,12 +18,22 @@ const bundle = `
   function normalizeClassification(raw) {
     const industries = raw.industries.map((industry) => {
       const sectors = industry.sectors.map((sector) => {
-        const subsectors = sector.subsectors.map((subsector) => ({
-          ...subsector,
-          sector_id: sector.id,
-          industry_id: industry.id,
-          classification: industry.classification,
-        }));
+        const subsectors = sector.subsectors.map((subsector) => {
+          const segments = subsector.segments?.map((segment) => ({
+            ...segment,
+            subsector_id: subsector.id,
+            sector_id: sector.id,
+            industry_id: industry.id,
+            classification: industry.classification,
+          })) || [];
+          return {
+            ...subsector,
+            sector_id: sector.id,
+            industry_id: industry.id,
+            classification: industry.classification,
+            segments,
+          };
+        });
         return {
           ...sector,
           industry_id: industry.id,
@@ -80,6 +90,12 @@ const bundle = `
         if (!sector) return null;
         return sector.subsectors.find(s => s.id === id) || null;
       }
+      if (parts.length === 4) {
+        // Handle segment ID (II.SS.SSS.SS)
+        const subsector = this.getById(parts[0] + '.' + parts[1] + '.' + parts[2]);
+        if (!subsector) return null;
+        return subsector.segments?.find(s => s.id === id) || null;
+      }
       return null;
     }
     
@@ -100,6 +116,12 @@ const bundle = `
             const subsectorLabel = caseSensitive ? subsector.label : subsector.label.toLowerCase();
             if (subsectorLabel.includes(searchQuery)) {
               results.push(subsector);
+            }
+            for (const segment of subsector.segments || []) {
+              const segmentLabel = caseSensitive ? segment.label : segment.label.toLowerCase();
+              if (segmentLabel.includes(searchQuery)) {
+                results.push(segment);
+              }
             }
           }
         }
@@ -125,12 +147,23 @@ const bundle = `
         (sum, ind) => sum + ind.sectors.reduce((s, sec) => s + sec.subsectors.length, 0),
         0
       );
+      const totalSegments = this.industries.reduce(
+        (sum, ind) => sum + ind.sectors.reduce(
+          (s, sec) => s + sec.subsectors.reduce(
+            (ss, sub) => ss + (sub.segments?.length || 0),
+            0
+          ),
+          0
+        ),
+        0
+      );
       return {
         version: this.version,
         release_date: this.releaseDate,
         industries: this.industries.length,
         sectors: totalSectors,
         subsectors: totalSubsectors,
+        segments: totalSegments,
         gic_industries: this.getGIC().length,
         dic_industries: this.getDIC().length,
       };
