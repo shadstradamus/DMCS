@@ -1802,13 +1802,67 @@
               "status": "active"
             },
             {
-              "label": "Student / Senior Housing",
+              "label": "Demographic-Specific Properties",
               "id": "08.04.002",
               "level": "subsector",
               "parent_id": "08.04",
               "sector_id": "08.04",
               "industry_id": "08",
               "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Student Housing",
+                  "id": "08.04.002.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "08.04.002",
+                  "subsector_id": "08.04.002",
+                  "sector_id": "08.04",
+                  "industry_id": "08",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Senior & Assisted Living",
+                  "id": "08.04.002.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "08.04.002",
+                  "subsector_id": "08.04.002",
+                  "sector_id": "08.04",
+                  "industry_id": "08",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Institutional Housing",
+                  "id": "08.04.002.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "08.04.002",
+                  "subsector_id": "08.04.002",
+                  "sector_id": "08.04",
+                  "industry_id": "08",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Co-Living Communities",
+                  "id": "08.04.002.04",
+                  "level": "segment",
+                  "segment_code": "04",
+                  "parent_id": "08.04.002",
+                  "subsector_id": "08.04.002",
+                  "sector_id": "08.04",
+                  "industry_id": "08",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
               "since": "2025-11-08",
               "status": "active"
             },
@@ -2374,13 +2428,67 @@
               "status": "active"
             },
             {
-              "label": "Music, Gaming & Esports",
+              "label": "Music & Audio",
               "id": "10.02.003",
               "level": "subsector",
               "parent_id": "10.02",
               "sector_id": "10.02",
               "industry_id": "10",
-              "classification": "active",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Music Streaming",
+                  "id": "10.02.003.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "10.02.003",
+                  "subsector_id": "10.02.003",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Record Label",
+                  "id": "10.02.003.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "10.02.003",
+                  "subsector_id": "10.02.003",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Music Tech",
+                  "id": "10.02.003.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "10.02.003",
+                  "subsector_id": "10.02.003",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Live Music Services",
+                  "id": "10.02.003.04",
+                  "level": "segment",
+                  "segment_code": "04",
+                  "parent_id": "10.02.003",
+                  "subsector_id": "10.02.003",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
               "since": "2025-11-08",
               "status": "active"
             },
@@ -2393,6 +2501,71 @@
               "industry_id": "10",
               "classification": "GIC",
               "since": "2025-11-08",
+              "status": "active"
+            },
+            {
+              "label": "Interactive Entertainment",
+              "id": "10.02.005",
+              "level": "subsector",
+              "parent_id": "10.02",
+              "sector_id": "10.02",
+              "industry_id": "10",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Video Game Studios",
+                  "id": "10.02.005.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "10.02.005",
+                  "subsector_id": "10.02.005",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Interactive Platforms",
+                  "id": "10.02.005.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "10.02.005",
+                  "subsector_id": "10.02.005",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Esports Organizations",
+                  "id": "10.02.005.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "10.02.005",
+                  "subsector_id": "10.02.005",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                },
+                {
+                  "label": "Esports Infrastructure",
+                  "id": "10.02.005.04",
+                  "level": "segment",
+                  "segment_code": "04",
+                  "parent_id": "10.02.005",
+                  "subsector_id": "10.02.005",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-10",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-10",
               "status": "active"
             }
           ],

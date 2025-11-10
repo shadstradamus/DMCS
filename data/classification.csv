@@ -160,7 +160,11 @@ subsector,08.03.002,Property Management,08.03,08,08.03,GIC,2025-11-08,active
 subsector,08.03.003,Facilities Services,08.03,08,08.03,GIC,2025-11-08,active
 sector,08.04,Specialized Real Estate,08,08,08.04,GIC,2025-11-08,active
 subsector,08.04.001,Data Centers,08.04,08,08.04,GIC,2025-11-08,active
-subsector,08.04.002,Student / Senior Housing,08.04,08,08.04,GIC,2025-11-08,active
+subsector,08.04.002,Demographic-Specific Properties,08.04,08,08.04,GIC,2025-11-08,active
+segment,08.04.002.01,Student Housing,08.04.002,08,08.04,GIC,2025-11-10,active
+segment,08.04.002.02,Senior & Assisted Living,08.04.002,08,08.04,GIC,2025-11-10,active
+segment,08.04.002.03,Institutional Housing,08.04.002,08,08.04,GIC,2025-11-10,active
+segment,08.04.002.04,Co-Living Communities,08.04.002,08,08.04,GIC,2025-11-10,active
 subsector,08.04.003,Cell Towers & Digital Infra,08.04,08,08.04,GIC,2025-11-08,active
 industry,09,Technology,,,,GIC,2025-11-08,active
 sector,09.01,Software & Platforms,09,09,09.01,GIC,2025-11-08,active
@@ -208,8 +212,17 @@ subsector,10.01.003,Satellite & Edge Networks,10.01,10,10.01,GIC,2025-11-08,acti
 sector,10.02,Media & Entertainment,10,10,10.02,GIC,2025-11-08,active
 subsector,10.02.001,TV & Streaming,10.02,10,10.02,GIC,2025-11-08,active
 subsector,10.02.002,Digital Media Platforms,10.02,10,10.02,GIC,2025-11-08,active
-subsector,10.02.003,"Music, Gaming & Esports",10.02,10,10.02,active,2025-11-08,active
+subsector,10.02.003,Music & Audio,10.02,10,10.02,GIC,2025-11-08,active
+segment,10.02.003.01,Music Streaming,10.02.003,10,10.02,GIC,2025-11-10,active
+segment,10.02.003.02,Record Label,10.02.003,10,10.02,GIC,2025-11-10,active
+segment,10.02.003.03,Music Tech,10.02.003,10,10.02,GIC,2025-11-10,active
+segment,10.02.003.04,Live Music Services,10.02.003,10,10.02,GIC,2025-11-10,active
 subsector,10.02.004,Diversified Entertainment,10.02,10,10.02,GIC,2025-11-08,active
+subsector,10.02.005,Interactive Entertainment,10.02,10,10.02,GIC,2025-11-10,active
+segment,10.02.005.01,Video Game Studios,10.02.005,10,10.02,GIC,2025-11-10,active
+segment,10.02.005.02,Interactive Platforms,10.02.005,10,10.02,GIC,2025-11-10,active
+segment,10.02.005.03,Esports Organizations,10.02.005,10,10.02,GIC,2025-11-10,active
+segment,10.02.005.04,Esports Infrastructure,10.02.005,10,10.02,GIC,2025-11-10,active
 sector,10.03,Digital Platforms & Social,10,10,10.03,GIC,2025-11-08,active
 subsector,10.03.001,Social Networks,10.03,10,10.03,GIC,2025-11-08,active
 subsector,10.03.002,Creator / UGC Platforms,10.03,10,10.03,GIC,2025-11-08,active
