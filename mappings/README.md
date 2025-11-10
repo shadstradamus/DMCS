@@ -55,6 +55,31 @@ Each mapping table includes:
 - **DMCS Secondary**: Common secondary classifications (if applicable)
 - **Notes**: Key differences, edge cases, materiality guidance
 
+### Segment-Level Mapping Guidance
+
+**Important:** Legacy classification systems (GICS, ICB, TRBC, NAICS) typically do not have segment-level equivalents. DMCS segments provide additional granularity beyond what these systems offer.
+
+**Mapping Approach:**
+1. **Map to subsector first**: Use the standard mapping tables to identify the appropriate DMCS subsector
+2. **Check for segments**: Review if the DMCS subsector has segments defined (34 segments across v1.1.0)
+3. **Apply segment if applicable**: If the entity's product line clearly fits a specific segment, use the segment ID
+4. **Default to subsector**: If uncertain or segments don't apply, use the subsector-level classification
+
+**Example:**
+- **Legacy:** GICS 45102010 (Application Software)
+- **DMCS Subsector:** 09.01.001 (Enterprise SaaS)
+- **DMCS Segment (if applicable):**
+  - Salesforce → 09.01.001.02 (CRM Software)
+  - SAP → 09.01.001.01 (ERP Software)
+  - Workday → 09.01.001.03 (HCM / Workforce Mgmt)
+- **Note:** If the company spans multiple segments or segment doesn't clearly fit, use subsector 09.01.001
+
+**Segments add value for:**
+- Competitive analysis within a subsector
+- Portfolio construction requiring product-line granularity
+- Sector rotation strategies focused on specific technologies
+- Risk analysis differentiating business models within subsectors
+
 ## Contributing
 
 Found an issue or have a better mapping suggestion?

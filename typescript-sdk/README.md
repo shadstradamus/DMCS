@@ -153,6 +153,31 @@ console.log(`Amazon Primary: ${primary?.label}`);
 console.log(`Amazon Secondary: ${secondary?.label}`);
 ```
 
+### Get a segment by ID
+
+```typescript
+import { Classification } from 'dmcs-sdk';
+
+const dmcs = new Classification();
+
+// Get a specific segment
+const crmSegment = dmcs.getById('09.01.001.02');
+console.log(`Segment: ${crmSegment?.label}`);
+// Output: Segment: CRM Software
+
+// Access parent hierarchy
+if (crmSegment) {
+  console.log(`Subsector: ${crmSegment.subsector_id}`);
+  console.log(`Sector: ${crmSegment.sector_id}`);
+  console.log(`Industry: ${crmSegment.industry_id}`);
+}
+
+// Get stablecoin segment
+const stablecoin = dmcs.getById('13.02.004.01');
+console.log(`${stablecoin?.id} — ${stablecoin?.label}`);
+// Output: 13.02.004.01 — Fiat-Backed Stablecoins
+```
+
 ### Iterate through all classifications
 
 ```typescript
@@ -166,6 +191,12 @@ for (const industry of dmcs.industries) {
     console.log(`  ${sector.id} — ${sector.label}`);
     for (const subsector of sector.subsectors) {
       console.log(`    ${subsector.id} — ${subsector.label}`);
+      // Display segments if they exist
+      if (subsector.segments && subsector.segments.length > 0) {
+        for (const segment of subsector.segments) {
+          console.log(`      ${segment.id} — ${segment.label}`);
+        }
+      }
     }
   }
 }

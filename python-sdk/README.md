@@ -143,6 +143,29 @@ print(f"Amazon Primary: {primary.label}")
 print(f"Amazon Secondary: {secondary.label}")
 ```
 
+### Get a segment by ID
+
+```python
+from dmcs_sdk import classification
+
+dmcs = classification()
+
+# Get a specific segment
+crm_segment = dmcs.get_by_id('09.01.001.02')
+print(f"Segment: {crm_segment.label}")
+# Output: Segment: CRM Software
+
+# Access parent hierarchy
+print(f"Subsector: {crm_segment.subsector_id}")
+print(f"Sector: {crm_segment.sector_id}")
+print(f"Industry: {crm_segment.industry_id}")
+
+# Get stablecoin segment
+stablecoin = dmcs.get_by_id('13.02.004.01')
+print(f"{stablecoin.id} — {stablecoin.label}")
+# Output: 13.02.004.01 — Fiat-Backed Stablecoins
+```
+
 ### Iterate through all classifications
 
 ```python
@@ -156,6 +179,10 @@ for industry in dmcs.industries:
         print(f"  {sector.id} — {sector.label}")
         for subsector in sector.subsectors:
             print(f"    {subsector.id} — {subsector.label}")
+            # Display segments if they exist
+            if subsector.segments:
+                for segment in subsector.segments:
+                    print(f"      {segment.id} — {segment.label}")
 ```
 
 ### Find all blockchain-related classifications

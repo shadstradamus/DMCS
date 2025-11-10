@@ -123,13 +123,24 @@ Store both the DMCS ID and the source classification for audit trails.
 
 ## Extension Namespace (DMCS-CUST)
 
-Need more granularity for your specific use case? Use **DMCS-CUST** custom nodes under official parents. Custom nodes use **C** + numbers (e.g., C01, C02) in the subsector position.
+Need more granularity for your specific use case? Use **DMCS-CUST** custom nodes under official parents. Custom nodes use **C** + numbers (e.g., C01, C02) to extend subsectors or segments.
 
 ### Structure
 
+**Subsector-Level Custom Nodes:**
 ```
 Official Parent:  II.SS.SSS
 Custom Child:     II.SS.CXXX (where C = Custom, XXX = your sequential ID)
+```
+
+**Segment-Level Custom Nodes:**
+```
+Official Parent:  II.SS.SSS.SS
+Custom Child:     II.SS.SSS.CXX (where C = Custom, XX = your sequential ID)
+
+Alternative (custom segment under official subsector):
+Official Parent:  II.SS.SSS
+Custom Segment:   II.SS.SSS.CXX
 ```
 
 ### Real-World Examples
@@ -159,6 +170,33 @@ Official:  09.01.002 — Enterprise SaaS
 Custom:    09.01.C01 — Public Sector SaaS (DMCS-CUST, parent: 09.01.002)
 Custom:    09.01.C02 — Healthcare SaaS (DMCS-CUST, parent: 09.01.002)
 Custom:    09.01.C03 — Financial Services SaaS (DMCS-CUST, parent: 09.01.002)
+```
+
+**Cybersecurity Vendor (Segment-Level Extensions)**
+```
+Official:  09.01.003 — Cybersecurity Software
+Official:  09.01.003.01 — Endpoint Protection / EDR
+Custom:    09.01.003.C01 — Threat Intelligence Platform (DMCS-CUST, parent: 09.01.003)
+Custom:    09.01.003.C02 — Security Orchestration (SOAR) (DMCS-CUST, parent: 09.01.003)
+Custom:    09.01.003.01.C01 — Mobile EDR (DMCS-CUST, parent: 09.01.003.01)
+```
+
+**Digital Asset Exchange (Segment-Level Extensions)**
+```
+Official:  13.02.001 — Centralized Exchanges (CEX)
+Official:  13.02.001.01 — Spot CEX
+Custom:    13.02.001.C01 — Institutional Trading Desk (DMCS-CUST, parent: 13.02.001)
+Custom:    13.02.001.C02 — Retail Copy Trading (DMCS-CUST, parent: 13.02.001)
+Custom:    13.02.001.01.C01 — High-Frequency Spot (DMCS-CUST, parent: 13.02.001.01)
+```
+
+**Banking Group (Mixed Subsector + Segment Extensions)**
+```
+Official:  07.01.001 — Retail Banking
+Custom:    07.01.C01 — Private Banking (DMCS-CUST, parent: 07.01.001)
+Custom:    07.01.C02 — Corporate Banking (DMCS-CUST, parent: 07.01.001)
+Custom:    07.01.001.C05 — Student Banking (DMCS-CUST, parent: 07.01.001)
+Custom:    07.01.001.C06 — Senior Banking (DMCS-CUST, parent: 07.01.001)
 ```
 
 **Diversified Conglomerate Example: "Global Industries Corp"**
@@ -227,22 +265,27 @@ Global Industries Corp
 
 ### Rules for DMCS-CUST
 
-1. **Always specify parent:** Custom nodes must reference their official parent subsector
+1. **Always specify parent:** Custom nodes must reference their official parent subsector or segment
 2. **Sequential numbering:** Use C01, C02, C03... within your organization
 3. **Document clearly:** Maintain internal documentation of what each custom node represents
 4. **No ID conflicts:** Coordinate custom IDs within your organization to avoid duplicates
 5. **Promotion path:** Widely-used custom nodes can be proposed for inclusion in DMCS-STD
+6. **Subsector vs Segment CUST:**
+   - Subsector-level: `II.SS.CXXX` (e.g., `09.01.C01`)
+   - Segment-level: `II.SS.SSS.CXX` (e.g., `09.01.003.C01`)
+   - **Important:** `09.01.C01` ≠ `09.01.001.C01` (different hierarchy levels!)
 
 ### When to Use DMCS-CUST
 
 ✅ **Use custom nodes when:**
 - You need industry-specific granularity (e.g., "Islamic Banking" under Retail Banking)
-- Internal reporting requires finer segments than DMCS provides
+- Internal reporting requires finer subsectors or segments than DMCS provides
 - Regional variations matter (e.g., "EU Financial Services" vs. "US Financial Services")
 - Business model innovations don't fit existing categories
+- Product-line segmentation needs more detail (e.g., specialized cybersecurity verticals)
 
 ❌ **Don't create custom nodes when:**
-- Official DMCS subsectors already cover your need
+- Official DMCS subsectors or segments already cover your need
 - You're trying to reclassify entities across industries (use secondary classification instead)
 - The distinction is purely organizational rather than business-model based
 
@@ -291,31 +334,50 @@ status                        active
 ```
 Start
 ├─ Software-led revenue? (Yes)
-│   ├─ Security-first? (Yes) → 09.01.003 Cybersecurity Software → select segment:
-│   │     Endpoint Protection / IAM / Cloud & Network Security
-│   ├─ Data platform core? (Yes) → 09.01.004 Data & Analytics Platforms → Databases / ETL / BI
-│   └─ Developer lifecycle focus? (Yes) → 09.01.005 Developer Tools & Observability → CI/CD / API / Observability
+│   ├─ Security-first? (Yes) → 09.01.003 Cybersecurity Software
+│   │     → Endpoint Protection (09.01.003.01) / IAM (09.01.003.02) / Cloud & Network Security (09.01.003.03)
+│   ├─ Data platform core? (Yes) → 09.01.004 Data & Analytics Platforms
+│   │     → Databases (09.01.004.01) / ETL & Data Integration (09.01.004.02) / BI & Analytics (09.01.004.03)
+│   └─ Developer lifecycle focus? (Yes) → 09.01.005 Developer Tools & Observability
+│         → CI/CD & DevOps (09.01.005.01) / API Management (09.01.005.02) / Observability (09.01.005.03)
 ├─ Hardware devices primary? (Yes)
-│   ├─ Personal/consumer? (Yes) → 09.03.001 Personal Computing & Mobile → PCs / Smartphones / Alt-OS
-│   ├─ Consumer electronics? (Yes) → 09.03.002 → Wearables / Smart Home / Audio & Imaging
-│   └─ Enterprise/datacenter? (Yes) → 09.03.003 → Servers / Storage / HCI
-├─ Network equipment core? (Yes) → 09.03.004 Networking Equipment → Enterprise / Data Center / Optical
+│   ├─ Personal/consumer? (Yes) → 09.02.002 Consumer Devices & Ecosystems
+│   │     → Smartphones & Accessories (09.02.002.01) / PCs & Tablets (09.02.002.02) / Wearables & Health (09.02.002.03)
+│   ├─ Consumer electronics? (Yes) → 09.03.002 Consumer Electronics
+│   │     → Wearables / Smart Home / Audio & Imaging
+│   └─ Enterprise/datacenter? (Yes) → 09.03.003 Enterprise Hardware
+│         → Servers / Storage / HCI
+├─ Network equipment core? (Yes) → 09.03.004 Networking Equipment
+│     → Enterprise / Data Center / Optical
 ├─ Semiconductor production? (Yes)
-│   ├─ Logic/compute? → 09.02.001 → CPUs / GPUs / AI Accelerators
-│   ├─ Memory/storage? → 09.02.002 → DRAM / NAND / Controllers
-│   ├─ Analog/power? → 09.02.003 → PMIC / Signal Chain / RF
-│   ├─ Manufacturing services? → 09.02.004 → Foundry / IDM / OSAT
-│   └─ Design tools/IP? → 09.02.005 → EDA Tools / IP Licensing / Design Services
+│   ├─ Logic/compute? → 09.02.001 Semiconductor Design & Manufacturing
+│   │     → CPUs / GPUs / AI Accelerators
+│   ├─ Memory/storage? → 09.02.002 Memory & Storage
+│   │     → DRAM / NAND / Controllers
+│   ├─ Analog/power? → 09.02.003 Analog & Power
+│   │     → PMIC / Signal Chain / RF
+│   ├─ Manufacturing services? → 09.02.004 Semiconductor Services
+│   │     → Foundry / IDM / OSAT
+│   └─ Design tools/IP? → 09.02.005 EDA & Design Services
+│         → EDA Tools / IP Licensing / Design Services
 ├─ Services-led? (Yes)
-│   ├─ Consulting/Integration? → 09.04.001 → Strategy & Architecture / Implementation / Managed Apps
-│   ├─ Outsourcing/BPO? → 09.04.002 → App Outsourcing / Infra Outsourcing / BPO
-│   ├─ Managed cloud/MSP? → 09.04.003 → MSP SMB / MSP Enterprise / Cloud Migration & FinOps
-│   └─ Security services? → 09.04.004 → MDR-XDR / PenTest / Audit & GRC
+│   ├─ Consulting/Integration? → 09.04.001 IT Consulting & Integration
+│   │     → Strategy & Architecture / Implementation / Managed Apps
+│   ├─ Outsourcing/BPO? → 09.04.002 IT Outsourcing & BPO
+│   │     → App Outsourcing / Infra Outsourcing / BPO
+│   ├─ Managed cloud/MSP? → 09.04.003 Managed Services & Cloud
+│   │     → MSP SMB / MSP Enterprise / Cloud Migration & FinOps
+│   └─ Security services? → 09.04.004 Cybersecurity Services
+│         → MDR-XDR / PenTest / Audit & GRC
 └─ Emerging tech focus? (Yes)
-   ├─ Robotics platforms? → 09.05.001 → Industrial Robots / AMRs / Controllers
-   ├─ Edge & IoT? → 09.05.002 → Gateways / Edge AI / Device Mgmt
-   ├─ Quantum/advanced compute? → 09.05.003 → Hardware / Software / Cryo & Control
-   └─ AR/VR/XR software? → 09.05.004 → AR SDKs / Spatial Mapping / 3D Content
+   ├─ Robotics platforms? → 09.05.001 Robotics & Automation
+   │     → Industrial Robots / AMRs / Controllers
+   ├─ Edge & IoT? → 09.05.002 Edge Computing & IoT
+   │     → Gateways / Edge AI / Device Mgmt
+   ├─ Quantum/advanced compute? → 09.05.003 Quantum Computing
+   │     → Hardware / Software / Cryo & Control
+   └─ AR/VR/XR software? → 09.05.004 Spatial Computing Platforms
+         → AR SDKs / Spatial Mapping / 3D Content
 ```
 
 ## Industry 13 – Digital & Onchain Economy (DIC)
@@ -392,7 +454,7 @@ All changes are versioned and documented. Community proposals via pull requests 
 ## Data Access
 
 ### Human-Readable
-- **[CLASSIFICATION.md](./CLASSIFICATION.md)** — Complete reference with all 13 industries, 55 sectors, and 190 subsectors
+- **[CLASSIFICATION.md](./CLASSIFICATION.md)** — Complete reference with all 13 industries, 55 sectors, 193 subsectors, and 34 segments
 
 ### Machine-Readable
 - **[data/classification.json](./data/classification.json)** — Hierarchical JSON structure for programmatic access
@@ -428,7 +490,7 @@ dmcs = classification()
 
 # Get stats
 print(dmcs.stats())
-# {'version': '1.1.0', 'release_date': '2025-11-09', 'industries': 13, 'sectors': 55, 'subsectors': 190, 'segments': 14}
+# {'version': '1.1.0', 'release_date': '2025-11-09', 'industries': 13, 'sectors': 55, 'subsectors': 193, 'segments': 34}
 
 # Lookup by ID
 tech = dmcs.get_by_id('09')
@@ -462,8 +524,8 @@ console.log(dmcs.stats());
 //   release_date: '2025-11-09',
 //   industries: 13,
 //   sectors: 55,
-//   subsectors: 191,
-//   segments: 14,
+//   subsectors: 193,
+//   segments: 34,
 //   gic_industries: 12,
 //   dic_industries: 1
 // }
