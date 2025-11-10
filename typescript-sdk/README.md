@@ -28,8 +28,8 @@ console.log(dmcs.stats());
 //   release_date: '2025-11-09',
 //   industries: 13,
 //   sectors: 55,
-//   subsectors: 190,
-//   segments: 14,
+//   subsectors: 193,
+//   segments: 34,
 //   gic_industries: 12,
 //   dic_industries: 1
 // }
@@ -49,7 +49,7 @@ results.forEach(result => console.log(result));
 
 // Filter by classification
 const gic = dmcs.getGIC();  // Traditional economy (01-12)
-const dic = dmcs.getDIC();  // Digital assets (13)
+const dic = dmcs.getDIC();  // Digital & onchain economy (13)
 
 console.log(`GIC has ${gic.length} industries`);
 console.log(`DIC has ${dic.length} industries`);

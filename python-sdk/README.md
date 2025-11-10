@@ -28,7 +28,7 @@ dmcs = classification()
 
 # Get stats
 print(dmcs.stats())
-# {'version': '1.1.0', 'release_date': '2025-11-09', 'industries': 13, 'sectors': 55, 'subsectors': 190, 'segments': 14, ...}
+# {'version': '1.1.0', 'release_date': '2025-11-09', 'industries': 13, 'sectors': 55, 'subsectors': 193, 'segments': 34, ...}
 
 # Lookup by ID
 tech = dmcs.get_by_id('09')
@@ -43,13 +43,13 @@ print(saas)
 results = dmcs.search('blockchain')
 for result in results:
     print(result)
-# 13 — Digital Assets & Blockchain (4 sectors, DIC)
+# 13 — Digital & Onchain Economy (4 sectors, DIC)
 # 13.01 — DLT & Blockchain Infrastructure (4 subsectors)
 # ...
 
 # Filter by classification
 gic = dmcs.get_GIC()  # Traditional economy (01-12)
-dic = dmcs.get_DIC()  # Digital assets (13)
+dic = dmcs.get_DIC()  # Digital & onchain economy (13)
 
 print(f"GIC has {len(gic)} industries")
 print(f"DIC has {len(dic)} industries")
