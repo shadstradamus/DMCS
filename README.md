@@ -2,150 +2,310 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.1.1** · Effective Date: 2025-11-10 · **License:** Apache 2.0
+**Version 1.1.2** · Effective Date: 2025-11-11 · **License:** Apache 2.0
 
-## Overview
+# DMCS — Open Source Industry Classification Standard
 
-DMCS (Dynamic Multi-Dimensional Classification Standard) is an open-source, hierarchical classification system for the modern economy. It provides:
+DMCS (Dynamic Multi-Dimensional Classification Standard) is a free, open-source taxonomy for classifying companies, cryptocurrencies, and business models across the modern economy.
 
-- **13 industries**, **55 sectors**, **193 subsectors**, and **34 segments** covering traditional and digital business models
-- **GIC** (01-12): General Industry Classification for the traditional economy
-- **DIC** (13): Digital Industry Classification for blockchain and crypto-native companies
-- **Materiality rules** for classifying diversified conglomerates with multiple business lines
-- **Stable IDs** that never change, with predictable evolution via public changelogs
+**Built for everyone — from hobby projects to enterprise platforms like Yahoo Finance.**
 
-## Why DMCS?
+**Why choose DMCS?**
 
-Modern companies don't fit legacy classification systems:
+- **Digital-native coverage** — First-class support for blockchain, crypto, SaaS, and platform business models
+- **Stable, immutable IDs** — Never break your historical data; IDs are permanent and versioned
+- **Free to use** — Apache 2.0 license for commercial and non-commercial projects
+- **Community-driven** — Submit proposals via GitHub issues; transparent governance and public changelog
+- **Extensible** — Add custom classifications (DMCS-CUST) without forking the standard
 
-- **Conglomerates** run material businesses across multiple industries
-- **Platforms** monetize in more than one way (e.g., cloud + advertising)
-- **Digital-asset organizations** have no home in older taxonomies
+## What You Get
 
-DMCS solves this with:
+**Core Taxonomy**
+- **13 industries** · **55 sectors** · **205 subsectors** · **49 segments**
+- Coverage spans traditional economy (GIC: 01-12) and digital/onchain economy (DIC: 13)
+- Every node includes lifecycle metadata (`since`, `status`) for tracking evolution
 
-1. **Explicit materiality threshold** (≥25-30% revenue or strategic) for secondary classifications
-2. **Digital-first design** treating blockchain/crypto as a first-class economic sector
-3. **Extensible namespace** (DMCS-CUST) so implementers can add detail without forking
-4. **Predictable releases** (structural: 2×/year; thematic: monthly/quarterly) with full changelogs and as needed.
+**Ready-to-Use Data**
+- `data/classification.json` — Full hierarchical structure with metadata
+- `data/classification.csv` — Flat table for databases and analytics tools
+- `CLASSIFICATION.md` — Human-readable reference documentation
 
-## Structure
+**SDKs for Developers**
+- **TypeScript/JavaScript** — `npm install dmcs-sdk` (browser + Node.js)
+- **Python** — `pip install dmcs-sdk` (pandas integration, search, and filtering)
+- Full API documentation in each SDK's README
 
-### Hierarchy
+**Mapping Guidance**
+- Pre-built crosswalks to GICS, ICB, NAICS, and TRBC
+- Notes explaining where legacy systems fall short and DMCS alternatives
+
+## Hierarchy & ID Rules
+
+### Visual Structure
 
 ```
-Industry (II) → Sector (II.SS) → Subsector (II.SS.SSS) → Segment (II.SS.SSS.SS)
+┌─────────────────────────────────────────────────────────────┐
+│  Industry (II)                                 Example: 09  │
+│  └─ Sector (II.SS)                             Example: 09.01│
+│     └─ Subsector (II.SS.SSS)                   Example: 09.01.002│
+│        └─ Segment (II.SS.SSS.SS) [optional]    Example: 09.01.002.03│
+└─────────────────────────────────────────────────────────────┘
+
+Example Chain:
+  09                → Technology (Industry)
+  09.01             → Software & Platforms (Sector)
+  09.01.002         → Cloud Platforms / PaaS (Subsector)
+  09.01.002.03      → Edge / Distributed Cloud (Segment)
 ```
 
-- **Industry** (mandatory): two digits that define the broad economic domain.
-- **Sector** (mandatory): adds a two-digit suffix to separate adjacent business groups.
-- **Subsector** (mandatory): adds a three-digit suffix for distinct operating models or value chains.
-- **Segment** (optional): adds a two-digit suffix when a subsector contains clearly distinct commercial product lines or service models. Segments inherit governance from their parent subsector and only appear when the market recognises sustained differences in revenue drivers, customer bases, or delivery motions.
+**Hierarchy Levels**
+- **Industry** (mandatory) — two digits defining the broad economic domain.
+- **Sector** (mandatory) — adds a two-digit suffix to separate adjacent business groups.
+- **Subsector** (mandatory) — adds a three-digit suffix representing distinct value chains.
+- **Segment** (optional) — two-digit suffix for discrete products/services within a subsector.
 
-**Example:**
-- `09` — Technology
-- `09.01` — Software & Platforms
-- `09.01.002` — Cloud Platforms / PaaS
-- `09.01.002.03` — Edge / Distributed Cloud (segment)
+**ID Guarantees**
+- **Immutable** — IDs never change; labels may evolve with public change notes.
+- **Hierarchical** — truncating the rightmost component returns the parent (e.g., `09.01.002.03` → `09.01.002`).
+- **Numeric & Fixed width** — Regex enforced: `^\d{2}\.\d{2}\.\d{3}(\.\d{2})?$`.
+- **Lifecycle metadata** — Every node carries `since`, `status`, optional `sunset`, and provenance details.
 
-### ID Rules
+## Coverage Snapshot (v1.1.2)
 
-- **Immutable:** IDs never change; labels may evolve
-- **Hierarchical:** Trimming from the right gives the parent
-- **Numeric:** All official nodes use numeric codes
-- **Fixed-width:** All IDs conform to the regex `^\d{2}\.\d{2}\.\d{3}(\.\d{2})?$`
+**13 industries** · **55 sectors** · **205 subsectors** · **49 segments**
 
-### Industries (13)
+### All Industries
 
-| ID | Industry | Classification |
-|----|----------|----------------|
-| 01 | Energy | GIC |
-| 02 | Basic Materials | GIC |
-| 03 | Industrials | GIC |
-| 04 | Consumer Discretionary | GIC |
-| 05 | Consumer Staples | GIC |
-| 06 | Healthcare | GIC |
-| 07 | Financial Services | GIC |
-| 08 | Real Estate | GIC |
-| 09 | Technology | GIC |
-| 10 | Communications & Media | GIC |
-| 11 | Utilities | GIC |
-| 12 | Government / Public / Education | GIC |
-| 13 | Digital & Onchain Economy | DIC |
+| ID | Industry | Classification | Coverage |
+|----|----------|----------------|----------|
+| 01 | Energy | GIC | Hydrocarbons, renewables, storage |
+| 02 | Basic Materials | GIC | Metals, chemicals, forestry |
+| 03 | Industrials | GIC | Manufacturing, logistics, aerospace |
+| 04 | Consumer Discretionary | GIC | Retail, leisure, consumer services |
+| 05 | Consumer Staples | GIC | Food, beverages, household |
+| 06 | Healthcare | GIC | Providers, pharma, biotech |
+| 07 | Financial Services | GIC | Banking, markets, insurance |
+| 08 | Real Estate | GIC | REITs, development, property ops |
+| 09 | Technology | GIC | Software, hardware, semiconductors, services |
+| 10 | Communications & Media | GIC | Networks, media, advertising |
+| 11 | Utilities | GIC | Power, water, grid services |
+| 12 | Government / Public / Education | GIC | Public sector, NGOs, education |
+| 13 | Digital & Onchain Economy | DIC | Crypto-native, DeFi, blockchain infrastructure |
 
-## Quick Examples
+## DMCS vs. Legacy Classification Systems
 
-| Entity | Primary Classification | Secondary |
-|--------|------------------------|-----------|
-| Apple | 09.02.002 (Consumer Devices & Ecosystems) | — |
-| Amazon | 04.05.002 (Online Marketplaces) | 09.01.004 (Cloud Platforms / PaaS) |
-| Meta | 10.03.001 (Social Networks) | 09.04.004 (Spatial / XR Platforms) |
-| Tether (USDT) | 13.02.004 (Stablecoin Issuers) | — |
-| Bitcoin (BTC) | 13.01.001 (Layer-1 Protocols) | — |
-| Chainlink (LINK) | 13.01.004 (Node / Infra Services) | — |
+| Feature | DMCS | GICS / ICB | NAICS | TRBC |
+|---------|------|------------|-------|------|
+| **License** | Apache 2.0 (Free) | Proprietary ($$$) | Public Domain | Proprietary ($$$) |
+| **Digital Economy Coverage** | ✅ Native DIC industry (13) | ❌ Limited | ❌ Limited | ❌ Limited |
+| **Crypto/Blockchain** | ✅ DeFi, L1/L2, stablecoins, NFTs | ❌ None | ❌ None | ❌ Minimal |
+| **SaaS Granularity** | ✅ 7 software subsectors + segments | ⚠️ Basic | ⚠️ Basic | ⚠️ Basic |
+| **Platform Business Models** | ✅ Multi-classification support | ⚠️ Limited | ❌ Single-class | ⚠️ Limited |
+| **ID Stability** | ✅ Immutable, versioned | ⚠️ Periodic changes | ⚠️ 5-year updates | ⚠️ Annual updates |
+| **Open Data Access** | ✅ JSON, CSV, SDKs | ❌ License required | ✅ Public | ❌ License required |
+| **Community Input** | ✅ GitHub issues/PRs | ❌ Closed | ❌ Gov agency | ❌ Closed |
+| **Custom Extensions** | ✅ DMCS-CUST namespace | ❌ Not supported | ❌ Not supported | ❌ Not supported |
+| **Commercial Use** | ✅ Unlimited | 💰 Fee + restrictions | ✅ Free | 💰 Fee + restrictions |
+| **API/SDK Support** | ✅ TypeScript, Python | 💰 Paid only | ❌ None | 💰 Paid only |
+| **Update Frequency** | As needed (community-driven) | Annual | Every 5 years | Annual |
+| **Conglomerate Support** | ✅ Primary + Secondary | ⚠️ Primary only | ⚠️ Primary only | ⚠️ Limited |
 
-### Segment-Level Examples
+**Bottom Line:** DMCS is purpose-built for modern, digital-first businesses with free access, stable IDs, and community governance—no licensing fees or vendor lock-in.
 
-Segments provide additional granularity within subsectors for distinct product lines or service models:
+## How Classification Works
 
-| Entity | Subsector | Segment | Why Segment? |
-|--------|-----------|---------|--------------|
-| Salesforce CRM | 09.01.001 (Enterprise SaaS) | 09.01.001.02 (CRM Software) | Distinct from ERP or HCM products |
-| Workday | 09.01.001 (Enterprise SaaS) | 09.01.001.03 (HCM / Workforce Mgmt) | Specialized in human capital management |
-| Palo Alto Networks | 09.01.003 (Cybersecurity Software) | 09.01.003.02 (Network Security) | Focus on firewall/SASE vs endpoint |
-| iPhone | 09.02.002 (Consumer Devices) | 09.02.002.01 (Smartphones & Accessories) | Different market from PCs/tablets |
-| Binance | 13.02.001 (Centralized Exchanges) | 13.02.001.01 (Spot Trading Platforms) | Core exchange vs derivatives/staking |
-| Uniswap | 13.02.002 (Decentralized Exchanges) | 13.02.002.01 (AMM DEX) | AMM model distinct from order book DEX |
-| USDC | 13.02.004 (Stablecoin Issuers) | 13.02.004.01 (Fiat-Backed Stablecoins) | Fiat reserves vs algorithmic/crypto-backed |
+**Primary Classification**
+- Assigned to the line of business with the largest revenue or activity
 
-**When to use segments:**
-- ✅ Product line has distinct revenue drivers and customer base
-- ✅ Market recognizes sustained differences in business model
-- ✅ Enables meaningful competitive analysis within a subsector
-- ❌ Don't use for minor product variations or SKU-level detail
+**Secondary Classification (Optional)**
+- Only assigned if the entity operates materially in a **different industry**
+- Requires ≥25-30% of revenue **or** declared strategic priority
+- Limited to one secondary classification per entity
 
-## Materiality Rule
+**Persistence Rule**
+- Add or remove classifications after 2 consecutive reporting periods meet or fail the threshold
+- Prevents rapid reclassification from one-time events
 
-- **Primary** (required): Largest revenue/activity line
-- **Secondary** (optional, max 1): Only if in a **different industry** and ≥25-30% revenue **or** declared strategic/growth
-- **Persistence**: Add/remove after 2 consecutive periods meeting/failing the test
+**Example: Amazon**
+- Primary: `04.05.002` (Online Marketplaces) — e-commerce is largest revenue
+- Secondary: `09.01.004` (Cloud Platforms / PaaS) — AWS meets ≥25% revenue threshold and operates in a different industry (Technology vs Consumer Discretionary)
 
-## Migration from Legacy Systems
+## Governance & Updates
 
-DMCS provides mapping guidance from:
+**How DMCS Evolves**
 
-- **GICS** (Global Industry Classification Standard)
-- **ICB** (Industry Classification Benchmark)
-- **TRBC** (Refinitiv Business Classification)
-- **NAICS** (North American Industry Classification System)
+DMCS updates through community proposals submitted via [GitHub Issues](https://github.com/shadstradamus/DMCS/issues/new/Quick comparison table — Show DMCS vs GICS/ICB/NAICS side-by-side highlighting key differences (open-source, digital coverage, immutable IDs, no fees)choose) using the **Taxonomy Proposal** template:
 
-Store both the DMCS ID and the source classification for audit trails.
+1. **Submit a Proposal** — Describe the business model, provide real-world examples, and explain why existing nodes are insufficient
+2. **Community Review** — Maintainers and community members discuss the rationale and impact
+3. **Decision & Implementation** — Accepted proposals are added in the next structural release
+4. **Changelog Documentation** — All changes are documented with effective dates and migration notes
 
-## Extension Namespace (DMCS-CUST)
+**Release Types**
+- **Structural releases** (as needed) — Add new industries, sectors, subsectors, or segments when community proposals are accepted
+- **Thematic releases** (as needed) — Label refinements and metadata updates without new IDs
 
-Need more granularity for your specific use case? Use **DMCS-CUST** custom nodes under official parents. Custom nodes use **C** + numbers (e.g., C01, C02) to extend subsectors or segments.
+**Transparency Guarantee**
+- All decisions are public and documented in `CHANGELOG.md`
+- IDs never change or get reused — immutability is a core principle
+- Community participation is welcome via issues and pull requests
 
-### Structure
+## Getting Started
 
-**Subsector-Level Custom Nodes:**
+**1. Browse the Taxonomy**
+- View complete hierarchy in [CLASSIFICATION.md](./CLASSIFICATION.md)
+- See full details in `data/classification.json` or `data/classification.csv`
+
+**2. Install an SDK (Optional)**
+
+TypeScript/JavaScript:
+```bash
+npm install dmcs-sdk
 ```
-Official Parent:  II.SS.SSS
-Custom Child:     II.SS.CXXX (where C = Custom, XXX = your sequential ID)
+
+Python:
+```bash
+pip install "git+https://github.com/shadstradamus/DMCS.git#subdirectory=python-sdk"
 ```
 
-**Segment-Level Custom Nodes:**
+**3. Use in Your Project**
+
+TypeScript:
+```typescript
+import { Classification } from 'dmcs-sdk';
+
+const dmcs = new Classification();
+
+// Get stats
+console.log(dmcs.stats());
+// { version: '1.1.2', industries: 13, sectors: 55, subsectors: 205, segments: 49 }
+
+// Lookup by ID
+const cloudPlatforms = dmcs.getById('09.01.004');
+console.log(cloudPlatforms.label); // "Cloud Platforms / PaaS"
+
+// Search
+const results = dmcs.search('blockchain');
 ```
-Official Parent:  II.SS.SSS.SS
-Custom Child:     II.SS.SSS.CXX (where C = Custom, XX = your sequential ID)
 
-Alternative (custom segment under official subsector):
-Official Parent:  II.SS.SSS
-Custom Segment:   II.SS.SSS.CXX
+Python:
+```python
+from dmcs_sdk import classification
+
+dmcs = classification()
+
+# Get stats
+print(dmcs.stats())
+
+# Lookup by ID
+tech = dmcs.get_by_id('09')
+print(tech)  # 09 — Technology (4 sectors, GIC)
+
+# Search
+results = dmcs.search('stablecoin')
 ```
 
-### Real-World Examples
+**4. Reference the Mappings**
 
-**Financial Services Conglomerate**
+If you're migrating from another system, check:
+- `mappings/gics-to-dmcs.md`
+- `mappings/icb-to-dmcs.md`
+- `mappings/naics-to-dmcs.md`
+- `mappings/trbc-to-dmcs.md`
+
+## Migration Guide: Switching from Legacy Systems
+
+### Quick Start (3 Steps)
+
+**Step 1: Download the Mapping File**
+
+Choose your current system:
+- GICS → `mappings/gics-to-dmcs.md`
+- ICB → `mappings/icb-to-dmcs.md`
+- NAICS → `mappings/naics-to-dmcs.md`
+- TRBC → `mappings/trbc-to-dmcs.md`
+
+**Step 2: Map Your Data**
+
+Each mapping file provides:
+- Source code → Target DMCS ID(s)
+- Rationale for the mapping
+- Notes on edge cases
+
+Example (GICS to DMCS):
+```
+GICS 45102010 (IT Services) → DMCS 09.03.001 (IT Consulting)
+GICS 45103010 (Application Software) → DMCS 09.01.002 (Enterprise SaaS)
+```
+
+**Step 3: Validate**
+
+Use the SDK to verify your mappings:
+
+```python
+from dmcs_sdk import classification
+
+dmcs = classification()
+
+# Verify mapped ID exists
+node = dmcs.get_by_id('09.01.002')
+print(node)  # Confirms valid DMCS node
+```
+
+### Handling Edge Cases
+
+**Conglomerates / Multi-Business Entities**
+
+Legacy systems typically force a single classification. DMCS supports:
+- **Primary** classification for dominant business line
+- **Secondary** classification for material operations in a different industry (≥25-30% revenue)
+
+Example:
+```
+Amazon in GICS: 25504010 (Internet & Direct Marketing Retail)
+Amazon in DMCS: 
+  Primary: 04.05.002 (Online Marketplaces)
+  Secondary: 09.01.004 (Cloud Platforms / PaaS)
+```
+
+**Digital/Platform Businesses**
+
+Legacy systems lack digital-native categories. Map to DMCS Industry 09 (Technology) or 13 (Digital & Onchain Economy):
+
+```
+Coinbase (no GICS equivalent) → DMCS 13.02.001 (Centralized Exchanges)
+Uniswap (no GICS equivalent) → DMCS 13.02.002 (Decentralized Exchanges)
+Stripe (GICS 45203020) → DMCS 07.02.003 (Payment Processing)
+```
+
+### Dual-Coding Strategy (Recommended)
+
+Store both classifications during transition:
+
+| Entity | Legacy Code | Legacy System | DMCS Primary | DMCS Secondary |
+|--------|-------------|---------------|--------------|----------------|
+| Apple | 45202030 | GICS | 09.02.005 | — |
+| Amazon | 25504010 | GICS | 04.05.002 | 09.01.004 |
+| Tether | — | — | 13.02.004 | — |
+
+Benefits:
+- Maintain backward compatibility
+- Compare classifications side-by-side
+- Gradual migration path
+
+## Custom Extensions (DMCS-CUST)
+
+Need more granularity than the standard taxonomy provides? **DMCS-CUST** lets you add custom classifications without forking the repository.
+
+**How It Works**
+
+Use custom IDs with a **C** prefix under official parent nodes:
+
+- **Subsector-level:** `II.SS.CXXX` (e.g., `09.01.C01`)
+- **Segment-level:** `II.SS.SSS.CXX` (e.g., `09.01.003.C01`)
+
+**Example: Financial Services Firm**
+
 ```
 Official:  07.01.001 — Retail Banking
 Custom:    07.01.C01 — Private Banking (DMCS-CUST, parent: 07.01.001)
@@ -156,15 +316,8 @@ Custom:    07.03.C01 — Equity Capital Markets (DMCS-CUST, parent: 07.03.003)
 Custom:    07.03.C02 — Debt Capital Markets (DMCS-CUST, parent: 07.03.003)
 ```
 
-**Healthcare System**
-```
-Official:  06.03.001 — Hospitals & Clinics
-Custom:    06.03.C01 — Specialty Hospitals (DMCS-CUST, parent: 06.03.001)
-Custom:    06.03.C02 — Outpatient Surgery Centers (DMCS-CUST, parent: 06.03.001)
-Custom:    06.03.C03 — Emergency Care Centers (DMCS-CUST, parent: 06.03.001)
-```
+**Example: Technology Platform**
 
-**Technology Platform**
 ```
 Official:  09.01.002 — Enterprise SaaS
 Custom:    09.01.C01 — Public Sector SaaS (DMCS-CUST, parent: 09.01.002)
@@ -172,447 +325,329 @@ Custom:    09.01.C02 — Healthcare SaaS (DMCS-CUST, parent: 09.01.002)
 Custom:    09.01.C03 — Financial Services SaaS (DMCS-CUST, parent: 09.01.002)
 ```
 
-**Cybersecurity Vendor (Segment-Level Extensions)**
-```
-Official:  09.01.003 — Cybersecurity Software
-Official:  09.01.003.01 — Endpoint Protection / EDR
-Custom:    09.01.003.C01 — Threat Intelligence Platform (DMCS-CUST, parent: 09.01.003)
-Custom:    09.01.003.C02 — Security Orchestration (SOAR) (DMCS-CUST, parent: 09.01.003)
-Custom:    09.01.003.01.C01 — Mobile EDR (DMCS-CUST, parent: 09.01.003.01)
-```
+**Rules for Custom Nodes**
 
-**Digital Asset Exchange (Segment-Level Extensions)**
-```
-Official:  13.02.001 — Centralized Exchanges (CEX)
-Official:  13.02.001.01 — Spot CEX
-Custom:    13.02.001.C01 — Institutional Trading Desk (DMCS-CUST, parent: 13.02.001)
-Custom:    13.02.001.C02 — Retail Copy Trading (DMCS-CUST, parent: 13.02.001)
-Custom:    13.02.001.01.C01 — High-Frequency Spot (DMCS-CUST, parent: 13.02.001.01)
-```
+1. **Always reference a valid parent** — Custom nodes must extend official DMCS nodes
+2. **Use sequential numbering** — C01, C02, C03... within your organization
+3. **Document internally** — Maintain clear definitions for each custom node
+4. **Avoid conflicts** — Coordinate IDs within your organization to prevent duplicates
+5. **Subsector ≠ Segment** — `09.01.C01` (subsector extension) is different from `09.01.001.C01` (segment extension under an official subsector)
 
-**Banking Group (Mixed Subsector + Segment Extensions)**
-```
-Official:  07.01.001 — Retail Banking
-Custom:    07.01.C01 — Private Banking (DMCS-CUST, parent: 07.01.001)
-Custom:    07.01.C02 — Corporate Banking (DMCS-CUST, parent: 07.01.001)
-Custom:    07.01.001.C05 — Student Banking (DMCS-CUST, parent: 07.01.001)
-Custom:    07.01.001.C06 — Senior Banking (DMCS-CUST, parent: 07.01.001)
-```
+**Promotion to Official DMCS**
 
-**Diversified Conglomerate Example: "Global Industries Corp"**
+If your custom node gains widespread adoption, you can propose adding it to the official taxonomy via a [GitHub Issue](https://github.com/shadstradamus/DMCS/issues/new/choose). Popular CUST nodes can be promoted through the governance process.
 
-A fictional conglomerate demonstrating multi-industry operations and custom extensions:
-
-#### Business Unit Breakdown
-
-| Business Unit | Revenue % | DMCS Classification | DMCS-CUST Extension |
-|---------------|-----------|---------------------|---------------------|
-| **Consumer Electronics** | 35% | 09.02.002 (Consumer Devices & Ecosystems) | — |
-| **Cloud Infrastructure** | 28% | 09.01.004 (Cloud Platforms / PaaS) | 09.01.C10 (Hybrid Cloud) |
-| **Retail Stores** | 15% | 04.05.001 (Multiline Retail) | 04.05.C05 (Experience Stores) |
-| **Digital Banking** | 12% | 07.01.001 (Retail Banking) | 07.01.C20 (Digital-Only Banking) |
-| **Content Streaming** | 10% | 10.02.001 (TV & Streaming) | 10.02.C08 (Interactive Streaming) |
-
-#### Company-Level DMCS Classification
-
-**Primary Classification:**
-- **09.02.002** — Consumer Devices & Ecosystems
-- **Rationale:** Largest revenue contributor at 35%
-- **Industry:** 09 (Technology)
-
-**Secondary Classification:**
-- **09.01.004** — Cloud Platforms / PaaS  
-- **Rationale:** 28% revenue from Cloud Infrastructure, meets materiality threshold (≥25%)
-- **Industry:** 09 (Technology)
-- **Note:** Both primary and secondary are in the same industry (Technology), so secondary is assigned due to materiality and strategic importance
-
-#### Why Custom Extensions? (DMCS-CUST Usage)
-
-Each division uses DMCS-CUST to capture business model nuances:
-
-1. **Cloud (09.01.C10 - Hybrid Cloud)**
-   - Parent: 09.01.004 (Cloud Platforms / PaaS)
-   - Why: Distinguishes hybrid cloud (on-prem + public cloud) from pure public cloud providers
-   
-2. **Retail (04.05.C05 - Experience Stores)**
-   - Parent: 04.05.001 (Multiline Retail)
-   - Why: Flagship experiential retail with live demos differs from traditional department stores
-
-3. **Banking (07.01.C20 - Digital-Only Banking)**
-   - Parent: 07.01.001 (Retail Banking)
-   - Why: No physical branches; app-only model differs from traditional retail banking
-
-4. **Streaming (10.02.C08 - Interactive Streaming)**
-   - Parent: 10.02.001 (TV & Streaming)
-   - Why: Hybrid of video streaming + interactive gaming elements
-
-#### Internal Reporting Hierarchy
-
-```
-Global Industries Corp
-├─ Primary: 09.02.002 (Consumer Devices & Ecosystems)
-├─ Secondary: 09.01.004 (Cloud Platforms / PaaS)
-│
-└─ Divisions (with DMCS-CUST granularity)
-   ├─ Consumer Electronics: 09.02.002
-   ├─ Cloud Infrastructure: 09.01.004 → 09.01.C10
-   ├─ Retail Stores: 04.05.001 → 04.05.C05
-   ├─ Digital Banking: 07.01.001 → 07.01.C20
-   └─ Content Streaming: 10.02.001 → 10.02.C08
-```
-
-**Key Takeaway:** DMCS standard codes classify the entity at the company level, while DMCS-CUST extensions provide division-level granularity for internal analytics and reporting without requiring changes to the official taxonomy.
-
-### Rules for DMCS-CUST
-
-1. **Always specify parent:** Custom nodes must reference their official parent subsector or segment
-2. **Sequential numbering:** Use C01, C02, C03... within your organization
-3. **Document clearly:** Maintain internal documentation of what each custom node represents
-4. **No ID conflicts:** Coordinate custom IDs within your organization to avoid duplicates
-5. **Promotion path:** Widely-used custom nodes can be proposed for inclusion in DMCS-STD
-6. **Subsector vs Segment CUST:**
-   - Subsector-level: `II.SS.CXXX` (e.g., `09.01.C01`)
-   - Segment-level: `II.SS.SSS.CXX` (e.g., `09.01.003.C01`)
-   - **Important:** `09.01.C01` ≠ `09.01.001.C01` (different hierarchy levels!)
-
-### When to Use DMCS-CUST
+**When to Use DMCS-CUST**
 
 ✅ **Use custom nodes when:**
-- You need industry-specific granularity (e.g., "Islamic Banking" under Retail Banking)
-- Internal reporting requires finer subsectors or segments than DMCS provides
-- Regional variations matter (e.g., "EU Financial Services" vs. "US Financial Services")
+- You need industry-specific detail (e.g., "Islamic Banking" under Retail Banking)
+- Internal reporting requires finer segments than DMCS provides
 - Business model innovations don't fit existing categories
-- Product-line segmentation needs more detail (e.g., specialized cybersecurity verticals)
+- You're building product-line analytics requiring specialized breakdowns
 
 ❌ **Don't create custom nodes when:**
-- Official DMCS subsectors or segments already cover your need
-- You're trying to reclassify entities across industries (use secondary classification instead)
-- The distinction is purely organizational rather than business-model based
+- Official DMCS nodes already cover your use case
+- You're trying to reclassify across industries (use secondary classification instead)
+- The distinction is organizational structure rather than business model
 
-Popular CUST nodes can be promoted to DMCS-STD in future releases through the governance process.
+## Who Uses DMCS?
 
-## Node Lifecycle Tracking
+DMCS is designed to scale from personal projects to enterprise platforms:
 
-DMCS v1.1.1 tracks node lifecycle with `since` and `status` fields for all taxonomy nodes:
+### For Hobbyists & Side Projects
+- 🎨 **Portfolio websites** — Classify companies in your stock tracking app
+- 📊 **Data visualizations** — Build industry charts and sector analysis
+- 🤖 **Learning projects** — Train ML models on business classification
+- 📱 **Crypto trackers** — Organize DeFi protocols and blockchain projects
+- **No fees, no limits** — Use freely without worrying about licensing
 
-**Fields:**
-- **since** (ISO 8601 date): When this node was added to DMCS
-- **status** (enum): Current lifecycle state
-  - `active` — Currently in use (default)
-  - `deprecated` — Discouraged but still valid
-  - `retired` — No longer assignable, ID reserved
+### For Startups & Developers
+- 🚀 **Fintech apps** — Add industry filters to investment platforms
+- 🔍 **Search & discovery** — Build company directories with DMCS categories
+- 📈 **Analytics dashboards** — Compare companies within precise subsectors
+- 🏦 **Compliance tools** — Classify entities for regulatory reporting
+- **SDK support** — TypeScript and Python libraries for rapid integration
 
-**Example:**
-```json
-{
-  "id": "09.01.003",
-  "label": "Cybersecurity Software",
-  "classification": "GIC",
-  "level": "subsector",
-  "since": "2025-11-08",
-  "status": "active"
-}
-```
+### For Enterprise & Financial Services
+- 💼 **Financial platforms** (like Yahoo Finance, Bloomberg alternatives) — Classify thousands of equities, crypto assets, and private companies
+- 🏢 **Asset managers** — Build custom fund classifications and benchmark indices
+- 📊 **Data vendors** — Distribute standardized classifications to clients
+- 🌐 **Global exchanges** — Organize listed companies and digital assets
+- **Scalable & stable** — Immutable IDs protect historical data across millions of records
 
-**Immutability Guarantee:**
-- IDs never change or get reused
-- Status can evolve (active → deprecated → retired)
-- Labels may be refined over time
-- Historical data remains valid indefinitely
+### For Researchers & Analysts
+- 📚 **Academic research** — Study industry evolution and business model trends
+- 📰 **Market analysis** — Track emerging sectors (DeFi, AI, quantum computing)
+- 📖 **Publications** — Cite DMCS as an open standard with DOI-style versioning
+- **Full transparency** — All data, governance, and changes are public
 
-**Query Examples:**
-```python
-# Get all active subsectors
-active = dmcs.get_active()
+## Use Cases
 
-# Historical lookup still works
-legacy = dmcs.get_by_id('10.02.005')  # Cable TV (status: retired)
-```
+**For Website Builders**
+- Classify companies, products, or services with consistent IDs
+- Display industry/sector badges that never break
+- Build filterable directories or taxonomies
 
-## Segment Governance
+**For AI Training**
+- Label training datasets with stable, versioned classifications
+- Map diverse business models to structured categories
+- Track entity classifications over time without data drift
 
-- **ID format:** `II.SS.SSS.SS` (two-digit segment suffix appended to the parent subsector)
-- **Creation threshold:** Parent subsector must support ≥3 distinct market-recognised lines **and** each candidate segment must be ≥10% of global subsector revenue **or** represent ≥10 large issuers.
-- **Capacity cap:** Maximum of 20 active segments per subsector; beyond that, split or refactor the parent subsector.
-- **Naming rules:** Use concise noun phrases that describe the product, service, or usage model (avoid marketing slogans or geographic qualifiers).
-- **Materiality effect:** Segments do not alter primary/secondary classification rules; they refine analysis within the assigned subsector.
-- **Release cadence:** Segments are introduced or retired only in structural releases (2× per year) and all changes are enumerated in the public changelog.
+**For Analytics & Research**
+- Analyze portfolios across traditional and digital economy
+- Compare companies within precise subsectors and segments
+- Build industry benchmarks with granular peer groups
 
-## Decision Tree – Technology (Industry 09)
+**For Data Teams**
+- Import flat CSV into SQL databases or data warehouses
+- Use SDKs for programmatic access in Python/TypeScript pipelines
+- Maintain backward compatibility through immutable IDs
+
+**For Crypto/Blockchain Projects**
+- First taxonomy with native support for DeFi, L1/L2, stablecoins, and onchain apps
+- Classify protocols, exchanges, and infrastructure with precision
+- Map digital assets to appropriate business model categories
+
+## Example: Technology Decision Tree (Industry 09)
+
+Need help classifying a technology company? Use this decision tree to find the right subsector:
 
 ```
 Start
-├─ Software-led revenue? (Yes)
-│   ├─ Security-first? (Yes) → 09.01.003 Cybersecurity Software
-│   │     → Endpoint Protection (09.01.003.01) / IAM (09.01.003.02) / Cloud & Network Security (09.01.003.03)
-│   ├─ Data platform core? (Yes) → 09.01.004 Data & Analytics Platforms
-│   │     → Databases (09.01.004.01) / ETL & Data Integration (09.01.004.02) / BI & Analytics (09.01.004.03)
-│   └─ Developer lifecycle focus? (Yes) → 09.01.005 Developer Tools & Observability
-│         → CI/CD & DevOps (09.01.005.01) / API Management (09.01.005.02) / Observability (09.01.005.03)
-├─ Hardware devices primary? (Yes)
-│   ├─ Personal/consumer? (Yes) → 09.02.002 Consumer Devices & Ecosystems
-│   │     → Smartphones & Accessories (09.02.002.01) / PCs & Tablets (09.02.002.02) / Wearables & Health (09.02.002.03)
-│   ├─ Consumer electronics? (Yes) → 09.03.002 Consumer Electronics
-│   │     → Wearables / Smart Home / Audio & Imaging
-│   └─ Enterprise/datacenter? (Yes) → 09.03.003 Enterprise Hardware
-│         → Servers / Storage / HCI
-├─ Network equipment core? (Yes) → 09.03.004 Networking Equipment
-│     → Enterprise / Data Center / Optical
-├─ Semiconductor production? (Yes)
-│   ├─ Logic/compute? → 09.02.001 Semiconductor Design & Manufacturing
-│   │     → CPUs / GPUs / AI Accelerators
-│   ├─ Memory/storage? → 09.02.002 Memory & Storage
-│   │     → DRAM / NAND / Controllers
-│   ├─ Analog/power? → 09.02.003 Analog & Power
-│   │     → PMIC / Signal Chain / RF
-│   ├─ Manufacturing services? → 09.02.004 Semiconductor Services
-│   │     → Foundry / IDM / OSAT
-│   └─ Design tools/IP? → 09.02.005 EDA & Design Services
-│         → EDA Tools / IP Licensing / Design Services
-├─ Services-led? (Yes)
-│   ├─ Consulting/Integration? → 09.04.001 IT Consulting & Integration
-│   │     → Strategy & Architecture / Implementation / Managed Apps
-│   ├─ Outsourcing/BPO? → 09.04.002 IT Outsourcing & BPO
-│   │     → App Outsourcing / Infra Outsourcing / BPO
-│   ├─ Managed cloud/MSP? → 09.04.003 Managed Services & Cloud
-│   │     → MSP SMB / MSP Enterprise / Cloud Migration & FinOps
-│   └─ Security services? → 09.04.004 Cybersecurity Services
-│         → MDR-XDR / PenTest / Audit & GRC
-└─ Emerging tech focus? (Yes)
-   ├─ Robotics platforms? → 09.05.001 Robotics & Automation
-   │     → Industrial Robots / AMRs / Controllers
-   ├─ Edge & IoT? → 09.05.002 Edge Computing & IoT
-   │     → Gateways / Edge AI / Device Mgmt
-   ├─ Quantum/advanced compute? → 09.05.003 Quantum Computing
-   │     → Hardware / Software / Cryo & Control
-   └─ AR/VR/XR software? → 09.05.004 Spatial Computing Platforms
-         → AR SDKs / Spatial Mapping / 3D Content
+├─ Software-led revenue?
+│   ├─ Application suite core? → 09.01.001 Application Software
+│   ├─ Horizontal SaaS platform? → 09.01.002 Enterprise SaaS
+│   ├─ Security-first? → 09.01.003 Cybersecurity Software
+│   ├─ Developer & cloud platform? → 09.01.004 Cloud Platforms / PaaS
+│   ├─ Data infrastructure core? → 09.01.005 Data & Database Platforms
+│   ├─ Customer engagement focus? → 09.01.006 CRM & Customer Platforms
+│   └─ AI platform delivery? → 09.01.007 AI & ML Platforms
+├─ Hardware & devices primary?
+│   ├─ Consumer devices? → 09.02.005 Consumer Devices & Ecosystems
+│   ├─ Network & telecom infrastructure? → 09.02.006 Network & Telecom Equipment
+│   ├─ Imaging/sensors/components? → 09.02.007 Imaging, Sensors & Components
+│   └─ Semiconductor supply chain?
+│         ├─ Fabless design & IP? → 09.02.001 Semiconductors — Design
+│         ├─ Foundry/IDM manufacturing? → 09.02.002 Semiconductors — Manufacturing
+│         ├─ Capital equipment? → 09.02.003 Semiconductor Equipment
+│         └─ Materials, gases & consumables? → 09.02.004 Semiconductor Materials
+├─ Services-led revenue?
+│   ├─ Consulting & integration? → 09.03.001 IT Consulting
+│   ├─ Managed operations? → 09.03.002 Managed Services
+│   ├─ Colocation/hosting? → 09.03.003 Data Center Services
+│   └─ Security services? → 09.03.004 Cybersecurity Services
+├─ Emerging tech bets?
+│   ├─ Robotics & automation hardware? → 09.04.001 Robotics & Automation
+│   ├─ IoT platforms & edge? → 09.04.002 IoT Platforms
+│   ├─ Advanced/experimental tech? → 09.04.003 Advanced / Experimental Tech
+│   └─ Spatial computing / XR? → 09.04.004 Spatial / XR Platforms
+└─ Otherwise: assess adjacent industries (e.g., Communications 10, Industrials 03)
 ```
 
-## Industry 13 – Digital & Onchain Economy (DIC)
+**More decision trees** for other industries are available in the full [CLASSIFICATION.md](./CLASSIFICATION.md) documentation.
 
-| ID | Name | Notes |
-|----|------|-------|
-| 13 | Digital & Onchain Economy | DIC umbrella (all onchain/digital rails) |
+## Real-World Examples
 
-### 13.01 – DLT & Blockchain Infrastructure
+| Entity | Primary | Secondary | Rationale |
+|--------|---------|-----------|-----------|
+| Apple | 09.02.005 (Consumer Devices & Ecosystems) | — | Hardware-led revenue (iPhone, Mac, iPad) is the dominant business line |
+| Amazon | 04.05.002 (Online Marketplaces) | 09.01.004 (Cloud Platforms / PaaS) | E-commerce is primary, AWS qualifies as secondary (≥25% revenue, different industry) |
+| Meta | 10.03.001 (Social Networks) | 09.04.004 (Spatial / XR Platforms) | Social media primary, Reality Labs emerging tech secondary |
+| Tether (USDT) | 13.02.004 (Stablecoin / Digital Currency) | — | Pure-play stablecoin issuer in digital assets industry |
+| NVIDIA | 09.02.001 (Semiconductors — Design) | — | Fabless GPU/accelerator design is core business |
+| Microsoft | 09.01.002 (Enterprise SaaS) | 09.01.004 (Cloud Platforms / PaaS) | Note: Both in same industry (Technology), so only primary assigned per materiality rules |
 
-| ID | Level | Label | Parent |
-|----|--------|--------|--------|
-| 13.01 | sector | DLT & Blockchain Infrastructure | 13 |
-| 13.01.001 | subsector | Public / Permissionless L1 | 13.01 |
-| 13.01.001.01 | segment | EVM L1 | 13.01.001 |
-| 13.01.001.02 | segment | Non-EVM L1 | 13.01.001 |
-| 13.01.002 | subsector | L2 / Rollup Infra | 13.01 |
-| 13.01.002.01 | segment | Optimistic Rollups | 13.01.002 |
-| 13.01.002.02 | segment | ZK Rollups | 13.01.002 |
-| 13.01.003 | subsector | Validator / Staking Services | 13.01 |
-| 13.01.004 | subsector | Chain Tooling & Infra Services | 13.01 |
+## Quality & Testing
 
-### 13.02 – Digital Asset Services & Markets
+DMCS maintains data quality through automated validation:
 
-| ID | Level | Label | Parent |
-|----|--------|--------|--------|
-| 13.02 | sector | Digital Asset Services & Markets | 13 |
-| 13.02.001 | subsector | Centralized Exchanges (CEX) | 13.02 |
-| 13.02.001.01 | segment | Spot CEX | 13.02.001 |
-| 13.02.001.02 | segment | Derivatives CEX | 13.02.001 |
-| 13.02.001.03 | segment | Fiat / On–Off Ramp CEX | 13.02.001 |
-| 13.02.002 | subsector | Decentralized Exchanges (DEX/AMM) | 13.02 |
-| 13.02.002.01 | segment | L1 DEX | 13.02.002 |
-| 13.02.002.02 | segment | L2 DEX | 13.02.002 |
-| 13.02.003 | subsector | Custody & Key Management | 13.02 |
-| 13.02.003.01 | segment | Institutional Custody | 13.02.003 |
-| 13.02.003.02 | segment | MPC / Wallet Infra | 13.02.003 |
-| 13.02.004 | subsector | Stablecoin / Digital Currency | 13.02 |
-| 13.02.004.01 | segment | Fiat-backed Stablecoins | 13.02.004 |
-| 13.02.004.02 | segment | Crypto-collateralized Stablecoins | 13.02.004 |
-| 13.02.004.03 | segment | Platform-linked Stablecoins | 13.02.004 |
-| 13.02.005 | subsector | Tokenization & Digital Securities | 13.02 |
+- **Schema validation** — Ensures all nodes have required fields and proper parent references
+- **Coverage checks** — Verifies published statistics match actual counts
+- **SDK tests** — TypeScript and Python SDKs include comprehensive test suites
+- **Audit reports** — Periodic reviews documented in `tooling/AUDIT_REPORT.txt`
 
-### 13.03 – Onchain Applications & Experiences
-
-| ID | Level | Label | Parent |
-|----|--------|--------|--------|
-| 13.03 | sector | Onchain Apps & Experiences | 13 |
-| 13.03.001 | subsector | DeFi (non-exchange) | 13.03 |
-| 13.03.002 | subsector | NFT / Digital Collectible Platforms | 13.03 |
-| 13.03.003 | subsector | Onchain Gaming / GameFi | 13.03 |
-| 13.03.004 | subsector | Onchain Social | 13.03 |
-
-### 13.04 – Onchain Services, Security & Compliance
-
-| ID | Level | Label | Parent |
-|----|--------|--------|--------|
-| 13.04 | sector | Onchain Services & Security | 13 |
-| 13.04.001 | subsector | Smart Contract Audit/Monitoring | 13.04 |
-| 13.04.002 | subsector | Chain Analytics / AML / Forensics | 13.04 |
-| 13.04.003 | subsector | Bridge / Oracle Security | 13.04 |
-| 13.04.004 | subsector | Compliance / Travel Rule | 13.04 |
-
-## Governance
-
-| Release Type | Frequency | Contents |
-|--------------|-----------|----------|
-| Structural | As needed (typically 1-2×/year) | New sectors/subsectors, taxonomy expansions |
-| Thematic | As needed | Label refinements, no ID changes |
-| Changelog | Every release | All additions, changes, effective dates |
-
-All changes are versioned and documented. Community proposals via pull requests are reviewed openly.
-
-## Data Access
-
-### Human-Readable
-- **[CLASSIFICATION.md](./CLASSIFICATION.md)** — Complete reference with all 13 industries, 55 sectors, 193 subsectors, and 34 segments
-
-### Machine-Readable
-- **[data/classification.json](./data/classification.json)** — Hierarchical JSON structure for programmatic access
-- **[data/classification.csv](./data/classification.csv)** — Flat CSV table for database imports and analytics
-
-### SDKs
-
-**Python SDK:**
+Run validation yourself:
 ```bash
-pip install "git+https://github.com/shadstradamus/DMCS.git#subdirectory=python-sdk"
+cd tooling/scripts
+node audit-taxonomy.js
 ```
 
-**TypeScript/JavaScript SDK:**
-```bash
-npm install dmcs-sdk
+## Frequently Asked Questions (FAQ)
+
+### How is DMCS different from GICS?
+
+**GICS** is a proprietary system owned by S&P and MSCI, requiring paid licenses for commercial use. It was designed for traditional public equities and lacks coverage for modern digital business models.
+
+**DMCS** is:
+- **Open source** (Apache 2.0) — free for any use, no licensing fees
+- **Digital-native** — includes dedicated Industry 13 for crypto/blockchain/DeFi
+- **Platform-friendly** — supports multi-classification for conglomerates (primary + secondary)
+- **Immutable IDs** — guaranteed stability; IDs never change or get reused
+- **Community-driven** — anyone can propose changes via GitHub
+
+### Can I use DMCS commercially?
+
+**Yes, absolutely.** DMCS is licensed under Apache 2.0, which allows:
+- ✅ Commercial use without fees or royalties
+- ✅ Modification and redistribution
+- ✅ Building paid products/services using DMCS
+- ✅ Training AI models on DMCS data
+- ✅ Integration into proprietary databases or platforms
+
+**Real-world applications:**
+- Financial platforms (stock screeners, portfolio trackers, market data APIs)
+- Enterprise data vendors and analytics services
+- AI/ML training datasets for business intelligence
+- Mobile apps and SaaS products
+- Internal classification systems at Fortune 500 companies
+
+The only requirement is attribution (keeping license notices in place). No usage limits, no approval needed, no revenue sharing.
+
+### How often does DMCS change?
+
+**IDs never change.** Once assigned, a DMCS ID is permanent and immutable—`09.01.002` will always mean the same thing.
+
+**What can change:**
+- **Labels** may be refined for clarity (e.g., "Cloud Platforms / PaaS" → "Cloud Infrastructure Platforms")
+- **New nodes** are added via structural releases (as needed, based on community proposals)
+- **Metadata** like `status` can evolve (e.g., `active` → `deprecated` → `retired`)
+
+All changes are documented in `CHANGELOG.md` with effective dates and migration guidance.
+
+### What happens if I need a category that doesn't exist?
+
+You have two options:
+
+**1. Use DMCS-CUST (Custom Extensions)**
+
+Add your own custom classifications immediately without waiting:
+- Create subsector extensions: `II.SS.CXXX` (e.g., `09.01.C01` for "Public Sector SaaS")
+- Create segment extensions: `II.SS.SSS.CXX` (e.g., `09.01.003.C01` for "Mobile EDR")
+- Keep using them indefinitely within your organization
+
+**2. Propose Official Addition**
+
+Submit a [Taxonomy Proposal](https://github.com/shadstradamus/DMCS/issues/new/choose) via GitHub Issues:
+1. Describe the business model and provide real-world examples
+2. Explain why existing nodes are insufficient
+3. Community reviews and discusses
+4. If accepted, it's added to the official taxonomy in the next release
+
+Popular DMCS-CUST nodes can be promoted to official standard through this process.
+
+### How stable are the IDs really?
+
+**Guaranteed immutable.** This is a core design principle:
+
+- **No reuse** — Retired IDs are never reassigned to different business models
+- **No renumbering** — The hierarchy never gets reorganized or collapsed
+- **Version tracking** — Every node has a `since` field recording when it was added
+- **Lifecycle management** — Nodes can be deprecated or retired, but IDs remain reserved
+
+Example:
+```json
+{
+  "id": "10.02.005",
+  "label": "Cable TV",
+  "status": "retired",
+  "since": "2024-01-15",
+  "sunset": "2025-06-01"
+}
 ```
 
-Or install from repository:
-```bash
-npm install git+https://github.com/shadstradamus/DMCS.git#subdirectory=typescript-sdk
-```
+Even retired IDs remain in the data model for historical lookups. Your 2020 dataset classified with DMCS v1.0 will still work with DMCS v2.0+.
 
-See [python-sdk/README.md](./python-sdk/README.md) and [typescript-sdk/README.md](./typescript-sdk/README.md) for detailed documentation.
+### Is DMCS only for public companies?
 
-### Usage Examples
+**No.** DMCS works for any entity with identifiable business models:
+- Public & private companies
+- Startups and scaleups
+- Crypto protocols and DAOs
+- Government agencies (Industry 12)
+- Non-profits and foundations
+- Products, divisions, or business units
 
-**Python:**
-```python
-from dmcs_sdk import classification
+The classification focuses on **what the entity does** (business model), not legal structure or funding stage.
 
-# Load the classification
-dmcs = classification()
+### Do I need to use the SDKs?
 
-# Get stats
-print(dmcs.stats())
-# {'version': '1.1.1', 'release_date': '2025-11-10', 'industries': 13, 'sectors': 55, 'subsectors': 193, 'segments': 34}
+**No, but they help.** The core taxonomy is available as:
+- `data/classification.json` — Load directly into any JSON parser
+- `data/classification.csv` — Import into Excel, SQL databases, or analytics tools
+- `CLASSIFICATION.md` — Human-readable reference for manual lookup
 
-# Lookup by ID
-tech = dmcs.get_by_id('09')
-print(tech)
-# 09 — Technology (4 sectors, GIC)
+The SDKs (TypeScript, Python) add convenience features like search, filtering, and validation, but you can work with raw data files if you prefer.
 
-saas = dmcs.get_by_id('09.01.002')
-print(saas)
-# 09.01.002 — Enterprise SaaS
+### How do I stay updated on changes?
 
-# Search by text
-results = dmcs.search('blockchain')
-for result in results:
-    print(result)
+- ⭐ **Star the repository** — Get notifications when new releases are published
+- 📖 **Watch** `CHANGELOG.md` — All structural and thematic changes are logged here
+- 🔔 **Subscribe to Issues** — Follow taxonomy proposal discussions
+- 📊 **Check version metadata** — SDK `.stats()` method shows current version
 
-# Filter by classification
-gic_industries = dmcs.get_GIC()  # Traditional economy (01-12)
-dic_industries = dmcs.get_DIC()  # Digital assets (13)
-```
+Each release is tagged in Git (e.g., `v1.1.2`) for easy comparison and rollback if needed.
 
-**TypeScript/JavaScript:**
-```typescript
-import { Classification } from 'dmcs-sdk';
+## What's Next
 
-const dmcs = new Classification();
+**Future Enhancements**
+- Decision trees for all 13 industries (currently have Technology)
+- Enhanced materiality guidance and examples
+- Additional mapping documentation for niche classification systems
+- Community-contributed case studies and classification rationales
 
-// Get stats
-console.log(dmcs.stats());
-// {
-//   version: '1.1.1',
-//   release_date: '2025-11-09',
-//   industries: 13,
-//   sectors: 55,
-//   subsectors: 193,
-//   segments: 34,
-//   gic_industries: 12,
-//   dic_industries: 1
-// }
-
-// Lookup by ID
-const tech = dmcs.getById('09');
-console.log(tech);
-// { id: '09', label: 'Technology', classification: 'GIC', sectors: [...] }
-
-const saas = dmcs.getById('09.01.002');
-console.log(saas);
-// { id: '09.01.002', label: 'Enterprise SaaS', ... }
-
-// Search by text
-const results = dmcs.search('blockchain');
-results.forEach(result => console.log(result));
-
-// Filter by classification
-const gic = dmcs.getGIC();  // Traditional economy (01-12)
-const dic = dmcs.getDIC();  // Digital assets (13)
-```
-
-**SQL (PostgreSQL):**
-```sql
-COPY dmcs_classification(level, id, label, parent_id, industry_id, sector_id, classification)
-FROM '/path/to/classification.csv' 
-DELIMITER ',' 
-CSV HEADER;
-```
-
-**Direct JSON/CSV:**
-```javascript
-fetch('data/classification.json')
-  .then(res => res.json())
-  .then(dmcs => {
-    const dic = dmcs.industries.find(i => i.classification === 'DIC');
-    console.log('Digital Assets Sectors:', dic.sectors.length);
-  });
-```
-
-## License
-
-Apache 2.0 License — see [LICENSE](./LICENSE)
+**Get Involved**
+- ⭐ Star the repository to follow updates
+- 💡 Submit classification proposals via [GitHub Issues](https://github.com/shadstradamus/DMCS/issues/new/choose)
+- 🐛 Report bugs or data inconsistencies
+- 📖 Improve documentation and examples
+- 🤝 Share how you're using DMCS in your project
 
 ## Contributing
 
-This is the current structural release (v1.1.1). Contribution guidelines and governance processes will be published in future updates.
+DMCS is community-driven and welcomes contributions:
 
-For questions, feedback, or mapping support, open an issue or discussion.
+**Ways to Contribute**
+1. **Propose taxonomy changes** — Use the [Taxonomy Proposal](https://github.com/shadstradamus/DMCS/issues/new/choose) issue template
+2. **Improve documentation** — Fix typos, clarify examples, add use cases
+3. **Enhance tooling** — Improve SDK features, add validation scripts, build utilities
+4. **Share feedback** — Open issues for bugs, questions, or suggestions
 
-## Open Source & Governance
+**Development Setup**
+```bash
+# Clone the repository
+git clone https://github.com/shadstradamus/DMCS.git
+cd DMCS
 
-**DMCS is fully open source under the Apache 2.0 License.**
+# Install tooling dependencies
+cd tooling
+npm install
 
-### What You Can Do (No Permission Required)
+# Run validation
+npm run audit
 
-- ✅ **Use DMCS freely** in any project, commercial or non-commercial
-- ✅ **Fork and modify** the taxonomy for your own purposes
-- ✅ **Create derivative works** and custom classification systems based on DMCS
-- ✅ **Build products and services** that implement DMCS (APIs, databases, analytics tools, etc.)
-- ✅ **Extend DMCS** using the DMCS-CUST namespace for organization-specific classifications
-- ✅ **Redistribute** in any format (JSON, CSV, SQL, API endpoints, etc.)
-- ✅ **Contribute improvements** via pull requests - all constructive contributions are welcome!
+# Install Python SDK for development
+cd ../python-sdk
+pip install -e .
+pytest
+```
 
-### Official DMCS Standard
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 
-This repository (https://github.com/shadstradamus/DMCS) is the **canonical source** for the official DMCS taxonomy. 
+## License & Usage
 
-**Trademark usage:** The "DMCS" name refers specifically to the taxonomy maintained in this repository. If you fork and significantly modify the standard:
-- You're free to use the data and ID structure
-- Please clearly indicate it's a derivative/modified version (e.g., "Based on DMCS" or "MyCompany Custom Classification derived from DMCS")
-- Don't imply your fork is the "official DMCS" standard
+**License:** Apache 2.0
 
-**Contributing to the official standard:**
-1. Fork this repository
-2. Submit a pull request with proposed additions or improvements
-3. Community discussion and review happens in the open
-4. Quality contributions that align with DMCS design principles are merged
-5. Official releases happen as needed based on the governance model
+✅ **You can:**
+- Use DMCS in any project (commercial or non-commercial)
+- Modify and redistribute the data
+- Build products and services using DMCS
+- Create derivative works
+- Extend with DMCS-CUST custom classifications
 
-**Goal:** Keep DMCS open, collaborative, trustworthy and anyone can use it, everyone can contribute, and there's one stable reference version.
+**Trademark:** "DMCS" refers to the official taxonomy maintained in this repository. If you fork and significantly modify the standard, please label it as "Based on DMCS" or similar to avoid confusion.
+
+---
+
+**Questions?** Open an [issue](https://github.com/shadstradamus/DMCS/issues) or discussion.
+
+**Repository:** [github.com/shadstradamus/DMCS](https://github.com/shadstradamus/DMCS)

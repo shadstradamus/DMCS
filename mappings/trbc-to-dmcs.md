@@ -54,11 +54,11 @@ TRBC is maintained by Refinitiv (now LSEG) and used across financial data platfo
 | 5710101010 | Computer Services | 09.03.001 - IT Consulting | 09.03.002 - Managed Services | System integration vs managed operations |
 | 5710101011 | Software | 09.01.002 - Enterprise SaaS | 09.01.001 - Application Software | Enterprise-first vs mixed models |
 | 5710101012 | Internet Services | 10.03.004 - Search & Digital Platforms | 10.03.001 - Social Networks | Use DMCS Industry 10 for platform companies |
-| 5720201011 | Semiconductors & Semiconductor Equipment | 09.02.001 - Semiconductors | - | Chip design, fabs, and capital equipment |
-| 5720201012 | Communications & Networking | 09.02.003 - Network & Telecom Equipment | - | Communications hardware manufacturers |
-| 5720201013 | Computers, Phones & Household Electronics | 09.02.002 - Consumer Devices & Ecosystems | - | Device OEMs |
-| 5720201014 | Electronic Components | 09.02.004 - Imaging, Sensors & Components | - | Passive and active components |
-| 5720201015 | Office Equipment | 09.02.004 - Imaging, Sensors & Components | - | Peripherals and printing |
+| 5720201011 | Semiconductors & Semiconductor Equipment | 09.02.001 - Semiconductors — Design (Fabless & IP) | 09.02.002 - Semiconductors — Manufacturing (Foundry & IDM) | Split DMCS by fabless vs IDM; route tooling to 09.02.003 |
+| 5720201012 | Communications & Networking | 09.02.006 - Network & Telecom Equipment | - | Communications hardware manufacturers |
+| 5720201013 | Computers, Phones & Household Electronics | 09.02.005 - Consumer Devices & Ecosystems | - | Device OEMs |
+| 5720201014 | Electronic Components | 09.02.007 - Imaging, Sensors & Components | - | Passive and active components |
+| 5720201015 | Office Equipment | 09.02.007 - Imaging, Sensors & Components | - | Peripherals and printing |
 
 ### Financials (TRBC 55 → DMCS 07 and 08)
 

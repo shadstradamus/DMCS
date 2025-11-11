@@ -169,9 +169,9 @@ NAICS is the standard used by US, Canada, and Mexico for classifying business es
 | 311111 | Dog and Cat Food Manufacturing | 05.01.001 - Packaged Foods | 05.01.004 - Snacks & Confectionery | Add secondary for treat-focused brands |
 | 325412 | Pharmaceutical Preparation Manufacturing | 06.01.001 - Branded Pharma | 06.01.002 - Generics & Biosimilars | Companies often straddle both |
 | 325620 | Toilet Preparation Manufacturing | 05.02.002 - Personal Care & Beauty | 05.02.001 - Household Products | Choose based on product line |
-| 334111 | Electronic Computer Manufacturing | 09.02.002 - Consumer Devices & Ecosystems | 09.02.003 - Network & Telecom Equipment | Secondary for enterprise hardware |
-| 334220 | Radio and Television Broadcasting and Wireless Communications Equipment | 09.02.003 - Network & Telecom Equipment | - | Communications hardware |
-| 334413 | Semiconductor and Related Device Manufacturing | 09.02.001 - Semiconductors | - | Chip foundries and designers |
+| 334111 | Electronic Computer Manufacturing | 09.02.005 - Consumer Devices & Ecosystems | 09.02.006 - Network & Telecom Equipment | Secondary for enterprise infrastructure lines |
+| 334220 | Radio and Television Broadcasting and Wireless Communications Equipment | 09.02.006 - Network & Telecom Equipment | - | Communications hardware |
+| 334413 | Semiconductor and Related Device Manufacturing | 09.02.002 - Semiconductors — Manufacturing (Foundry & IDM) | 09.02.001 - Semiconductors — Design (Fabless & IP) | Split by in-house fabs vs fabless design |
 | 335110 | Electric Lamp Bulb and Part Manufacturing | 03.02.002 - Electrical Equipment | 03.02.004 - Diversified Industrials | Use secondary when broad product set |
 | 336111 | Automobile Manufacturing | 04.01.001 - Automakers | 04.01.003 - EV & New Mobility | Secondary for EV-first OEMs |
 | 336211 | Motor Vehicle Body Manufacturing | 04.01.002 - Auto Parts & Components | - | Auto body and parts suppliers |

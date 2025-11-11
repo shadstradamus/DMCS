@@ -24,12 +24,12 @@ const dmcs = new Classification();
 // Get stats
 console.log(dmcs.stats());
 // {
-//   version: '1.1.1',
-//   release_date: '2025-11-09',
+//   version: '1.1.2',
+//   release_date: '2025-11-11',
 //   industries: 13,
 //   sectors: 55,
-//   subsectors: 193,
-//   segments: 34,
+//   subsectors: 205,
+//   segments: 49,
 //   gic_industries: 12,
 //   dic_industries: 1
 // }
@@ -163,7 +163,7 @@ const dmcs = new Classification();
 // Get a specific segment
 const crmSegment = dmcs.getById('09.01.001.02');
 console.log(`Segment: ${crmSegment?.label}`);
-// Output: Segment: CRM Software
+// Output: Segment: CRM / CX
 
 // Access parent hierarchy
 if (crmSegment) {

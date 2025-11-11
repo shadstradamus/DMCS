@@ -58,10 +58,10 @@ ICB is maintained by FTSE Russell and used across FTSE indices and European mark
 | 70101010 | Computer Services | 09.03.001 - IT Consulting | 09.03.002 - Managed Services | Advisory vs managed operations split |
 | 70101015 | Internet | 10.03.004 - Search & Digital Platforms | 10.03.001 - Social Networks | Choose by core monetization model |
 | 70101020 | Software | 09.01.002 - Enterprise SaaS | 09.01.001 - Application Software | Enterprise-first vs mixed consumer focus |
-| 70201020 | Computer Hardware | 09.02.002 - Consumer Devices & Ecosystems | - | End-user hardware manufacturers |
-| 70201030 | Electronic Office Equipment | 09.02.004 - Imaging, Sensors & Components | - | Peripherals, imaging and component makers |
-| 70203010 | Semiconductors | 09.02.001 - Semiconductors | - | Chip designers and fabs |
-| 70203015 | Semiconductor Equipment | 09.02.001 - Semiconductors | - | Capital equipment suppliers |
+| 70201020 | Computer Hardware | 09.02.005 - Consumer Devices & Ecosystems | - | End-user hardware manufacturers |
+| 70201030 | Electronic Office Equipment | 09.02.007 - Imaging, Sensors & Components | - | Peripherals, imaging and component makers |
+| 70203010 | Semiconductors | 09.02.001 - Semiconductors — Design (Fabless & IP) | 09.02.002 - Semiconductors — Manufacturing (Foundry & IDM) | Map based on fabless vs IDM business mix |
+| 70203015 | Semiconductor Equipment | 09.02.003 - Semiconductor Equipment | - | Capital equipment suppliers |
 
 ### Telecommunications (ICB 8000 → DMCS 10)
 

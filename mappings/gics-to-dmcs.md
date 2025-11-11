@@ -57,11 +57,11 @@ GICS is maintained by MSCI and S&P Dow Jones Indices. It classifies companies in
 | 45102020 | Data Processing & Outsourced Services | 09.03.002 - Managed Services | 09.01.004 - Cloud Platforms / PaaS | Managed services first, cloud as secondary if platform revenue significant |
 | 45103010 | Application Software | 09.01.002 - Enterprise SaaS | - | Subscription or license revenue |
 | 45103020 | Systems Software | 09.01.005 - Data & Database Platforms | - | Operating systems, middleware, database vendors |
-| 45201020 | Semiconductor Equipment | 09.02.001 - Semiconductors | - | Align with manufacturing supply chain |
-| 45203010 | Semiconductors | 09.02.001 - Semiconductors | - | Fabrication and chip design |
-| 45203015 | Semiconductor Equipment | 09.02.001 - Semiconductors | - | Capital equipment suppliers |
-| 45204010 | Communications Equipment | 09.02.003 - Network & Telecom Equipment | - | Networking hardware |
-| 45301010 | Computer Hardware | 09.02.002 - Consumer Devices & Ecosystems | - | Personal systems and devices |
+| 45201020 | Semiconductor Equipment | 09.02.003 - Semiconductor Equipment | 09.02.004 - Semiconductor Materials | Equipment vendors with large materials businesses |
+| 45203010 | Semiconductors | 09.02.001 - Semiconductors — Design (Fabless & IP) | 09.02.002 - Semiconductors — Manufacturing (Foundry & IDM) | Choose based on fabless vs IDM economics |
+| 45203015 | Semiconductor Equipment | 09.02.003 - Semiconductor Equipment | - | Capital equipment suppliers |
+| 45204010 | Communications Equipment | 09.02.006 - Network & Telecom Equipment | - | Networking hardware |
+| 45301010 | Computer Hardware | 09.02.005 - Consumer Devices & Ecosystems | - | Personal systems and devices |
 
 ### Communication Services (GICS 50 → DMCS 10)
 

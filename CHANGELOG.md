@@ -5,6 +5,46 @@ All notable changes to the DMCS (Dynamic Multi-Dimensional Classification Standa
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 2025-11-11
+
+### Added
+
+- **Technology hardware refresh**: split sector `09.02` into a full semiconductor supply chain
+  - `09.02.001` Semiconductors — Design (Fabless & IP)
+  - `09.02.002` Semiconductors — Manufacturing (Foundry & IDM)
+  - `09.02.003` Semiconductor Equipment
+  - `09.02.004` Semiconductor Materials
+  - `09.02.005` Consumer Devices & Ecosystems (with refreshed segments)
+  - `09.02.006` Network & Telecom Equipment
+  - `09.02.007` Imaging, Sensors & Components
+- **AI platform depth**: introduced three segments under `09.01.007 AI & ML Platforms`
+  - `09.01.007.01` Foundation Model Platforms
+  - `09.01.007.02` Model APIs & Orchestration
+  - `09.01.007.03` Applied AI Applications
+- **New green & digital economy subsectors**
+  - `10.02.006` Betting & iGaming
+  - `07.03.006` Carbon Exchanges & Data
+  - `11.04.003` Carbon Project Services & Trading
+  - `11.04.004` CCUS Equipment & Services
+  - `13.01.007` DePIN Infrastructure (DIC)
+  - `13.03.005` DePIN Applications (DIC)
+  - `01.04.005` Electrolyzers & Hydrogen Equipment
+  - `07.02.004` Digital Carriers & MGAs
+- **Automation support**: added `tooling/scripts/upgrade_taxonomy_1_1_2.js` to upgrade JSON metadata and seed new nodes programmatically
+
+### Changed
+
+- Count now **205 subsectors** (+12) and **49 segments** (+3) with release metadata updated to 2025-11-11
+- Website curated assets, SDK docs, and tooling references now align with new hardware IDs (Apple → 09.02.005, Cisco → 09.02.006, Intel → 09.02.002,
+  etc.)
+- Regenerated CSV and Markdown exports; synchronised SDK data bundles and tooling assets
+- Updated mapping guides (GICS / ICB / TRBC / NAICS) to the new semiconductor and hardware identifiers
+- Documentation refreshed: README decision tree, quick examples, API samples, TypeScript/Python SDK snippets, segment counts
+
+### Fixed
+
+- Restored consistent version metadata across README, SDKs, and API documentation after the structural refresh
+
 ## [1.1.1] - 2025-11-10
 
 ### Added
@@ -197,6 +237,7 @@ DMCS uses **semantic versioning**:
   - **MINOR**: New industries, sectors, or subsectors (structural releases)
   - **PATCH**: Label updates, documentation fixes, thematic additions
 
+[1.1.2]: https://github.com/shadstradamus/DMCS/releases/tag/v1.1.2
 [1.1.1]: https://github.com/shadstradamus/DMCS/releases/tag/v1.1.1
 [1.1.0]: https://github.com/shadstradamus/DMCS/releases/tag/v1.1.0
 [1.0.4]: https://github.com/shadstradamus/DMCS/releases/tag/v1.0.4
