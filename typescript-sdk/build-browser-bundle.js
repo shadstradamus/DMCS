@@ -180,8 +180,22 @@ const bundle = `
 `.trim();
 
 // Write bundle
-const outputPath = path.join(__dirname, 'dist', 'dmcs-bundle.js');
-fs.writeFileSync(outputPath, bundle, 'utf8');
+const sdkBundlePath = path.join(__dirname, 'dist', 'dmcs-bundle.js');
+fs.writeFileSync(sdkBundlePath, bundle, 'utf8');
 
-console.log(`✅ Browser bundle created: ${outputPath}`);
+let websiteBundlePath;
+try {
+  const websiteDistDir = path.resolve(__dirname, '..', '..', 'Website', 'dist');
+  fs.mkdirSync(websiteDistDir, { recursive: true });
+  websiteBundlePath = path.join(websiteDistDir, 'dmcs-bundle.js');
+  fs.writeFileSync(websiteBundlePath, bundle, 'utf8');
+  console.log(`✅ Browser bundle copied to website dist: ${websiteBundlePath}`);
+} catch (error) {
+  console.warn(`⚠️ Failed to copy bundle to website dist: ${error.message}`);
+}
+
+console.log(`✅ Browser bundle created: ${sdkBundlePath}`);
+if (websiteBundlePath) {
+  console.log(`   Website bundle path: ${websiteBundlePath}`);
+}
 console.log(`   Size: ${(bundle.length / 1024).toFixed(1)} KB`);

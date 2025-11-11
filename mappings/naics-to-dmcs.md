@@ -90,7 +90,7 @@ NAICS is the standard used by US, Canada, and Mexico for classifying business es
 | NAICS Code | NAICS Industry | DMCS Primary | DMCS Secondary | Notes |
 |------------|----------------|--------------|----------------|-------|
 | 511210 | Software Publishers | 09.01.002 - Enterprise SaaS | 09.01.001 - Application Software | Subscription vs license mix |
-| 517311 | Wired Telecommunications Carriers | 10.01.002 - Fixed-Line & Broadband | 10.02.001 - TV & Streaming | Secondary for bundled video |
+| 517311 | Wired Telecommunications Carriers | 10.01.002 - Fixed-Line & Broadband | 10.02.002 - Broadcasting & Networks | Secondary for bundled video |
 | 517312 | Wireless Telecommunications Carriers | 10.01.001 - Mobile Network Operators | - | Wireless carriers |
 | 518210 | Data Processing, Hosting, and Related Services | 09.01.004 - Cloud Platforms / PaaS | 09.03.002 - Managed Services | Add managed services when operating customer workloads |
 | 519130 | Internet Publishing and Broadcasting and Web Search Portals | 10.03.004 - Search & Digital Platforms | 10.03.001 - Social Networks | Pick based on primary engagement loop |

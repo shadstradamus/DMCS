@@ -61,7 +61,7 @@ Each mapping table includes:
 
 **Mapping Approach:**
 1. **Map to subsector first**: Use the standard mapping tables to identify the appropriate DMCS subsector
-2. **Check for segments**: Review if the DMCS subsector has segments defined (49 segments across v1.1.2)
+2. **Check for segments**: Review if the DMCS subsector has segments defined (57 segments across v1.1.3)
 3. **Apply segment if applicable**: If the entity's product line clearly fits a specific segment, use the segment ID
 4. **Default to subsector**: If uncertain or segments don't apply, use the subsector-level classification
 

@@ -1,8 +1,8 @@
 # DMCS classification — Full Classification Tree
 
-**Version:** 1.1.2  
+**Version:** 1.1.3  
 **Effective Date:** 2025-11-11  
-**Total:** 13 Industries · 55 Sectors · 205 Subsectors · 49 Segments
+**Total:** 13 Industries · 55 Sectors · 205 Subsectors · 57 Segments
 
 ---
 
@@ -318,11 +318,11 @@
 | 10.01.001 | Mobile Network Operators |
 | 10.01.002 | Fixed-Line & Broadband |
 | 10.01.003 | Satellite & Edge Networks |
-| 10.02.001 | TV & Streaming |
-| 10.02.002 | Digital Media Platforms |
+| 10.02.001 | Film, TV & Entertainment |
+| 10.02.002 | Broadcasting & Networks |
 | 10.02.003 | Recorded & Digital Music |
 | 10.02.004 | Diversified Entertainment |
-| 10.02.005 | Interactive Entertainment |
+| 10.02.005 | Interactive Home Entertainment |
 | 10.02.006 | Betting & iGaming |
 | 10.03.001 | Social Networks |
 | 10.03.002 | Creator / UGC Platforms |
@@ -335,14 +335,22 @@
 
 | ID | Parent Subsector | Label |
 |----|------------------|-------|
-| 10.02.003.01 | 10.02.003 | Music Streaming Services |
-| 10.02.003.02 | 10.02.003 | Recorded Music Rights & Labels |
-| 10.02.003.03 | 10.02.003 | Music Technology Solutions |
-| 10.02.003.04 | 10.02.003 | Live Music Promotion & Services |
-| 10.02.005.01 | 10.02.005 | Video Game Content Studios |
-| 10.02.005.02 | 10.02.005 | Interactive Entertainment Platforms |
-| 10.02.005.03 | 10.02.005 | Esports Teams & Leagues |
-| 10.02.005.04 | 10.02.005 | Esports Venues & Infrastructure |
+| 10.02.001.01 | 10.02.001 | Film & TV Production & Licensing |
+| 10.02.001.02 | 10.02.001 | Streaming Video Platforms |
+| 10.02.001.03 | 10.02.001 | Theatrical Exhibition |
+| 10.02.001.04 | 10.02.001 | Media Production & Ancillary Services |
+| 10.02.002.01 | 10.02.002 | Broadcast TV Networks & Station Groups |
+| 10.02.002.02 | 10.02.002 | Radio Networks & Stations |
+| 10.02.002.03 | 10.02.002 | Cable & Satellite TV Providers |
+| 10.02.002.04 | 10.02.002 | Cable Networks & Program Distribution |
+| 10.02.003.01 | 10.02.003 | Music Rights & Publishing |
+| 10.02.003.02 | 10.02.003 | Music Streaming & Distribution |
+| 10.02.003.03 | 10.02.003 | Live Music Promotion & Services |
+| 10.02.003.04 | 10.02.003 | Music Technology Solutions |
+| 10.02.005.01 | 10.02.005 | Video Game Creation & Publishing |
+| 10.02.005.02 | 10.02.005 | Interactive Platforms & Distribution |
+| 10.02.005.03 | 10.02.005 | Gaming Technology & Support Services |
+| 10.02.005.04 | 10.02.005 | Esports Competition & Media |
 
 ### 11 Utilities
 

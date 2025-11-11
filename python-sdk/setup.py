@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="dmcs-sdk",
-    version="1.1.2",
+    version="1.1.3",
     author="DMCS",
     description="Python SDK for Dynamic Multi-Dimensional Classification Standard",
     long_description=long_description,

@@ -71,10 +71,10 @@ GICS is maintained by MSCI and S&P Dow Jones Indices. It classifies companies in
 | 50101020 | Integrated Telecommunication Services | 10.01.002 - Fixed-Line & Broadband | 10.01.001 - Mobile Network Operators | Apply secondary when wireless materially contributes |
 | 50102010 | Wireless Telecommunication Services | 10.01.001 - Mobile Network Operators | - | Mobile-only operators |
 | 50201010 | Advertising | 10.04.002 - Agencies & Brand Services | 10.04.001 - Ad Networks & Exchanges | Split creative vs programmatic revenue |
-| 50201020 | Broadcasting | 10.02.001 - TV & Streaming | - | Linear and streaming broadcasters |
-| 50201030 | Cable & Satellite | 10.02.001 - TV & Streaming | 10.01.001 - Fixed-Line & Broadband | Secondary when network operations are material |
-| 50201040 | Publishing | 10.02.002 - Digital Media Platforms | - | Print and digital content providers |
-| 50202020 | Interactive Home Entertainment | 10.02.003 - Music, Gaming & Esports | - | Gaming and interactive experiences |
+| 50201020 | Broadcasting | 10.02.002 - Broadcasting & Networks | - | Linear TV/radio networks and station groups |
+| 50201030 | Cable & Satellite | 10.02.002 - Broadcasting & Networks | 10.01.002 - Fixed-Line & Broadband | Secondary when access network operations are material |
+| 50201040 | Publishing | 10.02.004 - Diversified Entertainment | - | Traditional and digital publishing businesses |
+| 50202020 | Interactive Home Entertainment | 10.02.005 - Interactive Home Entertainment | - | Gaming and interactive experiences |
 | 50203010 | Interactive Media & Services | 10.03.004 - Search & Digital Platforms | 10.03.001 - Social Networks | Pick based on core monetization |
 
 ### Financials (GICS 40 → DMCS 07)

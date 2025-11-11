@@ -1,3 +1,18 @@
+## [1.1.3] - 2025-11-11
+
+### Added
+
+- Introduced four segments under the new `10.02.001 Film, TV & Entertainment` subsector covering production/licensing, streaming, theatrical, and ancillary services
+- Added four broadcast distribution segments beneath `10.02.002 Broadcasting & Networks` to differentiate TV, radio, cable/satellite operators, and programming networks
+
+### Changed
+
+- Renamed media subsectors: `10.02.001` → **Film, TV & Entertainment**, `10.02.002` → **Broadcasting & Networks**, `10.02.005` → **Interactive Home Entertainment**
+- Refreshed music and gaming segment labels to better describe rights, streaming, live services, technology, and esports value chains
+- Bumped DMCS taxonomy metadata to **v1.1.3** and regenerated JSON, CSV, and Markdown exports
+- Synchronized TypeScript and Python SDK bundles, package versions, and website fallback data with the new media structure
+- Updated crosswalk documentation (GICS / ICB / NAICS) and end-user guides to reflect the revised media taxonomy terminology
+
 # Changelog
 
 All notable changes to the DMCS (Dynamic Multi-Dimensional Classification Standard) will be documented in this file.

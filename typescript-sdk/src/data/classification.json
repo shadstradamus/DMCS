@@ -1,5 +1,5 @@
 {
-  "dmcs_version": "1.1.2",
+  "dmcs_version": "1.1.3",
   "release_date": "2025-11-11",
   "description": "Dynamic Multi-Dimensional Classification Standard - Full Classification",
   "industries": [
@@ -2513,25 +2513,133 @@
           "classification": "GIC",
           "subsectors": [
             {
-              "label": "TV & Streaming",
+              "label": "Film, TV & Entertainment",
               "id": "10.02.001",
               "level": "subsector",
               "parent_id": "10.02",
               "sector_id": "10.02",
               "industry_id": "10",
               "classification": "GIC",
-              "since": "2025-11-08",
+              "segments": [
+                {
+                  "label": "Film & TV Production & Licensing",
+                  "id": "10.02.001.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "10.02.001",
+                  "subsector_id": "10.02.001",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Streaming Video Platforms",
+                  "id": "10.02.001.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "10.02.001",
+                  "subsector_id": "10.02.001",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Theatrical Exhibition",
+                  "id": "10.02.001.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "10.02.001",
+                  "subsector_id": "10.02.001",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Media Production & Ancillary Services",
+                  "id": "10.02.001.04",
+                  "level": "segment",
+                  "segment_code": "04",
+                  "parent_id": "10.02.001",
+                  "subsector_id": "10.02.001",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-11",
               "status": "active"
             },
             {
-              "label": "Digital Media Platforms",
+              "label": "Broadcasting & Networks",
               "id": "10.02.002",
               "level": "subsector",
               "parent_id": "10.02",
               "sector_id": "10.02",
               "industry_id": "10",
               "classification": "GIC",
-              "since": "2025-11-08",
+              "segments": [
+                {
+                  "label": "Broadcast TV Networks & Station Groups",
+                  "id": "10.02.002.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "10.02.002",
+                  "subsector_id": "10.02.002",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Radio Networks & Stations",
+                  "id": "10.02.002.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "10.02.002",
+                  "subsector_id": "10.02.002",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Cable & Satellite TV Providers",
+                  "id": "10.02.002.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "10.02.002",
+                  "subsector_id": "10.02.002",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Cable Networks & Program Distribution",
+                  "id": "10.02.002.04",
+                  "level": "segment",
+                  "segment_code": "04",
+                  "parent_id": "10.02.002",
+                  "subsector_id": "10.02.002",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-11",
               "status": "active"
             },
             {
@@ -2544,7 +2652,7 @@
               "classification": "GIC",
               "segments": [
                 {
-                  "label": "Music Streaming Services",
+                  "label": "Music Rights & Publishing",
                   "id": "10.02.003.01",
                   "level": "segment",
                   "segment_code": "01",
@@ -2557,7 +2665,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Recorded Music Rights & Labels",
+                  "label": "Music Streaming & Distribution",
                   "id": "10.02.003.02",
                   "level": "segment",
                   "segment_code": "02",
@@ -2570,7 +2678,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Music Technology Solutions",
+                  "label": "Live Music Promotion & Services",
                   "id": "10.02.003.03",
                   "level": "segment",
                   "segment_code": "03",
@@ -2583,7 +2691,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Live Music Promotion & Services",
+                  "label": "Music Technology Solutions",
                   "id": "10.02.003.04",
                   "level": "segment",
                   "segment_code": "04",
@@ -2611,7 +2719,7 @@
               "status": "active"
             },
             {
-              "label": "Interactive Entertainment",
+              "label": "Interactive Home Entertainment",
               "id": "10.02.005",
               "level": "subsector",
               "parent_id": "10.02",
@@ -2620,7 +2728,7 @@
               "classification": "GIC",
               "segments": [
                 {
-                  "label": "Video Game Content Studios",
+                  "label": "Video Game Creation & Publishing",
                   "id": "10.02.005.01",
                   "level": "segment",
                   "segment_code": "01",
@@ -2633,7 +2741,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Interactive Entertainment Platforms",
+                  "label": "Interactive Platforms & Distribution",
                   "id": "10.02.005.02",
                   "level": "segment",
                   "segment_code": "02",
@@ -2646,7 +2754,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Esports Teams & Leagues",
+                  "label": "Gaming Technology & Support Services",
                   "id": "10.02.005.03",
                   "level": "segment",
                   "segment_code": "03",
@@ -2659,7 +2767,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Esports Venues & Infrastructure",
+                  "label": "Esports Competition & Media",
                   "id": "10.02.005.04",
                   "level": "segment",
                   "segment_code": "04",

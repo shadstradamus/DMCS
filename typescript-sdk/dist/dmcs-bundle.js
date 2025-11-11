@@ -3,8 +3,8 @@
   
   // Embed classification data
   const classificationData = {
-  "dmcs_version": "1.1.1",
-  "release_date": "2025-11-10",
+  "dmcs_version": "1.1.3",
+  "release_date": "2025-11-11",
   "description": "Dynamic Multi-Dimensional Classification Standard - Full Classification",
   "industries": [
     {
@@ -211,6 +211,17 @@
               "classification": "GIC",
               "since": "2025-11-08",
               "status": "active"
+            },
+            {
+              "label": "Electrolyzers & Hydrogen Equipment",
+              "id": "01.04.005",
+              "level": "subsector",
+              "parent_id": "01.04",
+              "sector_id": "01.04",
+              "industry_id": "01",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
             }
           ],
           "since": "2025-11-08",
@@ -379,7 +390,7 @@
           "level": "sector",
           "parent_id": "02",
           "industry_id": "02",
-          "classification": "active",
+          "classification": "GIC",
           "subsectors": [
             {
               "label": "Forestry & Timber",
@@ -435,7 +446,7 @@
           "level": "sector",
           "parent_id": "03",
           "industry_id": "03",
-          "classification": "active",
+          "classification": "GIC",
           "subsectors": [
             {
               "label": "Aerospace OEMs",
@@ -614,7 +625,7 @@
           "level": "sector",
           "parent_id": "03",
           "industry_id": "03",
-          "classification": "active",
+          "classification": "GIC",
           "subsectors": [
             {
               "label": "EPC & Infrastructure",
@@ -1490,6 +1501,17 @@
               "classification": "GIC",
               "since": "2025-11-08",
               "status": "active"
+            },
+            {
+              "label": "Digital Carriers & MGAs",
+              "id": "07.02.004",
+              "level": "subsector",
+              "parent_id": "07.02",
+              "sector_id": "07.02",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
             }
           ],
           "since": "2025-11-08",
@@ -1556,6 +1578,17 @@
               "industry_id": "07",
               "classification": "GIC",
               "since": "2025-11-08",
+              "status": "active"
+            },
+            {
+              "label": "Carbon Exchanges & Data",
+              "id": "07.03.006",
+              "level": "subsector",
+              "parent_id": "07.03",
+              "sector_id": "07.03",
+              "industry_id": "07",
+              "classification": "GIC",
+              "since": "2025-11-11",
               "status": "active"
             }
           ],
@@ -1772,7 +1805,7 @@
               "status": "active"
             },
             {
-              "label": "Facilities Services",
+              "label": "Property Operations & Management",
               "id": "08.03.003",
               "level": "subsector",
               "parent_id": "08.03",
@@ -2130,7 +2163,48 @@
               "industry_id": "09",
               "classification": "GIC",
               "since": "2025-11-08",
-              "status": "active"
+              "status": "active",
+              "segments": [
+                {
+                  "id": "09.01.007.01",
+                  "label": "Foundation Model Platforms",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "09.01.007",
+                  "subsector_id": "09.01.007",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "id": "09.01.007.02",
+                  "label": "Model APIs & Orchestration",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "09.01.007",
+                  "subsector_id": "09.01.007",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "id": "09.01.007.03",
+                  "label": "Applied AI Applications",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "09.01.007",
+                  "subsector_id": "09.01.007",
+                  "sector_id": "09.01",
+                  "industry_id": "09",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                }
+              ]
             }
           ],
           "since": "2025-11-08",
@@ -2145,19 +2219,52 @@
           "classification": "GIC",
           "subsectors": [
             {
-              "label": "Semiconductors",
+              "label": "Semiconductors — Design (Fabless & IP)",
               "id": "09.02.001",
               "level": "subsector",
               "parent_id": "09.02",
               "sector_id": "09.02",
               "industry_id": "09",
               "classification": "GIC",
-              "since": "2025-11-08",
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "Semiconductors — Manufacturing (Foundry & IDM)",
+              "id": "09.02.002",
+              "level": "subsector",
+              "parent_id": "09.02",
+              "sector_id": "09.02",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "Semiconductor Equipment",
+              "id": "09.02.003",
+              "level": "subsector",
+              "parent_id": "09.02",
+              "sector_id": "09.02",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "Semiconductor Materials",
+              "id": "09.02.004",
+              "level": "subsector",
+              "parent_id": "09.02",
+              "sector_id": "09.02",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-11",
               "status": "active"
             },
             {
               "label": "Consumer Devices & Ecosystems",
-              "id": "09.02.002",
+              "id": "09.02.005",
               "level": "subsector",
               "parent_id": "09.02",
               "sector_id": "09.02",
@@ -2166,67 +2273,67 @@
               "segments": [
                 {
                   "label": "Smartphones",
-                  "id": "09.02.002.01",
+                  "id": "09.02.005.01",
                   "level": "segment",
                   "segment_code": "01",
-                  "parent_id": "09.02.002",
-                  "subsector_id": "09.02.002",
+                  "parent_id": "09.02.005",
+                  "subsector_id": "09.02.005",
                   "sector_id": "09.02",
                   "industry_id": "09",
                   "classification": "GIC",
-                  "since": "2025-11-10",
+                  "since": "2025-11-11",
                   "status": "active"
                 },
                 {
                   "label": "PCs / Tablets",
-                  "id": "09.02.002.02",
+                  "id": "09.02.005.02",
                   "level": "segment",
                   "segment_code": "02",
-                  "parent_id": "09.02.002",
-                  "subsector_id": "09.02.002",
+                  "parent_id": "09.02.005",
+                  "subsector_id": "09.02.005",
                   "sector_id": "09.02",
                   "industry_id": "09",
                   "classification": "GIC",
-                  "since": "2025-11-10",
+                  "since": "2025-11-11",
                   "status": "active"
                 },
                 {
                   "label": "Wearables",
-                  "id": "09.02.002.03",
+                  "id": "09.02.005.03",
                   "level": "segment",
                   "segment_code": "03",
-                  "parent_id": "09.02.002",
-                  "subsector_id": "09.02.002",
+                  "parent_id": "09.02.005",
+                  "subsector_id": "09.02.005",
                   "sector_id": "09.02",
                   "industry_id": "09",
                   "classification": "GIC",
-                  "since": "2025-11-10",
+                  "since": "2025-11-11",
                   "status": "active"
                 }
               ],
-              "since": "2025-11-08",
+              "since": "2025-11-11",
               "status": "active"
             },
             {
               "label": "Network & Telecom Equipment",
-              "id": "09.02.003",
+              "id": "09.02.006",
               "level": "subsector",
               "parent_id": "09.02",
               "sector_id": "09.02",
               "industry_id": "09",
               "classification": "GIC",
-              "since": "2025-11-08",
+              "since": "2025-11-11",
               "status": "active"
             },
             {
               "label": "Imaging, Sensors & Components",
-              "id": "09.02.004",
+              "id": "09.02.007",
               "level": "subsector",
               "parent_id": "09.02",
               "sector_id": "09.02",
               "industry_id": "09",
-              "classification": "active",
-              "since": "2025-11-08",
+              "classification": "GIC",
+              "since": "2025-11-11",
               "status": "active"
             }
           ],
@@ -2410,25 +2517,133 @@
           "classification": "GIC",
           "subsectors": [
             {
-              "label": "TV & Streaming",
+              "label": "Film, TV & Entertainment",
               "id": "10.02.001",
               "level": "subsector",
               "parent_id": "10.02",
               "sector_id": "10.02",
               "industry_id": "10",
               "classification": "GIC",
-              "since": "2025-11-08",
+              "segments": [
+                {
+                  "label": "Film & TV Production & Licensing",
+                  "id": "10.02.001.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "10.02.001",
+                  "subsector_id": "10.02.001",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Streaming Video Platforms",
+                  "id": "10.02.001.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "10.02.001",
+                  "subsector_id": "10.02.001",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Theatrical Exhibition",
+                  "id": "10.02.001.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "10.02.001",
+                  "subsector_id": "10.02.001",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Media Production & Ancillary Services",
+                  "id": "10.02.001.04",
+                  "level": "segment",
+                  "segment_code": "04",
+                  "parent_id": "10.02.001",
+                  "subsector_id": "10.02.001",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-11",
               "status": "active"
             },
             {
-              "label": "Digital Media Platforms",
+              "label": "Broadcasting & Networks",
               "id": "10.02.002",
               "level": "subsector",
               "parent_id": "10.02",
               "sector_id": "10.02",
               "industry_id": "10",
               "classification": "GIC",
-              "since": "2025-11-08",
+              "segments": [
+                {
+                  "label": "Broadcast TV Networks & Station Groups",
+                  "id": "10.02.002.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "10.02.002",
+                  "subsector_id": "10.02.002",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Radio Networks & Stations",
+                  "id": "10.02.002.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "10.02.002",
+                  "subsector_id": "10.02.002",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Cable & Satellite TV Providers",
+                  "id": "10.02.002.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "10.02.002",
+                  "subsector_id": "10.02.002",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Cable Networks & Program Distribution",
+                  "id": "10.02.002.04",
+                  "level": "segment",
+                  "segment_code": "04",
+                  "parent_id": "10.02.002",
+                  "subsector_id": "10.02.002",
+                  "sector_id": "10.02",
+                  "industry_id": "10",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-11",
               "status": "active"
             },
             {
@@ -2441,7 +2656,7 @@
               "classification": "GIC",
               "segments": [
                 {
-                  "label": "Music Streaming Services",
+                  "label": "Music Rights & Publishing",
                   "id": "10.02.003.01",
                   "level": "segment",
                   "segment_code": "01",
@@ -2454,7 +2669,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Recorded Music Rights & Labels",
+                  "label": "Music Streaming & Distribution",
                   "id": "10.02.003.02",
                   "level": "segment",
                   "segment_code": "02",
@@ -2467,7 +2682,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Music Technology Solutions",
+                  "label": "Live Music Promotion & Services",
                   "id": "10.02.003.03",
                   "level": "segment",
                   "segment_code": "03",
@@ -2480,7 +2695,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Live Music Promotion & Services",
+                  "label": "Music Technology Solutions",
                   "id": "10.02.003.04",
                   "level": "segment",
                   "segment_code": "04",
@@ -2508,7 +2723,7 @@
               "status": "active"
             },
             {
-              "label": "Interactive Entertainment",
+              "label": "Interactive Home Entertainment",
               "id": "10.02.005",
               "level": "subsector",
               "parent_id": "10.02",
@@ -2517,7 +2732,7 @@
               "classification": "GIC",
               "segments": [
                 {
-                  "label": "Video Game Content Studios",
+                  "label": "Video Game Creation & Publishing",
                   "id": "10.02.005.01",
                   "level": "segment",
                   "segment_code": "01",
@@ -2530,7 +2745,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Interactive Entertainment Platforms",
+                  "label": "Interactive Platforms & Distribution",
                   "id": "10.02.005.02",
                   "level": "segment",
                   "segment_code": "02",
@@ -2543,7 +2758,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Esports Teams & Leagues",
+                  "label": "Gaming Technology & Support Services",
                   "id": "10.02.005.03",
                   "level": "segment",
                   "segment_code": "03",
@@ -2556,7 +2771,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Esports Venues & Infrastructure",
+                  "label": "Esports Competition & Media",
                   "id": "10.02.005.04",
                   "level": "segment",
                   "segment_code": "04",
@@ -2570,6 +2785,17 @@
                 }
               ],
               "since": "2025-11-10",
+              "status": "active"
+            },
+            {
+              "label": "Betting & iGaming",
+              "id": "10.02.006",
+              "level": "subsector",
+              "parent_id": "10.02",
+              "sector_id": "10.02",
+              "industry_id": "10",
+              "classification": "GIC",
+              "since": "2025-11-11",
               "status": "active"
             }
           ],
@@ -2818,6 +3044,28 @@
               "industry_id": "11",
               "classification": "GIC",
               "since": "2025-11-08",
+              "status": "active"
+            },
+            {
+              "label": "Carbon Project Services & Trading",
+              "id": "11.04.003",
+              "level": "subsector",
+              "parent_id": "11.04",
+              "sector_id": "11.04",
+              "industry_id": "11",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "CCUS Equipment & Services",
+              "id": "11.04.004",
+              "level": "subsector",
+              "parent_id": "11.04",
+              "sector_id": "11.04",
+              "industry_id": "11",
+              "classification": "GIC",
+              "since": "2025-11-11",
               "status": "active"
             }
           ],
@@ -3172,6 +3420,17 @@
               "classification": "DIC",
               "since": "2025-11-10",
               "status": "active"
+            },
+            {
+              "label": "DePIN Infrastructure",
+              "id": "13.01.007",
+              "level": "subsector",
+              "parent_id": "13.01",
+              "sector_id": "13.01",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-11",
+              "status": "active"
             }
           ],
           "since": "2025-11-08",
@@ -3509,6 +3768,17 @@
               "classification": "DIC",
               "since": "2025-11-08",
               "status": "active"
+            },
+            {
+              "label": "DePIN Applications",
+              "id": "13.03.005",
+              "level": "subsector",
+              "parent_id": "13.03",
+              "sector_id": "13.03",
+              "industry_id": "13",
+              "classification": "DIC",
+              "since": "2025-11-11",
+              "status": "active"
             }
           ],
           "since": "2025-11-08",
@@ -3520,7 +3790,7 @@
           "level": "sector",
           "parent_id": "13",
           "industry_id": "13",
-          "classification": "active",
+          "classification": "DIC",
           "subsectors": [
             {
               "label": "Blockchain Data / Analytics",

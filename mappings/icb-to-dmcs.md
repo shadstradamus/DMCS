@@ -67,7 +67,7 @@ ICB is maintained by FTSE Russell and used across FTSE indices and European mark
 
 | ICB Code | ICB Subsector | DMCS Primary | DMCS Secondary | Notes |
 |----------|---------------|--------------|----------------|-------|
-| 80101010 | Fixed Line Telecommunications | 10.01.002 - Fixed-Line & Broadband | 10.02.001 - TV & Streaming | Secondary if video distribution is material |
+| 80101010 | Fixed Line Telecommunications | 10.01.002 - Fixed-Line & Broadband | 10.02.002 - Broadcasting & Networks | Secondary if video distribution is material |
 | 80101015 | Mobile Telecommunications | 10.01.001 - Mobile Network Operators | - | Wireless carriers |
 
 ### Financials (ICB 6000 → DMCS 07)

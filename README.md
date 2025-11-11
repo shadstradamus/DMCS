@@ -2,7 +2,7 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.1.2** · Effective Date: 2025-11-11 · **License:** Apache 2.0
+**Version 1.1.3** · Effective Date: 2025-11-11 · **License:** Apache 2.0
 
 # DMCS — Open Source Industry Classification Standard
 
@@ -21,7 +21,7 @@ DMCS (Dynamic Multi-Dimensional Classification Standard) is a free, open-source 
 ## What You Get
 
 **Core Taxonomy**
-- **13 industries** · **55 sectors** · **205 subsectors** · **49 segments**
+- **13 industries** · **55 sectors** · **205 subsectors** · **57 segments**
 - Coverage spans traditional economy (GIC: 01-12) and digital/onchain economy (DIC: 13)
 - Every node includes lifecycle metadata (`since`, `status`) for tracking evolution
 
@@ -70,9 +70,9 @@ Example Chain:
 - **Numeric & Fixed width** — Regex enforced: `^\d{2}\.\d{2}\.\d{3}(\.\d{2})?$`.
 - **Lifecycle metadata** — Every node carries `since`, `status`, optional `sunset`, and provenance details.
 
-## Coverage Snapshot (v1.1.2)
+## Coverage Snapshot (v1.1.3)
 
-**13 industries** · **55 sectors** · **205 subsectors** · **49 segments**
+**13 industries** · **55 sectors** · **205 subsectors** · **57 segments**
 
 ### All Industries
 
@@ -93,7 +93,6 @@ Example Chain:
 | 13 | Digital & Onchain Economy | DIC | Crypto-native, DeFi, blockchain infrastructure |
 
 ## DMCS vs. Legacy Classification Systems
-Quick comparison table — Show DMCS vs GICS/ICB/NAICS side-by-side highlighting key differences (open-source, digital coverage, immutable IDs, no fees)
 
 | Feature | DMCS | GICS / ICB | NAICS | TRBC |
 |---------|------|------------|-------|------|
@@ -135,7 +134,7 @@ Quick comparison table — Show DMCS vs GICS/ICB/NAICS side-by-side highlighting
 
 **How DMCS Evolves**
 
-DMCS updates through community proposals submitted via [GitHub Issues](https://github.com/shadstradamus/DMCS/issues/new/choose) using the **Taxonomy Proposal** template:
+DMCS updates through community proposals submitted via [GitHub Issues](https://github.com/shadstradamus/DMCS/issues/new/Quick comparison table — Show DMCS vs GICS/ICB/NAICS side-by-side highlighting key differences (open-source, digital coverage, immutable IDs, no fees)choose) using the **Taxonomy Proposal** template:
 
 1. **Submit a Proposal** — Describe the business model, provide real-world examples, and explain why existing nodes are insufficient
 2. **Community Review** — Maintainers and community members discuss the rationale and impact
@@ -179,7 +178,7 @@ const dmcs = new Classification();
 
 // Get stats
 console.log(dmcs.stats());
-// { version: '1.1.2', industries: 13, sectors: 55, subsectors: 205, segments: 49 }
+// { version: '1.1.3', industries: 13, sectors: 55, subsectors: 205, segments: 57 }
 
 // Lookup by ID
 const cloudPlatforms = dmcs.getById('09.01.004');
@@ -586,7 +585,7 @@ The SDKs (TypeScript, Python) add convenience features like search, filtering, a
 - 🔔 **Subscribe to Issues** — Follow taxonomy proposal discussions
 - 📊 **Check version metadata** — SDK `.stats()` method shows current version
 
-Each release is tagged in Git (e.g., `v1.1.2`) for easy comparison and rollback if needed.
+Each release is tagged in Git (e.g., `v1.1.3`) for easy comparison and rollback if needed.
 
 ## What's Next
 
@@ -652,4 +651,3 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 **Questions?** Open an [issue](https://github.com/shadstradamus/DMCS/issues) or discussion.
 
 **Repository:** [github.com/shadstradamus/DMCS](https://github.com/shadstradamus/DMCS)
-
