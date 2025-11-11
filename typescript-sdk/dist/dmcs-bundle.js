@@ -1839,7 +1839,7 @@
               "status": "active"
             },
             {
-              "label": "Demographic-Specific Properties",
+              "label": "Specialized Residential Properties",
               "id": "08.04.002",
               "level": "subsector",
               "parent_id": "08.04",
@@ -1848,7 +1848,7 @@
               "classification": "GIC",
               "segments": [
                 {
-                  "label": "Student Housing Communities",
+                  "label": "Student & Co-Living Housing",
                   "id": "08.04.002.01",
                   "level": "segment",
                   "segment_code": "01",
@@ -1874,7 +1874,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Government & Institutional Housing",
+                  "label": "Public & Institutional Sector Housing",
                   "id": "08.04.002.03",
                   "level": "segment",
                   "segment_code": "03",
@@ -1887,7 +1887,7 @@
                   "status": "active"
                 },
                 {
-                  "label": "Co-Living & Shared Housing",
+                  "label": "Co-Living & Flexible Housing",
                   "id": "08.04.002.04",
                   "level": "segment",
                   "segment_code": "04",

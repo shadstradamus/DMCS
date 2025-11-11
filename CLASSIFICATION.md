@@ -250,17 +250,17 @@
 | 08.03.002 | Property Management |
 | 08.03.003 | Property Operations & Management |
 | 08.04.001 | Data Centers |
-| 08.04.002 | Demographic-Specific Properties |
+| 08.04.002 | Specialized Residential Properties |
 | 08.04.003 | Cell Towers & Digital Infra |
 
 #### Segments (Industry 08)
 
 | ID | Parent Subsector | Label |
 |----|------------------|-------|
-| 08.04.002.01 | 08.04.002 | Student Housing Communities |
+| 08.04.002.01 | 08.04.002 | Student & Co-Living Housing |
 | 08.04.002.02 | 08.04.002 | Senior & Assisted Living Facilities |
-| 08.04.002.03 | 08.04.002 | Government & Institutional Housing |
-| 08.04.002.04 | 08.04.002 | Co-Living & Shared Housing |
+| 08.04.002.03 | 08.04.002 | Public & Institutional Sector Housing |
+| 08.04.002.04 | 08.04.002 | Co-Living & Flexible Housing |
 
 ### 09 Technology
 
