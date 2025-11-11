@@ -93,6 +93,7 @@ Example Chain:
 | 13 | Digital & Onchain Economy | DIC | Crypto-native, DeFi, blockchain infrastructure |
 
 ## DMCS vs. Legacy Classification Systems
+Quick comparison table — Show DMCS vs GICS/ICB/NAICS side-by-side highlighting key differences (open-source, digital coverage, immutable IDs, no fees)
 
 | Feature | DMCS | GICS / ICB | NAICS | TRBC |
 |---------|------|------------|-------|------|
@@ -134,7 +135,7 @@ Example Chain:
 
 **How DMCS Evolves**
 
-DMCS updates through community proposals submitted via [GitHub Issues](https://github.com/shadstradamus/DMCS/issues/new/Quick comparison table — Show DMCS vs GICS/ICB/NAICS side-by-side highlighting key differences (open-source, digital coverage, immutable IDs, no fees)choose) using the **Taxonomy Proposal** template:
+DMCS updates through community proposals submitted via [GitHub Issues](https://github.com/shadstradamus/DMCS/issues/new/choose) using the **Taxonomy Proposal** template:
 
 1. **Submit a Proposal** — Describe the business model, provide real-world examples, and explain why existing nodes are insufficient
 2. **Community Review** — Maintainers and community members discuss the rationale and impact
@@ -651,3 +652,4 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 **Questions?** Open an [issue](https://github.com/shadstradamus/DMCS/issues) or discussion.
 
 **Repository:** [github.com/shadstradamus/DMCS](https://github.com/shadstradamus/DMCS)
+
