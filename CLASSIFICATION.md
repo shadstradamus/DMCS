@@ -1,8 +1,8 @@
 # DMCS classification — Full Classification Tree
 
-**Version:** 1.1.1  
-**Effective Date:** 2025-11-09  
-**Total:** 13 Industries · 55 Sectors · 190 Subsectors · 14 Segments
+**Version:** 1.1.2  
+**Effective Date:** 2025-11-11  
+**Total:** 13 Industries · 55 Sectors · 205 Subsectors · 49 Segments
 
 ---
 
@@ -22,7 +22,7 @@
 | 10 | Communications & Media |
 | 11 | Utilities |
 | 12 | Government / Public / Education |
-| 13 | Digital Assets & Blockchain |
+| 13 | Digital & Onchain Economy |
 
 ---
 
@@ -82,13 +82,13 @@
 | 12.03 | Public Safety & Defense Services |
 | 12.04 | NGOs & Multilaterals |
 | 13.01 | DLT & Blockchain Infrastructure |
-| 13.02 | Digital Asset Services & Markets |
-| 13.03 | Onchain Apps & Experiences |
-| 13.04 | Onchain Services & Security |
+| 13.02 | Centralized Exchanges & Trading |
+| 13.03 | Onchain Applications & Experiences |
+| 13.04 | Onchain Services, Security & Compliance |
 
 ---
 
-## Subsectors (191)
+## Subsectors (205)
 
 ### 01 Energy
 
@@ -108,6 +108,7 @@
 | 01.04.002 | Wind & Offshore Wind |
 | 01.04.003 | Bioenergy & Waste-to-Energy |
 | 01.04.004 | Storage & Grid Integrators |
+| 01.04.005 | Electrolyzers & Hydrogen Equipment |
 
 ### 02 Basic Materials
 
@@ -221,11 +222,13 @@
 | 07.02.001 | Life & Health Insurance |
 | 07.02.002 | Property & Casualty |
 | 07.02.003 | Reinsurance & Specialty |
+| 07.02.004 | Digital Carriers & MGAs |
 | 07.03.001 | Asset & Wealth Management |
 | 07.03.002 | Brokerage & Trading Venues |
 | 07.03.003 | Investment Banking |
 | 07.03.004 | Holding / Investment Companies |
 | 07.03.005 | Digital Wealth / Robo |
+| 07.03.006 | Carbon Exchanges & Data |
 | 07.04.001 | Payment Networks |
 | 07.04.002 | Digital Wallets / Neobanks |
 | 07.04.003 | Merchant Acquiring |
@@ -245,10 +248,19 @@
 | 08.02.003 | Mixed-Use Projects |
 | 08.03.001 | Brokerage & Advisory |
 | 08.03.002 | Property Management |
-| 08.03.003 | Facilities Services |
+| 08.03.003 | Property Operations & Management |
 | 08.04.001 | Data Centers |
-| 08.04.002 | Student / Senior Housing |
+| 08.04.002 | Demographic-Specific Properties |
 | 08.04.003 | Cell Towers & Digital Infra |
+
+#### Segments (Industry 08)
+
+| ID | Parent Subsector | Label |
+|----|------------------|-------|
+| 08.04.002.01 | 08.04.002 | Student Housing Communities |
+| 08.04.002.02 | 08.04.002 | Senior & Assisted Living Facilities |
+| 08.04.002.03 | 08.04.002 | Government & Institutional Housing |
+| 08.04.002.04 | 08.04.002 | Co-Living & Shared Housing |
 
 ### 09 Technology
 
@@ -261,11 +273,13 @@
 | 09.01.005 | Data & Database Platforms |
 | 09.01.006 | CRM & Customer Platforms |
 | 09.01.007 | AI & ML Platforms |
-| 09.02.001 | Semiconductors |
-| 09.02.002 | Consumer Devices & Ecosystems |
-| 09.02.003 | Network & Telecom Equipment |
-| 09.02.004 | Imaging, Sensors & Components |
-| 09.02.005 | Semiconductor Design Tools & IP |
+| 09.02.001 | Semiconductors — Design (Fabless & IP) |
+| 09.02.002 | Semiconductors — Manufacturing (Foundry & IDM) |
+| 09.02.003 | Semiconductor Equipment |
+| 09.02.004 | Semiconductor Materials |
+| 09.02.005 | Consumer Devices & Ecosystems |
+| 09.02.006 | Network & Telecom Equipment |
+| 09.02.007 | Imaging, Sensors & Components |
 | 09.03.001 | IT Consulting |
 | 09.03.002 | Managed Services |
 | 09.03.003 | Data Center Services |
@@ -274,6 +288,28 @@
 | 09.04.002 | IoT Platforms |
 | 09.04.003 | Advanced / Experimental Tech |
 | 09.04.004 | Spatial / XR Platforms |
+
+#### Segments (Industry 09)
+
+| ID | Parent Subsector | Label |
+|----|------------------|-------|
+| 09.01.001.01 | 09.01.001 | ERP / Finance Suites |
+| 09.01.001.02 | 09.01.001 | CRM / CX |
+| 09.01.001.03 | 09.01.001 | HCM / Workforce |
+| 09.01.002.01 | 09.01.002 | General PaaS |
+| 09.01.002.02 | 09.01.002 | Data / AI Platforms |
+| 09.01.003.01 | 09.01.003 | Endpoint / XDR |
+| 09.01.003.02 | 09.01.003 | Identity / IAM |
+| 09.01.003.03 | 09.01.003 | Network / SASE |
+| 09.01.004.01 | 09.01.004 | DevTools / DevOps |
+| 09.01.004.02 | 09.01.004 | API / Integration |
+| 09.01.004.03 | 09.01.004 | Analytics / BI |
+| 09.01.007.01 | 09.01.007 | Foundation Model Platforms |
+| 09.01.007.02 | 09.01.007 | Model APIs & Orchestration |
+| 09.01.007.03 | 09.01.007 | Applied AI Applications |
+| 09.02.005.01 | 09.02.005 | Smartphones |
+| 09.02.005.02 | 09.02.005 | PCs / Tablets |
+| 09.02.005.03 | 09.02.005 | Wearables |
 
 ### 10 Communications & Media
 
@@ -284,14 +320,29 @@
 | 10.01.003 | Satellite & Edge Networks |
 | 10.02.001 | TV & Streaming |
 | 10.02.002 | Digital Media Platforms |
-| 10.02.003 | Music, Gaming & Esports |
+| 10.02.003 | Recorded & Digital Music |
 | 10.02.004 | Diversified Entertainment |
+| 10.02.005 | Interactive Entertainment |
+| 10.02.006 | Betting & iGaming |
 | 10.03.001 | Social Networks |
 | 10.03.002 | Creator / UGC Platforms |
 | 10.03.003 | Messaging & Communications Apps |
 | 10.03.004 | Search & Digital Platforms |
 | 10.04.001 | Ad Networks & Exchanges |
 | 10.04.002 | Agencies & Brand Services |
+
+#### Segments (Industry 10)
+
+| ID | Parent Subsector | Label |
+|----|------------------|-------|
+| 10.02.003.01 | 10.02.003 | Music Streaming Services |
+| 10.02.003.02 | 10.02.003 | Recorded Music Rights & Labels |
+| 10.02.003.03 | 10.02.003 | Music Technology Solutions |
+| 10.02.003.04 | 10.02.003 | Live Music Promotion & Services |
+| 10.02.005.01 | 10.02.005 | Video Game Content Studios |
+| 10.02.005.02 | 10.02.005 | Interactive Entertainment Platforms |
+| 10.02.005.03 | 10.02.005 | Esports Teams & Leagues |
+| 10.02.005.04 | 10.02.005 | Esports Venues & Infrastructure |
 
 ### 11 Utilities
 
@@ -306,6 +357,8 @@
 | 11.03.002 | Wastewater Services |
 | 11.04.001 | Multi-Utility Operations |
 | 11.04.002 | Waste & Recycling |
+| 11.04.003 | Carbon Project Services & Trading |
+| 11.04.004 | CCUS Equipment & Services |
 
 ### 12 Government / Public / Education
 
@@ -323,27 +376,33 @@
 | 12.04.001 | Nonprofits |
 | 12.04.002 | Development Agencies |
 
-### 13 Digital Assets & Blockchain (DIC)
+### 13 Digital & Onchain Economy
 
 | ID | Subsector |
 |----|-----------|
 | 13.01.001 | Public / Permissionless L1 |
-| 13.01.002 | Layer-2 / Rollup Infra |
+| 13.01.002 | L2 / Rollup Infrastructure |
 | 13.01.003 | Validator / Staking Services |
-| 13.01.004 | Chain Tooling & Infra Services |
+| 13.01.004 | Interoperability & Data Indexing |
+| 13.01.005 | Enterprise / Permissioned DLT |
+| 13.01.006 | Cross-chain Infrastructure |
+| 13.01.007 | DePIN Infrastructure |
 | 13.02.001 | Centralized Exchanges (CEX) |
 | 13.02.002 | Decentralized Exchanges (DEX/AMM) |
 | 13.02.003 | Custody & Key Management |
-| 13.02.004 | Stablecoin / Digital Currency |
+| 13.02.004 | Stablecoin / Digital Currency Platforms |
 | 13.02.005 | Tokenization & Digital Securities |
-| 13.03.001 | DeFi (Non-Exchange) |
-| 13.03.002 | NFT / Digital Collectible Platforms |
+| 13.02.006 | OTC / Prime Brokerage |
+| 13.02.007 | Market Making |
+| 13.03.001 | DeFi (non-exchange) |
+| 13.03.002 | NFT / Digital Collectibles |
 | 13.03.003 | Onchain Gaming / GameFi |
 | 13.03.004 | Onchain Social |
-| 13.04.001 | Smart Contract Audit & Monitoring |
-| 13.04.002 | Chain Analytics / AML / Forensics |
-| 13.04.003 | Bridge & Oracle Security |
-| 13.04.004 | Compliance & Travel Rule |
+| 13.03.005 | DePIN Applications |
+| 13.04.001 | Blockchain Data / Analytics |
+| 13.04.002 | Security / Audit Services |
+| 13.04.003 | Onchain Identity / Attestations |
+| 13.04.004 | Compliance / Travel Rule Providers |
 
 #### Segments (Industry 13)
 
@@ -353,16 +412,22 @@
 | 13.01.001.02 | 13.01.001 | Non-EVM L1 |
 | 13.01.002.01 | 13.01.002 | Optimistic Rollups |
 | 13.01.002.02 | 13.01.002 | ZK Rollups |
+| 13.01.003.01 | 13.01.003 | Node / Validator Ops |
+| 13.01.003.02 | 13.01.003 | Liquid Staking |
 | 13.02.001.01 | 13.02.001 | Spot CEX |
 | 13.02.001.02 | 13.02.001 | Derivatives CEX |
-| 13.02.001.03 | 13.02.001 | Fiat On/Off-Ramp CEX |
-| 13.02.002.01 | 13.02.002 | Layer-1 DEX |
-| 13.02.002.02 | 13.02.002 | Layer-2 DEX |
+| 13.02.001.03 | 13.02.001 | Fiat On/Off Ramp CEX |
+| 13.02.002.01 | 13.02.002 | L1 DEX |
+| 13.02.002.02 | 13.02.002 | L2 DEX |
 | 13.02.003.01 | 13.02.003 | Institutional Custody |
 | 13.02.003.02 | 13.02.003 | MPC / Wallet Infrastructure |
-| 13.02.004.01 | 13.02.004 | Fiat-Backed Stablecoins |
-| 13.02.004.02 | 13.02.004 | Crypto-Collateralized Stablecoins |
-| 13.02.004.03 | 13.02.004 | Platform-Linked Stablecoins |
+| 13.02.004.01 | 13.02.004 | Fiat-backed Stablecoins |
+| 13.02.004.02 | 13.02.004 | Crypto-collateralized Stablecoins |
+| 13.02.004.03 | 13.02.004 | Platform-linked Stablecoins |
+| 13.03.001.01 | 13.03.001 | Lending Protocols |
+| 13.03.001.02 | 13.03.001 | Derivatives Protocols |
+| 13.03.001.03 | 13.03.001 | Yield Aggregators |
+| 13.03.001.04 | 13.03.001 | Options Protocols |
 
 ---
 
