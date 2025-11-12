@@ -302,9 +302,9 @@ Store both classifications during transition:
 
 | Entity | Legacy Code | Legacy System | DMCS Primary | DMCS Secondary |
 |--------|-------------|---------------|--------------|----------------|
-| Apple | 45202030 | GICS | 09.02.005 | — |
-| Amazon | 25504010 | GICS | 04.05.002 | 09.01.004 |
-| Tether | — | — | 13.02.004 | — |
+| Apple | 45202030 | GICS | 09.02.005.01 | — |
+| Amazon | 25504010 | GICS | 04.05.002 | 09.01.002.01 |
+| Tether | — | — | 13.02.004.01 | — |
 
 Benefits:
 - Maintain backward compatibility
@@ -669,3 +669,4 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 **Questions?** Open an [issue](https://github.com/shadstradamus/DMCS/issues) or discussion.
 
 **Repository:** [github.com/shadstradamus/DMCS](https://github.com/shadstradamus/DMCS)
+
