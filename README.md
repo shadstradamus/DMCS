@@ -21,7 +21,7 @@ DMCS (Dynamic Multi-Dimensional Classification Standard) is a free, open-source 
 ## What You Get
 
 **Core Taxonomy**
-- **14 industries** · **59 sectors** · **221 subsectors** · **71 segments**
+- **14 industries** · **59 sectors** · **223 subsectors** · **85 segments**
 - Coverage spans traditional economy (**GIC**: General Industry Classification, 01-12,14) and digital/onchain economy (**DIC**: Digital Industry Classification, 13)
 - Every node includes lifecycle metadata (`since`, `status`) for tracking evolution
 
@@ -302,9 +302,9 @@ Store both classifications during transition:
 
 | Entity | Legacy Code | Legacy System | DMCS Primary | DMCS Secondary |
 |--------|-------------|---------------|--------------|----------------|
-| Apple | 45202030 | GICS | 09.02.005 | — |
-| Amazon | 25504010 | GICS | 04.05.002 | 09.01.004 |
-| Tether | — | — | 13.02.004 | — |
+| Apple | 45202030 | GICS | 09.02.005.01 | — |
+| Amazon | 25504010 | GICS | 04.05.002 | 09.01.002.01 |
+| Tether | — | — | 13.02.004.01 | — |
 
 Benefits:
 - Maintain backward compatibility
@@ -468,12 +468,12 @@ Start
 
 | Entity | Primary | Secondary | Rationale |
 |--------|---------|-----------|-----------|
-| Apple | 09.02.005 (Consumer Devices & Ecosystems) | — | Hardware-led revenue (iPhone, Mac, iPad) is the dominant business line |
-| Amazon | 04.05.002 (Online Marketplaces) | 09.01.004 (Cloud Platforms / PaaS) | E-commerce is primary, AWS qualifies as secondary (≥25% revenue, different industry) |
-| Meta | 10.03.001 (Social Networks) | 09.04.004 (Spatial / XR Platforms) | Social media primary, Reality Labs emerging tech secondary |
-| Tether (USDT) | 13.02.004 (Stablecoin / Digital Currency) | — | Pure-play stablecoin issuer in digital assets industry |
-| NVIDIA | 09.02.001 (Semiconductors — Design) | — | Fabless GPU/accelerator design is core business |
-| Microsoft | 09.01.002 (Enterprise SaaS) | — | Note: Both in same industry (Technology), so only primary assigned per materiality rules |
+| Apple | 09.02.005.01 — Smartphones | — | Hardware-led revenue (iPhone, Mac, iPad) is the dominant business line |
+| Amazon | 04.05.002 — Online Marketplaces | 09.01.002.01 — General PaaS | E-commerce is primary, AWS qualifies as secondary (≥25% revenue, different industry) |
+| Meta | 10.03.001 — Social Networks | — | Social media primary, Reality Labs emerging tech secondary |
+| Tether (USDT) | 13.02.004.01 — Fiat-backed Stablecoins | — | USD backed stablecoin issuer in digital assets industry |
+| NVIDIA | 09.02.001 — Semiconductors — Design (Fabless & IP) | — | Fabless GPU/accelerator design is core business |
+| Microsoft | 09.01.001 — Application Software) | — | Software leader in OS, with Windows and Microsft Office |
 
 ## Quality & Testing
 
@@ -669,3 +669,6 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines.
 **Questions?** Open an [issue](https://github.com/shadstradamus/DMCS/issues) or discussion.
 
 **Repository:** [github.com/shadstradamus/DMCS](https://github.com/shadstradamus/DMCS)
+
+
+
