@@ -22,7 +22,7 @@ DMCS (Dynamic Multi-Dimensional Classification Standard) is a free, open-source 
 
 **Core Taxonomy**
 - **14 industries** · **59 sectors** · **221 subsectors** · **71 segments**
-- Coverage spans traditional economy (GIC: 01-12) and digital/onchain economy (DIC: 13)
+- Coverage spans traditional economy (**GIC**: General Industry Classification, 01-12,14) and digital/onchain economy (**DIC**: Digital Industry Classification, 13)
 - Every node includes lifecycle metadata (`since`, `status`) for tracking evolution
 
 **Ready-to-Use Data**
@@ -75,6 +75,9 @@ Example Chain:
 **14 industries** · **59 sectors** · **221 subsectors** · **71 segments**
 
 ### All Industries
+
+**GIC (General Industry Classification)** — Traditional economy industries (01-12, 14)  
+**DIC (Digital Industry Classification)** — Digital and onchain economy (13)
 
 | ID | Industry | Classification | Coverage |
 |----|----------|----------------|----------|
