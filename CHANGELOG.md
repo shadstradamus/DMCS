@@ -6,6 +6,51 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.2.1] - 2025-11-12
+
+### Added
+
+- **New Subsectors (2):**
+  - `07.03.007` ESG Data Platforms (split from Carbon Exchanges & Data)
+  - `08.04.004` Fiber Infrastructure (split from Cell Towers & Digital Infra)
+
+- **New Segments (18):**
+  - `06.01.003.01` General Biotech
+  - `06.01.003.02` Cell & Gene Therapy
+  - `06.01.003.03` Genomics & Precision Medicine
+  - `06.01.003.04` Longevity & Anti-Aging
+  - `09.01.003.04` Cloud Security
+  - `09.01.005.01` Database Management Systems (DBMS)
+  - `09.01.005.02` Data Warehousing
+  - `09.01.005.03` BI & Analytics Platforms
+  - `09.04.003.01` Quantum Computing
+  - `09.04.003.02` AGI Research
+  - `09.04.003.03` Advanced Materials
+  - `09.04.003.04` Fusion Energy
+  - `10.03.004.01` Search Engines
+  - `10.03.004.02` Multi-Service Digital Ecosystems
+
+### Changed
+
+- **Subsector Splits:**
+  - `07.03.006` Carbon Exchanges & Data → `07.03.006` Carbon Exchanges
+  - `08.04.003` Cell Towers & Digital Infra → `08.04.003` Cell Towers
+
+- **Subsector Renames:**
+  - `09.04.003` Advanced / Experimental Tech → `09.04.003` Emerging & Deep Tech
+
+- **Segment Renames:**
+  - `09.01.002.01` General PaaS → `09.01.002.01` Infrastructure PaaS
+  - `09.01.003.01` Endpoint / XDR → `09.01.003.01` Network Security
+  - `09.01.003.02` Identity / IAM → `09.01.003.02` Endpoint Security
+  - `09.01.003.03` Network / SASE → `09.01.003.03` Identity & Access Management (IAM)
+
+### Summary
+- **Total Entries:** 381 (up from 367)
+- **New v1.2.1 Entries:** 23
+- **Focus:** Eliminated "odd couples" (mixed business models), added granularity to high-value markets (cybersecurity, data platforms, biotech, emerging tech)
+
+
 ## [1.2.0] - 2025-11-11
 
 ### Added

@@ -1,7 +1,7 @@
 {
   "name": "dmcs-sdk",
-  "version": "1.2.0",
-  "description": "TypeScript SDK for Dynamic Multi-Dimensional Classification Standard",
+  "version": "1.2.1",
+  "description": "TypeScript/JavaScript SDK for Dynamic Multi-Dimensional Classification Standard (DMCS)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

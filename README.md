@@ -2,7 +2,7 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.2.0** · Effective Date: 2025-11-11 · **License:** Apache 2.0
+**Version 1.2.1** · Effective Date: 2025-11-12 · **License:** Apache 2.0
 
 # DMCS — Open Source Industry Classification Standard
 
