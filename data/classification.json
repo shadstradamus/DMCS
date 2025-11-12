@@ -1,5 +1,5 @@
 {
-  "dmcs_version": "1.2.1",
+  "dmcs_version": "1.2.2",
   "release_date": "2025-11-12",
   "description": "Dynamic Multi-Dimensional Classification Standard - Full Classification",
   "industries": [
@@ -1225,7 +1225,21 @@
               "classification": "GIC",
               "since": "2025-11-08",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Specialty Tobacco & Vape Retail",
+                  "id": "05.03.003.01",
+                  "level": "segment",
+                  "parent_id": "05.03.003",
+                  "classification": "GIC",
+                  "since": "2025-11-12",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "05.03.003",
+                  "sector_id": "05.03",
+                  "industry_id": "05"
+                }
+              ],
               "sector_id": "05.03",
               "industry_id": "05"
             }
@@ -1263,6 +1277,182 @@
               "status": "active",
               "segments": [],
               "sector_id": "05.04",
+              "industry_id": "05"
+            }
+          ],
+          "industry_id": "05"
+        },
+        {
+          "label": "Tobacco & Cannabinoid Products",
+          "id": "05.05",
+          "level": "sector",
+          "parent_id": "05",
+          "classification": "GIC",
+          "since": "2025-11-12",
+          "status": "active",
+          "subsectors": [
+            {
+              "label": "Combustible Tobacco",
+              "id": "05.05.001",
+              "level": "subsector",
+              "parent_id": "05.05",
+              "classification": "GIC",
+              "since": "2025-11-12",
+              "status": "active",
+              "segments": [],
+              "sector_id": "05.05",
+              "industry_id": "05"
+            },
+            {
+              "label": "Reduced-Risk Nicotine (Heated & Vapor)",
+              "id": "05.05.002",
+              "level": "subsector",
+              "parent_id": "05.05",
+              "classification": "GIC",
+              "since": "2025-11-12",
+              "status": "active",
+              "segments": [
+                {
+                  "label": "Heated Tobacco Systems",
+                  "id": "05.05.002.01",
+                  "level": "segment",
+                  "parent_id": "05.05.002",
+                  "classification": "GIC",
+                  "since": "2025-11-12",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "05.05.002",
+                  "sector_id": "05.05",
+                  "industry_id": "05"
+                },
+                {
+                  "label": "Closed-Pod Vapor",
+                  "id": "05.05.002.02",
+                  "level": "segment",
+                  "parent_id": "05.05.002",
+                  "classification": "GIC",
+                  "since": "2025-11-12",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "05.05.002",
+                  "sector_id": "05.05",
+                  "industry_id": "05"
+                },
+                {
+                  "label": "Open-System Vapor",
+                  "id": "05.05.002.03",
+                  "level": "segment",
+                  "parent_id": "05.05.002",
+                  "classification": "GIC",
+                  "since": "2025-11-12",
+                  "status": "active",
+                  "segment_code": "03",
+                  "subsector_id": "05.05.002",
+                  "sector_id": "05.05",
+                  "industry_id": "05"
+                }
+              ],
+              "sector_id": "05.05",
+              "industry_id": "05"
+            },
+            {
+              "label": "Smokeless & Oral Nicotine",
+              "id": "05.05.003",
+              "level": "subsector",
+              "parent_id": "05.05",
+              "classification": "GIC",
+              "since": "2025-11-12",
+              "status": "active",
+              "segments": [],
+              "sector_id": "05.05",
+              "industry_id": "05"
+            },
+            {
+              "label": "Vertically-Integrated Cannabis (MSOs)",
+              "id": "05.05.004",
+              "level": "subsector",
+              "parent_id": "05.05",
+              "classification": "GIC",
+              "since": "2025-11-12",
+              "status": "active",
+              "segments": [],
+              "sector_id": "05.05",
+              "industry_id": "05"
+            },
+            {
+              "label": "Cannabis Products, Brands & Wellness",
+              "id": "05.05.005",
+              "level": "subsector",
+              "parent_id": "05.05",
+              "classification": "GIC",
+              "since": "2025-11-12",
+              "status": "active",
+              "segments": [],
+              "sector_id": "05.05",
+              "industry_id": "05"
+            },
+            {
+              "label": "Cannabis Cultivation & Supply Chain",
+              "id": "05.05.006",
+              "level": "subsector",
+              "parent_id": "05.05",
+              "classification": "GIC",
+              "since": "2025-11-12",
+              "status": "active",
+              "segments": [
+                {
+                  "label": "Cultivation",
+                  "id": "05.05.006.01",
+                  "level": "segment",
+                  "parent_id": "05.05.006",
+                  "classification": "GIC",
+                  "since": "2025-11-12",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "05.05.006",
+                  "sector_id": "05.05",
+                  "industry_id": "05"
+                },
+                {
+                  "label": "Extraction/Processing",
+                  "id": "05.05.006.02",
+                  "level": "segment",
+                  "parent_id": "05.05.006",
+                  "classification": "GIC",
+                  "since": "2025-11-12",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "05.05.006",
+                  "sector_id": "05.05",
+                  "industry_id": "05"
+                },
+                {
+                  "label": "Brand & Wholesale",
+                  "id": "05.05.006.03",
+                  "level": "segment",
+                  "parent_id": "05.05.006",
+                  "classification": "GIC",
+                  "since": "2025-11-12",
+                  "status": "active",
+                  "segment_code": "03",
+                  "subsector_id": "05.05.006",
+                  "sector_id": "05.05",
+                  "industry_id": "05"
+                }
+              ],
+              "sector_id": "05.05",
+              "industry_id": "05"
+            },
+            {
+              "label": "Devices & Accessories (Integrated)",
+              "id": "05.05.007",
+              "level": "subsector",
+              "parent_id": "05.05",
+              "classification": "GIC",
+              "since": "2025-11-12",
+              "status": "active",
+              "segments": [],
+              "sector_id": "05.05",
               "industry_id": "05"
             }
           ],

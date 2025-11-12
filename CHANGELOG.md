@@ -1,5 +1,47 @@
 # Changelog
 
+
+## [1.2.2] - 2025-11-12
+### Added
+- **New Sector (1):**
+  - `05.05` Tobacco & Cannabinoid Products
+
+- **New Subsectors (6):**
+  - `05.05.001` Combustible Tobacco
+  - `05.05.002` Reduced-Risk Nicotine (Heated & Vapor)
+  - `05.05.003` Smokeless & Oral Nicotine
+  - `05.05.004` Vertically-Integrated Cannabis (MSOs)
+  - `05.05.005` Cannabis Products, Brands & Wellness
+  - `05.05.006` Cannabis Cultivation & Supply Chain
+
+- **New Segments (5):**
+  - `05.05.002.01` Heated Tobacco Systems
+  - `05.05.002.02` Closed-Pod Vapor
+  - `05.05.002.03` Open-System Vapor
+  - `05.05.006.01` Cultivation
+  - `05.05.006.02` Extraction/Processing
+
+- **Retail Segment:**
+  - `05.03.003.01` Specialty Tobacco & Vape Retail
+
+### Changed
+- No changes
+
+### Removed
+- No removals
+
+### Statistics
+- Total Entries: 396
+- Industries: 14
+- Sectors: 60
+- Subsectors: 230
+- Segments: 92
+
+### Summary
+- **Focus:** Added comprehensive coverage for tobacco, nicotine alternatives, and cannabis industries with detailed product taxonomy and vertical integration classification
+
+---
+
 All notable changes to the DMCS (Dynamic Multi-Dimensional Classification Standard) will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
