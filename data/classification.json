@@ -1329,6 +1329,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "06.01.003",
                   "sector_id": "06.01",
                   "industry_id": "06"
@@ -1341,6 +1342,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "06.01.003",
                   "sector_id": "06.01",
                   "industry_id": "06"
@@ -1353,6 +1355,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "06.01.003",
                   "sector_id": "06.01",
                   "industry_id": "06"
@@ -1365,6 +1368,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "04",
                   "subsector_id": "06.01.003",
                   "sector_id": "06.01",
                   "industry_id": "06"
@@ -1570,6 +1574,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "06.05.001",
                   "sector_id": "06.05",
                   "industry_id": "06"
@@ -1582,6 +1587,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "06.05.001",
                   "sector_id": "06.05",
                   "industry_id": "06"
@@ -1607,6 +1613,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "06.05.002",
                   "sector_id": "06.05",
                   "industry_id": "06"
@@ -1619,6 +1626,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "06.05.002",
                   "sector_id": "06.05",
                   "industry_id": "06"
@@ -2110,6 +2118,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "08.03.004",
                   "sector_id": "08.03",
                   "industry_id": "08"
@@ -2122,6 +2131,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "08.03.004",
                   "sector_id": "08.03",
                   "industry_id": "08"
@@ -2134,6 +2144,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "08.03.004",
                   "sector_id": "08.03",
                   "industry_id": "08"
@@ -2146,6 +2157,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "04",
                   "subsector_id": "08.03.004",
                   "sector_id": "08.03",
                   "industry_id": "08"
@@ -2195,6 +2207,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "08.04.002",
                   "sector_id": "08.04",
                   "industry_id": "08"
@@ -2207,6 +2220,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "08.04.002",
                   "sector_id": "08.04",
                   "industry_id": "08"
@@ -2219,6 +2233,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "08.04.002",
                   "sector_id": "08.04",
                   "industry_id": "08"
@@ -2231,6 +2246,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "04",
                   "subsector_id": "08.04.002",
                   "sector_id": "08.04",
                   "industry_id": "08"
@@ -2303,6 +2319,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "09.01.001",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2315,6 +2332,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "09.01.001",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2327,6 +2345,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "09.01.001",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2352,6 +2371,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "09.01.002",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2364,6 +2384,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "09.01.002",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2389,6 +2410,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "09.01.003",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2401,6 +2423,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "09.01.003",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2413,6 +2436,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "09.01.003",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2425,6 +2449,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "04",
                   "subsector_id": "09.01.003",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2450,6 +2475,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "09.01.004",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2462,6 +2488,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "09.01.004",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2474,6 +2501,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "09.01.004",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2499,6 +2527,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "09.01.005",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2511,6 +2540,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "09.01.005",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2523,6 +2553,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "09.01.005",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2560,6 +2591,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "09.01.007",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2572,6 +2604,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "09.01.007",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2584,6 +2617,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "09.01.007",
                   "sector_id": "09.01",
                   "industry_id": "09"
@@ -2681,6 +2715,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "09.02.005",
                   "sector_id": "09.02",
                   "industry_id": "09"
@@ -2693,6 +2728,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "09.02.005",
                   "sector_id": "09.02",
                   "industry_id": "09"
@@ -2705,6 +2741,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "09.02.005",
                   "sector_id": "09.02",
                   "industry_id": "09"
@@ -2850,6 +2887,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "09.04.003",
                   "sector_id": "09.04",
                   "industry_id": "09"
@@ -2862,6 +2900,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "09.04.003",
                   "sector_id": "09.04",
                   "industry_id": "09"
@@ -2874,6 +2913,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "09.04.003",
                   "sector_id": "09.04",
                   "industry_id": "09"
@@ -2886,6 +2926,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "04",
                   "subsector_id": "09.04.003",
                   "sector_id": "09.04",
                   "industry_id": "09"
@@ -2994,6 +3035,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "10.02.001",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3006,6 +3048,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "10.02.001",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3018,6 +3061,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "10.02.001",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3030,6 +3074,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "04",
                   "subsector_id": "10.02.001",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3055,6 +3100,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "10.02.002",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3067,6 +3113,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "10.02.002",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3079,6 +3126,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "10.02.002",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3091,6 +3139,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "04",
                   "subsector_id": "10.02.002",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3116,6 +3165,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "10.02.003",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3128,6 +3178,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "10.02.003",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3140,6 +3191,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "10.02.003",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3152,6 +3204,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "04",
                   "subsector_id": "10.02.003",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3189,6 +3242,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "10.02.005",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3201,6 +3255,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "10.02.005",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3213,6 +3268,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "10.02.005",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3225,6 +3281,7 @@
                   "classification": "GIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "04",
                   "subsector_id": "10.02.005",
                   "sector_id": "10.02",
                   "industry_id": "10"
@@ -3310,6 +3367,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "10.03.004",
                   "sector_id": "10.03",
                   "industry_id": "10"
@@ -3322,6 +3380,7 @@
                   "classification": "GIC",
                   "since": "2025-11-12",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "10.03.004",
                   "sector_id": "10.03",
                   "industry_id": "10"
@@ -3788,6 +3847,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "13.01.001",
                   "sector_id": "13.01",
                   "industry_id": "13"
@@ -3800,6 +3860,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "13.01.001",
                   "sector_id": "13.01",
                   "industry_id": "13"
@@ -3825,6 +3886,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "13.01.002",
                   "sector_id": "13.01",
                   "industry_id": "13"
@@ -3837,6 +3899,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "13.01.002",
                   "sector_id": "13.01",
                   "industry_id": "13"
@@ -3862,6 +3925,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "13.01.003",
                   "sector_id": "13.01",
                   "industry_id": "13"
@@ -3874,6 +3938,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "13.01.003",
                   "sector_id": "13.01",
                   "industry_id": "13"
@@ -3959,6 +4024,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "13.02.001",
                   "sector_id": "13.02",
                   "industry_id": "13"
@@ -3971,6 +4037,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "13.02.001",
                   "sector_id": "13.02",
                   "industry_id": "13"
@@ -3983,6 +4050,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "13.02.001",
                   "sector_id": "13.02",
                   "industry_id": "13"
@@ -4008,6 +4076,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "13.02.002",
                   "sector_id": "13.02",
                   "industry_id": "13"
@@ -4020,6 +4089,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "13.02.002",
                   "sector_id": "13.02",
                   "industry_id": "13"
@@ -4045,6 +4115,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "13.02.003",
                   "sector_id": "13.02",
                   "industry_id": "13"
@@ -4057,6 +4128,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "13.02.003",
                   "sector_id": "13.02",
                   "industry_id": "13"
@@ -4082,6 +4154,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "13.02.004",
                   "sector_id": "13.02",
                   "industry_id": "13"
@@ -4094,6 +4167,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "13.02.004",
                   "sector_id": "13.02",
                   "industry_id": "13"
@@ -4106,6 +4180,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "13.02.004",
                   "sector_id": "13.02",
                   "industry_id": "13"
@@ -4179,6 +4254,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "13.03.001",
                   "sector_id": "13.03",
                   "industry_id": "13"
@@ -4191,6 +4267,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "13.03.001",
                   "sector_id": "13.03",
                   "industry_id": "13"
@@ -4203,6 +4280,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "03",
                   "subsector_id": "13.03.001",
                   "sector_id": "13.03",
                   "industry_id": "13"
@@ -4215,6 +4293,7 @@
                   "classification": "DIC",
                   "since": "2025-11-10",
                   "status": "active",
+                  "segment_code": "04",
                   "subsector_id": "13.03.001",
                   "sector_id": "13.03",
                   "industry_id": "13"
@@ -4407,6 +4486,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "14.01.004",
                   "sector_id": "14.01",
                   "industry_id": "14"
@@ -4419,6 +4499,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "14.01.004",
                   "sector_id": "14.01",
                   "industry_id": "14"
@@ -4456,6 +4537,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "14.02.001",
                   "sector_id": "14.02",
                   "industry_id": "14"
@@ -4468,6 +4550,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "14.02.001",
                   "sector_id": "14.02",
                   "industry_id": "14"
@@ -4553,6 +4636,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "01",
                   "subsector_id": "14.03.003",
                   "sector_id": "14.03",
                   "industry_id": "14"
@@ -4565,6 +4649,7 @@
                   "classification": "GIC",
                   "since": "2025-11-11",
                   "status": "active",
+                  "segment_code": "02",
                   "subsector_id": "14.03.003",
                   "sector_id": "14.03",
                   "industry_id": "14"
