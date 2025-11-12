@@ -1,43 +1,28 @@
 # GICS to DMCS Mapping
 
-Mapping from Global Industry Classification Standard (GICS) to DMCS classification.
+Structured guidance for migrating from the Global Industry Classification Standard (GICS) to DMCS. The table below focuses on common friction points. Use it alongside the boundary rules and DMCS materiality guidance.
 
-## About GICS
+| Source Code | Source Label | DMCS Node | DMCS Label | Confidence | Rationale | Edge Notes |
+|-------------|--------------|-----------|------------|------------|-----------|------------|
+| 45102010 | Application Software | 09.01.001 | Application Software | High | Direct alignment; both capture enterprise SaaS suites. | Use segments (`.01`–`.03`) when product mix is clearly ERP/CRM/HCM. |
+| 45102030 | Systems Software | 09.01.004 | Cloud Platforms / PaaS | Medium | DMCS bundles cloud platforms, developer tooling, and integration. | Verify if ad-funded freemium models (>50–60% ads) should move to 10.03. |
+| 45101010 | Internet & Direct Marketing Retail | 04.05.002 | Online Marketplaces | High | Marketplace-led consumer platforms map cleanly. | Apply 09.01 secondary if SaaS revenue ≥25–30%. |
+| 45101020 | Data Processing & Outsourced Services | 09.03.003 | Data Center Services | Medium | Managed hosting/colocation services mirror DMCS data center services. | If bulk of revenue from owning powered-shell assets, use 08.04.001 per boundary rule. |
+| 45203020 | Transaction & Payment Processing | 07.02.003 | Payment Processing | High | Payment rails, PSPs, and acquirers align directly. | For onchain processors, consider 13.02.004 as secondary. |
+| 25301010 | Casinos & Gaming | 04.04.003 | Casinos & Gaming Venues | High | Venue-led casino operations stay in Consumer Discretionary. | Online-only operations belong in 10.02.006 Betting & iGaming. |
+| 50202010 | Movies & Entertainment | 10.02.001 | Film, TV & Entertainment | Medium | DMCS differentiates segments for production, streaming, theatrical, ancillary. | Streaming-only platforms with ad-driven models may cross to 10.03 if ads dominate. |
+| 50202510 | Interactive Home Entertainment | 10.02.005 | Video Games & Interactive Media | High | Naming retained; DMCS refines segment labels. | Check for esports/event operations that might require 10.02.004 secondary. |
+| 60101010 | Diversified REITs | 08.04.001 | Data Centers | Medium | When diversified REITs skew to data centers, classify under DMCS data center REITs. | Use secondary for residual office/industrial holdings if ≥25–30%. |
+| 60101040 | Specialized REITs (Other) | 08.04.002 | Specialized Residential Properties | Medium | Covers demographic-specific housing REITs (student, senior, co-living). | If service revenues dominate, check 08.03.003 Property Operations vs 09.03.003. |
+| 50203010 | Interactive Media & Services | 10.03.001 | Advertising & Attention Platforms | Medium | Aligns with ad-funded consumer platforms. | If contracted SaaS revenue dominates, move to 09.01 subsectors. |
+| 40402010 | Investment Banking & Brokerage | 07.03.003 | Investment Banking | High | Direct mapping for capital markets activities. | Custody-heavy models may warrant 13.02.003 secondary. |
+| 20202020 | Research & Consulting Services | 14.01.001 | Management & Strategy Consulting | Medium | Strategy and management consultants align with DMCS professional services. | Add 14.01.004 secondary if firm derives substantial HR/ESG advisory fees. |
+| 20202010 | Human Resource & Employment Services | 14.02.001 | Staffing & Employment Services | High | Staffing agencies and recruiters map directly to DMCS staffing subsector. | Use segment `.01` for temp/contract heavy models; `.02` for retained search specialists. |
+| 20201070 | Diversified Support Services | 14.02.003 | Corporate Support Services | Medium | Facilities logistics, records management, and corporate support ops align here. | If work is plant/industrial-focused, consider 03.04.004 Industrial Maintenance & Services. |
+| 20201050 | Environmental & Facilities Services | 03.04.003 | Facility & Support Services | Medium | Front-of-house facilities, janitorial, and soft services match the updated facilities subsector. | Shift to 03.04.004 when heavy industrial maintenance dominates. |
+| 20201020 | Data Processing & Outsourced Services | 14.02.002 | Business Process Outsourcing (BPO) | Medium | BPO providers delivering corporate back-office functions fit DMCS BPO node. | If revenue comes from managed IT infrastructure, keep 09.03 managed services. |
 
-GICS is maintained by MSCI and S&P Dow Jones Indices. It classifies companies into 11 sectors, 25 industry groups, 74 industries, and 163 sub-industries.
-
-**GICS Sectors:**
-- 10 - Energy
-- 15 - Materials
-- 20 - Industrials
-- 25 - Consumer Discretionary
-- 30 - Consumer Staples
-- 35 - Health Care
-- 40 - Financials
-- 45 - Information Technology
-- 50 - Communication Services
-- 55 - Utilities
-- 60 - Real Estate
-
-## High-Level Sector Mapping
-
-| GICS Code | GICS Sector | DMCS Industry | Notes |
-|-----------|-------------|---------------|-------|
-| 10 | Energy | 01 (Energy) | Strong alignment; DMCS includes renewables granularity |
-| 15 | Materials | 02 (Basic Materials) | Direct mapping |
-| 20 | Industrials | 03 (Industrials) | DMCS separates logistics/transport more explicitly |
-| 25 | Consumer Discretionary | 04 (Consumer Discretionary) | DMCS adds e-commerce detail |
-| 30 | Consumer Staples | 05 (Consumer Staples) | Close alignment |
-| 35 | Health Care | 06 (Healthcare) | DMCS includes digital health subsectors |
-| 40 | Financials | 07 (Financial Services) | DMCS adds crypto/DeFi coverage |
-| 45 | Information Technology | 09 (Technology) | DMCS splits hardware, software, platforms |
-| 50 | Communication Services | 10 (Communications & Media) | DMCS separates social media, streaming |
-| 55 | Utilities | 11 (Utilities) | Direct mapping |
-| 60 | Real Estate | 08 (Real Estate) | DMCS adds digital real estate (metaverse) |
-
-## Detailed Sub-Industry Examples
-
-### Energy (GICS 10 → DMCS 01)
+> Need a code not listed here? Open an issue with revenue mix and business model details so we can extend the table.
 
 | GICS Code | GICS Sub-Industry | DMCS Primary | DMCS Secondary | Notes |
 |-----------|-------------------|--------------|----------------|-------|
@@ -74,7 +59,7 @@ GICS is maintained by MSCI and S&P Dow Jones Indices. It classifies companies in
 | 50201020 | Broadcasting | 10.02.002 - Broadcasting & Networks | - | Linear TV/radio networks and station groups |
 | 50201030 | Cable & Satellite | 10.02.002 - Broadcasting & Networks | 10.01.002 - Fixed-Line & Broadband | Secondary when access network operations are material |
 | 50201040 | Publishing | 10.02.004 - Diversified Entertainment | - | Traditional and digital publishing businesses |
-| 50202020 | Interactive Home Entertainment | 10.02.005 - Interactive Home Entertainment | - | Gaming and interactive experiences |
+| 50202020 | Interactive Home Entertainment | 10.02.005 - Video Games & Interactive Media | - | Gaming and interactive experiences |
 | 50203010 | Interactive Media & Services | 10.03.004 - Search & Digital Platforms | 10.03.001 - Social Networks | Pick based on core monetization |
 
 ### Financials (GICS 40 → DMCS 07)
@@ -92,6 +77,16 @@ GICS is maintained by MSCI and S&P Dow Jones Indices. It classifies companies in
 | 40301020 | Life & Health Insurance | 07.02.001 - Life & Health Insurance | - | Life, health, annuity carriers |
 | 40301040 | Property & Casualty Insurance | 07.02.002 - Property & Casualty | - | P&C carriers |
 | 40301050 | Reinsurance | 07.02.003 - Reinsurance & Specialty | - | Reinsurers and specialty carriers |
+
+### Professional & Business Services (GICS 20 → DMCS 14)
+
+| GICS Code | GICS Sub-Industry | DMCS Primary | DMCS Secondary | Notes |
+|-----------|-------------------|--------------|----------------|-------|
+| 20202020 | Research & Consulting Services | 14.01.001 - Management & Strategy Consulting | 14.01.004 - Specialized Advisory | Use segments `.01` and `.02` when HR/ESG advisory becomes material |
+| 20202010 | Human Resource & Employment Services | 14.02.001 - Staffing & Employment Services | 14.02.001.02 - Permanent & Executive Search | Segment `.01` captures temp/contract agencies; `.02` covers retained executive search |
+| 20201020 | Data Processing & Outsourced Services | 14.02.002 - Business Process Outsourcing (BPO) | 09.03.002 - Managed Services | Keep IT-managed services secondary when infrastructure work dominates |
+| 20201070 | Diversified Support Services | 14.02.003 - Corporate Support Services | 03.04.003 - Facility & Support Services | Use secondary when operations include significant facilities work |
+| 20201050 | Environmental & Facilities Services | 03.04.003 - Facility & Support Services | 03.04.004 - Industrial Maintenance & Services | Choose Industrial Maintenance when heavy plant turnaround work leads |
 
 ## Migration Checklist
 

@@ -24,7 +24,7 @@ const dmcs = new Classification();
 // Get stats
 console.log(dmcs.stats());
 // {
-//   version: '1.1.3',
+//   version: '1.2.0',
 //   release_date: '2025-11-11',
 //   industries: 13,
 //   sectors: 55,

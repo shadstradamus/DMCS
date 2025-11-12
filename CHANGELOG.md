@@ -6,6 +6,61 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.2.0] - 2025-11-11
+
+### Added
+
+- **Industry 14 — Professional & Business Services**
+  - `14.01` Professional Services
+    - `14.01.001` Management & Strategy Consulting
+    - `14.01.002` Legal Services
+    - `14.01.003` Accounting, Audit & Tax Services
+    - `14.01.004` Specialized Advisory
+      - `14.01.004.01` HR, Compensation & Benefits
+      - `14.01.004.02` ESG, Risk & Sustainability
+  - `14.02` Business Support & Outsourcing
+    - `14.02.001` Staffing & Employment Services
+      - `14.02.001.01` Temporary & Contract Staffing
+      - `14.02.001.02` Permanent & Executive Search
+    - `14.02.002` Business Process Outsourcing (BPO)
+    - `14.02.003` Corporate Support Services
+  - `14.03` Data, Information & Marketing Services
+    - `14.03.001` Financial Data, Ratings & Analytics
+    - `14.03.002` Market Research & General Data
+    - `14.03.003` Advertising & Marketing Agencies
+      - `14.03.003.01` Integrated Agencies & Holding Groups
+      - `14.03.003.02` Public Relations Services
+    - `14.03.004` Scientific & Technical Services
+- **Life sciences expansion**
+  - `06.05` Life Sciences Tools & Services
+    - `06.05.001` Life Sciences Equipment & Consumables
+      - `06.05.001.01` Analytical Instruments & Equipment
+      - `06.05.001.02` Life Sciences Consumables & Reagents
+    - `06.05.002` Contract Research & Manufacturing
+      - `06.05.002.01` Contract Research Organizations (CROs)
+      - `06.05.002.02` Contract Development & Manufacturing (CDMOs)
+- **PropTech platform depth**
+  - `08.03.004` PropTech & Real Estate Platforms
+    - `08.03.004.01` Residential Platforms & Marketplaces
+    - `08.03.004.02` Commercial Data & Analytics Platforms
+    - `08.03.004.03` Property & Asset Management Software
+    - `08.03.004.04` iBuyer & Direct Platforms
+- **Industrial services expansion**
+  - `03.04.004` Industrial Maintenance & Services
+- **Vertical SaaS coverage**
+  - `09.01.008` Vertical Industry SaaS
+
+### Changed
+
+- **Media interaction terminology**: retitled `10.02.005` from **Interactive Home Entertainment** to **Video Games & Interactive Media** to better reflect modern distribution and engagement models.
+- **Industrial services split**: separated the former `03.04.003 Facility & Industrial Services` into `03.04.003 Facility & Support Services` and `03.04.004 Industrial Maintenance & Services` for clearer coverage boundaries.
+- **Documentation & datasets**: regenerated `classification.json`, CSV exports, SDK payloads, and `CLASSIFICATION.md` to surface the new structure; refreshed README statistics, mapping guidance, and tooling mirrors.
+- **Scale update**: DMCS now tracks **14 industries**, **59 sectors**, **221 subsectors**, and **71 segments**.
+
+### Fixed
+
+- **Version alignment**: bumped repository metadata to `v1.2.0` and synchronized release dates across tooling scripts and SDK distributions.
+
 ## [1.1.3] - 2025-11-11
 
 ### Added
@@ -23,11 +78,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Real estate services terminology**: retitled `08.03.003` → **Facilities & Property Operations** to align naming with published boundary guidance.
+
 - **Media subsector renames**: retitled `10.02.001` → **Film, TV & Entertainment**, `10.02.002` → **Broadcasting & Networks**, and `10.02.005` → **Interactive Home Entertainment** to match the expanded scope
 - **Music & gaming terminology refresh**: refined segment labels to better describe rights management, streaming, live services, technology platforms, and esports coverage
 - **Specialized residential positioning**: retitled `08.04.002` to **Specialized Residential Properties** and aligned all child segments with their new housing terminology
 - **Artifact regeneration**: bumped DMCS taxonomy metadata to **v1.1.3** and regenerated JSON, CSV, Markdown, and bundle outputs across repositories
 - **Documentation alignment**: updated crosswalk references (GICS / ICB / NAICS) and end-user guides to reflect the revised media taxonomy terminology
+
+### Fixed
+
+- **README consistency**: corrected the hierarchy example to use `09.01.004` (Cloud Platforms / PaaS) and removed the improper secondary classification from the Microsoft case study.
+- **Boundary documentation**: expanded the scope notes covering game distribution vs creator platforms and broadcasting vs OTT streaming, and refreshed facilities guidance to match the updated label.
 
 ## [1.1.2] - 2025-11-11
 

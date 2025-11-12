@@ -49,11 +49,16 @@ These mapping tables help organizations transition from existing industry classi
 
 ## Mapping Format
 
-Each mapping table includes:
-- **Legacy Code & Label**: Original classification system identifier
-- **DMCS Primary**: Recommended primary classification
-- **DMCS Secondary**: Common secondary classifications (if applicable)
-- **Notes**: Key differences, edge cases, materiality guidance
+Each mapping table now uses a consistent column schema:
+- **Source Code** – Legacy identifier (sector / industry / subsector)
+- **Source Label** – Official legacy description
+- **DMCS Node** – Recommended DMCS ID (subsector or segment)
+- **DMCS Label** – DMCS description for quick scanning
+- **Confidence** – High / Medium / Low guidance based on structural fit
+- **Rationale** – Summary of why the mapping is appropriate
+- **Edge Notes** – Known caveats or boundary reminders
+
+> **Tip:** DMCS classifications are entity-level, while NAICS is establishment-based. When using NAICS, aggregate establishment codes to the consolidated entity before applying DMCS.
 
 ### Segment-Level Mapping Guidance
 
@@ -61,7 +66,7 @@ Each mapping table includes:
 
 **Mapping Approach:**
 1. **Map to subsector first**: Use the standard mapping tables to identify the appropriate DMCS subsector
-2. **Check for segments**: Review if the DMCS subsector has segments defined (57 segments across v1.1.3)
+2. **Check for segments**: Review if the DMCS subsector has segments defined (71 segments across v1.2.0)
 3. **Apply segment if applicable**: If the entity's product line clearly fits a specific segment, use the segment ID
 4. **Default to subsector**: If uncertain or segments don't apply, use the subsector-level classification
 

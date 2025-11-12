@@ -9,133 +9,99 @@ ICB is maintained by FTSE Russell and used across FTSE indices and European mark
 **ICB Industries:**
 - 0001 - Energy
 - 1000 - Basic Materials
-- 2000 - Industrials
-- 3000 - Consumer Discretionary
-- 4000 - Consumer Staples
-- 5000 - Health Care
-- 6000 - Financials
-- 7000 - Technology
-- 8000 - Telecommunications
-- 9000 - Utilities
-- 9500 - Real Estate
+# ICB to DMCS Mapping
 
-## High-Level Industry Mapping
+Reference table for mapping Industry Classification Benchmark (ICB) subsectors onto DMCS nodes. Focuses on tricky overlaps and incorporates current boundary guidance.
 
-| ICB Code | ICB Industry | DMCS Industry | Notes |
-|----------|--------------|---------------|-------|
-| 0001 | Energy | 01 (Energy) | Direct alignment; DMCS adds renewable granularity |
-| 1000 | Basic Materials | 02 (Basic Materials) | Strong alignment |
-| 2000 | Industrials | 03 (Industrials) | DMCS separates aerospace, logistics explicitly |
-| 3000 | Consumer Discretionary | 04 (Consumer Discretionary) | DMCS includes e-commerce detail |
-| 4000 | Consumer Staples | 05 (Consumer Staples) | Close alignment |
-| 5000 | Health Care | 06 (Healthcare) | DMCS adds digital health subsectors |
-| 6000 | Financials | 07 (Financial Services) | DMCS includes crypto/DeFi |
-| 7000 | Technology | 09 (Technology) | DMCS splits hardware/software/platforms |
-| 8000 | Telecommunications | 10 (Communications & Media) | DMCS merges with media/content |
-| 9000 | Utilities | 11 (Utilities) | Direct mapping |
-| 9500 | Real Estate | 08 (Real Estate) | DMCS adds digital real estate |
+| Source Code | Source Label | DMCS Node | DMCS Label | Confidence | Rationale | Edge Notes |
+|-------------|--------------|-----------|------------|------------|-----------|------------|
+| 10101015 | Software | 09.01.001 | Application Software | High | Enterprise/vertical SaaS aligns directly. | If advertising is primary monetisation, inspect 10.03 platform nodes. |
+| 10101020 | Consumer Digital Services | 10.03.001 | Advertising & Attention Platforms | Medium | Covers ad-funded consumer platforms per boundary rules. | Subscription-first streaming moves to 10.02.001 Film, TV & Entertainment. |
+| 10102010 | Semiconductors | 09.02.001 | Semiconductors | High | DMCS keeps dedicated semiconductor ladder identical in scope. | None. |
+| 40501010 | Airlines | 03.03.005 | Airlines | High | Direct mapping for scheduled passenger and cargo carriers. | Use 03.03.004 Parcel & Courier when vertical mobility or drone logistics dominate. |
+| 40501040 | Restaurants and Bars | 04.03.001 | Restaurants | High | Maps into DMCS hospitality subsector. | Delivery marketplaces belong in 04.05.002 Online Marketplaces. |
+| 35101010 | Real Estate Holding and Development | 08.02.001 | Real Estate Development | Medium | Aligns with DMCS landbanking & development groups. | If entity is primarily REIT structure, use 08.04.x nodes. |
+| 35101015 | Real Estate Services | 08.03.001 | Brokerage & Advisory | Medium | Core brokerage, leasing, and advisory groups align here. | Shift to 08.03.004 PropTech & Real Estate Platforms when product is software/data-led. |
+| 40501020 | Casinos and Gambling | 10.02.006 | Betting & iGaming | Medium | Online betting operations slot into DMCS gaming platform node. | Venue-first casinos remain in 04.04.003. |
+| 30201020 | Consumer Lending | 07.01.003 | Consumer Finance / Cards | High | Credit card and instalment lenders map directly. | BNPL models may need 07.04.002 Digital Wallets / Neobanks if product-specific. |
+| 10101010 | Computer Services | 09.03.003 | Data Center Services | Medium | Managed services, hosting, and colocation align with DMCS infrastructure ops. | Move to 08.04.001 if revenue dominated by REIT-style rents. |
+| 50205025 | Business Training and Employment Agencies | 14.02.001 | Staffing & Employment Services | High | Staffing, recruitment, and HR outsourcers map to DMCS staffing subsector. | Apply segment `.02` for retained executive search specialists. |
+| 50205015 | Transaction Processing Services | 14.02.003 | Corporate Support Services | Medium | Document storage, logistics, and shared-service operations align to the new corporate support node. | If operations skew industrial (maintenance/fabrication), evaluate 03.04.004. |
+| 50205020 | Professional Business Support Services | 14.01.001 | Management & Strategy Consulting | Medium | Strategy, legal, audit, and specialist advisory groups sit in DMCS Industry 14. | Use 14.01.004 segments for HR/comp or ESG-focused mandates. |
+| 60102020 | Renewable Energy Equipment | 01.03.002 | Solar & Distributed Energy | Medium | DMCS focuses on distributed infrastructure supply chain. | Utility-scale operators fall under 11.02.x instead. |
 
-## Detailed Subsector Examples
-
-### Energy (ICB 0001 → DMCS 01)
-
+Submit additional ICB codes through the registry pipeline if you encounter unmapped activity combinations.
 | ICB Code | ICB Subsector | DMCS Primary | DMCS Secondary | Notes |
 |----------|---------------|--------------|----------------|-------|
-| 00010505 | Oil: Crude Producers | 01.01.001 - Conventional Oil & Gas | - | Upstream producers with conventional reservoirs |
-| 00010510 | Exploration & Production | 01.01.001 - Conventional Oil & Gas | 01.01.002 - Unconventional / Shale | Use shale secondary when horizontal/fracking is ≥25% |
-| 00010515 | Integrated Oil & Gas | 01.01.001 - Conventional Oil & Gas | 01.03.001 - Refineries | Integrated majors earn material downstream revenue |
-| 00010520 | Oil: Offshore Services | 01.01.004 - Oilfield Services & Drilling | - | Offshore rigs and service contractors |
-| 00010525 | Oil Equipment & Services | 01.01.004 - Oilfield Services & Drilling | - | Equipment suppliers, service providers |
-| 00010530 | Pipelines | 01.02.001 - Pipelines | 01.02.003 - Marine Energy Transport | Marine secondary if fleet-based |
-| 00010535 | Refining & Marketing | 01.03.001 - Refineries | 01.03.002 - Fuel Retail & Stations | Retail networks meet materiality threshold |
-| 00053510 | Renewable Energy Equipment | 01.04.004 - Storage & Grid Integrators | 01.04.001 - Utility-Scale Solar | Secondary when OEM also owns solar assets |
-| 00053515 | Alternative Fuels | 01.04.003 - Bioenergy & Waste-to-Energy | - | Biofuels and biogas operators |
-
-### Technology (ICB 7000 → DMCS 09)
-
-| ICB Code | ICB Subsector | DMCS Primary | DMCS Secondary | Notes |
-|----------|---------------|--------------|----------------|-------|
-| 70101010 | Computer Services | 09.03.001 - IT Consulting | 09.03.002 - Managed Services | Advisory vs managed operations split |
-| 70101015 | Internet | 10.03.004 - Search & Digital Platforms | 10.03.001 - Social Networks | Choose by core monetization model |
-| 70101020 | Software | 09.01.002 - Enterprise SaaS | 09.01.001 - Application Software | Enterprise-first vs mixed consumer focus |
-| 70201020 | Computer Hardware | 09.02.005 - Consumer Devices & Ecosystems | - | End-user hardware manufacturers |
-| 70201030 | Electronic Office Equipment | 09.02.007 - Imaging, Sensors & Components | - | Peripherals, imaging and component makers |
-| 70203010 | Semiconductors | 09.02.001 - Semiconductors — Design (Fabless & IP) | 09.02.002 - Semiconductors — Manufacturing (Foundry & IDM) | Map based on fabless vs IDM business mix |
-| 70203015 | Semiconductor Equipment | 09.02.003 - Semiconductor Equipment | - | Capital equipment suppliers |
-
-### Telecommunications (ICB 8000 → DMCS 10)
-
-| ICB Code | ICB Subsector | DMCS Primary | DMCS Secondary | Notes |
-|----------|---------------|--------------|----------------|-------|
-| 80101010 | Fixed Line Telecommunications | 10.01.002 - Fixed-Line & Broadband | 10.02.002 - Broadcasting & Networks | Secondary if video distribution is material |
-| 80101015 | Mobile Telecommunications | 10.01.001 - Mobile Network Operators | - | Wireless carriers |
+| 15102015 | Telecommunications Services | 10.01.002 - Fixed-Line & Broadband | 10.02.002 - Broadcasting & Networks | Use for wireline-heavy carriers inside ICB's consolidated services bucket; add broadcasting secondary when video distribution is material |
+| 15102015 | Telecommunications Services | 10.01.001 - Mobile Network Operators | - | ICB no longer separates mobile; treat wireless-led carriers as DMCS mobile network operators based on revenue mix |
 
 ### Financials (ICB 6000 → DMCS 07)
 
 | ICB Code | ICB Subsector | DMCS Primary | DMCS Secondary | Notes |
 |----------|---------------|--------------|----------------|-------|
-| 60101010 | Banks | 07.01.001 - Retail Banking | 07.01.002 - Commercial / SME Lending | Secondary when corporate lending ≥30% |
-| 60101015 | Consumer Lending | 07.01.003 - Consumer Finance / Cards | - | Credit card and specialty consumer lenders |
-| 60201020 | Full Line Insurance | 07.02.001 - Life & Health Insurance | 07.02.002 - Property & Casualty | Split by dominant underwriting line |
-| 60201025 | Insurance Brokers | 07.02.003 - Reinsurance & Specialty | - | Brokerage aligns with specialty/reinsurance markets |
-| 60201030 | Property & Casualty Insurance | 07.02.002 - Property & Casualty | - | P&C carriers |
-| 60201035 | Reinsurance | 07.02.003 - Reinsurance & Specialty | - | Reinsurance specialists |
-| 60201040 | Life Insurance | 07.02.001 - Life & Health Insurance | - | Life and annuity carriers |
-| 60301010 | Real Estate Investment Trusts | 08.01.xxx - REIT (match asset class) | - | Pick 08.01.001-08.01.004 based on property focus |
-| 60301020 | Real Estate Holding & Development | 08.02.002 - Commercial Development | 08.02.001 - Residential Development | Assign primary by dominant pipeline |
-| 60301030 | Real Estate Services | 08.03.001 - Brokerage & Advisory | 08.03.002 - Property Management | Select subsector by service mix |
-| 60401010 | Asset Managers | 07.03.001 - Asset & Wealth Management | - | Traditional asset & wealth managers |
-| 60401015 | Private Equity | 07.03.004 - Holding / Investment Companies | - | Balance sheet investors |
-| 60401020 | Investment Services | 07.03.003 - Investment Banking | 07.03.002 - Brokerage & Trading Venues | Primary based on advisory vs execution |
-| 60401025 | Mortgage Finance | 07.01.003 - Consumer Finance / Cards | - | Mortgage lenders and servicers |
-| 60401030 | Specialty Finance | 07.04.004 - Digital Payments | 07.04.003 - Merchant Acquiring | Map according to payments vs acquiring blend |
+| 30101010 | Banks | 07.01.001 - Retail Banking | 07.01.002 - Commercial / SME Lending | Secondary when corporate lending ≥30% |
+| 30201020 | Consumer Lending | 07.01.003 - Consumer Finance / Cards | - | Credit card and specialty consumer lenders |
+| 30201025 | Mortgage Finance | 07.01.003 - Consumer Finance / Cards | - | Mortgage lenders and servicers |
+| 30201030 | Financial Data Providers | 07.04.004 - Digital Payments | 07.04.003 - Merchant Acquiring | Use DMCS fintech ladder for networks/processors; pure data vendors may fit 14.x corporate services |
+| 30202000 | Diversified Financial Services | 07.03.004 - Holding / Investment Companies | - | Includes private equity and multi-strategy balance sheet investors |
+| 30202010 | Asset Managers and Custodians | 07.03.001 - Asset & Wealth Management | - | Traditional asset & wealth managers and custody banks |
+| 30202015 | Investment Services | 07.03.003 - Investment Banking | 07.03.002 - Brokerage & Trading Venues | Primary based on advisory vs execution |
+| 30301010 | Life Insurance | 07.02.001 - Life & Health Insurance | - | Life and annuity carriers |
+| 30302010 | Full Line Insurance | 07.02.001 - Life & Health Insurance | 07.02.002 - Property & Casualty | Split by dominant underwriting line |
+| 30302015 | Insurance Brokers | 07.02.003 - Reinsurance & Specialty | - | Brokerage aligns with specialty/reinsurance markets |
+| 30302020 | Reinsurance | 07.02.003 - Reinsurance & Specialty | - | Reinsurance specialists |
+| 30302025 | Property and Casualty Insurance | 07.02.002 - Property & Casualty | - | P&C carriers |
+| 35101010 | Real Estate Holding and Development | 08.02.002 - Commercial Development | 08.02.001 - Residential Development | Assign primary by dominant pipeline |
+| 35101015 | Real Estate Services | 08.03.001 - Brokerage & Advisory | 08.03.002 - Property Management | Select subsector by service mix |
+| 35102000 | Diversified REITs | 08.01.xxx - REIT (match asset class) | - | Pick 08.01.001-08.01.004 based on property focus |
 
 ### Consumer Discretionary (ICB 3000 → DMCS 04)
 
 | ICB Code | ICB Subsector | DMCS Primary | DMCS Secondary | Notes |
 |----------|---------------|--------------|----------------|-------|
-| 30101010 | Automobiles | 04.01.001 - Automakers | - | Vehicle OEMs |
-| 30101020 | Auto Parts | 04.01.002 - Auto Parts & Components | - | Tier-one and aftermarket suppliers |
-| 30201020 | Clothing & Accessories | 04.03.001 - Apparel Brands | 04.03.002 - Sportswear & Footwear | Assign secondary when athleisure dominates |
-| 30201030 | Footwear | 04.03.002 - Sportswear & Footwear | - | Footwear brands |
-| 30201040 | Personal Products | 05.02.002 - Personal Care & Beauty | - | Moves to Consumer Staples in DMCS |
-| 30301010 | Consumer Electronics | 04.02.003 - Consumer Electronics | - | Home and personal electronics |
-| 30301020 | Household Appliances | 04.02.001 - Home Appliances | - | Major and small appliances |
+| 40101020 | Automobiles | 04.01.001 - Automakers | - | Vehicle OEMs |
+| 40101025 | Auto Parts | 04.01.002 - Auto Parts & Components | - | Tier-one and aftermarket suppliers |
+| 40204020 | Clothing and Accessories | 04.03.001 - Apparel Brands | 04.03.002 - Sportswear & Footwear | Assign secondary when athleisure dominates |
+| 40204025 | Footwear | 04.03.002 - Sportswear & Footwear | - | Footwear brands |
+| 40204035 | Cosmetics | 05.02.002 - Personal Care & Beauty | - | Beauty-focused brands inside ICB personal goods bucket |
+| 40203010 | Consumer Electronics | 04.02.003 - Consumer Electronics | - | Home and personal electronics |
+| 40202020 | Household Appliance | 04.02.001 - Home Appliances | - | Major and small appliances |
 
 ### Health Care (ICB 5000 → DMCS 06)
 
 | ICB Code | ICB Subsector | DMCS Primary | DMCS Secondary | Notes |
 |----------|---------------|--------------|----------------|-------|
-| 50101010 | Medical Equipment | 06.02.001 | - | Medical Devices |
-| 50101015 | Medical Supplies | 06.02.002 | - | Diagnostics & Lab Services |
-| 50201010 | Pharmaceuticals | 06.01.001 | - | Pharmaceuticals |
-| 50201020 | Biotechnology | 06.01.002 | - | Biotechnology |
-| 50301010 | Health Care Providers | 06.03.001 | - | Hospitals & Health Systems |
-| 50301020 | Medical Services | 06.03.002 | - | Outpatient & Specialty Care |
+| 20102010 | Medical Equipment | 06.02.001 | - | Medical Devices |
+| 20102015 | Medical Supplies | 06.05.001 - Life Sciences Equipment & Consumables | 06.02.002 - Diagnostics & Testing | Use new life sciences node for lab equipment/consumables; keep diagnostics secondary when labs operate facilities |
+| 20103015 | Pharmaceuticals | 06.01.001 | - | Pharmaceuticals |
+| 20103010 | Biotechnology | 06.01.002 | - | Biotechnology |
+| 20101010 | Health Care Facilities | 06.03.001 | - | Hospitals & Health Systems |
+| 20102020 | Medical Services | 06.05.002 - Contract Research & Manufacturing | 06.03.002 - Outpatient & Specialty Care | CRO/CDMO operators map to the new life sciences services node; keep provider classification when operating clinics |
 
 ### Industrials (ICB 2000 → DMCS 03)
 
 | ICB Code | ICB Subsector | DMCS Primary | DMCS Secondary | Notes |
 |----------|---------------|--------------|----------------|-------|
-| 20101010 | Aerospace | 03.01.001 | - | Aerospace & Defense |
-| 20101015 | Defense | 03.01.001 | - | Aerospace & Defense |
-| 20201010 | Containers & Packaging | 03.02.003 | - | Packaging & Containers |
-| 20201020 | Diversified Industrials | 03.02.001 | - | Diversified Manufacturers |
-| 20201050 | Electrical Components & Equipment | 03.02.002 | - | Electrical Equipment & Automation |
-| 20201070 | Industrial Machinery | 03.02.002 | - | Electrical Equipment & Automation |
-| 20301010 | Delivery Services | 03.03.002 | - | Freight & Logistics |
-| 20301020 | Marine Transportation | 03.03.002 | - | Freight & Logistics |
-| 20301030 | Railroads | 03.03.001 | - | Transportation Infrastructure |
-| 20301040 | Transportation Services | 03.03.002 | - | Freight & Logistics |
-| 20301050 | Trucking | 03.03.002 | - | Freight & Logistics |
-| 20302010 | Airlines | 03.03.003 | - | Airlines & Aviation Services |
-| 20302020 | Gambling | 04.04.003 | - | Gaming & Casinos |
-| 20302030 | Hotels | 04.04.001 | - | Hotels & Resorts |
-| 20302035 | Recreational Services | 04.04.004 | - | Entertainment Venues & Events |
-| 20302040 | Restaurants & Bars | 04.06.002 - Casual / Full-Service | 04.06.001 - Quick Service Restaurants | Assign secondary when QSR formats dominate |
-| 20303010 | Broadcasting & Entertainment | 10.02.002 | - | Publishing & Content Production |
-| 20303020 | Media Agencies | 10.02.001 | - | Advertising & Marketing Services |
-| 20303030 | Publishing | 10.02.002 | - | Publishing & Content Production |
+ | 50201010 | Aerospace | 03.01.001 | - | Aerospace & Defense |
+| 50201020 | Defense | 03.01.001 | - | Aerospace & Defense |
+| 50203030 | Containers and Packaging | 03.02.003 | - | Packaging & Containers |
+| 50203000 | Diversified Industrials | 03.02.001 | - | Diversified Manufacturers |
+| 50202010 | Electrical Components | 03.02.002 | - | Electrical Equipment & Automation |
+| 50204000 | Machinery: Industrial | 03.02.002 | - | Electrical Equipment & Automation |
+| 50206040 | Delivery Services | 03.03.002 | - | Freight & Logistics |
+| 50206030 | Marine Transportation | 03.03.002 | - | Freight & Logistics |
+| 50206020 | Railroads | 03.03.001 | - | Transportation Infrastructure |
+| 50206060 | Transportation Services | 03.03.002 | - | Freight & Logistics |
+| 50206010 | Trucking | 03.03.002 | - | Freight & Logistics |
+| 40501010 | Airlines | 03.03.005 | - | Airlines & Aviation Services |
+| 40501020 | Casinos and Gambling | 04.04.003 | - | Gaming & Casinos |
+| 40501025 | Hotels and Motels | 04.04.001 | - | Hotels & Resorts |
+| 40501030 | Recreational Services | 04.04.004 | - | Entertainment Venues & Events |
+| 40501040 | Restaurants and Bars | 04.06.002 - Casual / Full-Service | 04.06.001 - Quick Service Restaurants | Assign secondary when QSR formats dominate |
+| 40301010 | Entertainment | 10.02.002 | - | Publishing & Content Production |
+| 40301020 | Media Agencies | 10.02.001 | - | Advertising & Marketing Services |
+| 40301030 | Publishing | 10.02.002 | - | Publishing & Content Production |
 
 ## Migration Checklist
 
@@ -172,7 +138,7 @@ When converting from ICB to DMCS:
 ## Resources
 
 - [ICB Structure](https://www.ftserussell.com/data/industry-classification-benchmark-icb)
-- [DMCS classification](../classification.md)
+- [DMCS Classification](../classification.md)
 - [DMCS Materiality Rules](../README.md#materiality-rule)
 
 For questions or suggested improvements, open a [GitHub issue](https://github.com/shadstradamus/DMCS/issues).

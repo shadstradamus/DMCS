@@ -1,12 +1,12 @@
 # DMCS classification — Full Classification Tree
 
-**Version:** 1.1.3  
+**Version:** 1.2.0  
 **Effective Date:** 2025-11-11  
-**Total:** 13 Industries · 55 Sectors · 205 Subsectors · 57 Segments
+**Total:** 14 Industries · 59 Sectors · 221 Subsectors · 71 Segments
 
 ---
 
-## Industries (13)
+## Industries (14)
 
 | ID | Industry |
 |----|----------|
@@ -23,10 +23,11 @@
 | 11 | Utilities |
 | 12 | Government / Public / Education |
 | 13 | Digital & Onchain Economy |
+| 14 | Professional & Business Services |
 
 ---
 
-## Sectors (55)
+## Sectors (59)
 
 | ID | Sector |
 |----|--------|
@@ -57,6 +58,7 @@
 | 06.02 | Medical Devices & Supplies |
 | 06.03 | Healthcare Providers & Services |
 | 06.04 | Health Tech & Digital Care |
+| 06.05 | Life Sciences Tools & Services |
 | 07.01 | Banking & Lending |
 | 07.02 | Insurance |
 | 07.03 | Investment & Capital Markets |
@@ -85,10 +87,13 @@
 | 13.02 | Centralized Exchanges & Trading |
 | 13.03 | Onchain Applications & Experiences |
 | 13.04 | Onchain Services, Security & Compliance |
+| 14.01 | Professional Services |
+| 14.02 | Business Support & Outsourcing |
+| 14.03 | Data, Information & Marketing Services |
 
 ---
 
-## Subsectors (205)
+## Subsectors (221)
 
 ### 01 Energy
 
@@ -147,7 +152,8 @@
 | 03.03.006 | Container & Liner Shipping |
 | 03.04.001 | EPC & Infrastructure |
 | 03.04.002 | Commercial Contractors |
-| 03.04.003 | Facility & Industrial Services |
+| 03.04.003 | Facility & Support Services |
+| 03.04.004 | Industrial Maintenance & Services |
 
 ### 04 Consumer Discretionary
 
@@ -210,6 +216,17 @@
 | 06.04.002 | Healthcare Data & Analytics |
 | 06.04.003 | Clinical Data & RWE Platforms |
 | 06.04.004 | Revenue Cycle / Admin Tech |
+| 06.05.001 | Life Sciences Equipment & Consumables |
+| 06.05.002 | Contract Research & Manufacturing |
+
+#### Segments (Industry 06)
+
+| ID | Parent Subsector | Label |
+|----|------------------|-------|
+| 06.05.001.01 | 06.05.001 | Analytical Instruments & Equipment |
+| 06.05.001.02 | 06.05.001 | Life Sciences Consumables & Reagents |
+| 06.05.002.01 | 06.05.002 | Contract Research Organizations (CROs) |
+| 06.05.002.02 | 06.05.002 | Contract Development & Manufacturing (CDMOs) |
 
 ### 07 Financial Services
 
@@ -248,7 +265,8 @@
 | 08.02.003 | Mixed-Use Projects |
 | 08.03.001 | Brokerage & Advisory |
 | 08.03.002 | Property Management |
-| 08.03.003 | Property Operations & Management |
+| 08.03.003 | Facilities & Property Operations |
+| 08.03.004 | PropTech & Real Estate Platforms |
 | 08.04.001 | Data Centers |
 | 08.04.002 | Specialized Residential Properties |
 | 08.04.003 | Cell Towers & Digital Infra |
@@ -257,6 +275,10 @@
 
 | ID | Parent Subsector | Label |
 |----|------------------|-------|
+| 08.03.004.01 | 08.03.004 | Residential Platforms & Marketplaces |
+| 08.03.004.02 | 08.03.004 | Commercial Data & Analytics Platforms |
+| 08.03.004.03 | 08.03.004 | Property & Asset Management Software |
+| 08.03.004.04 | 08.03.004 | iBuyer & Direct Platforms |
 | 08.04.002.01 | 08.04.002 | Student & Co-Living Housing |
 | 08.04.002.02 | 08.04.002 | Senior & Assisted Living Facilities |
 | 08.04.002.03 | 08.04.002 | Public & Institutional Sector Housing |
@@ -273,6 +295,7 @@
 | 09.01.005 | Data & Database Platforms |
 | 09.01.006 | CRM & Customer Platforms |
 | 09.01.007 | AI & ML Platforms |
+| 09.01.008 | Vertical Industry SaaS |
 | 09.02.001 | Semiconductors — Design (Fabless & IP) |
 | 09.02.002 | Semiconductors — Manufacturing (Foundry & IDM) |
 | 09.02.003 | Semiconductor Equipment |
@@ -322,7 +345,7 @@
 | 10.02.002 | Broadcasting & Networks |
 | 10.02.003 | Recorded & Digital Music |
 | 10.02.004 | Diversified Entertainment |
-| 10.02.005 | Interactive Home Entertainment |
+| 10.02.005 | Video Games & Interactive Media |
 | 10.02.006 | Betting & iGaming |
 | 10.03.001 | Social Networks |
 | 10.03.002 | Creator / UGC Platforms |
@@ -436,6 +459,33 @@
 | 13.03.001.02 | 13.03.001 | Derivatives Protocols |
 | 13.03.001.03 | 13.03.001 | Yield Aggregators |
 | 13.03.001.04 | 13.03.001 | Options Protocols |
+
+### 14 Professional & Business Services
+
+| ID | Subsector |
+|----|-----------|
+| 14.01.001 | Management & Strategy Consulting |
+| 14.01.002 | Legal Services |
+| 14.01.003 | Accounting, Audit & Tax Services |
+| 14.01.004 | Specialized Advisory |
+| 14.02.001 | Staffing & Employment Services |
+| 14.02.002 | Business Process Outsourcing (BPO) |
+| 14.02.003 | Corporate Support Services |
+| 14.03.001 | Financial Data, Ratings & Analytics |
+| 14.03.002 | Market Research & General Data |
+| 14.03.003 | Advertising & Marketing Agencies |
+| 14.03.004 | Scientific & Technical Services |
+
+#### Segments (Industry 14)
+
+| ID | Parent Subsector | Label |
+|----|------------------|-------|
+| 14.01.004.01 | 14.01.004 | HR, Compensation & Benefits |
+| 14.01.004.02 | 14.01.004 | ESG, Risk & Sustainability Advisory |
+| 14.02.001.01 | 14.02.001 | Temporary & Contract Staffing |
+| 14.02.001.02 | 14.02.001 | Permanent & Executive Search |
+| 14.03.003.01 | 14.03.003 | Integrated Agencies & Holding Groups |
+| 14.03.003.02 | 14.03.003 | Public Relations Services |
 
 ---
 

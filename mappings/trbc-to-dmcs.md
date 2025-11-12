@@ -1,10 +1,32 @@
 # TRBC to DMCS Mapping
 
-Mapping from Refinitiv Business Classification (TRBC) to DMCS classification.
+This table calls out the parts of Thomson Reuters Business Classification (TRBC) that typically require judgment when porting into DMCS.
 
-## About TRBC
+| Source Code | Source Label | DMCS Node | DMCS Label | Confidence | Rationale | Edge Notes |
+|-------------|--------------|-----------|------------|------------|-----------|------------|
+| 5720102010 | Application Software | 09.01.001 | Application Software | High | Enterprise SaaS matches DMCS application stack. | Advertising-led productivity suites may belong in 10.03. |
+| 5720601010 | Interactive Media & Services | 10.03.001 | Advertising & Attention Platforms | Medium | Ad-funded platforms align with DMCS attention economy segment. | If subscription-first, evaluate 10.02 streaming nodes. |
+| 5720603010 | Online Gaming | 10.02.006 | Betting & iGaming | Medium | DMCS splits online wagering and gaming from venue-based casinos. | Esports organisers (no wagering) → 10.02.004 Competitive Gaming. |
+| 5510101010 | Investment Banking & Brokerage | 07.03.003 | Investment Banking | High | Capital markets services mapped directly. | Crypto-native prime brokers may need 13.02.004 DeFi Services secondary. |
+| 5730102010 | Data Processing & Outsourced Services | 09.03.003 | Data Center Services | Medium | Managed hosting and colocation fit DMCS infrastructure services. | Property-heavy operators may be 08.04.001 Data Center REIT per boundary guidance. |
+| 5330201010 | Residential REITs | 08.04.002 | Specialized Residential Properties | Medium | DMCS differentiates specialised residential asset classes. | If senior/assisted living service revenues dominate, review 06.03 Healthcare Services nodes. |
+| 5310101010 | Real Estate Development | 08.02.001 | Real Estate Development | High | Landbanking and project development align. | Mixed REIT/developer structures may need split nodes. |
+| 5510504010 | Consumer Finance | 07.02.002 | Consumer Lending | High | Installment lenders and card issuers map directly. | BNPL-only operators can use 07.02.004 BNPL. |
+| 5610103010 | Airlines | 12.02.002 | Airlines | High | Scheduled passenger/cargo airlines align one-to-one. | eVTOL-focused operators → 12.01.002 Advanced Air Mobility. |
+| 5620101010 | Railroads | 12.03.001 | Rail Freight & Logistics | Medium | DMCS groups rail operations with freight logistics. | Passenger-only intercity services can use 12.03.003 Passenger Rail. |
+| 5720103013 | E-commerce & Auction Services | 08.03.004 | PropTech & Real Estate Platforms | Medium | Property marketplaces and transaction portals align with DMCS PropTech coverage. | Keep 10.03 platform nodes when the model is ad-led or multi-vertical. |
+| 5220304013 | Management Consulting Services | 14.01.001 | Management & Strategy Consulting | Medium | DMCS Industry 14 now houses management consultancies. | Add 14.01.004 secondary when HR/ESG advisory drives revenue. |
+| 5220304012 | Legal Services | 14.01.002 | Legal Services | Medium | Legal practices slot into the dedicated legal services subsector. | Keep 07.03.001 secondary for ALSPs embedded in wealth managers. |
+| 5220304011 | Corporate Accounting Services | 14.01.003 | Accounting, Audit & Tax Services | Medium | Audit, accounting, and tax firms now map to DMCS accounting coverage. | If firm operates captive BPO hubs, pair with 14.02.002 secondary. |
+| 5220303011 | Human Resources Consulting Services | 14.01.004 | Specialized Advisory | Medium | HR, compensation, and benefits specialists live in the new advisory node. | When delivery extends into staffing execution, add 14.02.001 secondary. |
+| 5220303012 | Outsourcing & Staffing Services | 14.02.001 | Staffing & Employment Services | High | Core staffing and temp agencies align directly with staffing segments. | Use `.01` for temp/contract, `.02` for retained search. |
+| 5220303013 | Executive Search Services | 14.02.001 | Staffing & Employment Services | Medium | Retained search partners fall under DMCS staffing Industry 14. | Add 14.01.004 secondary if mandates are mostly advisory. |
+| 5220304017 | Data Processing Services | 14.02.002 | Business Process Outsourcing (BPO) | Medium | Back-office BPO platforms fit the new BPO subsector. | Switch to 09.03 when work is primarily IT-managed infrastructure. |
+| 5220304025 | Call Center Services | 14.02.002 | Business Process Outsourcing (BPO) | Medium | Contact centre operators are treated as BPO providers in DMCS. | Add 10.03 secondary if centres monetise via ad-supported chat/services. |
+| 5220304010 | Business Support Services (NEC) | 14.02.003 | Corporate Support Services | Medium | Document storage, corporate logistics, and office services move to corporate support. | Use 03.04.003 when services tilt to facilities operations. |
+| 5220304016 | Cleaning Services | 03.04.003 | Facility & Support Services | Medium | Soft facilities management providers align with the updated facilities node. | For heavy industrial maintenance portfolios, elevate to 03.04.004. |
 
-TRBC is maintained by Refinitiv (now LSEG) and used across financial data platforms. It classifies companies into 10 economic sectors, 28 business sectors, 54 industry groups, and 136 industries.
+Raise a registry request if you need coverage for unlisted TRBC activities or hybrid business models.
 
 **TRBC Economic Sectors:**
 - 50 - Energy
@@ -59,6 +81,28 @@ TRBC is maintained by Refinitiv (now LSEG) and used across financial data platfo
 | 5720201013 | Computers, Phones & Household Electronics | 09.02.005 - Consumer Devices & Ecosystems | - | Device OEMs |
 | 5720201014 | Electronic Components | 09.02.007 - Imaging, Sensors & Components | - | Passive and active components |
 | 5720201015 | Office Equipment | 09.02.007 - Imaging, Sensors & Components | - | Peripherals and printing |
+| 5730102010 | Data Processing & Outsourced Services | 09.03.003 - Data Center Services | 08.04.001 - Data Center REITs | Assign REIT secondary when revenue is predominantly lease-backed |
+| 5720103013 | E-commerce & Auction Services | 08.03.004 - PropTech & Real Estate Platforms | 10.03.001 - Advertising & Attention Platforms | Apply PropTech when the marketplace is property-specific and settlement flows through the platform |
+
+### Professional & Commercial Services (TRBC 52203 → DMCS 14)
+
+| TRBC Code | TRBC Industry | DMCS Primary | DMCS Secondary | Notes |
+|-----------|---------------|--------------|----------------|-------|
+| 5220304013 | Management Consulting Services | 14.01.001 - Management & Strategy Consulting | 14.01.004 - Specialized Advisory | Strategy consultancies anchor in Industry 14; add specialized advisory when HR/ESG practices are material |
+| 5220304012 | Legal Services | 14.01.002 - Legal Services | 14.01.003 - Accounting, Audit & Tax Services | Law firms now map directly; add accounting/tax when multidisciplinary partnerships run integrated practices |
+| 5220304011 | Corporate Accounting Services | 14.01.003 - Accounting, Audit & Tax Services | 14.02.002 - Business Process Outsourcing (BPO) | Accounting and audit networks align here; layer BPO when shared-service centres deliver outsourced finance operations |
+| 5220303011 | Human Resources Consulting Services | 14.01.004 - Specialized Advisory | 14.02.001 - Staffing & Employment Services | Compensation, benefits, and HR advisory roll into specialized advisory; use staffing secondary if mandates include execution |
+| 5220303012 | Outsourcing & Staffing Services | 14.02.001 - Staffing & Employment Services | 14.02.002 - Business Process Outsourcing (BPO) | Temp and contract staffing sit in the staffing subsector; add BPO when large MSP contracts exist |
+| 5220303013 | Executive Search Services | 14.02.001 - Staffing & Employment Services | 14.01.004 - Specialized Advisory | Retained search belongs in staffing; add specialized advisory when mandates are advisory-heavy |
+| 5220304017 | Data Processing Services | 14.02.002 - Business Process Outsourcing (BPO) | 09.03.002 - Managed Services | Shared-service finance and HR BPO map to 14.02.002; keep IT-managed infrastructure under Technology |
+| 5220304025 | Call Center Services | 14.02.002 - Business Process Outsourcing (BPO) | 10.03.001 - Advertising & Attention Platforms | Voice/chat centres align with BPO; add advertising platform secondary when monetised via ad inventory |
+| 5220304010 | Business Support Services (NEC) | 14.02.003 - Corporate Support Services | 03.04.003 - Facility & Support Services | Document storage, mailroom, and records logistics now sit in corporate support; switch to facilities when operations are building-led |
+| 5220307011 | Financial Information Providers | 14.03.001 - Financial Data, Ratings & Analytics | 07.03.001 - Asset & Wealth Management | Data vendors align with DMCS data & analytics; add asset management when firms operate index-linked products |
+| 5220307013 | Rating Agencies | 14.03.001 - Financial Data, Ratings & Analytics | 07.03.003 - Investment Banking | Ratings agencies stay in DMCS data; use investment banking secondary for agencies embedded in capital markets groups |
+| 5330201021 | Market Research | 14.03.002 - Market Research & General Data | 10.03.001 - Advertising & Attention Platforms | Market insight firms align here; add advertising platform secondary when panels are monetised via ad inventory |
+| 5330201011 | Advertising Agency | 14.03.003 - Advertising & Marketing Agencies | 10.03.001 - Advertising & Attention Platforms | Creative/media agencies belong in the new agency subsector; keep platform secondary when owning inventory |
+| 5330201018 | Public Relations | 14.03.003.02 - Public Relations Services | 14.03.003.01 - Integrated Agencies & Holding Groups | Use PR segment for communications specialists; promote to integrated agencies when PR is part of multi-service holdings |
+| 5220304024 | Testing Laboratories | 14.03.004 - Scientific & Technical Services | 06.05.002 - Contract Research & Manufacturing | Independent labs align with scientific services; add life sciences secondary when CRO/CDMO delivery dominates |
 
 ### Financials (TRBC 55 → DMCS 07 and 08)
 
@@ -76,7 +120,7 @@ TRBC is maintained by Refinitiv (now LSEG) and used across financial data platfo
 | 5520301013 | Reinsurance | 07.02.003 - Reinsurance & Specialty | - | Reinsurance specialists |
 | 5520301014 | Insurance Brokers & Services | 07.02.003 - Reinsurance & Specialty | - | Brokers align with specialty placement |
 | 5530401011 | Real Estate Operations | 08.02.002 - Commercial Development | 08.02.001 - Residential Development | Choose subsector by pipeline |
-| 5530401012 | Real Estate Services | 08.03.001 - Brokerage & Advisory | 08.03.002 - Property Management | Service-led groups |
+| 5530401012 | Real Estate Services | 08.03.001 - Brokerage & Advisory | 08.03.004 - PropTech & Real Estate Platforms | Traditional service-led groups stay in brokerage; shift to PropTech when offerings are primarily digital marketplaces |
 | 5530401013 | Diversified REITs | 08.01.xxx - REIT (match asset class) | - | Select 08.01.001-08.01.004 based on holdings |
 
 ### Healthcare (TRBC 56 → DMCS 06)
@@ -86,6 +130,8 @@ TRBC is maintained by Refinitiv (now LSEG) and used across financial data platfo
 | 5610101010 | Pharmaceuticals | 06.01.001 - Branded Pharma | - | Branded and specialty pharma |
 | 5610101011 | Biotechnology & Medical Research | 06.01.003 - Biotech & Cell/Gene | - | Aligns with DMCS biotech coverage |
 | 5610101012 | Medical Equipment, Supplies & Distribution | 06.02.001 - Diagnostic Devices | 06.02.002 - Surgical & Ortho | Split by product mix |
+| 5610102017 | Laboratory Diagnostic & Testing Substances | 06.05.001 - Life Sciences Equipment & Consumables | 06.02.001 - Diagnostic Devices | Use the new life sciences tools node for reagents/instruments; keep diagnostics secondary when labs sell direct to patients |
+| 5620201012 | Bio Diagnostics & Testing | 06.05.002 - Contract Research & Manufacturing | 06.01.003 - Biotech & Cell/Gene | CRO/CDMO operators align with life sciences services; add biotech secondary when they hold proprietary pipelines |
 | 5610201011 | Healthcare Providers & Services | 06.03.001 - Hospitals & Clinics | 06.03.002 - Managed Care & Payers | Add payer secondary if integrated |
 | 5610201012 | Managed Healthcare | 06.03.002 - Managed Care & Payers | - | Health insurers and managed care |
 
@@ -117,7 +163,8 @@ TRBC is maintained by Refinitiv (now LSEG) and used across financial data platfo
 | TRBC Code | TRBC Industry | DMCS Primary | DMCS Secondary | Notes |
 |-----------|---------------|--------------|----------------|-------|
 | 5210101010 | Aerospace & Defense | 03.01.001 - Aerospace OEMs | 03.01.002 - Defense Systems | Assign secondary when defense dominates |
-| 5210201011 | Industrial & Commercial Services | 03.04.003 - Facility & Industrial Services | 03.02.004 - Diversified Industrials | Services vs manufacturing mix |
+| 5210201011 | Industrial & Commercial Services | 03.04.003 - Facility & Support Services | 03.04.004 - Industrial Maintenance & Services | Use facilities vs heavy industrial maintenance split introduced in v1.2.0 |
+| 5220304016 | Cleaning Services | 03.04.003 - Facility & Support Services | 14.02.003 - Corporate Support Services | Soft services stay with facilities; add corporate support when work is primarily office services |
 | 5210301012 | Industrial Machinery & Equipment | 03.02.001 - Heavy Machinery | 03.02.002 - Electrical Equipment | Split mechanical vs electrical focus |
 | 5220401011 | Freight & Logistics Services | 03.03.004 - Parcel & Courier | 03.03.002 - Trucking & Haulage | Choose based on mode |
 | 5220401012 | Marine Freight & Logistics | 03.03.006 - Container & Liner Shipping | - | Ocean freight operators |
@@ -177,7 +224,7 @@ When converting from TRBC to DMCS:
 ## Resources
 
 - [TRBC Structure](https://www.lseg.com/en/data-analytics/financial-data/trbc)
-- [DMCS classification](../classification.md)
+- [DMCS Classification](../classification.md)
 - [DMCS Materiality Rules](../README.md#materiality-rule)
 
 For questions or suggested improvements, open a [GitHub issue](https://github.com/shadstradamus/DMCS/issues).

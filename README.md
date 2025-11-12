@@ -2,7 +2,7 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.1.3** · Effective Date: 2025-11-11 · **License:** Apache 2.0
+**Version 1.2.0** · Effective Date: 2025-11-11 · **License:** Apache 2.0
 
 # DMCS — Open Source Industry Classification Standard
 
@@ -21,7 +21,7 @@ DMCS (Dynamic Multi-Dimensional Classification Standard) is a free, open-source 
 ## What You Get
 
 **Core Taxonomy**
-- **13 industries** · **55 sectors** · **205 subsectors** · **57 segments**
+- **14 industries** · **59 sectors** · **221 subsectors** · **71 segments**
 - Coverage spans traditional economy (GIC: 01-12) and digital/onchain economy (DIC: 13)
 - Every node includes lifecycle metadata (`since`, `status`) for tracking evolution
 
@@ -54,8 +54,8 @@ DMCS (Dynamic Multi-Dimensional Classification Standard) is a free, open-source 
 Example Chain:
   09                → Technology (Industry)
   09.01             → Software & Platforms (Sector)
-  09.01.002         → Cloud Platforms / PaaS (Subsector)
-  09.01.002.03      → Edge / Distributed Cloud (Segment)
+  09.01.004         → Cloud Platforms / PaaS (Subsector)
+  09.01.004.02      → API / Integration (Segment)
 ```
 
 **Hierarchy Levels**
@@ -70,9 +70,9 @@ Example Chain:
 - **Numeric & Fixed width** — Regex enforced: `^\d{2}\.\d{2}\.\d{3}(\.\d{2})?$`.
 - **Lifecycle metadata** — Every node carries `since`, `status`, optional `sunset`, and provenance details.
 
-## Coverage Snapshot (v1.1.3)
+## Coverage Snapshot (v1.2.0)
 
-**13 industries** · **55 sectors** · **205 subsectors** · **57 segments**
+**14 industries** · **59 sectors** · **221 subsectors** · **71 segments**
 
 ### All Industries
 
@@ -91,6 +91,7 @@ Example Chain:
 | 11 | Utilities | GIC | Power, water, grid services |
 | 12 | Government / Public / Education | GIC | Public sector, NGOs, education |
 | 13 | Digital & Onchain Economy | DIC | Crypto-native, DeFi, blockchain infrastructure |
+| 14 | Professional & Business Services | GIC | Consulting, outsourcing, data & marketing services |
 
 ## DMCS vs. Legacy Classification Systems
 
@@ -115,7 +116,7 @@ Example Chain:
 ## How Classification Works
 
 **Primary Classification**
-- Assigned to the line of business with the largest revenue or activity
+- Follow the published determination order: (1) external revenue share (target ≥50–60%), (2) earnings contribution (gross or operating profit), (3) asset base for balance-sheet-driven entities (banks, insurers, REITs), and (4) management discussion / market perception when financial signals are inconclusive.
 
 **Secondary Classification (Optional)**
 - Only assigned if the entity operates materially in a **different industry**
@@ -123,8 +124,22 @@ Example Chain:
 - Limited to one secondary classification per entity
 
 **Persistence Rule**
-- Add or remove classifications after 2 consecutive reporting periods meet or fail the threshold
+- Add or remove classifications after 2 consecutive reporting periods meet or fail the threshold (unless a transformative corporate action occurs)
 - Prevents rapid reclassification from one-time events
+
+**Boundary Guidance**
+Review [docs/boundaries.md](./docs/boundaries.md) for complete scope notes. Snapshot of common calls:
+
+| Scenario | Primary In Scope | Primary Out of Scope | Notes |
+|----------|------------------|----------------------|-------|
+| Data centers | 08.04.001 Data Centers (powered shell, REIT-style) | 09.03.003 Data Center Services (managed colo, IXPs) | Start with revenue mix; use operating profit when within ±3pp. |
+| Ad-funded platforms | 10.03 Advertising & Attention Platforms | 09.01 Software & Platforms | Advertising ≥50–60% keeps primary in Industry 10; SaaS contracts stay in Industry 09. |
+| Mobility | 04.07 Mobility Platforms | 03.03 Transportation & Logistics | Marketplace-led operators vs asset-heavy carriage; assign secondary if both ≥25–30%. |
+| Facilities services | 08.03.003 Facilities & Property Operations | 03.04.004 Industrial Maintenance & Services | Follow the asset base: real-estate portfolios vs plant/process sites. |
+| Game distribution | 10.02.005.02 Interactive Platforms & Distribution | 10.03.002 Creator & UGC Platforms | Game stores/launchers (Steam, Epic, console) stay in 10.02; creator-first UGC hubs belong in Industry 10.03. |
+| Video distribution | 10.02.002 Broadcasting & Networks | 10.02.001 Film, TV & Entertainment | MVPDs and cable/satellite operators stay in 10.02.002; pure-play OTT video belongs in 10.02.001 streaming segments. |
+| Betting & iGaming | 10.02.006 Betting & iGaming | 04.04.003 Casinos & Gaming Venues | Venue-heavy mixes remain Consumer Discretionary; online platforms lead to Industry 10. |
+| DePIN | 13.01.007 DePIN Infrastructure | 13.03.005 DePIN Applications | Classify by where revenue is earned—resource supply vs downstream client app. |
 
 **Example: Amazon**
 - Primary: `04.05.002` (Online Marketplaces) — e-commerce is largest revenue
@@ -178,7 +193,7 @@ const dmcs = new Classification();
 
 // Get stats
 console.log(dmcs.stats());
-// { version: '1.1.3', industries: 13, sectors: 55, subsectors: 205, segments: 57 }
+// { version: '1.2.0', industries: 14, sectors: 59, subsectors: 221, segments: 71 }
 
 // Lookup by ID
 const cloudPlatforms = dmcs.getById('09.01.004');
@@ -455,7 +470,7 @@ Start
 | Meta | 10.03.001 (Social Networks) | 09.04.004 (Spatial / XR Platforms) | Social media primary, Reality Labs emerging tech secondary |
 | Tether (USDT) | 13.02.004 (Stablecoin / Digital Currency) | — | Pure-play stablecoin issuer in digital assets industry |
 | NVIDIA | 09.02.001 (Semiconductors — Design) | — | Fabless GPU/accelerator design is core business |
-| Microsoft | 09.01.002 (Enterprise SaaS) | 09.01.004 (Cloud Platforms / PaaS) | Note: Both in same industry (Technology), so only primary assigned per materiality rules |
+| Microsoft | 09.01.002 (Enterprise SaaS) | — | Note: Both in same industry (Technology), so only primary assigned per materiality rules |
 
 ## Quality & Testing
 
@@ -590,7 +605,7 @@ Each release is tagged in Git (e.g., `v1.1.3`) for easy comparison and rollback 
 ## What's Next
 
 **Future Enhancements**
-- Decision trees for all 13 industries (currently have Technology)
+- Decision trees for all 14 industries (currently have Technology)
 - Enhanced materiality guidance and examples
 - Additional mapping documentation for niche classification systems
 - Community-contributed case studies and classification rationales

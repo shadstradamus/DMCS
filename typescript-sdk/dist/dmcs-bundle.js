@@ -3,7 +3,7 @@
   
   // Embed classification data
   const classificationData = {
-  "dmcs_version": "1.1.3",
+  "dmcs_version": "1.2.0",
   "release_date": "2025-11-11",
   "description": "Dynamic Multi-Dimensional Classification Standard - Full Classification",
   "industries": [
@@ -650,7 +650,7 @@
               "status": "active"
             },
             {
-              "label": "Facility & Industrial Services",
+              "label": "Facility & Support Services",
               "id": "03.04.003",
               "level": "subsector",
               "parent_id": "03.04",
@@ -658,6 +658,17 @@
               "industry_id": "03",
               "classification": "GIC",
               "since": "2025-11-08",
+              "status": "active"
+            },
+            {
+              "label": "Industrial Maintenance & Services",
+              "id": "03.04.004",
+              "level": "subsector",
+              "parent_id": "03.04",
+              "sector_id": "03.04",
+              "industry_id": "03",
+              "classification": "GIC",
+              "since": "2025-11-11",
               "status": "active"
             }
           ],
@@ -1393,6 +1404,96 @@
           ],
           "since": "2025-11-08",
           "status": "active"
+        },
+        {
+          "label": "Life Sciences Tools & Services",
+          "id": "06.05",
+          "level": "sector",
+          "parent_id": "06",
+          "industry_id": "06",
+          "classification": "GIC",
+          "subsectors": [
+            {
+              "label": "Life Sciences Equipment & Consumables",
+              "id": "06.05.001",
+              "level": "subsector",
+              "parent_id": "06.05",
+              "sector_id": "06.05",
+              "industry_id": "06",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Analytical Instruments & Equipment",
+                  "id": "06.05.001.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "06.05.001",
+                  "subsector_id": "06.05.001",
+                  "sector_id": "06.05",
+                  "industry_id": "06",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Life Sciences Consumables & Reagents",
+                  "id": "06.05.001.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "06.05.001",
+                  "subsector_id": "06.05.001",
+                  "sector_id": "06.05",
+                  "industry_id": "06",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "Contract Research & Manufacturing",
+              "id": "06.05.002",
+              "level": "subsector",
+              "parent_id": "06.05",
+              "sector_id": "06.05",
+              "industry_id": "06",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Contract Research Organizations (CROs)",
+                  "id": "06.05.002.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "06.05.002",
+                  "subsector_id": "06.05.002",
+                  "sector_id": "06.05",
+                  "industry_id": "06",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Contract Development & Manufacturing (CDMOs)",
+                  "id": "06.05.002.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "06.05.002",
+                  "subsector_id": "06.05.002",
+                  "sector_id": "06.05",
+                  "industry_id": "06",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-11",
+              "status": "active"
+            }
+          ],
+          "since": "2025-11-11",
+          "status": "active"
         }
       ],
       "since": "2025-11-08",
@@ -1805,7 +1906,7 @@
               "status": "active"
             },
             {
-              "label": "Property Operations & Management",
+              "label": "Facilities & Property Operations",
               "id": "08.03.003",
               "level": "subsector",
               "parent_id": "08.03",
@@ -1813,6 +1914,71 @@
               "industry_id": "08",
               "classification": "GIC",
               "since": "2025-11-08",
+              "status": "active"
+            },
+            {
+              "label": "PropTech & Real Estate Platforms",
+              "id": "08.03.004",
+              "level": "subsector",
+              "parent_id": "08.03",
+              "sector_id": "08.03",
+              "industry_id": "08",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Residential Platforms & Marketplaces",
+                  "id": "08.03.004.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "08.03.004",
+                  "subsector_id": "08.03.004",
+                  "sector_id": "08.03",
+                  "industry_id": "08",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Commercial Data & Analytics Platforms",
+                  "id": "08.03.004.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "08.03.004",
+                  "subsector_id": "08.03.004",
+                  "sector_id": "08.03",
+                  "industry_id": "08",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Property & Asset Management Software",
+                  "id": "08.03.004.03",
+                  "level": "segment",
+                  "segment_code": "03",
+                  "parent_id": "08.03.004",
+                  "subsector_id": "08.03.004",
+                  "sector_id": "08.03",
+                  "industry_id": "08",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "iBuyer & Direct Platforms",
+                  "id": "08.03.004.04",
+                  "level": "segment",
+                  "segment_code": "04",
+                  "parent_id": "08.03.004",
+                  "subsector_id": "08.03.004",
+                  "sector_id": "08.03",
+                  "industry_id": "08",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-11",
               "status": "active"
             }
           ],
@@ -2205,6 +2371,17 @@
                   "status": "active"
                 }
               ]
+            },
+            {
+              "label": "Vertical Industry SaaS",
+              "id": "09.01.008",
+              "level": "subsector",
+              "parent_id": "09.01",
+              "sector_id": "09.01",
+              "industry_id": "09",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
             }
           ],
           "since": "2025-11-08",
@@ -2723,7 +2900,7 @@
               "status": "active"
             },
             {
-              "label": "Interactive Home Entertainment",
+              "label": "Video Games & Interactive Media",
               "id": "10.02.005",
               "level": "subsector",
               "parent_id": "10.02",
@@ -3842,6 +4019,258 @@
         }
       ],
       "since": "2025-11-08",
+      "status": "active"
+    },
+    {
+      "label": "Professional & Business Services",
+      "id": "14",
+      "level": "industry",
+      "parent_id": null,
+      "classification": "GIC",
+      "sectors": [
+        {
+          "label": "Professional Services",
+          "id": "14.01",
+          "level": "sector",
+          "parent_id": "14",
+          "industry_id": "14",
+          "classification": "GIC",
+          "subsectors": [
+            {
+              "label": "Management & Strategy Consulting",
+              "id": "14.01.001",
+              "level": "subsector",
+              "parent_id": "14.01",
+              "sector_id": "14.01",
+              "industry_id": "14",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "Legal Services",
+              "id": "14.01.002",
+              "level": "subsector",
+              "parent_id": "14.01",
+              "sector_id": "14.01",
+              "industry_id": "14",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "Accounting, Audit & Tax Services",
+              "id": "14.01.003",
+              "level": "subsector",
+              "parent_id": "14.01",
+              "sector_id": "14.01",
+              "industry_id": "14",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "Specialized Advisory",
+              "id": "14.01.004",
+              "level": "subsector",
+              "parent_id": "14.01",
+              "sector_id": "14.01",
+              "industry_id": "14",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "HR, Compensation & Benefits",
+                  "id": "14.01.004.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "14.01.004",
+                  "subsector_id": "14.01.004",
+                  "sector_id": "14.01",
+                  "industry_id": "14",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "ESG, Risk & Sustainability Advisory",
+                  "id": "14.01.004.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "14.01.004",
+                  "subsector_id": "14.01.004",
+                  "sector_id": "14.01",
+                  "industry_id": "14",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-11",
+              "status": "active"
+            }
+          ],
+          "since": "2025-11-11",
+          "status": "active"
+        },
+        {
+          "label": "Business Support & Outsourcing",
+          "id": "14.02",
+          "level": "sector",
+          "parent_id": "14",
+          "industry_id": "14",
+          "classification": "GIC",
+          "subsectors": [
+            {
+              "label": "Staffing & Employment Services",
+              "id": "14.02.001",
+              "level": "subsector",
+              "parent_id": "14.02",
+              "sector_id": "14.02",
+              "industry_id": "14",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Temporary & Contract Staffing",
+                  "id": "14.02.001.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "14.02.001",
+                  "subsector_id": "14.02.001",
+                  "sector_id": "14.02",
+                  "industry_id": "14",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Permanent & Executive Search",
+                  "id": "14.02.001.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "14.02.001",
+                  "subsector_id": "14.02.001",
+                  "sector_id": "14.02",
+                  "industry_id": "14",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "Business Process Outsourcing (BPO)",
+              "id": "14.02.002",
+              "level": "subsector",
+              "parent_id": "14.02",
+              "sector_id": "14.02",
+              "industry_id": "14",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "Corporate Support Services",
+              "id": "14.02.003",
+              "level": "subsector",
+              "parent_id": "14.02",
+              "sector_id": "14.02",
+              "industry_id": "14",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
+            }
+          ],
+          "since": "2025-11-11",
+          "status": "active"
+        },
+        {
+          "label": "Data, Information & Marketing Services",
+          "id": "14.03",
+          "level": "sector",
+          "parent_id": "14",
+          "industry_id": "14",
+          "classification": "GIC",
+          "subsectors": [
+            {
+              "label": "Financial Data, Ratings & Analytics",
+              "id": "14.03.001",
+              "level": "subsector",
+              "parent_id": "14.03",
+              "sector_id": "14.03",
+              "industry_id": "14",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "Market Research & General Data",
+              "id": "14.03.002",
+              "level": "subsector",
+              "parent_id": "14.03",
+              "sector_id": "14.03",
+              "industry_id": "14",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "Advertising & Marketing Agencies",
+              "id": "14.03.003",
+              "level": "subsector",
+              "parent_id": "14.03",
+              "sector_id": "14.03",
+              "industry_id": "14",
+              "classification": "GIC",
+              "segments": [
+                {
+                  "label": "Integrated Agencies & Holding Groups",
+                  "id": "14.03.003.01",
+                  "level": "segment",
+                  "segment_code": "01",
+                  "parent_id": "14.03.003",
+                  "subsector_id": "14.03.003",
+                  "sector_id": "14.03",
+                  "industry_id": "14",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                },
+                {
+                  "label": "Public Relations Services",
+                  "id": "14.03.003.02",
+                  "level": "segment",
+                  "segment_code": "02",
+                  "parent_id": "14.03.003",
+                  "subsector_id": "14.03.003",
+                  "sector_id": "14.03",
+                  "industry_id": "14",
+                  "classification": "GIC",
+                  "since": "2025-11-11",
+                  "status": "active"
+                }
+              ],
+              "since": "2025-11-11",
+              "status": "active"
+            },
+            {
+              "label": "Scientific & Technical Services",
+              "id": "14.03.004",
+              "level": "subsector",
+              "parent_id": "14.03",
+              "sector_id": "14.03",
+              "industry_id": "14",
+              "classification": "GIC",
+              "since": "2025-11-11",
+              "status": "active"
+            }
+          ],
+          "since": "2025-11-11",
+          "status": "active"
+        }
+      ],
+      "since": "2025-11-11",
       "status": "active"
     }
   ]
