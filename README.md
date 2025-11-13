@@ -88,8 +88,8 @@ Every DMCS ID is permanent and version-controlled:
 ```
 ID: 09.01.004.02
 Version: 1.2.2
-Label: API / Integration PaaS
-Since: 2025-11-08
+Label: API / Integration
+Since: 2025-11-10
 Status: active
 ```
 
@@ -166,7 +166,7 @@ Industry (II)
 09                 → Technology (Industry)
 09.01              → Software & Platforms (Sector)
 09.01.004          → Cloud Platforms / PaaS (Subsector)
-09.01.004.02       → API / Integration PaaS (Segment)
+09.01.004.02       → API / Integration (Segment)
 ```
 
 ### ID Format Specification
@@ -263,75 +263,83 @@ DMCS divides the economy into two major categories:
 
 **Native blockchain and digital asset classification:**
 
-#### 13.01 — Blockchain Infrastructure (9 subsectors)
+#### 13.01 — DLT & Blockchain Infrastructure (7 subsectors, 6 segments)
 
-- **13.01.001** — Layer 1 Protocols
-- **13.01.002** — Layer 2 & Scaling Solutions
-- **13.01.003** — Validators & Staking Services
-- **13.01.004** — Oracle Networks
-- **13.01.005** — Cross-Chain Infrastructure
-- **13.01.006** — Blockchain Development Tools
+- **13.01.001** — Public / Permissionless L1
+  - 13.01.001.01 — EVM L1
+  - 13.01.001.02 — Non-EVM L1
+- **13.01.002** — L2 / Rollup Infrastructure
+  - 13.01.002.01 — Optimistic Rollups
+  - 13.01.002.02 — ZK Rollups
+- **13.01.003** — Validator / Staking Services
+  - 13.01.003.01 — Node / Validator Ops
+  - 13.01.003.02 — Liquid Staking
+- **13.01.004** — Interoperability & Data Indexing
+- **13.01.005** — Enterprise / Permissioned DLT
+- **13.01.006** — Cross-chain Infrastructure
 - **13.01.007** — DePIN Infrastructure
-- **13.01.008** — Modular Blockchain Components
-- **13.01.009** — Rollup Infrastructure
 
-#### 13.02 — Digital Asset Exchanges & Trading (4 subsectors, 3 segments)
+#### 13.02 — Centralized Exchanges & Trading (7 subsectors, 10 segments)
 
-- **13.02.001** — Centralized Exchanges
-  - 13.02.001.01 — Retail Exchanges
-  - 13.02.001.02 — Institutional Exchanges
-- **13.02.002** — Decentralized Exchanges
-- **13.02.003** — Digital Asset Derivatives
-- **13.02.004** — Stablecoin / Digital Currency
+- **13.02.001** — Centralized Exchanges (CEX)
+  - 13.02.001.01 — Spot CEX
+  - 13.02.001.02 — Derivatives CEX
+  - 13.02.001.03 — Fiat On/Off Ramp CEX
+- **13.02.002** — Decentralized Exchanges (DEX/AMM)
+  - 13.02.002.01 — L1 DEX
+  - 13.02.002.02 — L2 DEX
+- **13.02.003** — Custody & Key Management
+  - 13.02.003.01 — Institutional Custody
+  - 13.02.003.02 — MPC / Wallet Infrastructure
+- **13.02.004** — Stablecoin / Digital Currency Platforms
+  - 13.02.004.01 — Fiat-backed Stablecoins
+  - 13.02.004.02 — Crypto-collateralized Stablecoins
+  - 13.02.004.03 — Platform-linked Stablecoins
+- **13.02.005** — Tokenization & Digital Securities
+- **13.02.006** — OTC / Prime Brokerage
+- **13.02.007** — Market Making
 
-#### 13.03 — DeFi Protocols & Applications (5 subsectors, 1 segment)
+#### 13.03 — Onchain Applications & Experiences (5 subsectors, 4 segments)
 
-- **13.03.001** — Lending & Borrowing
-- **13.03.002** — Yield & Liquidity Protocols
-- **13.03.003** — Derivatives & Perpetuals
-- **13.03.004** — Liquid Staking
+- **13.03.001** — DeFi (non-exchange)
+  - 13.03.001.01 — Lending Protocols
+  - 13.03.001.02 — Derivatives Protocols
+  - 13.03.001.03 — Yield Aggregators
+  - 13.03.001.04 — Options Protocols
+- **13.03.002** — NFT / Digital Collectibles
+- **13.03.003** — Onchain Gaming / GameFi
+- **13.03.004** — Onchain Social
 - **13.03.005** — DePIN Applications
-  - 13.03.005.01 — Compute & Storage Networks
 
-#### 13.04 — Digital Asset Services (4 subsectors)
+#### 13.04 — Onchain Services, Security & Compliance (4 subsectors)
 
-- **13.04.001** — Custody & Wallet Services
-- **13.04.002** — Digital Asset Payments
-- **13.04.003** — Tokenization Platforms
-- **13.04.004** — Digital Asset Data & Analytics
-
-#### 13.05 — Onchain Applications (5 subsectors, 2 segments)
-
-- **13.05.001** — NFT Platforms & Marketplaces
-- **13.05.002** — Blockchain Gaming Platforms
-  - 13.05.002.01 — Play-to-Earn Games
-- **13.05.003** — DAOs & Governance
-- **13.05.004** — Social & Creator Platforms
-- **13.05.005** — Metaverse & Virtual Worlds
-  - 13.05.005.01 — Virtual Land & Assets
+- **13.04.001** — Blockchain Data / Analytics
+- **13.04.002** — Security / Audit Services
+- **13.04.003** — Onchain Identity / Attestations
+- **13.04.004** — Compliance / Travel Rule Providers
 
 ### Technology Industry (09) — SaaS & Platform Granularity
 
 **Comprehensive software and platform classification:**
 
-#### 09.01 — Software & Platforms (7 subsectors, 14 segments)
+#### 09.01 — Software & Platforms (7 subsectors, 11 segments)
 
 - **09.01.001** — Application Software
-  - 09.01.001.01 — Productivity & Collaboration
-  - 09.01.001.02 — Design & Creative Software
-  - 09.01.001.03 — Engineering & Technical Software
+  - 09.01.001.01 — ERP / Finance Suites
+  - 09.01.001.02 — Supply Chain & Procurement Software
+  - 09.01.001.03 — HCM / Workforce
 - **09.01.002** — Enterprise SaaS
-  - 09.01.002.01 — Infrastructure PaaS
-  - 09.01.002.02 — Vertical SaaS
-  - 09.01.002.03 — Workflow Automation
+  - 09.01.002.01 — Collaboration & Productivity
+  - 09.01.002.02 — General Business Management
 - **09.01.003** — Cybersecurity Software
   - 09.01.003.01 — Network Security
   - 09.01.003.02 — Endpoint Security
   - 09.01.003.03 — Identity & Access Management (IAM)
   - 09.01.003.04 — Cloud Security
 - **09.01.004** — Cloud Platforms / PaaS
-  - 09.01.004.01 — Compute & Container Platforms
-  - 09.01.004.02 — API / Integration PaaS
+  - 09.01.004.01 — DevTools / DevOps
+  - 09.01.004.02 — API / Integration
+  - 09.01.004.03 — Observability & Monitoring Platforms
 - **09.01.005** — Data & Database Platforms
   - 09.01.005.01 — Database Management Systems (DBMS)
   - 09.01.005.02 — Data Warehousing
@@ -840,10 +848,10 @@ tech_subsectors.to_csv('technology_subsectors.csv', index=False)
 **Structure:**
 ```csv
 level,id,label,parent_id,industry_id,sector_id,classification,since,status
-industry,01,Energy,,,01,GIC,2025-11-08,active
-sector,01.01,Upstream & Exploration,01,01,01.01,GIC,2025-11-08,active
-subsector,01.01.001,Conventional Oil & Gas,01.01,01,01.01,GIC,2025-11-08,active
-segment,01.01.001.01,Integrated Oil & Gas,01.01.001,01,01.01,GIC,2025-11-08,active
+industry,05,Consumer Staples,,,05,GIC,2025-11-08,active
+sector,05.05,Tobacco & Cannabis,05,05,05.05,GIC,2025-11-12,active
+subsector,05.05.002,Vapor & Electronic Products,05.05,05,05.05,GIC,2025-11-12,active
+segment,05.05.002.01,Heated Tobacco Systems,05.05.002,05,05.05,GIC,2025-11-12,active
 ```
 
 **Use Cases:**
