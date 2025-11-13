@@ -4,7 +4,7 @@
   // Embed classification data
   const classificationData = {
   "dmcs_version": "1.2.2",
-  "release_date": "2025-11-12",
+  "release_date": "2025-11-13",
   "description": "Dynamic Multi-Dimensional Classification Standard - Full Classification",
   "industries": [
     {
@@ -2373,7 +2373,7 @@
           "status": "active",
           "subsectors": [
             {
-              "label": "Data Centers",
+              "label": "Data Center REITs & Assets",
               "id": "08.04.001",
               "level": "subsector",
               "parent_id": "08.04",
@@ -2450,7 +2450,7 @@
               "industry_id": "08"
             },
             {
-              "label": "Cell Towers",
+              "label": "Cell Tower REITs & Assets",
               "id": "08.04.003",
               "level": "subsector",
               "parent_id": "08.04",
@@ -2462,7 +2462,7 @@
               "industry_id": "08"
             },
             {
-              "label": "Fiber Infrastructure",
+              "label": "Fiber Infrastructure REITs & Assets",
               "id": "08.04.004",
               "level": "subsector",
               "parent_id": "08.04",
@@ -3005,7 +3005,7 @@
               "industry_id": "09"
             },
             {
-              "label": "Data Center Services",
+              "label": "Data Center Colocation & Services",
               "id": "09.03.003",
               "level": "subsector",
               "parent_id": "09.03",
@@ -3787,7 +3787,7 @@
               "industry_id": "11"
             },
             {
-              "label": "Carbon Project Services & Trading",
+              "label": "Carbon Project Development & Services",
               "id": "11.04.003",
               "level": "subsector",
               "parent_id": "11.04",
