@@ -26,6 +26,24 @@
 
 ### Changed
 
+- **Label Clarity Improvements (5) — Asset vs. Service Disambiguation:**
+  
+  *These label updates improve clarity between asset ownership models (REITs) and operational service businesses, addressing user feedback on classification boundary guidance.*
+  
+  **Improvement 1: Carbon Services Disambiguation**
+  - `11.04.003` Carbon Project Services & Trading → **Carbon Project Development & Services**
+  - *Rationale: Distinguishes project development (engineering, consultation) from financial exchange trading (07.03.006)*
+
+  **Improvement 2: Data Center Business Model Clarity**
+  - `08.04.001` Data Centers → **Data Center REITs & Assets**
+  - `09.03.003` Data Center Services → **Data Center Colocation & Services**
+  - *Rationale: Clarifies REIT ownership (real estate) vs. colocation/managed services (IT services)*
+
+  **Improvement 3: Telecom Infrastructure Asset Clarity**
+  - `08.04.003` Cell Towers → **Cell Tower REITs & Assets**
+  - `08.04.004` Fiber Infrastructure → **Fiber Infrastructure REITs & Assets**
+  - *Rationale: Explicitly identifies REIT ownership model to distinguish from telecom service providers*
+
 - **Label Updates (6) — Taxonomy Validation Error Resolution:**
   
   *These label changes address conflicts identified after implementing automated label similarity and redundancy validation. Prior to v1.2.2, our validation tooling did not check for duplicate or semantically overlapping labels across different hierarchy branches. This gap allowed conflicting labels to be introduced during taxonomy expansion.*
@@ -62,8 +80,9 @@
 
 ### Summary
 - **Tobacco & Cannabis:** Added comprehensive coverage for tobacco, nicotine alternatives, and cannabis industries with detailed product taxonomy
+- **Label Clarity:** Improved 5 labels to distinguish asset ownership (REITs) from operational services
 - **Taxonomy Quality:** Resolved 6 label conflicts/duplications discovered through improved validation tooling
-- **Validation Enhancement:** Implemented label conflict detection in to prevent future naming conflicts
+- **Validation Enhancement:** Implemented label conflict detection to prevent future naming conflicts
 - **Immutability Guarantee:** As of v1.2.2, all IDs are permanently immutable. The validation error that allowed these conflicts has been corrected.
 
 ---
