@@ -26,7 +26,7 @@ The **Dynamic Multi-Dimensional Classification Standard (DMCS)** is a free, open
 ## What You Get
 
 **Core Taxonomy**
-- **14 industries** · **60 sectors** · **234 subsectors** · **92 segments**
+- **14 industries** · **60 sectors** · **241 subsectors** · **92 segments**
 - Coverage spans traditional economy (**GIC**: General Industry Classification, 01-12, 14) and digital/onchain economy (**DIC**: Digital Industry Classification, 13)
 - Every node includes lifecycle metadata (`since`, `status`) for tracking evolution
 
@@ -224,13 +224,13 @@ Each classification node includes comprehensive metadata:
 
 ### Statistical Summary (v1.3.0)
 
-**Total Classification Nodes:** 400
+**Total Classification Nodes:** 407
 
 | Level | Count | Description |
 |-------|-------|-------------|
 | Industries | 14 | Top-level economic domains |
 | Sectors | 60 | Broad business categories |
-| Subsectors | 234 | Specific business models |
+| Subsectors | 241 | Specific business models |
 | Segments | 92 | Granular product/service lines |
 
 ### Industry Classification Framework
@@ -477,7 +477,7 @@ const dmcs = new Classification();
 
 // Get system statistics
 console.log(dmcs.stats());
-// Output: { version: '1.3.0', industries: 14, sectors: 60, subsectors: 234, segments: 92 }
+// Output: { version: '1.3.0', industries: 14, sectors: 60, subsectors: 241, segments: 92 }
 
 // Lookup by ID
 const cloudPlatforms = dmcs.getById('09.01.004');

@@ -3,38 +3,46 @@
 
 ## [1.3.0] - 2025-11-13
 ### Added
-- **New Subsectors (4):**
+- **New Subsectors (11):**
+  - `03.04.005` Waste & Environmental Services - Addresses the need for a specific classification for companies involved in waste management and environmental services, providing a clearer distinction within the sector.
+  - `04.05.004` Consumer Electronics Retail - Covers retail businesses focused on consumer electronics, enhancing the taxonomy's ability to classify companies like Best Buy accurately.
+  - `04.05.005` Off-Price & Apparel Retail - Provides a home for retailers specializing in off-price and apparel sales, such as TJX Companies, improving the taxonomy's retail sector granularity.
+  - `04.05.006` Automotive Retail & Parts - Includes businesses that retail automotive vehicles and parts, allowing for more precise classification of companies in this niche.
+  - `04.05.007` Home Furnishings Retail - Covers retailers specializing in home furnishings, enabling better classification of companies focused on this market segment.
+  - `04.05.008` Miscellaneous & Other Specialty Retail - Offers a category for specialty retailers not covered by other subsectors, ensuring all retail business models have an appropriate classification.
+  - `09.01.009` EdTech Platforms & Services - Addresses the growing EdTech industry by providing a specific classification for educational technology platforms and services, enhancing the taxonomy's coverage of the education sector.
   - `08.04.005` Healthcare & Social Properties - Addresses gap for healthcare REITs (hospitals, senior living facilities, medical office buildings)
   - `08.04.006` Farmland & Timberland (REITs & Assets) - Covers agricultural and forest land ownership for companies like Weyerhaeuser, Gladstone Land
   - `03.03.007` Transportation Infrastructure (Owners & Operators) - Infrastructure owners (toll roads, airports, seaports) distinct from service operators
   - `03.02.005` B2B Industrial Marketplaces - Business-to-business industrial goods platforms (e.g., GigaCloud, GlobalSources) separate from consumer marketplaces
 
 ### Changed
-- **Label Clarity (1):**
+- **Label Clarity (4):**
+  - `04.05.003` Specialty Retail → "Home Improvement Retail" - Clarifies the focus on home improvement, distinguishing it from other specialty retail categories and providing a clearer home for companies like Home Depot.
+  - `11.04.002` Waste & Recycling → "Independent Power Producers" - Corrects the classification to reflect businesses involved in generating power independently, improving the accuracy of the energy sector.
+  - `12.02.003` EdTech Providers → "Professional & Continuing Education" - Refines the label to emphasize professional and continuing education services, enhancing the distinction within the education sector.
   - `03.02.004` Diversified Industrials → "Industrial Conglomerates & Diversified" - Distinguishes from 07.03.004 holding companies by emphasizing operational industrial conglomerates
 
 ### Rationale
-This release addresses four critical taxonomy coverage gaps identified through GICS comparison analysis:
-
-1. **Healthcare & Social Properties** (`08.04.005`): Healthcare REITs represent a major real estate category with distinct characteristics from other specialized property types. Companies like Welltower and Ventas own hospitals, senior living facilities, and medical office buildings.
-
-2. **Farmland & Timberland** (`08.04.006`): Agricultural and timberland assets are significant investment categories distinct from traditional real estate. Weyerhaeuser (timberland REIT) and Gladstone Land (farmland) require proper classification.
-
-3. **Transportation Infrastructure Owners** (`03.03.007`): Infrastructure ownership (toll roads, airports, seaports) is fundamentally different from transportation service operations. Companies like Transurban (toll roads) and Ferrovial (airports) own and operate infrastructure assets.
-
-4. **B2B Industrial Marketplaces** (`03.02.005`): Business-to-business industrial goods platforms operate differently from consumer marketplaces (04.05.002). GigaCloud and GlobalSources facilitate bulk industrial equipment trading with distinct business models.
-
-The label clarification for Industrial Conglomerates (`03.02.004`) resolves potential confusion with financial holding companies by emphasizing operational diversification in industrial businesses.
+1. **Waste & Environmental Services** (`03.04.005`): Addresses the need for a specific classification for companies involved in waste management and environmental services, providing a clearer distinction within the sector, with examples including companies focused on recycling and waste disposal.
+2. **Consumer Electronics Retail** (`04.05.004`): Covers retail businesses focused on consumer electronics, enhancing the taxonomy's ability to classify companies like Best Buy accurately, reflecting the significant market presence of consumer electronics retailers.
+3. **Off-Price & Apparel Retail** (`04.05.005`): Provides a home for retailers specializing in off-price and apparel sales, such as TJX Companies, improving the taxonomy's retail sector granularity by distinguishing these retailers from other types.
+4. **Automotive Retail & Parts** (`04.05.006`): Includes businesses that retail automotive vehicles and parts, allowing for more precise classification of companies in this niche, which is crucial for industry analysis and investment decisions.
+5. **Home Furnishings Retail** (`04.05.007`): Covers retailers specializing in home furnishings, enabling better classification of companies focused on this market segment, such as IKEA and Bed Bath & Beyond.
+6. **Miscellaneous & Other Specialty Retail** (`04.05.008`): Offers a category for specialty retailers not covered by other subsectors, ensuring all retail business models have an appropriate classification, which enhances the taxonomy's comprehensiveness.
+7. **EdTech Platforms & Services** (`09.01.009`): Addresses the growing EdTech industry by providing a specific classification for educational technology platforms and services, enhancing the taxonomy's coverage of the education sector, with examples including companies like Coursera and Udemy.
+8. **Healthcare & Social Properties** (`08.04.005`): Healthcare REITs represent a major real estate category with distinct characteristics from other specialized property types, with companies like Welltower and Ventas owning hospitals, senior living facilities, and medical office buildings.
+9. **Farmland & Timberland** (`08.04.006`): Agricultural and timberland assets are significant investment categories distinct from traditional real estate, with Weyerhaeuser (timberland REIT) and Gladstone Land (farmland) requiring proper classification.
+10. **Transportation Infrastructure Owners** (`03.03.007`): Infrastructure ownership (toll roads, airports, seaports) is fundamentally different from transportation service operations, with companies like Transurban (toll roads) and Ferrovial (airports) owning and operating infrastructure assets.
+11. **B2B Industrial Marketplaces** (`03.02.005`): Business-to-business industrial goods platforms operate differently from consumer marketplaces, with GigaCloud and GlobalSources facilitating bulk industrial equipment trading with distinct business models.
+12. **Home Improvement Retail** (`04.05.003`), **Independent Power Producers** (`11.04.002`), **Professional & Continuing Education** (`12.02.003`), and **Industrial Conglomerates & Diversified** (`03.02.004`): These label clarifications resolve potential ambiguities and ensure that companies are classified based on their primary business activities, facilitating more accurate analysis and comparison across industries.
 
 ### Statistics
-- Total Entries: 404
+- Total Entries: 407
 - Industries: 14
 - Sectors: 60
-- Subsectors: 234
+- Subsectors: 241
 - Segments: 92
-
----
-
 
 ## [1.2.2] - 2025-11-12
 ### Added

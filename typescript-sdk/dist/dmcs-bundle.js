@@ -742,6 +742,18 @@
               "segments": [],
               "sector_id": "03.04",
               "industry_id": "03"
+            },
+            {
+              "label": "Waste & Environmental Services",
+              "id": "03.04.005",
+              "level": "subsector",
+              "parent_id": "03.04",
+              "classification": "GIC",
+              "since": "2025-11-13",
+              "status": "active",
+              "segments": [],
+              "sector_id": "03.04",
+              "industry_id": "03"
             }
           ],
           "industry_id": "03"
@@ -995,12 +1007,72 @@
               "industry_id": "04"
             },
             {
-              "label": "Specialty Retail",
+              "label": "Home Improvement Retail",
               "id": "04.05.003",
               "level": "subsector",
               "parent_id": "04.05",
               "classification": "GIC",
-              "since": "2025-11-08",
+              "since": "2025-11-13",
+              "status": "active",
+              "segments": [],
+              "sector_id": "04.05",
+              "industry_id": "04"
+            },
+            {
+              "label": "Consumer Electronics Retail",
+              "id": "04.05.004",
+              "level": "subsector",
+              "parent_id": "04.05",
+              "classification": "GIC",
+              "since": "2025-11-13",
+              "status": "active",
+              "segments": [],
+              "sector_id": "04.05",
+              "industry_id": "04"
+            },
+            {
+              "label": "Off-Price & Apparel Retail",
+              "id": "04.05.005",
+              "level": "subsector",
+              "parent_id": "04.05",
+              "classification": "GIC",
+              "since": "2025-11-13",
+              "status": "active",
+              "segments": [],
+              "sector_id": "04.05",
+              "industry_id": "04"
+            },
+            {
+              "label": "Automotive Retail & Parts",
+              "id": "04.05.006",
+              "level": "subsector",
+              "parent_id": "04.05",
+              "classification": "GIC",
+              "since": "2025-11-13",
+              "status": "active",
+              "segments": [],
+              "sector_id": "04.05",
+              "industry_id": "04"
+            },
+            {
+              "label": "Home Furnishings Retail",
+              "id": "04.05.007",
+              "level": "subsector",
+              "parent_id": "04.05",
+              "classification": "GIC",
+              "since": "2025-11-13",
+              "status": "active",
+              "segments": [],
+              "sector_id": "04.05",
+              "industry_id": "04"
+            },
+            {
+              "label": "Miscellaneous & Other Specialty Retail",
+              "id": "04.05.008",
+              "level": "subsector",
+              "parent_id": "04.05",
+              "classification": "GIC",
+              "since": "2025-11-13",
               "status": "active",
               "segments": [],
               "sector_id": "04.05",
@@ -2879,6 +2951,18 @@
               "segments": [],
               "sector_id": "09.01",
               "industry_id": "09"
+            },
+            {
+              "label": "EdTech Platforms & Services",
+              "id": "09.01.009",
+              "level": "subsector",
+              "parent_id": "09.01",
+              "classification": "GIC",
+              "since": "2025-11-13",
+              "status": "active",
+              "segments": [],
+              "sector_id": "09.01",
+              "industry_id": "09"
             }
           ],
           "industry_id": "09"
@@ -3823,12 +3907,12 @@
               "industry_id": "11"
             },
             {
-              "label": "Waste & Recycling",
+              "label": "Independent Power Producers",
               "id": "11.04.002",
               "level": "subsector",
               "parent_id": "11.04",
               "classification": "GIC",
-              "since": "2025-11-08",
+              "since": "2025-11-13",
               "status": "active",
               "segments": [],
               "sector_id": "11.04",
@@ -3954,12 +4038,12 @@
               "industry_id": "12"
             },
             {
-              "label": "EdTech Providers",
+              "label": "Professional & Continuing Education",
               "id": "12.02.003",
               "level": "subsector",
               "parent_id": "12.02",
               "classification": "GIC",
-              "since": "2025-11-08",
+              "since": "2025-11-13",
               "status": "active",
               "segments": [],
               "sector_id": "12.02",

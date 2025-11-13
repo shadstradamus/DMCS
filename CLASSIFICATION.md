@@ -2,7 +2,7 @@
 
 **Version:** 1.2.1  
 **Effective Date:** 2025-11-13  
-**Total:** 14 Industries · 60 Sectors · 234 Subsectors · 92 Segments
+**Total:** 14 Industries · 60 Sectors · 241 Subsectors · 92 Segments
 
 ---
 
@@ -94,7 +94,7 @@
 
 ---
 
-## Subsectors (234)
+## Subsectors (241)
 
 ### 01 Energy
 
@@ -157,6 +157,7 @@
 | 03.04.002 | Commercial Contractors |
 | 03.04.003 | Facility & Support Services |
 | 03.04.004 | Industrial Maintenance & Services |
+| 03.04.005 | Waste & Environmental Services |
 
 ### 04 Consumer Discretionary
 
@@ -177,7 +178,12 @@
 | 04.04.004 | Experience & Ticketing Platforms |
 | 04.05.001 | Multiline Retail |
 | 04.05.002 | Online Marketplaces |
-| 04.05.003 | Specialty Retail |
+| 04.05.003 | Home Improvement Retail |
+| 04.05.004 | Consumer Electronics Retail |
+| 04.05.005 | Off-Price & Apparel Retail |
+| 04.05.006 | Automotive Retail & Parts |
+| 04.05.007 | Home Furnishings Retail |
+| 04.05.008 | Miscellaneous & Other Specialty Retail |
 | 04.06.001 | Quick Service Restaurants |
 | 04.06.002 | Casual / Full-Service |
 | 04.06.003 | Foodservice Franchising |
@@ -326,6 +332,7 @@
 | 09.01.006 | CRM & Customer Platforms |
 | 09.01.007 | AI & ML Platforms |
 | 09.01.008 | Vertical Industry SaaS |
+| 09.01.009 | EdTech Platforms & Services |
 | 09.02.001 | Semiconductors — Design (Fabless & IP) |
 | 09.02.002 | Semiconductors — Manufacturing (Foundry & IDM) |
 | 09.02.003 | Semiconductor Equipment |
@@ -427,7 +434,7 @@
 | 11.03.001 | Water Supply |
 | 11.03.002 | Wastewater Services |
 | 11.04.001 | Multi-Utility Operations |
-| 11.04.002 | Waste & Recycling |
+| 11.04.002 | Independent Power Producers |
 | 11.04.003 | Carbon Project Development & Services |
 | 11.04.004 | CCUS Equipment & Services |
 
@@ -440,7 +447,7 @@
 | 12.01.003 | Municipal Services |
 | 12.02.001 | K-12 Operators |
 | 12.02.002 | Higher Education |
-| 12.02.003 | EdTech Providers |
+| 12.02.003 | Professional & Continuing Education |
 | 12.03.001 | Emergency & Response |
 | 12.03.002 | Contracted Gov Services |
 | 12.03.003 | Private Defense / Public Safety Contractors |
