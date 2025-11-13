@@ -2519,12 +2519,12 @@
                   "industry_id": "09"
                 },
                 {
-                  "label": "CRM / CX",
+                  "label": "Supply Chain & Procurement Software",
                   "id": "09.01.001.02",
                   "level": "segment",
                   "parent_id": "09.01.001",
                   "classification": "GIC",
-                  "since": "2025-11-10",
+                  "since": "2025-11-12",
                   "status": "active",
                   "segment_code": "02",
                   "subsector_id": "09.01.001",
@@ -2558,7 +2558,7 @@
               "status": "active",
               "segments": [
                 {
-                  "label": "Infrastructure PaaS",
+                  "label": "Collaboration & Productivity",
                   "id": "09.01.002.01",
                   "level": "segment",
                   "parent_id": "09.01.002",
@@ -2571,12 +2571,12 @@
                   "industry_id": "09"
                 },
                 {
-                  "label": "Data / AI Platforms",
+                  "label": "General Business Management",
                   "id": "09.01.002.02",
                   "level": "segment",
                   "parent_id": "09.01.002",
                   "classification": "GIC",
-                  "since": "2025-11-10",
+                  "since": "2025-11-12",
                   "status": "active",
                   "segment_code": "02",
                   "subsector_id": "09.01.002",
@@ -2688,12 +2688,12 @@
                   "industry_id": "09"
                 },
                 {
-                  "label": "Analytics / BI",
+                  "label": "Observability & Monitoring Platforms",
                   "id": "09.01.004.03",
                   "level": "segment",
                   "parent_id": "09.01.004",
                   "classification": "GIC",
-                  "since": "2025-11-10",
+                  "since": "2025-11-12",
                   "status": "active",
                   "segment_code": "03",
                   "subsector_id": "09.01.004",
@@ -3587,12 +3587,12 @@
           "industry_id": "10"
         },
         {
-          "label": "Advertising & Marketing Services",
+          "label": "Advertising & Marketing Technology",
           "id": "10.04",
           "level": "sector",
           "parent_id": "10",
           "classification": "GIC",
-          "since": "2025-11-08",
+          "since": "2025-11-12",
           "status": "active",
           "subsectors": [
             {
@@ -3608,12 +3608,12 @@
               "industry_id": "10"
             },
             {
-              "label": "Agencies & Brand Services",
+              "label": "Marketing Automation & Data Platforms",
               "id": "10.04.002",
               "level": "subsector",
               "parent_id": "10.04",
               "classification": "GIC",
-              "since": "2025-11-08",
+              "since": "2025-11-12",
               "status": "active",
               "segments": [],
               "sector_id": "10.04",

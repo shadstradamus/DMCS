@@ -25,7 +25,30 @@
   - `05.03.003.01` Specialty Tobacco & Vape Retail
 
 ### Changed
-- No changes
+
+- **Label Updates (6) — Taxonomy Validation Error Resolution:**
+  
+  *These label changes address conflicts identified after implementing automated label similarity and redundancy validation. Prior to v1.2.2, our validation tooling did not check for duplicate or semantically overlapping labels across different hierarchy branches. This gap allowed conflicting labels to be introduced during taxonomy expansion.*
+  
+  **As of v1.2.2, we guarantee full ID immutability moving forward.**
+  
+  **Conflict Fix 1: Agency Services**
+  - `10.04` Advertising & Marketing Services → **Advertising & Marketing Technology**
+  - `10.04.002` Agencies & Brand Services → **Marketing Automation & Data Platforms**
+  - *Rationale: Creates clean AdTech/MarTech separation from agency services in 14.03.003*
+
+  **Conflict Fix 2: CRM Duplication**
+  - `09.01.001.02` CRM / CX → **Supply Chain & Procurement Software**
+  - *Rationale: Removes CRM conflict with 09.01.006; fills major software category gap*
+
+  **Conflict Fix 3: PaaS Misclassification**
+  - `09.01.002.01` Infrastructure PaaS → **Collaboration & Productivity**
+  - `09.01.002.02` Data / AI Platforms → **General Business Management**
+  - *Rationale: Corrects misclassified segments to actual Enterprise SaaS categories (Slack, Atlassian, project management)*
+
+  **Conflict Fix 4: BI & Analytics Duplication**
+  - `09.01.004.03` Analytics / BI → **Observability & Monitoring Platforms**
+  - *Rationale: Removes BI conflict with 09.01.005.03; fits developer-focused PaaS (Datadog, Splunk)*
 
 ### Removed
 - No removals
@@ -38,7 +61,10 @@
 - Segments: 92
 
 ### Summary
-- **Focus:** Added comprehensive coverage for tobacco, nicotine alternatives, and cannabis industries with detailed product taxonomy and vertical integration classification
+- **Tobacco & Cannabis:** Added comprehensive coverage for tobacco, nicotine alternatives, and cannabis industries with detailed product taxonomy
+- **Taxonomy Quality:** Resolved 6 label conflicts/duplications discovered through improved validation tooling
+- **Validation Enhancement:** Implemented label conflict detection in to prevent future naming conflicts
+- **Immutability Guarantee:** As of v1.2.2, all IDs are permanently immutable. The validation error that allowed these conflicts has been corrected.
 
 ---
 
