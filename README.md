@@ -194,7 +194,7 @@ Each classification node includes comprehensive metadata:
 {
   "level": "segment",
   "id": "09.01.004.02",
-  "label": "API / Integration PaaS",
+  "label": "API / Integration",
   "parent_id": "09.01.004",
   "industry_id": "09",
   "sector_id": "09.01",
@@ -1218,3 +1218,4 @@ https://github.com/shadstradamus/DMCS
 **Explore Classifications:** [trydmcs.pages.dev](https://trydmcs.pages.dev/) — Interactive browser with curated company examples
 
 **Repository:** [github.com/shadstradamus/DMCS](https://github.com/shadstradamus/DMCS)
+
