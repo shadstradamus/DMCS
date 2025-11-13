@@ -2,7 +2,7 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.3.0** | **Release Date:** 2025-11-13 | **License:** Apache 2.0
+**Version 1.3.1** | **Release Date:** 2025-11-13 | **License:** Apache 2.0
 
 ---
 
@@ -10,7 +10,7 @@
 
 The **Dynamic Multi-Dimensional Classification Standard (DMCS)** is a free, open-source taxonomy for classifying companies, digital assets, and business models across the modern economy. Built for everyone—from hobby projects to enterprise financial platforms like Yahoo Finance.
 
-🌐 **[Try DMCS Interactive Browser](https://trydmcs.pages.dev/)** — Explore curated company classifications and browse the full taxonomy interactively.
+**[Try DMCS Interactive Browser](https://trydmcs.pages.dev/)** — Explore curated company classifications and browse the full taxonomy interactively.
 
 **DMCS solves critical gaps in legacy classification systems:**
 
@@ -26,7 +26,7 @@ The **Dynamic Multi-Dimensional Classification Standard (DMCS)** is a free, open
 ## What You Get
 
 **Core Taxonomy**
-- **14 industries** · **60 sectors** · **241 subsectors** · **92 segments**
+- **14 industries** · **60 sectors** · **241 subsectors** · **105 segments**
 - Coverage spans traditional economy (**GIC**: General Industry Classification, 01-12, 14) and digital/onchain economy (**DIC**: Digital Industry Classification, 13)
 - Every node includes lifecycle metadata (`since`, `status`) for tracking evolution
 
@@ -87,7 +87,7 @@ Industry 13 (Digital & Onchain Economy) provides native classification for:
 Every DMCS ID is permanent and version-controlled:
 ```
 ID: 09.01.004.02
-Version: 1.3.0
+Version: 1.3.1
 Label: API / Integration
 Since: 2025-11-10
 Status: active
@@ -222,16 +222,16 @@ Each classification node includes comprehensive metadata:
 
 ## Coverage & Taxonomy
 
-### Statistical Summary (v1.3.0)
+### Statistical Summary (v1.3.1)
 
-**Total Classification Nodes:** 407
+**Total Classification Nodes:** 420
 
 | Level | Count | Description |
 |-------|-------|-------------|
 | Industries | 14 | Top-level economic domains |
 | Sectors | 60 | Broad business categories |
 | Subsectors | 241 | Specific business models |
-| Segments | 92 | Granular product/service lines |
+| Segments | 105 | Granular product/service lines |
 
 ### Industry Classification Framework
 
@@ -477,7 +477,7 @@ const dmcs = new Classification();
 
 // Get system statistics
 console.log(dmcs.stats());
-// Output: { version: '1.3.0', industries: 14, sectors: 60, subsectors: 241, segments: 92 }
+// Output: { version: '1.3.1', industries: 14, sectors: 60, subsectors: 241, segments: 105 }
 
 // Lookup by ID
 const cloudPlatforms = dmcs.getById('09.01.004');
@@ -501,7 +501,7 @@ dmcs = classification()
 
 # Get system statistics
 print(dmcs.stats())
-# Output: {'version': '1.3.0', 'industries': 14, 'sectors': 60, ...}
+# Output: {'version': '1.3.1', 'industries': 14, 'sectors': 60, ...}
 
 # Lookup by ID
 tech = dmcs.get_by_id('09')
@@ -566,10 +566,10 @@ dmcs.stats(): Stats
 // Returns: { version, industries, sectors, subsectors, segments, total }
 
 dmcs.getVersion(): string
-// Returns: "1.3.0"
+// Returns: "1.3.1"
 
 dmcs.getReleaseDate(): string
-// Returns: "1.3.0"
+// Returns: "1.3.1"
 
 // Lookup Methods
 dmcs.getById(id: string): Node | undefined
@@ -676,7 +676,7 @@ dmcs = classification()
 
 # System Information
 dmcs.stats() -> dict
-# Returns: {'version': '1.3.0', 'industries': 14, ...}
+# Returns: {'version': '1.3.1', 'industries': 14, ...}
 
 dmcs.get_version() -> str
 # Returns: "1.3.0"
@@ -778,7 +778,7 @@ tech_subsectors.to_csv('technology_subsectors.csv', index=False)
 **Structure:**
 ```json
 {
-  "dmcs_version": "1.3.0",
+  "dmcs_version": "1.3.1",
   "release_date": "2025-11-13",
   "industries": [
     {
@@ -1143,7 +1143,7 @@ DMCS follows semantic versioning (SemVer):
 - **MINOR**: New sectors, subsectors, or segments added
 - **PATCH**: Label updates, metadata fixes, documentation improvements
 
-**Current Version:** 1.3.0 (2025-11-13)
+**Current Version:** 1.3.1 (2025-11-13)
 
 ---
 
@@ -1195,7 +1195,7 @@ See [CHANGELOG.md](CHANGELOG.md) for complete version history and detailed chang
 
 **Academic/Research Citation:**
 ```
-DMCS. (2025). Dynamic Multi-Dimensional Classification Standard (Version 1.3.0) [Data set]. 
+DMCS. (2025). Dynamic Multi-Dimensional Classification Standard (Version 1.3.1) [Data set]. 
 https://github.com/shadstradamus/DMCS
 ```
 
@@ -1205,7 +1205,7 @@ https://github.com/shadstradamus/DMCS
   title = {Dynamic Multi-Dimensional Classification Standard},
   author = {{DMCS.}},
   year = {2025},
-  version = {1.3.0},
+  version = {1.3.1},
   url = {https://github.com/shadstradamus/DMCS},
   note = {Apache License 2.0}
 }

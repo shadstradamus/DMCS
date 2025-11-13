@@ -1,6 +1,52 @@
 # Changelog
 
 
+## [1.3.1] - 2025-11-13
+### Added
+- **New Subsectors (12):**
+  - `01.01.004.01` Oilfield Services - Addresses the need for a specific classification for companies providing services to oilfields, enhancing the granularity of the energy sector.
+  - `01.01.004.02` Oilfield Equipment & Drilling - Covers businesses that manufacture equipment for oilfield drilling, allowing for more precise classification of companies in this niche.
+  - `04.01.001.01` Mass Market Automakers - Provides a home for automakers focused on mass market vehicles, distinguishing them from premium and luxury segments.
+  - `04.01.001.02` Premium & Luxury Automakers - Includes businesses that manufacture high-end vehicles, enabling better classification of companies like Mercedes-Benz and BMW.
+  - `04.01.002.01` Tires & Rubber - Covers manufacturers of tires and other rubber products for the automotive industry, such as Michelin and Goodyear.
+  - `04.01.002.02` General Parts & Systems - Offers a category for suppliers of general automotive parts and systems, enhancing the taxonomy's coverage of the automotive supply chain.
+  - `04.01.003.01` EV & New Mobility OEMs - Addresses the growing electric vehicle market by providing a specific classification for EV manufacturers, such as Tesla.
+  - `04.01.003.02` EV Charging & Infrastructure - Covers businesses that provide charging infrastructure for electric vehicles, including companies like ChargePoint.
+  - `04.01.003.03` Autonomous & Mobility Tech - Includes companies developing autonomous driving technology and mobility solutions, such as Waymo and Uber.
+  - `04.04.001.01` Hotels & Resorts - Provides a home for businesses operating hotels and resorts, such as Marriott and Hilton.
+  - `04.04.001.02` Cruise Lines - Covers companies that operate cruise lines, enabling better classification of businesses like Carnival Corporation.
+  - `05.01.002.01` Alcoholic Beverages - Addresses the need for a specific classification for manufacturers of alcoholic beverages, including companies like Anheuser-Busch.
+  - `05.01.002.02` Non-Alcoholic Beverages - Includes businesses that manufacture non-alcoholic beverages, such as Coca-Cola and PepsiCo.
+
+### Changed
+- **Modified Entries (1):**
+  - Subsector 04.04.001: 'Hotels & Resorts' → 'Hotels & Cruise Lines' - Clarifies the subsector to include both hotels and cruise lines, providing a more comprehensive classification.
+
+### Rationale
+1. **Oilfield Services** (`01.01.004.01`): Addresses the need for a specific classification for companies providing services to oilfields, such as Halliburton and Schlumberger, enhancing the granularity of the energy sector.
+2. **Oilfield Equipment & Drilling** (`01.01.004.02`): Covers businesses that manufacture equipment for oilfield drilling, like National Oilwell Varco, allowing for more precise classification of companies in this niche.
+3. **Mass Market Automakers** (`04.01.001.01`): Provides a home for automakers focused on mass market vehicles, distinguishing them from premium and luxury segments, with examples including Toyota and Ford.
+4. **Premium & Luxury Automakers** (`04.01.001.02`): Includes businesses that manufacture high-end vehicles, enabling better classification of companies like Mercedes-Benz and BMW, which require distinct market analysis.
+5. **Tires & Rubber** (`04.01.002.01`): Covers manufacturers of tires and other rubber products for the automotive industry, such as Michelin and Goodyear, providing a clearer classification for these suppliers.
+6. **General Parts & Systems** (`04.01.002.02`): Offers a category for suppliers of general automotive parts and systems, enhancing the taxonomy's coverage of the automotive supply chain, including companies like Continental AG.
+7. **EV & New Mobility OEMs** (`04.01.003.01`): Addresses the growing electric vehicle market by providing a specific classification for EV manufacturers, such as Tesla, enabling more accurate industry analysis.
+8. **EV Charging & Infrastructure** (`04.01.003.02`): Covers businesses that provide charging infrastructure for electric vehicles, including companies like ChargePoint, which are crucial for the adoption of EVs.
+9. **Autonomous & Mobility Tech** (`04.01.003.03`): Includes companies developing autonomous driving technology and mobility solutions, such as Waymo and Uber, providing a home for these innovative businesses.
+10. **Hotels & Resorts** (`04.04.001.01`): Provides a home for businesses operating hotels and resorts, such as Marriott and Hilton, distinguishing them from other hospitality sectors.
+11. **Cruise Lines** (`04.04.001.02`): Covers companies that operate cruise lines, enabling better classification of businesses like Carnival Corporation, which have unique operational models.
+12. **Alcoholic Beverages** (`05.01.002.01`): Addresses the need for a specific classification for manufacturers of alcoholic beverages, including companies like Anheuser-Busch, providing clearer market segmentation.
+13. **Non-Alcoholic Beverages** (`05.01.002.02`): Includes businesses that manufacture non-alcoholic beverages, such as Coca-Cola and PepsiCo, enabling more precise classification and analysis of these companies.
+The modification of Subsector 04.04.001 to 'Hotels & Cruise Lines' improves label clarity by encompassing both hotels and cruise lines under a single, more descriptive category.
+
+### Statistics
+- Total Entries: 420
+- Industries: 14
+- Sectors: 60
+- Subsectors: 241
+- Segments: 105
+
+---
+
 ## [1.3.0] - 2025-11-13
 ### Added
 - **New Subsectors (11):**

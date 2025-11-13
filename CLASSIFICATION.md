@@ -1,8 +1,8 @@
 # DMCS classification — Full Classification Tree
 
-**Version:** 1.2.1  
+**Version:** 1.3.1  
 **Effective Date:** 2025-11-13  
-**Total:** 14 Industries · 60 Sectors · 241 Subsectors · 92 Segments
+**Total:** 14 Industries · 60 Sectors · 241 Subsectors · 105 Segments
 
 ---
 
@@ -116,6 +116,13 @@
 | 01.04.004 | Storage & Grid Integrators |
 | 01.04.005 | Electrolyzers & Hydrogen Equipment |
 
+#### 01 Energy Segments
+
+| Parent Subsector | ID | Label |
+|------------------|-------|-------|
+| 01.01.004 - Oilfield Services & Drilling | 01.01.004.01 | Oilfield Services |
+|  | 01.01.004.02 | Oilfield Equipment & Drilling |
+
 ### 02 Basic Materials
 
 | ID | Subsector |
@@ -172,7 +179,7 @@
 | 04.03.001 | Apparel Brands |
 | 04.03.002 | Sportswear & Footwear |
 | 04.03.003 | Luxury Goods |
-| 04.04.001 | Hotels & Resorts |
+| 04.04.001 | Hotels & Cruise Lines |
 | 04.04.002 | Travel Services |
 | 04.04.003 | Gaming & Casinos |
 | 04.04.004 | Experience & Ticketing Platforms |
@@ -190,6 +197,20 @@
 | 04.07.001 | Ridehailing & Delivery Platforms |
 | 04.07.002 | Mobility Marketplaces |
 | 04.07.003 | Last-Mile Delivery Platforms |
+
+#### 04 Consumer Discretionary Segments
+
+| Parent Subsector | ID | Label |
+|------------------|-------|-------|
+| 04.01.001 - Automakers | 04.01.001.01 | Mass Market Automakers |
+|  | 04.01.001.02 | Premium & Luxury Automakers |
+| 04.01.002 - Auto Parts & Components | 04.01.002.01 | Tires & Rubber |
+|  | 04.01.002.02 | General Parts & Systems |
+| 04.01.003 - EV & New Mobility | 04.01.003.01 | EV & New Mobility OEMs |
+|  | 04.01.003.02 | EV Charging & Infrastructure |
+|  | 04.01.003.03 | Autonomous & Mobility Tech |
+| 04.04.001 - Hotels & Cruise Lines | 04.04.001.01 | Hotels & Resorts |
+|  | 04.04.001.02 | Cruise Lines |
 
 ### 05 Consumer Staples
 
@@ -218,6 +239,8 @@
 
 | Parent Subsector | ID | Label |
 |------------------|-------|-------|
+| 05.01.002 - Beverages & Brewers | 05.01.002.01 | Alcoholic Beverages |
+|  | 05.01.002.02 | Non-Alcoholic Beverages |
 | 05.03.003 - Convenience & Drug Retail | 05.03.003.01 | Specialty Tobacco & Vape Retail |
 | 05.05.002 - Reduced-Risk Nicotine (Heated & Vapor) | 05.05.002.01 | Heated Tobacco Systems |
 |  | 05.05.002.02 | Closed-Pod Vapor |

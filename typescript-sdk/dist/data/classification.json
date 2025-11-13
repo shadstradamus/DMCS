@@ -1,5 +1,5 @@
 {
-    "dmcs_version": "1.3.0",
+    "dmcs_version": "1.3.1",
     "release_date": "2025-11-13",
     "description": "Dynamic Multi-Dimensional Classification Standard - Full Classification",
     "industries": [
@@ -65,7 +65,34 @@
                             "classification": "GIC",
                             "since": "2025-11-08",
                             "status": "active",
-                            "segments": [],
+                            "segments": [
+                                {
+                                    "label": "Oilfield Services",
+                                    "id": "01.01.004.01",
+                                    "level": "segment",
+                                    "parent_id": "01.01.004",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "01",
+                                    "subsector_id": "01.01.004",
+                                    "sector_id": "01.01",
+                                    "industry_id": "01"
+                                },
+                                {
+                                    "label": "Oilfield Equipment & Drilling",
+                                    "id": "01.01.004.02",
+                                    "level": "segment",
+                                    "parent_id": "01.01.004",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "02",
+                                    "subsector_id": "01.01.004",
+                                    "sector_id": "01.01",
+                                    "industry_id": "01"
+                                }
+                            ],
                             "sector_id": "01.01",
                             "industry_id": "01"
                         }
@@ -782,7 +809,34 @@
                             "classification": "GIC",
                             "since": "2025-11-08",
                             "status": "active",
-                            "segments": [],
+                            "segments": [
+                                {
+                                    "label": "Mass Market Automakers",
+                                    "id": "04.01.001.01",
+                                    "level": "segment",
+                                    "parent_id": "04.01.001",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "01",
+                                    "subsector_id": "04.01.001",
+                                    "sector_id": "04.01",
+                                    "industry_id": "04"
+                                },
+                                {
+                                    "label": "Premium & Luxury Automakers",
+                                    "id": "04.01.001.02",
+                                    "level": "segment",
+                                    "parent_id": "04.01.001",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "02",
+                                    "subsector_id": "04.01.001",
+                                    "sector_id": "04.01",
+                                    "industry_id": "04"
+                                }
+                            ],
                             "sector_id": "04.01",
                             "industry_id": "04"
                         },
@@ -794,7 +848,34 @@
                             "classification": "GIC",
                             "since": "2025-11-08",
                             "status": "active",
-                            "segments": [],
+                            "segments": [
+                                {
+                                    "label": "Tires & Rubber",
+                                    "id": "04.01.002.01",
+                                    "level": "segment",
+                                    "parent_id": "04.01.002",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "01",
+                                    "subsector_id": "04.01.002",
+                                    "sector_id": "04.01",
+                                    "industry_id": "04"
+                                },
+                                {
+                                    "label": "General Parts & Systems",
+                                    "id": "04.01.002.02",
+                                    "level": "segment",
+                                    "parent_id": "04.01.002",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "02",
+                                    "subsector_id": "04.01.002",
+                                    "sector_id": "04.01",
+                                    "industry_id": "04"
+                                }
+                            ],
                             "sector_id": "04.01",
                             "industry_id": "04"
                         },
@@ -806,7 +887,47 @@
                             "classification": "GIC",
                             "since": "2025-11-08",
                             "status": "active",
-                            "segments": [],
+                            "segments": [
+                                {
+                                    "label": "EV & New Mobility OEMs",
+                                    "id": "04.01.003.01",
+                                    "level": "segment",
+                                    "parent_id": "04.01.003",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "01",
+                                    "subsector_id": "04.01.003",
+                                    "sector_id": "04.01",
+                                    "industry_id": "04"
+                                },
+                                {
+                                    "label": "EV Charging & Infrastructure",
+                                    "id": "04.01.003.02",
+                                    "level": "segment",
+                                    "parent_id": "04.01.003",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "02",
+                                    "subsector_id": "04.01.003",
+                                    "sector_id": "04.01",
+                                    "industry_id": "04"
+                                },
+                                {
+                                    "label": "Autonomous & Mobility Tech",
+                                    "id": "04.01.003.03",
+                                    "level": "segment",
+                                    "parent_id": "04.01.003",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "03",
+                                    "subsector_id": "04.01.003",
+                                    "sector_id": "04.01",
+                                    "industry_id": "04"
+                                }
+                            ],
                             "sector_id": "04.01",
                             "industry_id": "04"
                         }
@@ -919,14 +1040,41 @@
                     "status": "active",
                     "subsectors": [
                         {
-                            "label": "Hotels & Resorts",
+                            "label": "Hotels & Cruise Lines",
                             "id": "04.04.001",
                             "level": "subsector",
                             "parent_id": "04.04",
                             "classification": "GIC",
                             "since": "2025-11-08",
                             "status": "active",
-                            "segments": [],
+                            "segments": [
+                                {
+                                    "label": "Hotels & Resorts",
+                                    "id": "04.04.001.01",
+                                    "level": "segment",
+                                    "parent_id": "04.04.001",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "01",
+                                    "subsector_id": "04.04.001",
+                                    "sector_id": "04.04",
+                                    "industry_id": "04"
+                                },
+                                {
+                                    "label": "Cruise Lines",
+                                    "id": "04.04.001.02",
+                                    "level": "segment",
+                                    "parent_id": "04.04.001",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "02",
+                                    "subsector_id": "04.04.001",
+                                    "sector_id": "04.04",
+                                    "industry_id": "04"
+                                }
+                            ],
                             "sector_id": "04.04",
                             "industry_id": "04"
                         },
@@ -1213,7 +1361,34 @@
                             "classification": "GIC",
                             "since": "2025-11-08",
                             "status": "active",
-                            "segments": [],
+                            "segments": [
+                                {
+                                    "label": "Alcoholic Beverages",
+                                    "id": "05.01.002.01",
+                                    "level": "segment",
+                                    "parent_id": "05.01.002",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "01",
+                                    "subsector_id": "05.01.002",
+                                    "sector_id": "05.01",
+                                    "industry_id": "05"
+                                },
+                                {
+                                    "label": "Non-Alcoholic Beverages",
+                                    "id": "05.01.002.02",
+                                    "level": "segment",
+                                    "parent_id": "05.01.002",
+                                    "classification": "GIC",
+                                    "since": "2025-11-13",
+                                    "status": "active",
+                                    "segment_code": "02",
+                                    "subsector_id": "05.01.002",
+                                    "sector_id": "05.01",
+                                    "industry_id": "05"
+                                }
+                            ],
                             "sector_id": "05.01",
                             "industry_id": "05"
                         },
