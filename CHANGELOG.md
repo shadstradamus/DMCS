@@ -1,6 +1,41 @@
 # Changelog
 
 
+## [1.3.0] - 2025-11-13
+### Added
+- **New Subsectors (4):**
+  - `08.04.005` Healthcare & Social Properties - Addresses gap for healthcare REITs (hospitals, senior living facilities, medical office buildings)
+  - `08.04.006` Farmland & Timberland (REITs & Assets) - Covers agricultural and forest land ownership for companies like Weyerhaeuser, Gladstone Land
+  - `03.03.007` Transportation Infrastructure (Owners & Operators) - Infrastructure owners (toll roads, airports, seaports) distinct from service operators
+  - `03.02.005` B2B Industrial Marketplaces - Business-to-business industrial goods platforms (e.g., GigaCloud, GlobalSources) separate from consumer marketplaces
+
+### Changed
+- **Label Clarity (1):**
+  - `03.02.004` Diversified Industrials → "Industrial Conglomerates & Diversified" - Distinguishes from 07.03.004 holding companies by emphasizing operational industrial conglomerates
+
+### Rationale
+This release addresses four critical taxonomy coverage gaps identified through GICS comparison analysis:
+
+1. **Healthcare & Social Properties** (`08.04.005`): Healthcare REITs represent a major real estate category with distinct characteristics from other specialized property types. Companies like Welltower and Ventas own hospitals, senior living facilities, and medical office buildings.
+
+2. **Farmland & Timberland** (`08.04.006`): Agricultural and timberland assets are significant investment categories distinct from traditional real estate. Weyerhaeuser (timberland REIT) and Gladstone Land (farmland) require proper classification.
+
+3. **Transportation Infrastructure Owners** (`03.03.007`): Infrastructure ownership (toll roads, airports, seaports) is fundamentally different from transportation service operations. Companies like Transurban (toll roads) and Ferrovial (airports) own and operate infrastructure assets.
+
+4. **B2B Industrial Marketplaces** (`03.02.005`): Business-to-business industrial goods platforms operate differently from consumer marketplaces (04.05.002). GigaCloud and GlobalSources facilitate bulk industrial equipment trading with distinct business models.
+
+The label clarification for Industrial Conglomerates (`03.02.004`) resolves potential confusion with financial holding companies by emphasizing operational diversification in industrial businesses.
+
+### Statistics
+- Total Entries: 404
+- Industries: 14
+- Sectors: 60
+- Subsectors: 234
+- Segments: 92
+
+---
+
+
 ## [1.2.2] - 2025-11-12
 ### Added
 - **New Sector (1):**

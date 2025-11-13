@@ -1,8 +1,8 @@
 # DMCS classification — Full Classification Tree
 
-**Version:** 1.2.0  
-**Effective Date:** 2025-11-11  
-**Total:** 14 Industries · 59 Sectors · 221 Subsectors · 71 Segments
+**Version:** 1.2.1  
+**Effective Date:** 2025-11-13  
+**Total:** 14 Industries · 60 Sectors · 234 Subsectors · 92 Segments
 
 ---
 
@@ -27,7 +27,7 @@
 
 ---
 
-## Sectors (59)
+## Sectors (60)
 
 | ID | Sector |
 |----|--------|
@@ -54,6 +54,7 @@
 | 05.02 | Household & Personal Care |
 | 05.03 | Staples Retail |
 | 05.04 | Agriculture & Food Supply |
+| 05.05 | Tobacco & Cannabinoid Products |
 | 06.01 | Pharma & Biotech |
 | 06.02 | Medical Devices & Supplies |
 | 06.03 | Healthcare Providers & Services |
@@ -74,7 +75,7 @@
 | 10.01 | Telecom & Connectivity |
 | 10.02 | Media & Entertainment |
 | 10.03 | Digital Platforms & Social |
-| 10.04 | Advertising & Marketing Services |
+| 10.04 | Advertising & Marketing Technology |
 | 11.01 | Electric Utilities |
 | 11.02 | Gas Utilities |
 | 11.03 | Water Utilities |
@@ -93,7 +94,7 @@
 
 ---
 
-## Subsectors (221)
+## Subsectors (234)
 
 ### 01 Energy
 
@@ -143,13 +144,15 @@
 | 03.02.001 | Heavy Machinery |
 | 03.02.002 | Electrical Equipment |
 | 03.02.003 | Automation Components |
-| 03.02.004 | Diversified Industrials |
+| 03.02.004 | Industrial Conglomerates & Diversified |
+| 03.02.005 | B2B Industrial Marketplaces |
 | 03.03.001 | Rail & Transit |
 | 03.03.002 | Trucking & Haulage |
 | 03.03.003 | Air Freight & Cargo |
 | 03.03.004 | Parcel & Courier |
 | 03.03.005 | Airlines |
 | 03.03.006 | Container & Liner Shipping |
+| 03.03.007 | Transportation Infrastructure (Owners & Operators) |
 | 03.04.001 | EPC & Infrastructure |
 | 03.04.002 | Commercial Contractors |
 | 03.04.003 | Facility & Support Services |
@@ -197,6 +200,25 @@
 | 05.03.003 | Convenience & Drug Retail |
 | 05.04.001 | Agri Processing |
 | 05.04.002 | Farm & Produce |
+| 05.05.001 | Combustible Tobacco |
+| 05.05.002 | Reduced-Risk Nicotine (Heated & Vapor) |
+| 05.05.003 | Smokeless & Oral Nicotine |
+| 05.05.004 | Vertically-Integrated Cannabis (MSOs) |
+| 05.05.005 | Cannabis Products, Brands & Wellness |
+| 05.05.006 | Cannabis Cultivation & Supply Chain |
+| 05.05.007 | Devices & Accessories (Integrated) |
+
+#### 05 Consumer Staples Segments
+
+| Parent Subsector | ID | Label |
+|------------------|-------|-------|
+| 05.03.003 - Convenience & Drug Retail | 05.03.003.01 | Specialty Tobacco & Vape Retail |
+| 05.05.002 - Reduced-Risk Nicotine (Heated & Vapor) | 05.05.002.01 | Heated Tobacco Systems |
+|  | 05.05.002.02 | Closed-Pod Vapor |
+|  | 05.05.002.03 | Open-System Vapor |
+| 05.05.006 - Cannabis Cultivation & Supply Chain | 05.05.006.01 | Cultivation |
+|  | 05.05.006.02 | Extraction/Processing |
+|  | 05.05.006.03 | Brand & Wholesale |
 
 ### 06 Healthcare
 
@@ -219,14 +241,18 @@
 | 06.05.001 | Life Sciences Equipment & Consumables |
 | 06.05.002 | Contract Research & Manufacturing |
 
-#### Segments (Industry 06)
+#### 06 Healthcare Segments
 
-| ID | Parent Subsector | Label |
-|----|------------------|-------|
-| 06.05.001.01 | 06.05.001 | Analytical Instruments & Equipment |
-| 06.05.001.02 | 06.05.001 | Life Sciences Consumables & Reagents |
-| 06.05.002.01 | 06.05.002 | Contract Research Organizations (CROs) |
-| 06.05.002.02 | 06.05.002 | Contract Development & Manufacturing (CDMOs) |
+| Parent Subsector | ID | Label |
+|------------------|-------|-------|
+| 06.01.003 - Biotech & Cell/Gene | 06.01.003.01 | General Biotech |
+|  | 06.01.003.02 | Cell & Gene Therapy |
+|  | 06.01.003.03 | Genomics & Precision Medicine |
+|  | 06.01.003.04 | Longevity & Anti-Aging |
+| 06.05.001 - Life Sciences Equipment & Consumables | 06.05.001.01 | Analytical Instruments & Equipment |
+|  | 06.05.001.02 | Life Sciences Consumables & Reagents |
+| 06.05.002 - Contract Research & Manufacturing | 06.05.002.01 | Contract Research Organizations (CROs) |
+|  | 06.05.002.02 | Contract Development & Manufacturing (CDMOs) |
 
 ### 07 Financial Services
 
@@ -245,7 +271,8 @@
 | 07.03.003 | Investment Banking |
 | 07.03.004 | Holding / Investment Companies |
 | 07.03.005 | Digital Wealth / Robo |
-| 07.03.006 | Carbon Exchanges & Data |
+| 07.03.006 | Carbon Exchanges |
+| 07.03.007 | ESG Data Platforms |
 | 07.04.001 | Payment Networks |
 | 07.04.002 | Digital Wallets / Neobanks |
 | 07.04.003 | Merchant Acquiring |
@@ -267,22 +294,25 @@
 | 08.03.002 | Property Management |
 | 08.03.003 | Facilities & Property Operations |
 | 08.03.004 | PropTech & Real Estate Platforms |
-| 08.04.001 | Data Centers |
+| 08.04.001 | Data Center REITs & Assets |
 | 08.04.002 | Specialized Residential Properties |
-| 08.04.003 | Cell Towers & Digital Infra |
+| 08.04.003 | Cell Tower REITs & Assets |
+| 08.04.004 | Fiber Infrastructure REITs & Assets |
+| 08.04.005 | Healthcare & Social Properties |
+| 08.04.006 | Farmland & Timberland (REITs & Assets) |
 
-#### Segments (Industry 08)
+#### 08 Real Estate Segments
 
-| ID | Parent Subsector | Label |
-|----|------------------|-------|
-| 08.03.004.01 | 08.03.004 | Residential Platforms & Marketplaces |
-| 08.03.004.02 | 08.03.004 | Commercial Data & Analytics Platforms |
-| 08.03.004.03 | 08.03.004 | Property & Asset Management Software |
-| 08.03.004.04 | 08.03.004 | iBuyer & Direct Platforms |
-| 08.04.002.01 | 08.04.002 | Student & Co-Living Housing |
-| 08.04.002.02 | 08.04.002 | Senior & Assisted Living Facilities |
-| 08.04.002.03 | 08.04.002 | Public & Institutional Sector Housing |
-| 08.04.002.04 | 08.04.002 | Co-Living & Flexible Housing |
+| Parent Subsector | ID | Label |
+|------------------|-------|-------|
+| 08.03.004 - PropTech & Real Estate Platforms | 08.03.004.01 | Residential Platforms & Marketplaces |
+|  | 08.03.004.02 | Commercial Data & Analytics Platforms |
+|  | 08.03.004.03 | Property & Asset Management Software |
+|  | 08.03.004.04 | iBuyer & Direct Platforms |
+| 08.04.002 - Specialized Residential Properties | 08.04.002.01 | Student & Co-Living Housing |
+|  | 08.04.002.02 | Senior & Assisted Living Facilities |
+|  | 08.04.002.03 | Public & Institutional Sector Housing |
+|  | 08.04.002.04 | Co-Living & Flexible Housing |
 
 ### 09 Technology
 
@@ -305,34 +335,42 @@
 | 09.02.007 | Imaging, Sensors & Components |
 | 09.03.001 | IT Consulting |
 | 09.03.002 | Managed Services |
-| 09.03.003 | Data Center Services |
+| 09.03.003 | Data Center Colocation & Services |
 | 09.03.004 | Cybersecurity Services |
 | 09.04.001 | Robotics & Automation |
 | 09.04.002 | IoT Platforms |
-| 09.04.003 | Advanced / Experimental Tech |
+| 09.04.003 | Emerging & Deep Tech |
 | 09.04.004 | Spatial / XR Platforms |
 
-#### Segments (Industry 09)
+#### 09 Technology Segments
 
-| ID | Parent Subsector | Label |
-|----|------------------|-------|
-| 09.01.001.01 | 09.01.001 | ERP / Finance Suites |
-| 09.01.001.02 | 09.01.001 | CRM / CX |
-| 09.01.001.03 | 09.01.001 | HCM / Workforce |
-| 09.01.002.01 | 09.01.002 | General PaaS |
-| 09.01.002.02 | 09.01.002 | Data / AI Platforms |
-| 09.01.003.01 | 09.01.003 | Endpoint / XDR |
-| 09.01.003.02 | 09.01.003 | Identity / IAM |
-| 09.01.003.03 | 09.01.003 | Network / SASE |
-| 09.01.004.01 | 09.01.004 | DevTools / DevOps |
-| 09.01.004.02 | 09.01.004 | API / Integration |
-| 09.01.004.03 | 09.01.004 | Analytics / BI |
-| 09.01.007.01 | 09.01.007 | Foundation Model Platforms |
-| 09.01.007.02 | 09.01.007 | Model APIs & Orchestration |
-| 09.01.007.03 | 09.01.007 | Applied AI Applications |
-| 09.02.005.01 | 09.02.005 | Smartphones |
-| 09.02.005.02 | 09.02.005 | PCs / Tablets |
-| 09.02.005.03 | 09.02.005 | Wearables |
+| Parent Subsector | ID | Label |
+|------------------|-------|-------|
+| 09.01.001 - Application Software | 09.01.001.01 | ERP / Finance Suites |
+|  | 09.01.001.02 | Supply Chain & Procurement Software |
+|  | 09.01.001.03 | HCM / Workforce |
+| 09.01.002 - Enterprise SaaS | 09.01.002.01 | Collaboration & Productivity |
+|  | 09.01.002.02 | General Business Management |
+| 09.01.003 - Cybersecurity Software | 09.01.003.01 | Network Security |
+|  | 09.01.003.02 | Endpoint Security |
+|  | 09.01.003.03 | Identity & Access Management (IAM) |
+|  | 09.01.003.04 | Cloud Security |
+| 09.01.004 - Cloud Platforms / PaaS | 09.01.004.01 | DevTools / DevOps |
+|  | 09.01.004.02 | API / Integration |
+|  | 09.01.004.03 | Observability & Monitoring Platforms |
+| 09.01.005 - Data & Database Platforms | 09.01.005.01 | Database Management Systems (DBMS) |
+|  | 09.01.005.02 | Data Warehousing |
+|  | 09.01.005.03 | BI & Analytics Platforms |
+| 09.01.007 - AI & ML Platforms | 09.01.007.01 | Foundation Model Platforms |
+|  | 09.01.007.02 | Model APIs & Orchestration |
+|  | 09.01.007.03 | Applied AI Applications |
+| 09.02.005 - Consumer Devices & Ecosystems | 09.02.005.01 | Smartphones |
+|  | 09.02.005.02 | PCs / Tablets |
+|  | 09.02.005.03 | Wearables |
+| 09.04.003 - Emerging & Deep Tech | 09.04.003.01 | Quantum Computing |
+|  | 09.04.003.02 | AGI Research |
+|  | 09.04.003.03 | Advanced Materials |
+|  | 09.04.003.04 | Fusion Energy |
 
 ### 10 Communications & Media
 
@@ -352,28 +390,30 @@
 | 10.03.003 | Messaging & Communications Apps |
 | 10.03.004 | Search & Digital Platforms |
 | 10.04.001 | Ad Networks & Exchanges |
-| 10.04.002 | Agencies & Brand Services |
+| 10.04.002 | Marketing Automation & Data Platforms |
 
-#### Segments (Industry 10)
+#### 10 Communications & Media Segments
 
-| ID | Parent Subsector | Label |
-|----|------------------|-------|
-| 10.02.001.01 | 10.02.001 | Film & TV Production & Licensing |
-| 10.02.001.02 | 10.02.001 | Streaming Video Platforms |
-| 10.02.001.03 | 10.02.001 | Theatrical Exhibition |
-| 10.02.001.04 | 10.02.001 | Media Production & Ancillary Services |
-| 10.02.002.01 | 10.02.002 | Broadcast TV Networks & Station Groups |
-| 10.02.002.02 | 10.02.002 | Radio Networks & Stations |
-| 10.02.002.03 | 10.02.002 | Cable & Satellite TV Providers |
-| 10.02.002.04 | 10.02.002 | Cable Networks & Program Distribution |
-| 10.02.003.01 | 10.02.003 | Music Rights & Publishing |
-| 10.02.003.02 | 10.02.003 | Music Streaming & Distribution |
-| 10.02.003.03 | 10.02.003 | Live Music Promotion & Services |
-| 10.02.003.04 | 10.02.003 | Music Technology Solutions |
-| 10.02.005.01 | 10.02.005 | Video Game Creation & Publishing |
-| 10.02.005.02 | 10.02.005 | Interactive Platforms & Distribution |
-| 10.02.005.03 | 10.02.005 | Gaming Technology & Support Services |
-| 10.02.005.04 | 10.02.005 | Esports Competition & Media |
+| Parent Subsector | ID | Label |
+|------------------|-------|-------|
+| 10.02.001 - Film, TV & Entertainment | 10.02.001.01 | Film & TV Production & Licensing |
+|  | 10.02.001.02 | Streaming Video Platforms |
+|  | 10.02.001.03 | Theatrical Exhibition |
+|  | 10.02.001.04 | Media Production & Ancillary Services |
+| 10.02.002 - Broadcasting & Networks | 10.02.002.01 | Broadcast TV Networks & Station Groups |
+|  | 10.02.002.02 | Radio Networks & Stations |
+|  | 10.02.002.03 | Cable & Satellite TV Providers |
+|  | 10.02.002.04 | Cable Networks & Program Distribution |
+| 10.02.003 - Recorded & Digital Music | 10.02.003.01 | Music Rights & Publishing |
+|  | 10.02.003.02 | Music Streaming & Distribution |
+|  | 10.02.003.03 | Live Music Promotion & Services |
+|  | 10.02.003.04 | Music Technology Solutions |
+| 10.02.005 - Video Games & Interactive Media | 10.02.005.01 | Video Game Creation & Publishing |
+|  | 10.02.005.02 | Interactive Platforms & Distribution |
+|  | 10.02.005.03 | Gaming Technology & Support Services |
+|  | 10.02.005.04 | Esports Competition & Media |
+| 10.03.004 - Search & Digital Platforms | 10.03.004.01 | Search Engines |
+|  | 10.03.004.02 | Multi-Service Digital Ecosystems |
 
 ### 11 Utilities
 
@@ -388,7 +428,7 @@
 | 11.03.002 | Wastewater Services |
 | 11.04.001 | Multi-Utility Operations |
 | 11.04.002 | Waste & Recycling |
-| 11.04.003 | Carbon Project Services & Trading |
+| 11.04.003 | Carbon Project Development & Services |
 | 11.04.004 | CCUS Equipment & Services |
 
 ### 12 Government / Public / Education
@@ -435,30 +475,30 @@
 | 13.04.003 | Onchain Identity / Attestations |
 | 13.04.004 | Compliance / Travel Rule Providers |
 
-#### Segments (Industry 13)
+#### 13 Digital & Onchain Economy Segments
 
-| ID | Parent Subsector | Label |
-|----|------------------|-------|
-| 13.01.001.01 | 13.01.001 | EVM L1 |
-| 13.01.001.02 | 13.01.001 | Non-EVM L1 |
-| 13.01.002.01 | 13.01.002 | Optimistic Rollups |
-| 13.01.002.02 | 13.01.002 | ZK Rollups |
-| 13.01.003.01 | 13.01.003 | Node / Validator Ops |
-| 13.01.003.02 | 13.01.003 | Liquid Staking |
-| 13.02.001.01 | 13.02.001 | Spot CEX |
-| 13.02.001.02 | 13.02.001 | Derivatives CEX |
-| 13.02.001.03 | 13.02.001 | Fiat On/Off Ramp CEX |
-| 13.02.002.01 | 13.02.002 | L1 DEX |
-| 13.02.002.02 | 13.02.002 | L2 DEX |
-| 13.02.003.01 | 13.02.003 | Institutional Custody |
-| 13.02.003.02 | 13.02.003 | MPC / Wallet Infrastructure |
-| 13.02.004.01 | 13.02.004 | Fiat-backed Stablecoins |
-| 13.02.004.02 | 13.02.004 | Crypto-collateralized Stablecoins |
-| 13.02.004.03 | 13.02.004 | Platform-linked Stablecoins |
-| 13.03.001.01 | 13.03.001 | Lending Protocols |
-| 13.03.001.02 | 13.03.001 | Derivatives Protocols |
-| 13.03.001.03 | 13.03.001 | Yield Aggregators |
-| 13.03.001.04 | 13.03.001 | Options Protocols |
+| Parent Subsector | ID | Label |
+|------------------|-------|-------|
+| 13.01.001 - Public / Permissionless L1 | 13.01.001.01 | EVM L1 |
+|  | 13.01.001.02 | Non-EVM L1 |
+| 13.01.002 - L2 / Rollup Infrastructure | 13.01.002.01 | Optimistic Rollups |
+|  | 13.01.002.02 | ZK Rollups |
+| 13.01.003 - Validator / Staking Services | 13.01.003.01 | Node / Validator Ops |
+|  | 13.01.003.02 | Liquid Staking |
+| 13.02.001 - Centralized Exchanges (CEX) | 13.02.001.01 | Spot CEX |
+|  | 13.02.001.02 | Derivatives CEX |
+|  | 13.02.001.03 | Fiat On/Off Ramp CEX |
+| 13.02.002 - Decentralized Exchanges (DEX/AMM) | 13.02.002.01 | L1 DEX |
+|  | 13.02.002.02 | L2 DEX |
+| 13.02.003 - Custody & Key Management | 13.02.003.01 | Institutional Custody |
+|  | 13.02.003.02 | MPC / Wallet Infrastructure |
+| 13.02.004 - Stablecoin / Digital Currency Platforms | 13.02.004.01 | Fiat-backed Stablecoins |
+|  | 13.02.004.02 | Crypto-collateralized Stablecoins |
+|  | 13.02.004.03 | Platform-linked Stablecoins |
+| 13.03.001 - DeFi (non-exchange) | 13.03.001.01 | Lending Protocols |
+|  | 13.03.001.02 | Derivatives Protocols |
+|  | 13.03.001.03 | Yield Aggregators |
+|  | 13.03.001.04 | Options Protocols |
 
 ### 14 Professional & Business Services
 
@@ -476,16 +516,16 @@
 | 14.03.003 | Advertising & Marketing Agencies |
 | 14.03.004 | Scientific & Technical Services |
 
-#### Segments (Industry 14)
+#### 14 Professional & Business Services Segments
 
-| ID | Parent Subsector | Label |
-|----|------------------|-------|
-| 14.01.004.01 | 14.01.004 | HR, Compensation & Benefits |
-| 14.01.004.02 | 14.01.004 | ESG, Risk & Sustainability Advisory |
-| 14.02.001.01 | 14.02.001 | Temporary & Contract Staffing |
-| 14.02.001.02 | 14.02.001 | Permanent & Executive Search |
-| 14.03.003.01 | 14.03.003 | Integrated Agencies & Holding Groups |
-| 14.03.003.02 | 14.03.003 | Public Relations Services |
+| Parent Subsector | ID | Label |
+|------------------|-------|-------|
+| 14.01.004 - Specialized Advisory | 14.01.004.01 | HR, Compensation & Benefits |
+|  | 14.01.004.02 | ESG, Risk & Sustainability Advisory |
+| 14.02.001 - Staffing & Employment Services | 14.02.001.01 | Temporary & Contract Staffing |
+|  | 14.02.001.02 | Permanent & Executive Search |
+| 14.03.003 - Advertising & Marketing Agencies | 14.03.003.01 | Integrated Agencies & Holding Groups |
+|  | 14.03.003.02 | Public Relations Services |
 
 ---
 
@@ -493,7 +533,7 @@
 
 - **IDs are immutable** — labels may evolve, IDs will not
 - **Hierarchical trimming** — drop rightmost segment to get parent (e.g., `09.01.002` → `09.01` → `09`)
-- **GIC** = Industries 01-12 (traditional economy)
+- **GIC** = Industries 01-12, 14 (traditional economy)
 - **DIC** = Industry 13 (digital assets & blockchain)
 - **Extension namespace** (DMCS-CUST) — add custom nodes under official parents without collision
 

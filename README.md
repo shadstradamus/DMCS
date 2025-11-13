@@ -2,7 +2,7 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.2.2** | **Release Date:** November 12, 2025 | **License:** Apache 2.0
+**Version 1.3.0** | **Release Date:** 2025-11-13 | **License:** Apache 2.0
 
 ---
 
@@ -26,7 +26,7 @@ The **Dynamic Multi-Dimensional Classification Standard (DMCS)** is a free, open
 ## What You Get
 
 **Core Taxonomy**
-- **14 industries** · **60 sectors** · **230 subsectors** · **92 segments**
+- **14 industries** · **60 sectors** · **234 subsectors** · **92 segments**
 - Coverage spans traditional economy (**GIC**: General Industry Classification, 01-12, 14) and digital/onchain economy (**DIC**: Digital Industry Classification, 13)
 - Every node includes lifecycle metadata (`since`, `status`) for tracking evolution
 
@@ -87,7 +87,7 @@ Industry 13 (Digital & Onchain Economy) provides native classification for:
 Every DMCS ID is permanent and version-controlled:
 ```
 ID: 09.01.004.02
-Version: 1.2.2
+Version: 1.3.0
 Label: API / Integration
 Since: 2025-11-10
 Status: active
@@ -194,7 +194,7 @@ Each classification node includes comprehensive metadata:
 {
   "level": "segment",
   "id": "09.01.004.02",
-  "label": "API / Integration",
+  "label": "API / Integration PaaS",
   "parent_id": "09.01.004",
   "industry_id": "09",
   "sector_id": "09.01",
@@ -222,15 +222,15 @@ Each classification node includes comprehensive metadata:
 
 ## Coverage & Taxonomy
 
-### Statistical Summary (v1.2.2)
+### Statistical Summary (v1.3.0)
 
-**Total Classification Nodes:** 396
+**Total Classification Nodes:** 400
 
 | Level | Count | Description |
 |-------|-------|-------------|
 | Industries | 14 | Top-level economic domains |
 | Sectors | 60 | Broad business categories |
-| Subsectors | 230 | Specific business models |
+| Subsectors | 234 | Specific business models |
 | Segments | 92 | Granular product/service lines |
 
 ### Industry Classification Framework
@@ -417,7 +417,7 @@ Q4 2025: Cloud revenue = 20% → Remove secondary (second period confirms)
 
 | Scenario | Classification A | Classification B | Decision Rule |
 |----------|------------------|------------------|---------------|
-| **Data Centers** | 08.04.001 (Data Centers - REIT) | 09.03.003 (Data Center Services) | Powered shell + lease model → 08.04; Managed colo + connectivity → 09.03 |
+| **Data Centers** | 08.04.001 (Data Center REITs & Assets) | 09.03.003 (Data Center Colocation & Services) | Powered shell + lease model → 08.04; Managed colo + connectivity → 09.03 |
 | **Ad-Funded Platforms** | 10.03 (Digital Platforms & Social) | 09.01 (Software & Platforms) | Ad revenue ≥50-60% → 10.03; SaaS subscription model → 09.01 |
 | **Mobility Services** | 04.07 (Mobility Platforms) | 03.03 (Transportation & Logistics) | Marketplace-led (Uber, Lyft) → 04.07; Asset-heavy carriage → 03.03 |
 | **Cloud Gaming** | 10.02.005.02 (Interactive Platforms & Distribution) | 09.01.007 (AI & ML Platforms) | Game distribution primary → 10.02; Cloud compute infrastructure → 09.01 |
@@ -477,7 +477,7 @@ const dmcs = new Classification();
 
 // Get system statistics
 console.log(dmcs.stats());
-// Output: { version: '1.2.2', industries: 14, sectors: 60, subsectors: 230, segments: 92 }
+// Output: { version: '1.3.0', industries: 14, sectors: 60, subsectors: 234, segments: 92 }
 
 // Lookup by ID
 const cloudPlatforms = dmcs.getById('09.01.004');
@@ -501,7 +501,7 @@ dmcs = classification()
 
 # Get system statistics
 print(dmcs.stats())
-# Output: {'version': '1.2.2', 'industries': 14, 'sectors': 60, ...}
+# Output: {'version': '1.3.0', 'industries': 14, 'sectors': 60, ...}
 
 # Lookup by ID
 tech = dmcs.get_by_id('09')
@@ -566,10 +566,10 @@ dmcs.stats(): Stats
 // Returns: { version, industries, sectors, subsectors, segments, total }
 
 dmcs.getVersion(): string
-// Returns: "1.2.2"
+// Returns: "1.3.0"
 
 dmcs.getReleaseDate(): string
-// Returns: "2025-11-12"
+// Returns: "1.3.0"
 
 // Lookup Methods
 dmcs.getById(id: string): Node | undefined
@@ -676,10 +676,10 @@ dmcs = classification()
 
 # System Information
 dmcs.stats() -> dict
-# Returns: {'version': '1.2.2', 'industries': 14, ...}
+# Returns: {'version': '1.3.0', 'industries': 14, ...}
 
 dmcs.get_version() -> str
-# Returns: "1.2.2"
+# Returns: "1.3.0"
 
 dmcs.get_release_date() -> str
 # Returns: "2025-11-12"
@@ -778,8 +778,8 @@ tech_subsectors.to_csv('technology_subsectors.csv', index=False)
 **Structure:**
 ```json
 {
-  "dmcs_version": "1.2.2",
-  "release_date": "2025-11-12",
+  "dmcs_version": "1.3.0",
+  "release_date": "2025-11-13",
   "industries": [
     {
       "level": "industry",
@@ -1143,7 +1143,7 @@ DMCS follows semantic versioning (SemVer):
 - **MINOR**: New sectors, subsectors, or segments added
 - **PATCH**: Label updates, metadata fixes, documentation improvements
 
-**Current Version:** 1.2.2 (November 12, 2025)
+**Current Version:** 1.3.0 (2025-11-13)
 
 ---
 
@@ -1195,7 +1195,7 @@ See [CHANGELOG.md](CHANGELOG.md) for complete version history and detailed chang
 
 **Academic/Research Citation:**
 ```
-DMCS. (2025). Dynamic Multi-Dimensional Classification Standard (Version 1.2.2) [Data set]. 
+DMCS. (2025). Dynamic Multi-Dimensional Classification Standard (Version 1.3.0) [Data set]. 
 https://github.com/shadstradamus/DMCS
 ```
 
@@ -1205,7 +1205,7 @@ https://github.com/shadstradamus/DMCS
   title = {Dynamic Multi-Dimensional Classification Standard},
   author = {{DMCS.}},
   year = {2025},
-  version = {1.2.2},
+  version = {1.3.0},
   url = {https://github.com/shadstradamus/DMCS},
   note = {Apache License 2.0}
 }
@@ -1218,4 +1218,3 @@ https://github.com/shadstradamus/DMCS
 **Explore Classifications:** [trydmcs.pages.dev](https://trydmcs.pages.dev/) — Interactive browser with curated company examples
 
 **Repository:** [github.com/shadstradamus/DMCS](https://github.com/shadstradamus/DMCS)
-

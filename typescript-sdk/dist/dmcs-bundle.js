@@ -3,7 +3,7 @@
   
   // Embed classification data
   const classificationData = {
-  "dmcs_version": "1.2.2",
+  "dmcs_version": "1.3.0",
   "release_date": "2025-11-13",
   "description": "Dynamic Multi-Dimensional Classification Standard - Full Classification",
   "industries": [
@@ -564,12 +564,24 @@
               "industry_id": "03"
             },
             {
-              "label": "Diversified Industrials",
+              "label": "Industrial Conglomerates & Diversified",
               "id": "03.02.004",
               "level": "subsector",
               "parent_id": "03.02",
               "classification": "GIC",
-              "since": "2025-11-08",
+              "since": "2025-11-13",
+              "status": "active",
+              "segments": [],
+              "sector_id": "03.02",
+              "industry_id": "03"
+            },
+            {
+              "label": "B2B Industrial Marketplaces",
+              "id": "03.02.005",
+              "level": "subsector",
+              "parent_id": "03.02",
+              "classification": "GIC",
+              "since": "2025-11-13",
               "status": "active",
               "segments": [],
               "sector_id": "03.02",
@@ -654,6 +666,18 @@
               "parent_id": "03.03",
               "classification": "GIC",
               "since": "2025-11-08",
+              "status": "active",
+              "segments": [],
+              "sector_id": "03.03",
+              "industry_id": "03"
+            },
+            {
+              "label": "Transportation Infrastructure (Owners & Operators)",
+              "id": "03.03.007",
+              "level": "subsector",
+              "parent_id": "03.03",
+              "classification": "GIC",
+              "since": "2025-11-13",
               "status": "active",
               "segments": [],
               "sector_id": "03.03",
@@ -2468,6 +2492,30 @@
               "parent_id": "08.04",
               "classification": "GIC",
               "since": "2025-11-12",
+              "status": "active",
+              "segments": [],
+              "sector_id": "08.04",
+              "industry_id": "08"
+            },
+            {
+              "label": "Healthcare & Social Properties",
+              "id": "08.04.005",
+              "level": "subsector",
+              "parent_id": "08.04",
+              "classification": "GIC",
+              "since": "2025-11-13",
+              "status": "active",
+              "segments": [],
+              "sector_id": "08.04",
+              "industry_id": "08"
+            },
+            {
+              "label": "Farmland & Timberland (REITs & Assets)",
+              "id": "08.04.006",
+              "level": "subsector",
+              "parent_id": "08.04",
+              "classification": "GIC",
+              "since": "2025-11-13",
               "status": "active",
               "segments": [],
               "sector_id": "08.04",
