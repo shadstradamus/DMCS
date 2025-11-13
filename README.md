@@ -418,12 +418,12 @@ Q4 2025: Cloud revenue = 20% → Remove secondary (second period confirms)
 | Scenario | Classification A | Classification B | Decision Rule |
 |----------|------------------|------------------|---------------|
 | **Data Centers** | 08.04.001 (Data Centers - REIT) | 09.03.003 (Data Center Services) | Powered shell + lease model → 08.04; Managed colo + connectivity → 09.03 |
-| **Ad-Funded Platforms** | 10.03 (Advertising Platforms) | 09.01 (Software Platforms) | Ad revenue ≥50-60% → 10.03; SaaS subscription model → 09.01 |
+| **Ad-Funded Platforms** | 10.03 (Digital Platforms & Social) | 09.01 (Software & Platforms) | Ad revenue ≥50-60% → 10.03; SaaS subscription model → 09.01 |
 | **Mobility Services** | 04.07 (Mobility Platforms) | 03.03 (Transportation & Logistics) | Marketplace-led (Uber, Lyft) → 04.07; Asset-heavy carriage → 03.03 |
-| **Cloud Gaming** | 10.02.005.02 (Interactive Platforms) | 09.01.007 (AI & ML Platforms) | Game distribution primary → 10.02; Cloud compute infrastructure → 09.01 |
-| **Fintech Apps** | 07.02.003 (Payment Processing) | 09.01.002 (Enterprise SaaS) | Payment transaction revenue ≥50% → 07.02; Software licensing → 09.01 |
+| **Cloud Gaming** | 10.02.005.02 (Interactive Platforms & Distribution) | 09.01.007 (AI & ML Platforms) | Game distribution primary → 10.02; Cloud compute infrastructure → 09.01 |
+| **Fintech Apps** | 07.04.004 (Digital Payments) | 09.01.002 (Enterprise SaaS) | Payment transaction revenue ≥50% → 07.04; Software licensing → 09.01 |
 | **DePIN Projects** | 13.01.007 (DePIN Infrastructure) | 13.03.005 (DePIN Applications) | Resource supply layer → 13.01; End-user application → 13.03 |
-| **Stablecoin Issuers** | 13.02.004 (Stablecoin / Digital Currency) | 07.02 (Payments & Transactions) | Crypto-native issuance → 13.02; Bank-issued digital currency → 07.02 |
+| **Stablecoin Issuers** | 13.02.004 (Stablecoin / Digital Currency Platforms) | 07.04 (FinTech & Payments) | Crypto-native issuance → 13.02; Bank-issued digital currency → 07.04 |
 
 ---
 
@@ -817,12 +817,12 @@ tech_subsectors.to_csv('technology_subsectors.csv', index=False)
                 {
                   "level": "segment",
                   "id": "09.01.004.02",
-                  "label": "API / Integration PaaS",
+                  "label": "API / Integration",
                   "parent_id": "09.01.004",
                   "industry_id": "09",
                   "sector_id": "09.01",
                   "classification": "GIC",
-                  "since": "2025-11-08",
+                  "since": "2025-11-10",
                   "status": "active"
                 }
               ]
@@ -930,10 +930,10 @@ CREATE TABLE entity_classification (
 
 | GICS Code | GICS Label | DMCS Primary | DMCS Label | Mapping Type |
 |-----------|------------|--------------|------------|--------------|
-| 45102010 | IT Services | 09.03.001 | IT Consulting | 1:1 Direct |
+| 45102010 | IT Consulting & Other Services | 09.03.001 | IT Consulting | 1:1 Direct |
 | 45103010 | Application Software | 09.01.001, 09.01.002 | Application Software, Enterprise SaaS | 1:Many (Granular) |
-| 25504010 | Internet & Direct Marketing | 04.05.002, 10.03.004 | Online Marketplaces, Digital Ecosystems | 1:Many (Multi-dimensional) |
-| — | (No GICS Code) | 13.02.001 | Centralized Exchanges | New Coverage |
+| 45101010 | Internet & Direct Marketing Retail | 04.05.002, 10.03.004 | Online Marketplaces, Search & Digital Platforms | 1:Many (Multi-dimensional) |
+| — | (No GICS Code) | 13.02.001 | Centralized Exchanges (CEX) | New Coverage |
 
 **Mapping Types:**
 
