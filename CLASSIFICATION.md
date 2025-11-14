@@ -1,8 +1,8 @@
 # DMCS classification — Full Classification Tree
 
-**Version:** 1.3.1  
+**Version:** 1.3.3  
 **Effective Date:** 2025-11-13  
-**Total:** 14 Industries · 60 Sectors · 241 Subsectors · 105 Segments
+**Total:** 14 Industries · 60 Sectors · 241 Subsectors · 143 Segments
 
 ---
 
@@ -515,6 +515,17 @@
 |  | 13.01.002.02 | ZK Rollups |
 | 13.01.003 - Validator / Staking Services | 13.01.003.01 | Node / Validator Ops |
 |  | 13.01.003.02 | Liquid Staking |
+| 13.01.004 - Interoperability & Data Indexing | 13.01.004.01 | Oracles & Data Feeds |
+|  | 13.01.004.02 | Indexing & Query Protocols |
+|  | 13.01.004.03 | Cross-ledger Messaging / Interop Layers |
+| 13.01.005 - Enterprise / Permissioned DLT | 13.01.005.01 | Financial Institution / Capital Markets DLT |
+|  | 13.01.005.02 | Industry / Consortium DLT |
+| 13.01.006 - Cross-chain Infrastructure | 13.01.006.01 | Bridge & Routing Infrastructure |
+|  | 13.01.006.02 | Cross-network Hubs / Layer-0 Frameworks |
+| 13.01.007 - DePIN Infrastructure | 13.01.007.01 | Compute DePIN (GPU / AI / Rendering) |
+|  | 13.01.007.02 | Storage DePIN |
+|  | 13.01.007.03 | Connectivity / Wireless DePIN |
+|  | 13.01.007.04 | Sensing / Mapping DePIN |
 | 13.02.001 - Centralized Exchanges (CEX) | 13.02.001.01 | Spot CEX |
 |  | 13.02.001.02 | Derivatives CEX |
 |  | 13.02.001.03 | Fiat On/Off Ramp CEX |
@@ -525,10 +536,37 @@
 | 13.02.004 - Stablecoin / Digital Currency Platforms | 13.02.004.01 | Fiat-backed Stablecoins |
 |  | 13.02.004.02 | Crypto-collateralized Stablecoins |
 |  | 13.02.004.03 | Platform-linked Stablecoins |
+| 13.02.005 - Tokenization & Digital Securities | 13.02.005.01 | Tokenized Funds & Investment Products |
+|  | 13.02.005.02 | Tokenized Debt & Credit Instruments |
+|  | 13.02.005.03 | Tokenized Real Assets & RWAs |
+|  | 13.02.005.04 | Digital Securities Issuance & Platforms |
+| 13.02.006 - OTC / Prime Brokerage | 13.02.006.01 | OTC Desks |
+|  | 13.02.006.02 | Prime Brokerage Services |
+| 13.02.007 - Market Making | 13.02.007.01 | Proprietary / Principal Market Makers |
+|  | 13.02.007.02 | Electronic / Algorithmic Market Makers |
 | 13.03.001 - DeFi (non-exchange) | 13.03.001.01 | Lending Protocols |
 |  | 13.03.001.02 | Derivatives Protocols |
 |  | 13.03.001.03 | Yield Aggregators |
 |  | 13.03.001.04 | Options Protocols |
+| 13.03.002 - NFT / Digital Collectibles | 13.03.002.01 | NFT Marketplaces |
+|  | 13.03.002.02 | NFT Collections & IP Owners |
+|  | 13.03.002.03 | NFT Infrastructure & Tooling |
+| 13.03.003 - Onchain Gaming / GameFi | 13.03.003.01 | Game Platforms & Protocols |
+|  | 13.03.003.02 | Game Titles & IP |
+| 13.03.004 - Onchain Social | 13.03.004.01 | Social Graph Protocols |
+|  | 13.03.004.02 | Creator Monetization Protocols |
+|  | 13.03.004.03 | Social Token & Fan Platforms |
+| 13.03.005 - DePIN Applications | 13.03.005.01 | Consumer DePIN Applications |
+|  | 13.03.005.02 | Enterprise / API DePIN Applications |
+|  | 13.03.005.03 | DePIN Marketplaces & Aggregators |
+| 13.04.001 - Blockchain Data / Analytics | 13.04.001.01 | Explorers & Basic Analytics |
+|  | 13.04.001.02 | Institutional Analytics & Risk Platforms |
+| 13.04.002 - Security / Audit Services | 13.04.002.01 | Smart Contract Audits & Code Review |
+|  | 13.04.002.02 | Monitoring, Bug Bounties & Incident Response |
+| 13.04.003 - Onchain Identity / Attestations | 13.04.003.01 | Identity & KYC Providers |
+|  | 13.04.003.02 | Credential & Reputation Protocols |
+| 13.04.004 - Compliance / Travel Rule Providers | 13.04.004.01 | Travel Rule & Transaction Screening Providers |
+|  | 13.04.004.02 | Chain Monitoring & Forensics Platforms |
 
 ### 14 Professional & Business Services
 

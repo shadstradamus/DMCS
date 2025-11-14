@@ -3,8 +3,8 @@
   
   // Embed classification data
   const classificationData = {
-  "dmcs_version": "1.3.1",
-  "release_date": "2025-11-13",
+  "dmcs_version": "1.3.3",
+  "release_date": "2025-11-14",
   "description": "Dynamic Multi-Dimensional Classification Standard - Full Classification",
   "industries": [
     {
@@ -4456,7 +4456,47 @@
               "classification": "DIC",
               "since": "2025-11-08",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Oracles & Data Feeds",
+                  "id": "13.01.004.01",
+                  "level": "segment",
+                  "parent_id": "13.01.004",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.01.004",
+                  "sector_id": "13.01",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Indexing & Query Protocols",
+                  "id": "13.01.004.02",
+                  "level": "segment",
+                  "parent_id": "13.01.004",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.01.004",
+                  "sector_id": "13.01",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Cross-ledger Messaging / Interop Layers",
+                  "id": "13.01.004.03",
+                  "level": "segment",
+                  "parent_id": "13.01.004",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "03",
+                  "subsector_id": "13.01.004",
+                  "sector_id": "13.01",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.01",
               "industry_id": "13"
             },
@@ -4468,7 +4508,34 @@
               "classification": "DIC",
               "since": "2025-11-10",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Financial Institution / Capital Markets DLT",
+                  "id": "13.01.005.01",
+                  "level": "segment",
+                  "parent_id": "13.01.005",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.01.005",
+                  "sector_id": "13.01",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Industry / Consortium DLT",
+                  "id": "13.01.005.02",
+                  "level": "segment",
+                  "parent_id": "13.01.005",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.01.005",
+                  "sector_id": "13.01",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.01",
               "industry_id": "13"
             },
@@ -4480,7 +4547,34 @@
               "classification": "DIC",
               "since": "2025-11-10",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Bridge & Routing Infrastructure",
+                  "id": "13.01.006.01",
+                  "level": "segment",
+                  "parent_id": "13.01.006",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.01.006",
+                  "sector_id": "13.01",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Cross-network Hubs / Layer-0 Frameworks",
+                  "id": "13.01.006.02",
+                  "level": "segment",
+                  "parent_id": "13.01.006",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.01.006",
+                  "sector_id": "13.01",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.01",
               "industry_id": "13"
             },
@@ -4492,7 +4586,60 @@
               "classification": "DIC",
               "since": "2025-11-11",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Compute DePIN (GPU / AI / Rendering)",
+                  "id": "13.01.007.01",
+                  "level": "segment",
+                  "parent_id": "13.01.007",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.01.007",
+                  "sector_id": "13.01",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Storage DePIN",
+                  "id": "13.01.007.02",
+                  "level": "segment",
+                  "parent_id": "13.01.007",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.01.007",
+                  "sector_id": "13.01",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Connectivity / Wireless DePIN",
+                  "id": "13.01.007.03",
+                  "level": "segment",
+                  "parent_id": "13.01.007",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "03",
+                  "subsector_id": "13.01.007",
+                  "sector_id": "13.01",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Sensing / Mapping DePIN",
+                  "id": "13.01.007.04",
+                  "level": "segment",
+                  "parent_id": "13.01.007",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "04",
+                  "subsector_id": "13.01.007",
+                  "sector_id": "13.01",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.01",
               "industry_id": "13"
             }
@@ -4698,7 +4845,60 @@
               "classification": "DIC",
               "since": "2025-11-08",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Tokenized Funds & Investment Products",
+                  "id": "13.02.005.01",
+                  "level": "segment",
+                  "parent_id": "13.02.005",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.02.005",
+                  "sector_id": "13.02",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Tokenized Debt & Credit Instruments",
+                  "id": "13.02.005.02",
+                  "level": "segment",
+                  "parent_id": "13.02.005",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.02.005",
+                  "sector_id": "13.02",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Tokenized Real Assets & RWAs",
+                  "id": "13.02.005.03",
+                  "level": "segment",
+                  "parent_id": "13.02.005",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "03",
+                  "subsector_id": "13.02.005",
+                  "sector_id": "13.02",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Digital Securities Issuance & Platforms",
+                  "id": "13.02.005.04",
+                  "level": "segment",
+                  "parent_id": "13.02.005",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "04",
+                  "subsector_id": "13.02.005",
+                  "sector_id": "13.02",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.02",
               "industry_id": "13"
             },
@@ -4710,7 +4910,34 @@
               "classification": "DIC",
               "since": "2025-11-10",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "OTC Desks",
+                  "id": "13.02.006.01",
+                  "level": "segment",
+                  "parent_id": "13.02.006",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.02.006",
+                  "sector_id": "13.02",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Prime Brokerage Services",
+                  "id": "13.02.006.02",
+                  "level": "segment",
+                  "parent_id": "13.02.006",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.02.006",
+                  "sector_id": "13.02",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.02",
               "industry_id": "13"
             },
@@ -4722,7 +4949,34 @@
               "classification": "DIC",
               "since": "2025-11-10",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Proprietary / Principal Market Makers",
+                  "id": "13.02.007.01",
+                  "level": "segment",
+                  "parent_id": "13.02.007",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.02.007",
+                  "sector_id": "13.02",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Electronic / Algorithmic Market Makers",
+                  "id": "13.02.007.02",
+                  "level": "segment",
+                  "parent_id": "13.02.007",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.02.007",
+                  "sector_id": "13.02",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.02",
               "industry_id": "13"
             }
@@ -4811,7 +5065,47 @@
               "classification": "DIC",
               "since": "2025-11-08",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "NFT Marketplaces",
+                  "id": "13.03.002.01",
+                  "level": "segment",
+                  "parent_id": "13.03.002",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.03.002",
+                  "sector_id": "13.03",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "NFT Collections & IP Owners",
+                  "id": "13.03.002.02",
+                  "level": "segment",
+                  "parent_id": "13.03.002",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.03.002",
+                  "sector_id": "13.03",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "NFT Infrastructure & Tooling",
+                  "id": "13.03.002.03",
+                  "level": "segment",
+                  "parent_id": "13.03.002",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "03",
+                  "subsector_id": "13.03.002",
+                  "sector_id": "13.03",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.03",
               "industry_id": "13"
             },
@@ -4823,7 +5117,34 @@
               "classification": "DIC",
               "since": "2025-11-08",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Game Platforms & Protocols",
+                  "id": "13.03.003.01",
+                  "level": "segment",
+                  "parent_id": "13.03.003",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.03.003",
+                  "sector_id": "13.03",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Game Titles & IP",
+                  "id": "13.03.003.02",
+                  "level": "segment",
+                  "parent_id": "13.03.003",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.03.003",
+                  "sector_id": "13.03",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.03",
               "industry_id": "13"
             },
@@ -4835,7 +5156,47 @@
               "classification": "DIC",
               "since": "2025-11-08",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Social Graph Protocols",
+                  "id": "13.03.004.01",
+                  "level": "segment",
+                  "parent_id": "13.03.004",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.03.004",
+                  "sector_id": "13.03",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Creator Monetization Protocols",
+                  "id": "13.03.004.02",
+                  "level": "segment",
+                  "parent_id": "13.03.004",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.03.004",
+                  "sector_id": "13.03",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Social Token & Fan Platforms",
+                  "id": "13.03.004.03",
+                  "level": "segment",
+                  "parent_id": "13.03.004",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "03",
+                  "subsector_id": "13.03.004",
+                  "sector_id": "13.03",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.03",
               "industry_id": "13"
             },
@@ -4847,7 +5208,47 @@
               "classification": "DIC",
               "since": "2025-11-11",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Consumer DePIN Applications",
+                  "id": "13.03.005.01",
+                  "level": "segment",
+                  "parent_id": "13.03.005",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.03.005",
+                  "sector_id": "13.03",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Enterprise / API DePIN Applications",
+                  "id": "13.03.005.02",
+                  "level": "segment",
+                  "parent_id": "13.03.005",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.03.005",
+                  "sector_id": "13.03",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "DePIN Marketplaces & Aggregators",
+                  "id": "13.03.005.03",
+                  "level": "segment",
+                  "parent_id": "13.03.005",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "03",
+                  "subsector_id": "13.03.005",
+                  "sector_id": "13.03",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.03",
               "industry_id": "13"
             }
@@ -4871,7 +5272,34 @@
               "classification": "DIC",
               "since": "2025-11-08",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Explorers & Basic Analytics",
+                  "id": "13.04.001.01",
+                  "level": "segment",
+                  "parent_id": "13.04.001",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.04.001",
+                  "sector_id": "13.04",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Institutional Analytics & Risk Platforms",
+                  "id": "13.04.001.02",
+                  "level": "segment",
+                  "parent_id": "13.04.001",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.04.001",
+                  "sector_id": "13.04",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.04",
               "industry_id": "13"
             },
@@ -4883,7 +5311,34 @@
               "classification": "DIC",
               "since": "2025-11-08",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Smart Contract Audits & Code Review",
+                  "id": "13.04.002.01",
+                  "level": "segment",
+                  "parent_id": "13.04.002",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.04.002",
+                  "sector_id": "13.04",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Monitoring, Bug Bounties & Incident Response",
+                  "id": "13.04.002.02",
+                  "level": "segment",
+                  "parent_id": "13.04.002",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.04.002",
+                  "sector_id": "13.04",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.04",
               "industry_id": "13"
             },
@@ -4895,7 +5350,34 @@
               "classification": "DIC",
               "since": "2025-11-08",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Identity & KYC Providers",
+                  "id": "13.04.003.01",
+                  "level": "segment",
+                  "parent_id": "13.04.003",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.04.003",
+                  "sector_id": "13.04",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Credential & Reputation Protocols",
+                  "id": "13.04.003.02",
+                  "level": "segment",
+                  "parent_id": "13.04.003",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.04.003",
+                  "sector_id": "13.04",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.04",
               "industry_id": "13"
             },
@@ -4907,7 +5389,34 @@
               "classification": "DIC",
               "since": "2025-11-08",
               "status": "active",
-              "segments": [],
+              "segments": [
+                {
+                  "label": "Travel Rule & Transaction Screening Providers",
+                  "id": "13.04.004.01",
+                  "level": "segment",
+                  "parent_id": "13.04.004",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "01",
+                  "subsector_id": "13.04.004",
+                  "sector_id": "13.04",
+                  "industry_id": "13"
+                },
+                {
+                  "label": "Chain Monitoring & Forensics Platforms",
+                  "id": "13.04.004.02",
+                  "level": "segment",
+                  "parent_id": "13.04.004",
+                  "classification": "DIC",
+                  "since": "2025-11-13",
+                  "status": "active",
+                  "segment_code": "02",
+                  "subsector_id": "13.04.004",
+                  "sector_id": "13.04",
+                  "industry_id": "13"
+                }
+              ],
               "sector_id": "13.04",
               "industry_id": "13"
             }
