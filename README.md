@@ -2,7 +2,7 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.3.1** | **Release Date:** 2025-11-13 | **License:** Apache 2.0
+**Version 1.3.3** | **Release Date:** 2025-11-14 | **License:** Apache 2.0
 
 ---
 
@@ -26,7 +26,7 @@ The **Dynamic Multi-Dimensional Classification Standard (DMCS)** is a free, open
 ## What You Get
 
 **Core Taxonomy**
-- **14 industries** · **60 sectors** · **241 subsectors** · **105 segments**
+- **14 industries** · **60 sectors** · **241 subsectors** · **143 segments**
 - Coverage spans traditional economy (**GIC**: General Industry Classification, 01-12, 14) and digital/onchain economy (**DIC**: Digital Industry Classification, 13)
 - Every node includes lifecycle metadata (`since`, `status`) for tracking evolution
 
@@ -87,7 +87,7 @@ Industry 13 (Digital & Onchain Economy) provides native classification for:
 Every DMCS ID is permanent and version-controlled:
 ```
 ID: 09.01.004.02
-Version: 1.3.1
+Version: 1.3.3
 Label: API / Integration
 Since: 2025-11-10
 Status: active
@@ -222,16 +222,16 @@ Each classification node includes comprehensive metadata:
 
 ## Coverage & Taxonomy
 
-### Statistical Summary (v1.3.1)
+### Statistical Summary (v1.3.3)
 
-**Total Classification Nodes:** 420
+**Total Classification Nodes:** 458
 
 | Level | Count | Description |
 |-------|-------|-------------|
 | Industries | 14 | Top-level economic domains |
 | Sectors | 60 | Broad business categories |
 | Subsectors | 241 | Specific business models |
-| Segments | 105 | Granular product/service lines |
+| Segments | 143 | Granular product/service lines |
 
 ### Industry Classification Framework
 
@@ -263,7 +263,7 @@ DMCS divides the economy into two major categories:
 
 **Native blockchain and digital asset classification:**
 
-#### 13.01 — DLT & Blockchain Infrastructure (7 subsectors, 6 segments)
+#### 13.01 — DLT & Blockchain Infrastructure (7 subsectors, 17 segments)
 
 - **13.01.001** — Public / Permissionless L1
   - 13.01.001.01 — EVM L1
@@ -275,11 +275,22 @@ DMCS divides the economy into two major categories:
   - 13.01.003.01 — Node / Validator Ops
   - 13.01.003.02 — Liquid Staking
 - **13.01.004** — Interoperability & Data Indexing
+  - 13.01.004.01 — Oracles & Data Feeds
+  - 13.01.004.02 — Indexing & Query Protocols
+  - 13.01.004.03 — Cross-ledger Messaging / Interop Layers
 - **13.01.005** — Enterprise / Permissioned DLT
+  - 13.01.005.01 — Financial Institution / Capital Markets DLT
+  - 13.01.005.02 — Industry / Consortium DLT
 - **13.01.006** — Cross-chain Infrastructure
+  - 13.01.006.01 — Bridge & Routing Infrastructure
+  - 13.01.006.02 — Cross-network Hubs / Layer-0 Frameworks
 - **13.01.007** — DePIN Infrastructure
+  - 13.01.007.01 — Compute DePIN (GPU / AI / Rendering)
+  - 13.01.007.02 — Storage DePIN
+  - 13.01.007.03 — Connectivity / Wireless DePIN
+  - 13.01.007.04 — Sensing / Mapping DePIN
 
-#### 13.02 — Centralized Exchanges & Trading (7 subsectors, 10 segments)
+#### 13.02 — Centralized Exchanges & Trading (7 subsectors, 18 segments)
 
 - **13.02.001** — Centralized Exchanges (CEX)
   - 13.02.001.01 — Spot CEX
@@ -296,10 +307,18 @@ DMCS divides the economy into two major categories:
   - 13.02.004.02 — Crypto-collateralized Stablecoins
   - 13.02.004.03 — Platform-linked Stablecoins
 - **13.02.005** — Tokenization & Digital Securities
+  - 13.02.005.01 — Tokenized Funds & Investment Products
+  - 13.02.005.02 — Tokenized Debt & Credit Instruments
+  - 13.02.005.03 — Tokenized Real Assets & RWAs
+  - 13.02.005.04 — Digital Securities Issuance & Platforms
 - **13.02.006** — OTC / Prime Brokerage
+  - 13.02.006.01 — OTC Desks
+  - 13.02.006.02 — Prime Brokerage Services
 - **13.02.007** — Market Making
+  - 13.02.007.01 — Proprietary / Principal Market Makers
+  - 13.02.007.02 — Electronic / Algorithmic Market Makers
 
-#### 13.03 — Onchain Applications & Experiences (5 subsectors, 4 segments)
+#### 13.03 — Onchain Applications & Experiences (5 subsectors, 15 segments)
 
 - **13.03.001** — DeFi (non-exchange)
   - 13.03.001.01 — Lending Protocols
@@ -307,16 +326,35 @@ DMCS divides the economy into two major categories:
   - 13.03.001.03 — Yield Aggregators
   - 13.03.001.04 — Options Protocols
 - **13.03.002** — NFT / Digital Collectibles
+  - 13.03.002.01 — NFT Marketplaces
+  - 13.03.002.02 — NFT Collections & IP Owners
+  - 13.03.002.03 — NFT Infrastructure & Tooling
 - **13.03.003** — Onchain Gaming / GameFi
+  - 13.03.003.01 — Game Platforms & Protocols
+  - 13.03.003.02 — Game Titles & IP
 - **13.03.004** — Onchain Social
+  - 13.03.004.01 — Social Graph Protocols
+  - 13.03.004.02 — Creator Monetization Protocols
+  - 13.03.004.03 — Social Token & Fan Platforms
 - **13.03.005** — DePIN Applications
+  - 13.03.005.01 — Consumer DePIN Applications
+  - 13.03.005.02 — Enterprise / API DePIN Applications
+  - 13.03.005.03 — DePIN Marketplaces & Aggregators
 
-#### 13.04 — Onchain Services, Security & Compliance (4 subsectors)
+#### 13.04 — Onchain Services, Security & Compliance (4 subsectors, 8 segments)
 
 - **13.04.001** — Blockchain Data / Analytics
+  - 13.04.001.01 — Explorers & Basic Analytics
+  - 13.04.001.02 — Institutional Analytics & Risk Platforms
 - **13.04.002** — Security / Audit Services
+  - 13.04.002.01 — Smart Contract Audits & Code Review
+  - 13.04.002.02 — Monitoring, Bug Bounties & Incident Response
 - **13.04.003** — Onchain Identity / Attestations
+  - 13.04.003.01 — Identity & KYC Providers
+  - 13.04.003.02 — Credential & Reputation Protocols
 - **13.04.004** — Compliance / Travel Rule Providers
+  - 13.04.004.01 — Travel Rule & Transaction Screening Providers
+  - 13.04.004.02 — Chain Monitoring & Forensics Platforms
 
 ### Technology Industry (09) — SaaS & Platform Granularity
 
@@ -477,7 +515,7 @@ const dmcs = new Classification();
 
 // Get system statistics
 console.log(dmcs.stats());
-// Output: { version: '1.3.1', industries: 14, sectors: 60, subsectors: 241, segments: 105 }
+// Output: { version: '1.3.3', industries: 14, sectors: 60, subsectors: 241, segments: 143 }
 
 // Lookup by ID
 const cloudPlatforms = dmcs.getById('09.01.004');
@@ -501,7 +539,7 @@ dmcs = classification()
 
 # Get system statistics
 print(dmcs.stats())
-# Output: {'version': '1.3.1', 'industries': 14, 'sectors': 60, ...}
+# Output: {'version': '1.3.3', 'industries': 14, 'sectors': 60, ...}
 
 # Lookup by ID
 tech = dmcs.get_by_id('09')
@@ -566,10 +604,10 @@ dmcs.stats(): Stats
 // Returns: { version, industries, sectors, subsectors, segments, total }
 
 dmcs.getVersion(): string
-// Returns: "1.3.1"
+// Returns: "1.3.3"
 
 dmcs.getReleaseDate(): string
-// Returns: "1.3.1"
+// Returns: "1.3.3"
 
 // Lookup Methods
 dmcs.getById(id: string): Node | undefined
@@ -676,7 +714,7 @@ dmcs = classification()
 
 # System Information
 dmcs.stats() -> dict
-# Returns: {'version': '1.3.1', 'industries': 14, ...}
+# Returns: {'version': '1.3.3', 'industries': 14, ...}
 
 dmcs.get_version() -> str
 # Returns: "1.3.0"
@@ -778,8 +816,8 @@ tech_subsectors.to_csv('technology_subsectors.csv', index=False)
 **Structure:**
 ```json
 {
-  "dmcs_version": "1.3.1",
-  "release_date": "2025-11-13",
+  "dmcs_version": "1.3.3",
+  "release_date": "2025-11-14",
   "industries": [
     {
       "level": "industry",
@@ -1143,7 +1181,7 @@ DMCS follows semantic versioning (SemVer):
 - **MINOR**: New sectors, subsectors, or segments added
 - **PATCH**: Label updates, metadata fixes, documentation improvements
 
-**Current Version:** 1.3.1 (2025-11-13)
+**Current Version:** 1.3.3 (2025-11-14)
 
 ---
 
@@ -1195,7 +1233,7 @@ See [CHANGELOG.md](CHANGELOG.md) for complete version history and detailed chang
 
 **Academic/Research Citation:**
 ```
-DMCS. (2025). Dynamic Multi-Dimensional Classification Standard (Version 1.3.1) [Data set]. 
+DMCS. (2025). Dynamic Multi-Dimensional Classification Standard (Version 1.3.3) [Data set]. 
 https://github.com/shadstradamus/DMCS
 ```
 
@@ -1205,7 +1243,7 @@ https://github.com/shadstradamus/DMCS
   title = {Dynamic Multi-Dimensional Classification Standard},
   author = {{DMCS.}},
   year = {2025},
-  version = {1.3.1},
+  version = {1.3.3},
   url = {https://github.com/shadstradamus/DMCS},
   note = {Apache License 2.0}
 }
