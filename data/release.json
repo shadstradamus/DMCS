@@ -1,0 +1,11 @@
+{
+  "version": "1.3.3",
+  "release_date": "2025-11-13",
+  "counts": {
+    "industries": 14,
+    "sectors": 60,
+    "subsectors": 241,
+    "segments": 143
+  },
+  "total_nodes": 458
+}

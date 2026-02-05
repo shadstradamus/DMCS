@@ -24,12 +24,12 @@ const dmcs = new Classification();
 // Get stats
 console.log(dmcs.stats());
 // {
-//   version: '1.2.0',
-//   release_date: '2025-11-11',
-//   industries: 13,
-//   sectors: 55,
-//   subsectors: 205,
-//   segments: 57,
+//   version: '1.3.3',
+//   release_date: '2025-11-13',
+//   industries: 14,
+//   sectors: 60,
+//   subsectors: 241,
+//   segments: 143,
 //   gic_industries: 12,
 //   dic_industries: 1
 // }

@@ -2,7 +2,7 @@
   <img src="assets/dmcs-logo.svg" alt="DMCS Logo" width="800">
 </p>
 
-**Version 1.3.3** | **Release Date:** 2025-11-14 | **License:** Apache 2.0
+**Version 1.3.3** | **Release Date:** 2025-11-13 | **License:** Apache 2.0
 
 ---
 
@@ -33,6 +33,7 @@ The **Dynamic Multi-Dimensional Classification Standard (DMCS)** is a free, open
 **Ready-to-Use Data**
 - `data/classification.json` — Full hierarchical structure with metadata
 - `data/classification.csv` — Flat table for databases and analytics tools
+- `data/release.json` — Version + release date (source of truth)
 - `CLASSIFICATION.md` — Human-readable reference documentation
 
 **SDKs for Developers**
@@ -817,7 +818,7 @@ tech_subsectors.to_csv('technology_subsectors.csv', index=False)
 ```json
 {
   "dmcs_version": "1.3.3",
-  "release_date": "2025-11-14",
+  "release_date": "2025-11-13",
   "industries": [
     {
       "level": "industry",
@@ -1181,7 +1182,7 @@ DMCS follows semantic versioning (SemVer):
 - **MINOR**: New sectors, subsectors, or segments added
 - **PATCH**: Label updates, metadata fixes, documentation improvements
 
-**Current Version:** 1.3.3 (2025-11-14)
+**Current Version:** 1.3.3 (2025-11-13)
 
 ---
 
