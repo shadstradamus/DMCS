@@ -1,193 +1,119 @@
 # Contributing to DMCS
 
-Thank you for your interest in contributing to the Dynamic Multi-Dimensional Classification Standard (DMCS)!
+Thank you for contributing to the Dynamic Multi-Dimensional Classification Standard (DMCS). DMCS is an open-source classification standard, so taxonomy changes, mappings, documentation, and SDK changes all need to preserve stable IDs and reproducible releases.
 
-DMCS is a community-driven open-source project. We welcome contributions from anyone who wants to improve classification for the modern economy.
+## Start Here
 
-## Quick Start
+1. Fork the repository.
+2. Create a focused branch for your change.
+3. Review [CLASSIFICATION.md](./CLASSIFICATION.md), the canonical data under [`data/`](./data), and [boundary guidance](./docs/boundaries.md) when relevant.
+4. Make the smallest change that solves the problem.
+5. Run the synchronization and validation commands below.
+6. Submit a pull request explaining what changed, why it changed, and whether the change affects taxonomy IDs, labels, mappings, SDK behavior, or release metadata.
 
-1. **Fork** the repository
-2. **Create a branch** for your changes
-3. **Make your changes** (new classifications, documentation, code, etc.)
-4. **Submit a pull request** with a clear description
-5. **Participate in review** and address feedback
-6. **Get merged!** Quality contributions are welcomed
+## Canonical Data and Generated Copies
+
+The canonical release manifest is `data/release.json`. The canonical taxonomy is `data/classification.json`, with `data/classification.csv` as its flat representation.
+
+The SDKs carry synchronized copies of the taxonomy so they can work without fetching data at runtime. Do not hand-edit those copies independently.
+
+After changing canonical taxonomy data or release metadata, run:
+
+```bash
+python scripts/sync_sdk_data.py
+python scripts/validate_release.py
+```
+
+The sync helper copies canonical data into the Python and TypeScript SDKs and aligns TypeScript package versions. The validator checks release metadata, hierarchy integrity, IDs, lifecycle metadata, CSV/JSON consistency, SDK copies, package versions, and documentation headers.
+
+GitHub Actions runs the same release validation and builds/tests both SDKs on pushes and pull requests.
 
 ## Ways to Contribute
 
-### 1. Report Issues or Gaps
+### Report a Classification Gap
 
-If you notice:
-- A business model or industry segment that doesn't fit existing subsectors
-- Classification edge cases or ambiguities
-- Errors in the taxonomy or documentation
-- Inconsistencies in ID assignments or labels
+Open an issue when a real business model cannot be represented cleanly by the existing taxonomy. Include the entity or activity you are trying to classify, the closest existing nodes, why those nodes are insufficient, and representative examples.
 
-**→ Open an issue** describing the gap, including:
-- The entity/business model you're trying to classify
-- Why existing subsectors don't fit
-- Suggested placement or new subsector name
+### Propose a Taxonomy Node
 
-### 2. Propose New Subsectors or Sectors
+For a new sector, subsector, or segment, provide:
 
-If you believe a new classification node is needed:
+- proposed label and parent node;
+- a concise business-model definition;
+- at least three representative real-world examples when possible;
+- why existing nodes do not fit;
+- likely boundary conflicts; and
+- whether the proposal changes only coverage or also requires mapping/documentation updates.
 
-1. **Check existing taxonomy** — review [TAXONOMY.md](./TAXONOMY.md) to ensure it doesn't already exist
-2. **Open an issue** with:
-   - Proposed label and parent sector/industry
-   - 3-5 example entities that would use this classification
-   - Business model description (how it differs from existing subsectors)
-3. **Tag it** with `enhancement` or `taxonomy-proposal`
-4. **Community discussion** happens in the issue thread
-5. If approved, maintainers assign the next available ID and merge
+Maintainers assign official IDs. Do not repurpose or reuse an existing ID, including an ID that has been deprecated or sunset.
 
-**Note:** New IDs are assigned by maintainers to avoid collisions. Popular DMCS-CUST nodes may be promoted to official status.
+### Improve Documentation or Mappings
 
-### 3. Improve Documentation
+Documentation corrections, examples, boundary clarification, and GICS/ICB/TRBC/NAICS mapping improvements are welcome. Mapping changes should identify the source code, proposed DMCS target, confidence, rationale, and material edge cases.
 
-- Fix typos, unclear language, or broken links
-- Add examples or use cases
-- Improve migration guidance (GICS/ICB/TRBC/NAICS mapping)
-- Enhance Python SDK or API documentation
+### Contribute SDK Code
 
-**→ Submit a pull request** with your changes.
+SDK contributions should preserve behavioral parity between Python and TypeScript where practical. Public lookup semantics, lifecycle metadata, classification codes, and release statistics should remain consistent across implementations.
 
-### 4. Contribute Code
+## Taxonomy Rules
 
-- Improve Python SDK functionality
-- Add new API endpoints
-- Create SDKs for other languages (JavaScript/TypeScript, Rust, Go, etc.)
-- Build tools and integrations
+DMCS uses the hierarchy:
 
-**→ Follow code quality standards** and submit a pull request.
+```text
+Industry (II)
+└─ Sector (II.SS)
+   └─ Subsector (II.SS.SSS)
+      └─ Segment (II.SS.SSS.SS) [optional]
+```
 
-### 5. Build Mapping Tables
+IDs are stable. Once issued, an ID is never reassigned to a different concept. Labels may be clarified through a documented release, while lifecycle status communicates whether a node is `active`, `deprecated`, or `sunset`.
 
-Help build mapping tables from legacy systems:
+All nodes must preserve correct `parent_id`, `industry_id`, `sector_id`, and, for segments, `subsector_id` relationships. `since` dates use ISO `YYYY-MM-DD` format. Classification values are `GIC` or `DIC`.
 
-- **GICS → DMCS**
-- **ICB → DMCS**
-- **TRBC → DMCS**
-- **NAICS → DMCS**
+## Primary and Secondary Classification
 
-Include source code, target DMCS ID, and reasoning for non-obvious mappings.
+Use the DMCS methodology and boundary guidance rather than classifying by branding alone. Revenue mix is normally the first signal, followed by earnings contribution, asset base for balance-sheet-driven entities, and management emphasis when the financial signals remain inconclusive.
 
-## Contribution Guidelines
+A materially different business line may receive a secondary classification when it meets the applicable DMCS materiality threshold. Document the rationale so the decision can be audited later.
 
-### Code of Conduct
+## Pull Request Checklist
 
-- **Be respectful and constructive** — Focus on improving the standard, not criticizing contributors
-- **Evidence-based discussions** — Back proposals with examples, data, or business logic
-- **Collaborative spirit** — Work together to find the best classification structure
-- **Assume good intent** — We're all working toward the same goal
+Before opening a PR, confirm that:
 
-### Pull Request Process
+- IDs are unique and correctly formatted.
+- Existing IDs were not reused.
+- Parent and derived hierarchy fields are correct.
+- `classification`, `since`, and `status` metadata are valid.
+- `data/classification.json` and `data/classification.csv` agree.
+- SDK copies are synchronized with canonical data.
+- Python and TypeScript SDK behavior remains aligned.
+- Documentation examples reference current IDs and labels.
+- `python scripts/validate_release.py` passes.
+- Python SDK tests pass with `pytest python-sdk/tests`.
+- TypeScript builds with `npm ci --prefix typescript-sdk` followed by `npm run build --prefix typescript-sdk`.
 
-1. **Fork the repository** and create a feature branch
-2. **Make your changes** (taxonomy, documentation, code, examples)
-3. **Test your changes**:
-   - For taxonomy: Verify IDs don't conflict, hierarchy is correct
-   - For code: Run tests, ensure code quality
-   - For docs: Check for broken links, formatting issues
-4. **Commit with clear messages**:
-   - `feat: add subsector 10.03.003 Messaging & Communications Apps`
-   - `docs: fix typo in README.md`
-   - `sdk: add search by taxonomy filter`
-5. **Submit PR** with a clear description of what changed and why
-6. **Respond to feedback** — Maintainers or community may suggest improvements
-7. **Get merged!** — Once approved, your contribution becomes part of DMCS
+## Change Categories
 
-### Review Process
+**Documentation or mapping correction:** No canonical ID changes. Usually suitable for a normal pull request after validation.
 
-**Timeline:**
-- Documentation/bug fixes: Typically reviewed within 1-3 days
-- Code contributions: Reviewed within 3-5 days
-- Taxonomy proposals: Require community discussion, typically 7-14 days
+**Label refinement:** The ID remains stable. Update canonical data, documentation, mappings if affected, and the changelog.
 
-**Criteria for approval:**
-- **Accuracy** — Changes are factually correct and well-researched
-- **Consistency** — Follows existing patterns and design principles
-- **Clarity** — Well-documented with examples where appropriate
-- **Value** — Addresses a real need or improves the standard
+**New segment or subsector:** Requires a taxonomy proposal and review. New IDs must follow the existing allocation pattern.
 
-## Governance Model
+**Structural change:** New sectors, industries, large reorganization, or changes affecting classification methodology require public discussion and maintainer approval before implementation.
 
-### Decision-Making Process
+**Hotfix:** Reserved for clear data, packaging, or SDK defects where the intended taxonomy is already established.
 
-DMCS uses a **community-driven governance model** with the following principles:
+## Review Principles
 
-1. **Open Discussion** — All major changes are discussed publicly in GitHub issues
-2. **Consensus-Seeking** — We aim for broad agreement, not just majority vote
-3. **Maintainer Discretion** — Core maintainers have final say on structural changes to preserve consistency
-4. **Transparent Rationale** — Decisions are documented with clear reasoning
+Contributions are evaluated for accuracy, consistency, clarity, interoperability, backward compatibility, and usefulness. Taxonomy proposals should be evidence-based and avoid creating overlapping nodes for short-lived market terminology.
 
-### Roles
+DMCS seeks consensus through public discussion, while maintainers retain final responsibility for ID assignment, release integrity, and structural consistency.
 
-**Contributors** (Anyone)
-- Open issues, submit PRs, participate in discussions
-- No special permissions required
-- All constructive contributions are welcome
+## Security Issues
 
-**Community Members** (Active Contributors)
-- Regular contributors who have submitted quality PRs
-- Participate in proposal reviews and discussions
-- Help onboard new contributors
+Do not report undisclosed security vulnerabilities in a public issue. Follow [SECURITY.md](./SECURITY.md) and use GitHub Private Vulnerability Reporting.
 
-**Maintainers** (Core Team)
-- Review and merge PRs
-- Assign new classification IDs
-- Make final decisions on taxonomy structure
-- Coordinate releases
-- Currently: Project founder and designated maintainers
+## License
 
-### Taxonomy Change Process
-
-**Minor Changes** (Label refinements, documentation, examples):
-- Submit PR → Review → Merge
-- No formal approval process needed
-- Released in next thematic update
-
-**Major Changes** (New subsectors, sectors, or structural reorganization):
-1. **Proposal** — Open GitHub issue with `taxonomy-proposal` label
-2. **Discussion** — Community weighs in (minimum 7 days for structural changes)
-3. **Refinement** — Author updates proposal based on feedback
-4. **Decision** — Maintainers approve or request changes
-5. **Implementation** — Approved proposals are merged and ID is assigned
-6. **Release** — Included in next structural release
-
-**Criteria for Approval:**
-- Addresses a genuine classification gap (3+ real-world examples)
-- Fits logically within existing hierarchy
-- Doesn't overlap with existing classifications
-- Has clear business model definition
-- Community consensus (no major objections)
-
-## Governance
-
-DMCS follows a flexible release schedule:
-
-| Release Type | Frequency | Scope |
-|--------------|-----------|-------|
-| **Structural** | As needed (typically 1-2×/year) | New sectors, subsectors, ID assignments |
-| **Thematic** | As needed | Label updates, refinements (no ID changes) |
-
-**Release Philosophy:**
-- We release when there's meaningful value, not on arbitrary schedules
-- Structural releases typically happen 1-2× per year as the economy evolves
-- Hotfixes for errors or critical gaps can be released immediately
-
-### Becoming a Maintainer
-
-Community members who consistently contribute quality work may be invited to join as maintainers. Criteria:
-- Multiple merged PRs (taxonomy proposals, code, or documentation)
-- Active participation in proposal discussions
-- Demonstrated understanding of DMCS design principles
-- Commitment to collaborative decision-making
-
-## Questions?
-
-- **GitHub Issues** — Taxonomy questions, bug reports, or feature requests
-- **GitHub Discussions** — General questions, ideas, or community chat
-- **Email** — For sensitive or private matters, contact the maintainers (see repository)
-
-Thank you for helping DMCS evolve with the modern economy!
+By contributing, you agree that your contribution will be distributed under the repository's Apache 2.0 license.
