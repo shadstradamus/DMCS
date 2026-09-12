@@ -2,17 +2,21 @@
 
 ## Supported Versions
 
-We currently maintain the latest public release stream of DMCS. Older releases are provided for reference only and will not receive security fixes.
+DMCS supports the current public release line. Older release lines remain available for reference, but security and SDK fixes are applied to the current line only.
 
 | Version | Supported |
-| ------- | ---------- |
-| 1.0.x   | :white_check_mark: |
-| < 1.0   | :x: |
+| ------- | --------- |
+| 1.3.x   | :white_check_mark: |
+| < 1.3   | :x: |
+
+The current stable release is **DMCS 1.3.3**. Taxonomy corrections that do not create a new public release are maintained on the repository's development branches until they are merged into a supported release.
 
 ## Reporting a Vulnerability
 
-Please report suspected vulnerabilities privately so we can investigate and release a fix before details become public. Use **GitHub's Private Vulnerability Reporting** feature on this repository (Security ▸ Report a vulnerability).
+Please report suspected vulnerabilities privately so they can be investigated before details become public. Use **GitHub Private Vulnerability Reporting** on this repository under **Security → Report a vulnerability**.
 
-We aim to acknowledge new reports within **3 business days**. After triage we will provide status updates at least every **7 days** until resolution. When a fix is ready, we will coordinate disclosure with the reporter and publish the patch in the next supported release.
+Please include enough information to reproduce the issue, the affected SDK or file, the expected behavior, and any known impact. Do not include secrets, credentials, or unrelated personal data.
 
-Please avoid opening public issues or discussions for security-related matters. If you need to share additional context, attach it to the private report.
+We aim to acknowledge new reports within **3 business days**. After triage, status updates will be provided at least every **7 days** until resolution. When a fix is ready, disclosure will be coordinated with the reporter and the fix will be included in the next supported release or patch.
+
+Please do not open a public issue or discussion for an undisclosed security vulnerability.

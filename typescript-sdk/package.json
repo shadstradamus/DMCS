@@ -1,17 +1,17 @@
 {
   "name": "dmcs-sdk",
-  "version": "1.2.3",
+  "version": "1.3.3",
   "description": "TypeScript/JavaScript SDK for Dynamic Multi-Dimensional Classification Standard (DMCS)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "build:browser": "npm run build && node build-browser-bundle.js",
     "prepare": "npm run build",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
     "dmcs",
-    "classification",
     "classification",
     "industry",
     "sector"

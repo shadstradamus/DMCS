@@ -987,7 +987,7 @@
           "id": "04.03",
           "level": "sector",
           "parent_id": "04",
-          "classification": "active",
+          "classification": "GIC",
           "since": "2025-11-08",
           "status": "active",
           "subsectors": [
@@ -1035,7 +1035,7 @@
           "id": "04.04",
           "level": "sector",
           "parent_id": "04",
-          "classification": "active",
+          "classification": "GIC",
           "since": "2025-11-08",
           "status": "active",
           "subsectors": [

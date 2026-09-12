@@ -1,6 +1,6 @@
 export type ClassificationCode = 'GIC' | 'DIC';
 export type ClassificationLevel = 'industry' | 'sector' | 'subsector' | 'segment';
-export type NodeStatus = 'active' | 'deprecated' | 'retired';
+export type NodeStatus = 'active' | 'deprecated' | 'sunset';
 
 export interface RawSegment {
   id: string;

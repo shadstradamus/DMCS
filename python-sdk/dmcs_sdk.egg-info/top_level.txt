@@ -1,1 +1,0 @@
-dmcs_sdk

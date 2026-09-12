@@ -1,104 +1,96 @@
 # DMCS Mapping Tables
 
-Cross-reference tables for migrating from legacy classification systems to DMCS.
+Cross-reference guidance for migrating from legacy classification systems to DMCS.
 
 ## Overview
 
-These mapping tables help organizations transition from existing industry classification standards to DMCS. Each table provides approximate mappings based on business model and operational characteristics.
+These mappings help organizations translate existing industry classifications into DMCS. They are **guidance, not guaranteed 1:1 equivalents**: DMCS is entity- and business-model-oriented, while some source systems use different units, hierarchies, or classification rules.
 
-**Important Notes:**
-- Mappings are **approximate guidance**, not 1:1 equivalents
-- Companies should validate classifications based on actual revenue/activity mix
-- When in doubt, refer to DMCS materiality rules (≥25-30% threshold for secondary)
-- Store both legacy and DMCS codes during transition for audit trails
+When using a mapping:
+
+- Validate the result against the entity's actual revenue and activity mix.
+- Use DMCS materiality rules when deciding whether a secondary classification is warranted.
+- Preserve the legacy code alongside the DMCS code during migration for auditability.
+- Prefer a DMCS subsector unless a segment clearly matches the entity or product line.
 
 ## Available Mappings
 
 ### GICS (Global Industry Classification Standard)
+
 - **Source:** [GICS to DMCS Mapping](./gics-to-dmcs.md)
-- **Coverage:** S&P 500, MSCI indices
-- **Use Case:** Equity research, portfolio management
-- **Structure:** 11 sectors → 25 industry groups → 74 industries → 163 sub-industries
+- **Use case:** Equity research and portfolio classification
 
 ### ICB (Industry Classification Benchmark)
-- **Source:** [ICB to DMCS Mapping](./icb-to-dmcs.md)
-- **Coverage:** FTSE indices, European markets
-- **Use Case:** International equity benchmarking
-- **Structure:** 11 industries → 20 supersectors → 45 sectors → 173 subsectors
 
+- **Source:** [ICB to DMCS Mapping](./icb-to-dmcs.md)
+- **Use case:** International equity benchmarking and migration
 
 ### TRBC (Refinitiv Business Classification)
+
 - **Source:** [TRBC to DMCS Mapping](./trbc-to-dmcs.md)
-- **Coverage:** Refinitiv/LSEG data, global corporate universe
-- **Use Case:** Financial data platforms, risk analytics
-- **Structure:** 10 economic sectors → 28 business sectors → 54 industry groups → 136 industries
+- **Use case:** Financial-data platforms and risk analytics
 
 ### NAICS (North American Industry Classification System)
+
 - **Source:** [NAICS to DMCS Mapping](./naics-to-dmcs.md)
-- **Coverage:** US/Canada government statistics, regulatory filings
-- **Use Case:** Government data, economic analysis, compliance
-- **Structure:** 20 sectors → 99 subsectors → 311 industry groups → 709 industries
+- **Use case:** Government data, economic analysis, and compliance workflows
 
-## How to Use
+> **Important:** NAICS is generally establishment-based while DMCS is designed for entity-level classification. Aggregate the relevant establishment activity before assigning the consolidated entity's DMCS classification.
 
-1. **Identify your legacy classification**: Look up the current GICS/ICB/TRBC/NAICS code
-2. **Find DMCS equivalent**: Reference the appropriate mapping table
-3. **Validate materiality**: Confirm the DMCS classification matches ≥70% of revenue/activity
-4. **Check for secondary**: If another industry represents ≥25-30%, assign as secondary
-5. **Document both codes**: Store legacy + DMCS codes for transition tracking
+## Recommended Migration Process
 
-## Mapping Format
+1. Identify the current legacy code and source-system level.
+2. Locate the closest DMCS node in the corresponding mapping table.
+3. Validate the placement against the entity's business model and external revenue mix.
+4. Apply a secondary DMCS classification when another materially different activity meets the DMCS secondary-classification threshold.
+5. Document the legacy code, DMCS code, effective date, and rationale.
+6. Re-evaluate the classification after material acquisitions, divestitures, or sustained changes in revenue mix.
 
-Each mapping table now uses a consistent column schema:
-- **Source Code** – Legacy identifier (sector / industry / subsector)
-- **Source Label** – Official legacy description
-- **DMCS Node** – Recommended DMCS ID (subsector or segment)
-- **DMCS Label** – DMCS description for quick scanning
-- **Confidence** – High / Medium / Low guidance based on structural fit
-- **Rationale** – Summary of why the mapping is appropriate
-- **Edge Notes** – Known caveats or boundary reminders
+## Mapping Table Format
 
-> **Tip:** DMCS classifications are entity-level, while NAICS is establishment-based. When using NAICS, aggregate establishment codes to the consolidated entity before applying DMCS.
+The mapping tables use a common schema where practical:
 
-### Segment-Level Mapping Guidance
+- **Source Code** — Legacy identifier
+- **Source Label** — Legacy description
+- **DMCS Node** — Recommended DMCS ID
+- **DMCS Label** — Current DMCS label
+- **Confidence** — High / Medium / Low structural fit
+- **Rationale** — Why the mapping is appropriate
+- **Edge Notes** — Known caveats or boundary guidance
 
-**Important:** Legacy classification systems (GICS, ICB, TRBC, NAICS) typically do not have segment-level equivalents. DMCS segments provide additional granularity beyond what these systems offer.
+## Segment-Level Guidance
 
-**Mapping Approach:**
-1. **Map to subsector first**: Use the standard mapping tables to identify the appropriate DMCS subsector
-2. **Check for segments**: Review if the DMCS subsector has segments defined (71 segments across v1.2.0)
-3. **Apply segment if applicable**: If the entity's product line clearly fits a specific segment, use the segment ID
-4. **Default to subsector**: If uncertain or segments don't apply, use the subsector-level classification
+DMCS v1.3.3 contains **143 segments** beneath its 241 subsectors. Legacy systems often do not provide an equivalent level of granularity, so mappings should normally resolve to a subsector first and only then be refined to a segment when the business line is unambiguous.
 
-**Example:**
-- **Legacy:** GICS 45102010 (Application Software)
-- **DMCS Subsector:** 09.01.001 (Enterprise SaaS)
-- **DMCS Segment (if applicable):**
-  - Salesforce → 09.01.001.02 (CRM Software)
-  - SAP → 09.01.001.01 (ERP Software)
-  - Workday → 09.01.001.03 (HCM / Workforce Mgmt)
-- **Note:** If the company spans multiple segments or segment doesn't clearly fit, use subsector 09.01.001
+Example:
 
-**Segments add value for:**
-- Competitive analysis within a subsector
-- Portfolio construction requiring product-line granularity
-- Sector rotation strategies focused on specific technologies
-- Risk analysis differentiating business models within subsectors
+- **Legacy:** GICS 45102010 — Application Software
+- **DMCS subsector:** `09.01.001` — Application Software
+- **Possible DMCS segments:**
+  - `09.01.001.01` — ERP / Finance Suites
+  - `09.01.001.02` — Supply Chain & Procurement Software
+  - `09.01.001.03` — HCM / Workforce
 
-## Contributing
+If the entity spans multiple segments or the available evidence does not support segment-level precision, retain the subsector classification.
 
-Found an issue or have a better mapping suggestion?
-1. Open an issue describing the discrepancy
-2. Provide context: company examples, revenue mix, rationale
-3. Community review and discussion
-4. Accepted improvements merged into official mappings
+Segments are especially useful for competitive analysis, product-line research, portfolio construction, and risk analysis where subsector-level grouping is too broad.
+
+## Boundary Guidance
+
+Mappings should be read together with [DMCS Boundary Guidance](../docs/boundaries.md), especially for business models that can reasonably fall into more than one industry. Revenue mix is the primary signal, followed by earnings contribution, asset base where relevant, and management emphasis when financial signals remain inconclusive.
+
+## Contributing Mapping Improvements
+
+If a mapping appears inaccurate or incomplete, open an issue with:
+
+- the source system and code;
+- the proposed DMCS node;
+- one or more representative entities;
+- the business-model rationale; and
+- any known edge cases.
+
+Accepted corrections should update the mapping table without changing canonical DMCS IDs unless a separate taxonomy proposal has been approved.
 
 ## Disclaimer
 
-These mappings are provided as **guidance only**. DMCS and the legacy systems have different philosophies and granularity levels. Always:
-- Review actual company business models
-- Apply DMCS materiality rules
-- Consult official DMCS classification documentation when uncertain
-- Document classification decisions for audit purposes
-
-For questions about specific mappings, open a GitHub discussion or issue.
+These tables are migration aids. DMCS and the referenced legacy systems use different methodologies and granularity, so organizations should validate classifications independently and document their decisions for audit purposes.
