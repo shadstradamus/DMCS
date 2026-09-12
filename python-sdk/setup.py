@@ -1,11 +1,18 @@
+import json
+from pathlib import Path
 from setuptools import setup, find_packages
 
-with open("README.md", "r", encoding="utf-8") as fh:
+ROOT = Path(__file__).resolve().parent
+
+with open(ROOT / "README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
+
+with open(ROOT / "dmcs_sdk" / "data" / "classification.json", "r", encoding="utf-8") as fh:
+    package_version = json.load(fh)["dmcs_version"]
 
 setup(
     name="dmcs-sdk",
-    version="1.2.3",
+    version=package_version,
     author="DMCS",
     description="Python SDK for Dynamic Multi-Dimensional Classification Standard",
     long_description=long_description,
