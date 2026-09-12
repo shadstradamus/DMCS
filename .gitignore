@@ -1,6 +1,15 @@
 # Node
 node_modules/
 
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
 # Build outputs
 dist/
 build/
@@ -18,10 +27,8 @@ npm-debug.log*
 *.ntvs*
 *.njsproj
 *.sln
+.idea/
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Other
-.idea/
