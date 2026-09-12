@@ -1,0 +1,67 @@
+name: Validate DMCS
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  release-integrity:
+    name: Release integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate canonical release data
+        run: python scripts/validate_release.py
+
+      - name: Install Python SDK and test dependencies
+        run: python -m pip install -e "./python-sdk[dev]"
+
+      - name: Run Python SDK tests
+        run: pytest python-sdk/tests
+
+  typescript-sdk:
+    name: TypeScript SDK build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install TypeScript dependencies
+        run: npm ci --prefix typescript-sdk
+
+      - name: Build TypeScript SDK
+        run: npm run build --prefix typescript-sdk
+
+      - name: Smoke test TypeScript SDK
+        run: |
+          node - <<'NODE'
+          const { Classification } = require('./typescript-sdk/dist/index.js');
+          const dmcs = new Classification();
+          const stats = dmcs.stats();
+          if (stats.version !== '1.3.3') throw new Error(`Unexpected version: ${stats.version}`);
+          if (stats.industries !== 14 || stats.sectors !== 60 || stats.subsectors !== 241 || stats.segments !== 143) {
+            throw new Error(`Unexpected taxonomy counts: ${JSON.stringify(stats)}`);
+          }
+          if (stats.gic_industries !== 13 || stats.dic_industries !== 1) {
+            throw new Error(`Unexpected GIC/DIC counts: ${JSON.stringify(stats)}`);
+          }
+          const segment = dmcs.getById('01.01.004.01');
+          if (!segment || segment.since !== '2025-11-13' || segment.status !== 'active') {
+            throw new Error('Lifecycle metadata was not preserved for segment 01.01.004.01');
+          }
+          NODE
