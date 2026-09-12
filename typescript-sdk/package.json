@@ -6,6 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "build:browser": "npm run build && node build-browser-bundle.js",
     "prepare": "npm run build",
     "prepublishOnly": "npm run build"
   },
