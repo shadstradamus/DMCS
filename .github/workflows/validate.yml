@@ -9,16 +9,20 @@ permissions:
 
 jobs:
   release-integrity:
-    name: Release integrity
+    name: Python ${{ matrix.python-version }} / release integrity
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.8", "3.12"]
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
 
       - name: Validate canonical release data
         run: python scripts/validate_release.py
@@ -29,17 +33,21 @@ jobs:
       - name: Run Python SDK tests
         run: pytest python-sdk/tests
 
+      - name: Build Python distribution
+        if: matrix.python-version == '3.12'
+        run: python -m build python-sdk
+
   typescript-sdk:
     name: TypeScript SDK build
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Install TypeScript dependencies
         run: npm ci --prefix typescript-sdk
@@ -47,9 +55,13 @@ jobs:
       - name: Build TypeScript SDK
         run: npm run build --prefix typescript-sdk
 
+      - name: Build browser bundle
+        run: npm run build:browser --prefix typescript-sdk
+
       - name: Smoke test TypeScript SDK
         run: |
           node - <<'NODE'
+          const fs = require('fs');
           const { Classification } = require('./typescript-sdk/dist/index.js');
           const dmcs = new Classification();
           const stats = dmcs.stats();
@@ -63,5 +75,8 @@ jobs:
           const segment = dmcs.getById('01.01.004.01');
           if (!segment || segment.since !== '2025-11-13' || segment.status !== 'active') {
             throw new Error('Lifecycle metadata was not preserved for segment 01.01.004.01');
+          }
+          if (!fs.existsSync('./typescript-sdk/dist/dmcs-bundle.js')) {
+            throw new Error('Browser bundle was not generated');
           }
           NODE
