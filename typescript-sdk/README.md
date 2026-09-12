@@ -2,26 +2,28 @@
 
 TypeScript/JavaScript library for working with the Dynamic Multi-Dimensional Classification Standard (DMCS).
 
+The SDK bundles the taxonomy and does not require a network request for normal lookups.
+
 ## Installation
 
-```bash
-npm install dmcs-sdk
-```
-
-Or install from the repository:
+The repository is the authoritative distribution source for the current SDK code. Clone the repository and build the TypeScript package locally:
 
 ```bash
-npm install git+https://github.com/shadstradamus/DMCS.git#subdirectory=typescript-sdk
+git clone https://github.com/shadstradamus/DMCS.git
+cd DMCS/typescript-sdk
+npm ci
+npm run build
 ```
+
+The package name is `dmcs-sdk`. Registry publishing should only be documented as available after a corresponding npm release has been verified.
 
 ## Quick Start
 
 ```typescript
-import { Classification } from 'dmcs-sdk';
+import { Classification } from './dist';
 
 const dmcs = new Classification();
 
-// Get stats
 console.log(dmcs.stats());
 // {
 //   version: '1.3.3',
@@ -30,191 +32,120 @@ console.log(dmcs.stats());
 //   sectors: 60,
 //   subsectors: 241,
 //   segments: 143,
-//   gic_industries: 12,
+//   gic_industries: 13,
 //   dic_industries: 1
 // }
 
-// Lookup by ID
 const tech = dmcs.getById('09');
-console.log(tech);
-// { id: '09', label: 'Technology', classification: 'GIC', sectors: [...] }
+console.log(tech?.label);
+// Technology
 
 const saas = dmcs.getById('09.01.002');
-console.log(saas);
-// { id: '09.01.002', label: 'Enterprise SaaS', ... }
+console.log(saas?.label);
+// Enterprise SaaS
 
-// Search by text
 const results = dmcs.search('blockchain');
-results.forEach(result => console.log(result));
+results.forEach(result => console.log(`${result.id} — ${result.label}`));
 
-// Filter by classification
-const gic = dmcs.getGIC();  // Traditional economy (01-12)
-const dic = dmcs.getDIC();  // Digital & onchain economy (13)
-
-console.log(`GIC has ${gic.length} industries`);
-console.log(`DIC has ${dic.length} industries`);
+// GIC includes industries 01-12 and 14.
+const gic = dmcs.getGIC();
+// DIC is the Digital & Onchain Economy, industry 13.
+const dic = dmcs.getDIC();
 ```
 
-## JavaScript (CommonJS)
+## Lookup Levels
 
-```javascript
-const { Classification } = require('dmcs-sdk');
+```typescript
+const industry = dmcs.getById('09');
+const sector = dmcs.getById('09.01');
+const subsector = dmcs.getById('09.01.001');
+const segment = dmcs.getById('09.01.001.02');
 
-const dmcs = new Classification();
-
-// Get all Technology subsectors
-const tech = dmcs.getById('09');
-tech.sectors.forEach(sector => {
-  console.log(`${sector.id}: ${sector.label}`);
-});
+console.log(segment?.label);
+// Supply Chain & Procurement Software
 ```
+
+DMCS IDs use these forms:
+
+- Industry: `II`
+- Sector: `II.SS`
+- Subsector: `II.SS.SSS`
+- Segment: `II.SS.SSS.SS`
+
+## Lifecycle Metadata
+
+Normalized SDK objects preserve canonical lifecycle metadata:
+
+```typescript
+const segment = dmcs.getById('01.01.004.01');
+console.log(segment?.since);
+// 2025-11-13
+console.log(segment?.status);
+// active
+
+const active = dmcs.getActive();
+const sunset = dmcs.getByStatus('sunset');
+```
+
+Valid lifecycle states are `active`, `deprecated`, and `sunset`.
 
 ## API Reference
 
 ### `Classification`
 
-Main class for loading and querying DMCS data.
+Properties:
 
-**Properties:**
-- `version: string` - DMCS version
-- `releaseDate: string` - Release date
-- `description: string` - Classification description
-- `industries: Industry[]` - All industries
+- `version: string`
+- `releaseDate: string`
+- `description: string`
+- `industries: Industry[]`
 
-**Methods:**
-- `getById(id: string): Classification | null` - Lookup industry, sector, subsector, or segment by ID
-- `search(query: string, caseSensitive?: boolean): Classification[]` - Search classifications by label
-- `filterByClassification(classification: 'GIC' | 'DIC'): Industry[]` - Get industries by classification
-- `getGIC(): Industry[]` - Get all GIC industries
-- `getDIC(): Industry[]` - Get all DIC industries
-- `stats(): ClassificationStats` - Get classification statistics
+Methods:
 
-### Types
+- `getById(id)` — lookup any hierarchy level
+- `search(query, caseSensitive?)` — search labels across all hierarchy levels
+- `filterByClassification(code)` — filter industries by `GIC` or `DIC`
+- `getGIC()` — return all GIC industries
+- `getDIC()` — return all DIC industries
+- `stats()` — return release metadata and hierarchy counts
+- `getActive()` — return all active nodes
+- `getByStatus(status)` — filter by lifecycle status
 
-**Industry**
-```typescript
-interface Industry {
-  id: string;
-  label: string;
-  classification: 'GIC' | 'DIC';
-  sectors: Sector[];
-}
-```
+The package exports `Industry`, `Sector`, `Subsector`, `Segment`, `ClassificationCode`, `ClassificationLevel`, `NodeStatus`, and the related raw-data interfaces from `src/types.ts`.
 
-**Sector**
-```typescript
-interface Sector {
-  id: string;
-  label: string;
-  industry_id: string;
-  classification: 'GIC' | 'DIC';
-  subsectors: Subsector[];
-}
-```
+## CommonJS
 
-**Subsector**
-```typescript
-interface Subsector {
-  id: string;
-  label: string;
-  sector_id: string;
-  industry_id: string;
-  classification: 'GIC' | 'DIC';
-  segments: Segment[];
-}
-```
+After building:
 
-**Segment**
-```typescript
-interface Segment {
-  id: string;
-  label: string;
-  subsector_id: string;
-  sector_id: string;
-  industry_id: string;
-  classification: 'GIC' | 'DIC';
-}
-```
-
-## Examples
-
-### Classify a company
-
-```typescript
-import { Classification } from 'dmcs-sdk';
+```javascript
+const { Classification } = require('./dist/index.js');
 
 const dmcs = new Classification();
-
-// Amazon: Primary = Online Marketplaces, Secondary = Cloud Platforms
-const primary = dmcs.getById('04.05.002');
-const secondary = dmcs.getById('09.01.004');
-
-console.log(`Amazon Primary: ${primary?.label}`);
-console.log(`Amazon Secondary: ${secondary?.label}`);
+console.log(dmcs.getById('13.01'));
 ```
 
-### Get a segment by ID
+## Development
 
-```typescript
-import { Classification } from 'dmcs-sdk';
+From the repository root, synchronize SDK data after canonical taxonomy changes:
 
-const dmcs = new Classification();
-
-// Get a specific segment
-const crmSegment = dmcs.getById('09.01.001.02');
-console.log(`Segment: ${crmSegment?.label}`);
-// Output: Segment: CRM / CX
-
-// Access parent hierarchy
-if (crmSegment) {
-  console.log(`Subsector: ${crmSegment.subsector_id}`);
-  console.log(`Sector: ${crmSegment.sector_id}`);
-  console.log(`Industry: ${crmSegment.industry_id}`);
-}
-
-// Get stablecoin segment
-const stablecoin = dmcs.getById('13.02.004.01');
-console.log(`${stablecoin?.id} — ${stablecoin?.label}`);
-// Output: 13.02.004.01 — Fiat-Backed Stablecoins
+```bash
+python scripts/sync_sdk_data.py
+python scripts/validate_release.py
 ```
 
-### Iterate through all classifications
+Build the TypeScript SDK:
 
-```typescript
-import { Classification } from 'dmcs-sdk';
-
-const dmcs = new Classification();
-
-for (const industry of dmcs.industries) {
-  console.log(`\n${industry.id} — ${industry.label}`);
-  for (const sector of industry.sectors) {
-    console.log(`  ${sector.id} — ${sector.label}`);
-    for (const subsector of sector.subsectors) {
-      console.log(`    ${subsector.id} — ${subsector.label}`);
-      // Display segments if they exist
-      if (subsector.segments && subsector.segments.length > 0) {
-        for (const segment of subsector.segments) {
-          console.log(`      ${segment.id} — ${segment.label}`);
-        }
-      }
-    }
-  }
-}
+```bash
+npm ci --prefix typescript-sdk
+npm run build --prefix typescript-sdk
 ```
 
-### Find all blockchain-related classifications
+The generated `dist/` directory and `node_modules/` are build artifacts and are intentionally not source-controlled. GitHub Actions rebuilds the SDK from source on pushes and pull requests.
 
-```typescript
-import { Classification } from 'dmcs-sdk';
+## Canonical Data
 
-const dmcs = new Classification();
-
-const blockchain = dmcs.search('blockchain');
-blockchain.forEach(item => {
-  console.log(`${item.id} — ${item.label}`);
-});
-```
+The TypeScript source copy of the taxonomy lives at `src/data/classification.json`, but it is generated from the repository's canonical `data/classification.json`. Do not edit the SDK copy independently.
 
 ## License
 
-Apache 2.0 License - see [LICENSE](../LICENSE)
+Apache 2.0 License — see [LICENSE](../LICENSE).
