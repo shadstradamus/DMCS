@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dmcs-sdk"
+dynamic = ["version"]
+description = "Python SDK for the Dynamic Multi-Dimensional Classification Standard"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "DMCS" }
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Topic :: Office/Business :: Financial",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0",
+  "black>=22.0",
+  "mypy>=0.990",
+  "build>=1.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/shadstradamus/DMCS"
+Repository = "https://github.com/shadstradamus/DMCS"
+Issues = "https://github.com/shadstradamus/DMCS/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dmcs_sdk*"]
+
+[tool.setuptools.package-data]
+dmcs_sdk = ["data/*.json", "data/*.csv"]
+
+[tool.setuptools.dynamic]
+version = { attr = "dmcs_sdk.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+
+[tool.mypy]
+python_version = "3.8"
+packages = ["dmcs_sdk"]
