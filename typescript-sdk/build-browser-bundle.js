@@ -1,201 +1,221 @@
-// Build browser IIFE bundle from TypeScript SDK
+// Build a standalone browser IIFE bundle from the compiled DMCS TypeScript SDK data.
 const fs = require('fs');
 const path = require('path');
 
-// Read the compiled JS modules
-const indexJs = fs.readFileSync(path.join(__dirname, 'dist', 'index.js'), 'utf8');
 const classificationData = require('./dist/data/classification.json');
 
-// Create IIFE bundle
 const bundle = `
 (function(window) {
   'use strict';
-  
-  // Embed classification data
+
   const classificationData = ${JSON.stringify(classificationData, null, 2)};
-  
-  // Classification types
+
   function normalizeClassification(raw) {
     const industries = raw.industries.map((industry) => {
       const sectors = industry.sectors.map((sector) => {
         const subsectors = sector.subsectors.map((subsector) => {
-          const segments = subsector.segments?.map((segment) => ({
+          const segments = (subsector.segments || []).map((segment) => ({
             ...segment,
-            subsector_id: subsector.id,
-            sector_id: sector.id,
-            industry_id: industry.id,
-            classification: industry.classification,
-          })) || [];
+            parent_id: segment.parent_id || subsector.id,
+            subsector_id: segment.subsector_id || subsector.id,
+            sector_id: segment.sector_id || sector.id,
+            industry_id: segment.industry_id || industry.id,
+            classification: segment.classification || industry.classification,
+            status: segment.status || 'active'
+          }));
+
           return {
             ...subsector,
-            sector_id: sector.id,
-            industry_id: industry.id,
-            classification: industry.classification,
-            segments,
+            parent_id: subsector.parent_id || sector.id,
+            sector_id: subsector.sector_id || sector.id,
+            industry_id: subsector.industry_id || industry.id,
+            classification: subsector.classification || industry.classification,
+            status: subsector.status || 'active',
+            segments
           };
         });
+
         return {
           ...sector,
-          industry_id: industry.id,
-          classification: industry.classification,
-          subsectors,
+          parent_id: sector.parent_id || industry.id,
+          industry_id: sector.industry_id || industry.id,
+          classification: sector.classification || industry.classification,
+          status: sector.status || 'active',
+          subsectors
         };
       });
+
       return {
         ...industry,
-        sectors,
+        status: industry.status || 'active',
+        sectors
       };
     });
+
     return {
       dmcs_version: raw.dmcs_version,
       release_date: raw.release_date,
       description: raw.description,
-      industries,
+      industries
     };
   }
-  
+
   class Classification {
     constructor() {
       this.data = normalizeClassification(classificationData);
     }
-    
+
     get version() {
       return this.data.dmcs_version;
     }
-    
+
     get releaseDate() {
       return this.data.release_date;
     }
-    
+
     get description() {
       return this.data.description;
     }
-    
+
     get industries() {
       return this.data.industries;
     }
-    
+
     getById(id) {
       const parts = id.split('.');
+
       if (parts.length === 1) {
-        return this.industries.find(i => i.id === id) || null;
+        return this.industries.find((industry) => industry.id === id) || null;
       }
+
       if (parts.length === 2) {
         const industry = this.getById(parts[0]);
-        if (!industry) return null;
-        return industry.sectors.find(s => s.id === id) || null;
+        return industry ? industry.sectors.find((sector) => sector.id === id) || null : null;
       }
+
       if (parts.length === 3) {
         const sector = this.getById(parts[0] + '.' + parts[1]);
-        if (!sector) return null;
-        return sector.subsectors.find(s => s.id === id) || null;
+        return sector ? sector.subsectors.find((subsector) => subsector.id === id) || null : null;
       }
+
       if (parts.length === 4) {
-        // Handle segment ID (II.SS.SSS.SS)
         const subsector = this.getById(parts[0] + '.' + parts[1] + '.' + parts[2]);
-        if (!subsector) return null;
-        return subsector.segments?.find(s => s.id === id) || null;
+        return subsector ? (subsector.segments || []).find((segment) => segment.id === id) || null : null;
       }
+
       return null;
     }
-    
+
     search(query, caseSensitive = false) {
       const results = [];
-      const searchQuery = caseSensitive ? query : query.toLowerCase();
+      const needle = caseSensitive ? query : query.toLowerCase();
+      const matches = (label) => {
+        const value = caseSensitive ? label : label.toLowerCase();
+        return value.includes(needle);
+      };
+
       for (const industry of this.industries) {
-        const industryLabel = caseSensitive ? industry.label : industry.label.toLowerCase();
-        if (industryLabel.includes(searchQuery)) {
-          results.push(industry);
-        }
+        if (matches(industry.label)) results.push(industry);
         for (const sector of industry.sectors) {
-          const sectorLabel = caseSensitive ? sector.label : sector.label.toLowerCase();
-          if (sectorLabel.includes(searchQuery)) {
-            results.push(sector);
-          }
+          if (matches(sector.label)) results.push(sector);
           for (const subsector of sector.subsectors) {
-            const subsectorLabel = caseSensitive ? subsector.label : subsector.label.toLowerCase();
-            if (subsectorLabel.includes(searchQuery)) {
-              results.push(subsector);
-            }
+            if (matches(subsector.label)) results.push(subsector);
             for (const segment of subsector.segments || []) {
-              const segmentLabel = caseSensitive ? segment.label : segment.label.toLowerCase();
-              if (segmentLabel.includes(searchQuery)) {
-                results.push(segment);
-              }
+              if (matches(segment.label)) results.push(segment);
+            }
+          }
+        }
+      }
+
+      return results;
+    }
+
+    filterByClassification(classification) {
+      return this.industries.filter((industry) => industry.classification === classification);
+    }
+
+    getGIC() {
+      return this.filterByClassification('GIC');
+    }
+
+    getDIC() {
+      return this.filterByClassification('DIC');
+    }
+
+    getByStatus(status) {
+      const results = [];
+      for (const industry of this.industries) {
+        if (industry.status === status) results.push(industry);
+        for (const sector of industry.sectors) {
+          if (sector.status === status) results.push(sector);
+          for (const subsector of sector.subsectors) {
+            if (subsector.status === status) results.push(subsector);
+            for (const segment of subsector.segments || []) {
+              if (segment.status === status) results.push(segment);
             }
           }
         }
       }
       return results;
     }
-    
-    filterByClassification(classification) {
-      return this.industries.filter(i => i.classification === classification);
+
+    getActive() {
+      return this.getByStatus('active');
     }
-    
-    getGIC() {
-      return this.filterByClassification('GIC');
-    }
-    
-    getDIC() {
-      return this.filterByClassification('DIC');
-    }
-    
+
     stats() {
-      const totalSectors = this.industries.reduce((sum, ind) => sum + ind.sectors.length, 0);
-      const totalSubsectors = this.industries.reduce(
-        (sum, ind) => sum + ind.sectors.reduce((s, sec) => s + sec.subsectors.length, 0),
+      const sectors = this.industries.reduce((sum, industry) => sum + industry.sectors.length, 0);
+      const subsectors = this.industries.reduce(
+        (sum, industry) => sum + industry.sectors.reduce(
+          (sectorSum, sector) => sectorSum + sector.subsectors.length,
+          0
+        ),
         0
       );
-      const totalSegments = this.industries.reduce(
-        (sum, ind) => sum + ind.sectors.reduce(
-          (s, sec) => s + sec.subsectors.reduce(
-            (ss, sub) => ss + (sub.segments?.length || 0),
+      const segments = this.industries.reduce(
+        (sum, industry) => sum + industry.sectors.reduce(
+          (sectorSum, sector) => sectorSum + sector.subsectors.reduce(
+            (subsectorSum, subsector) => subsectorSum + (subsector.segments || []).length,
             0
           ),
           0
         ),
         0
       );
+
       return {
         version: this.version,
         release_date: this.releaseDate,
         industries: this.industries.length,
-        sectors: totalSectors,
-        subsectors: totalSubsectors,
-        segments: totalSegments,
+        sectors,
+        subsectors,
+        segments,
         gic_industries: this.getGIC().length,
-        dic_industries: this.getDIC().length,
+        dic_industries: this.getDIC().length
       };
     }
   }
-  
-  // Expose to window
+
   window.DMCS_SDK = {
-    Classification: Classification,
+    Classification,
     taxonomy: new Classification()
   };
-  
 })(window);
 `.trim();
 
-// Write bundle
-const sdkBundlePath = path.join(__dirname, 'dist', 'dmcs-bundle.js');
-fs.writeFileSync(sdkBundlePath, bundle, 'utf8');
+const distDir = path.join(__dirname, 'dist');
+fs.mkdirSync(distDir, { recursive: true });
 
-let websiteBundlePath;
-try {
-  const websiteDistDir = path.resolve(__dirname, '..', '..', 'Website', 'dist');
-  fs.mkdirSync(websiteDistDir, { recursive: true });
-  websiteBundlePath = path.join(websiteDistDir, 'dmcs-bundle.js');
-  fs.writeFileSync(websiteBundlePath, bundle, 'utf8');
-  console.log(`✅ Browser bundle copied to website dist: ${websiteBundlePath}`);
-} catch (error) {
-  console.warn(`⚠️ Failed to copy bundle to website dist: ${error.message}`);
-}
+const bundlePath = path.join(distDir, 'dmcs-bundle.js');
+fs.writeFileSync(bundlePath, bundle, 'utf8');
+console.log(`Browser bundle created: ${bundlePath}`);
+console.log(`Size: ${(Buffer.byteLength(bundle, 'utf8') / 1024).toFixed(1)} KB`);
 
-console.log(`✅ Browser bundle created: ${sdkBundlePath}`);
-if (websiteBundlePath) {
-  console.log(`   Website bundle path: ${websiteBundlePath}`);
+const externalOutputDir = process.env.DMCS_BROWSER_OUTPUT_DIR;
+if (externalOutputDir) {
+  const resolvedOutputDir = path.resolve(externalOutputDir);
+  fs.mkdirSync(resolvedOutputDir, { recursive: true });
+  const externalPath = path.join(resolvedOutputDir, 'dmcs-bundle.js');
+  fs.copyFileSync(bundlePath, externalPath);
+  console.log(`Browser bundle copied to: ${externalPath}`);
 }
-console.log(`   Size: ${(bundle.length / 1024).toFixed(1)} KB`);
