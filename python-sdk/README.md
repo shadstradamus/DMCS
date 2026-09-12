@@ -2,20 +2,22 @@
 
 Python library for working with the Dynamic Multi-Dimensional Classification Standard (DMCS).
 
+The SDK ships with the DMCS taxonomy, so normal lookups do not require a network request.
+
 ## Installation
 
-The SDK is not published to PyPI yet. Install directly from the repository:
+The Python SDK is not currently published to PyPI. Install it directly from the repository:
 
 ```bash
 pip install "git+https://github.com/shadstradamus/DMCS.git#subdirectory=python-sdk"
 ```
 
-Or clone the repo and install in editable mode:
+For development:
 
 ```bash
 git clone https://github.com/shadstradamus/DMCS.git
 cd DMCS/python-sdk
-pip install -e .
+pip install -e ".[dev]"
 ```
 
 ## Quick Start
@@ -23,37 +25,76 @@ pip install -e .
 ```python
 from dmcs_sdk import classification
 
-# Load the classification
+# Load the bundled taxonomy
 dmcs = classification()
 
-# Get stats
 print(dmcs.stats())
-# {'version': '1.3.3', 'release_date': '2025-11-13', 'industries': 14, 'sectors': 60, 'subsectors': 241, 'segments': 143, ...}
+# {
+#   'version': '1.3.3',
+#   'release_date': '2025-11-13',
+#   'industries': 14,
+#   'sectors': 60,
+#   'subsectors': 241,
+#   'segments': 143,
+#   'gic_industries': 13,
+#   'dic_industries': 1
+# }
 
-# Lookup by ID
 tech = dmcs.get_by_id('09')
 print(tech)
-# 09 — Technology (4 sectors, GIC)
+# 09 — Technology (... sectors, GIC)
 
 saas = dmcs.get_by_id('09.01.002')
 print(saas)
 # 09.01.002 — Enterprise SaaS
 
-# Search by text
 results = dmcs.search('blockchain')
 for result in results:
     print(result)
-# 13 — Digital & Onchain Economy (4 sectors, DIC)
-# 13.01 — DLT & Blockchain Infrastructure (4 subsectors)
-# ...
 
-# Filter by classification
-gic = dmcs.get_GIC()  # Traditional economy (01-12)
-dic = dmcs.get_DIC()  # Digital & onchain economy (13)
-
-print(f"GIC has {len(gic)} industries")
-print(f"DIC has {len(dic)} industries")
+# GIC includes industries 01-12 and 14.
+gic = dmcs.get_GIC()
+# DIC is the Digital & Onchain Economy, industry 13.
+dic = dmcs.get_DIC()
 ```
+
+## Lookup Levels
+
+DMCS supports lookups at every hierarchy level:
+
+```python
+industry = dmcs.get_by_id('09')
+sector = dmcs.get_by_id('09.01')
+subsector = dmcs.get_by_id('09.01.001')
+segment = dmcs.get_by_id('09.01.001.02')
+
+print(segment.label)
+# Supply Chain & Procurement Software
+```
+
+IDs use these forms:
+
+- Industry: `II`
+- Sector: `II.SS`
+- Subsector: `II.SS.SSS`
+- Segment: `II.SS.SSS.SS`
+
+## Lifecycle Metadata
+
+SDK objects preserve the canonical `since` and `status` metadata:
+
+```python
+segment = dmcs.get_by_id('01.01.004.01')
+print(segment.since)
+# 2025-11-13
+print(segment.status)
+# active
+
+active_nodes = dmcs.get_active()
+sunset_nodes = dmcs.get_by_status('sunset')
+```
+
+Valid lifecycle states are `active`, `deprecated`, and `sunset`.
 
 ## API Reference
 
@@ -61,188 +102,88 @@ print(f"DIC has {len(dic)} industries")
 
 Main class for loading and querying DMCS data.
 
-**Properties:**
-- `version: str` - DMCS version
-- `release_date: str` - Release date
-- `description: str` - Classification description
-- `industries: List[Industry]` - All industries
-- `total_industries: int` - Count of all industries
-- `total_sectors: int` - Count of all sectors
-- `total_subsectors: int` - Count of all subsectors
-- `total_segments: int` - Count of all segments
+Properties:
 
-**Methods:**
-- `get_by_id(classification_id: str) -> Industry | Sector | Subsector | Segment | None` - Lookup by ID
-- `search(query: str, case_sensitive: bool = False) -> List` - Search by text
-- `filter_by_classification(classification: str) -> List[Industry]` - Filter by GIC or DIC
-- `get_GIC() -> List[Industry]` - Get all GIC industries (01-12)
-- `get_DIC() -> List[Industry]` - Get all DIC industries (13)
-- `stats() -> Dict` - Get classification statistics (industries, sectors, subsectors, segments)
+- `version: str`
+- `release_date: str`
+- `description: str`
+- `industries: List[Industry]`
+- `total_industries: int`
+- `total_sectors: int`
+- `total_subsectors: int`
+- `total_segments: int`
 
-### Data Classes
+Methods:
 
-**Industry**
-```python
-@dataclass
-class Industry:
-    id: str
-    label: str
-    classification: str  # "GIC" or "DIC"
-    sectors: List[Sector]
-```
+- `get_by_id(classification_id)` — lookup an industry, sector, subsector, or segment
+- `search(query, case_sensitive=False)` — search labels across all hierarchy levels
+- `filter_by_classification(classification_code)` — filter industries by `GIC` or `DIC`
+- `get_GIC()` — return all GIC industries
+- `get_DIC()` — return all DIC industries
+- `stats()` — return release metadata and hierarchy counts
+- `get_active()` — return all active nodes
+- `get_by_status(status)` — filter nodes by lifecycle status
 
-**Sector**
-```python
-@dataclass
-class Sector:
-    id: str
-    label: str
-    industry_id: str
-    classification: str  # "GIC" or "DIC"
-    subsectors: List[Subsector]
-```
+## Data Objects
 
-**Subsector**
-```python
-@dataclass
-class Subsector:
-    id: str
-    label: str
-    sector_id: str
-    industry_id: str
-    classification: str  # "GIC" or "DIC"
-    segments: List[Segment]
-```
+The SDK exposes `Industry`, `Sector`, `Subsector`, and `Segment` dataclasses. Every object includes its ID, label, hierarchy metadata, classification code, `since` date, and lifecycle `status`. Child collections are available on industries, sectors, and subsectors.
 
-**Segment**
-```python
-@dataclass
-class Segment:
-    id: str
-    label: str
-    subsector_id: str
-    sector_id: str
-    industry_id: str
-    classification: str  # "GIC" or "DIC"
-```
-
-## Examples
-
-### Classify a company
+Example:
 
 ```python
 from dmcs_sdk import classification
 
 dmcs = classification()
+segment = dmcs.get_by_id('09.01.001.02')
 
-# Amazon: Primary = Online Marketplaces, Secondary = Cloud Platforms
-primary = dmcs.get_by_id('04.05.002')
-secondary = dmcs.get_by_id('09.01.004')
-
-print(f"Amazon Primary: {primary.label}")
-print(f"Amazon Secondary: {secondary.label}")
+print(segment.id)
+print(segment.label)
+print(segment.parent_id)
+print(segment.subsector_id)
+print(segment.sector_id)
+print(segment.industry_id)
+print(segment.classification)
+print(segment.since)
+print(segment.status)
 ```
 
-### Get a segment by ID
+## Loading a Custom Taxonomy File
 
 ```python
-from dmcs_sdk import classification
-
-dmcs = classification()
-
-# Get a specific segment
-crm_segment = dmcs.get_by_id('09.01.001.02')
-print(f"Segment: {crm_segment.label}")
-# Output: Segment: CRM Software
-
-# Access parent hierarchy
-print(f"Subsector: {crm_segment.subsector_id}")
-print(f"Sector: {crm_segment.sector_id}")
-print(f"Industry: {crm_segment.industry_id}")
-
-# Get stablecoin segment
-stablecoin = dmcs.get_by_id('13.02.004.01')
-print(f"{stablecoin.id} — {stablecoin.label}")
-# Output: 13.02.004.01 — Fiat-Backed Stablecoins
-```
-
-### Iterate through all classifications
-
-```python
-from dmcs_sdk import classification
-
-dmcs = classification()
-
-for industry in dmcs.industries:
-    print(f"\n{industry.id} — {industry.label} ({industry.classification})")
-    for sector in industry.sectors:
-        print(f"  {sector.id} — {sector.label}")
-        for subsector in sector.subsectors:
-            print(f"    {subsector.id} — {subsector.label}")
-            # Display segments if they exist
-            if subsector.segments:
-                for segment in subsector.segments:
-                    print(f"      {segment.id} — {segment.label}")
-```
-
-### Find all blockchain-related classifications
-
-```python
-from dmcs_sdk import classification
-
-dmcs = classification()
-
-blockchain = dmcs.search('blockchain')
-for item in blockchain:
-    print(f"{item.id} — {item.label}")
-```
-
-### Get all Digital Asset industries
-
-```python
-from dmcs_sdk import classification
-
-dmcs = classification()
-
-# Get DIC (Digital Industry Classification) industries
-dic = dmcs.get_DIC()
-for industry in dic:
-    print(f"{industry.id} — {industry.label}")
-    print(f"  Sectors: {len(industry.sectors)}")
-    print(f"  Subsectors: {industry.subsector_count}")
-```
-
-### Load from custom file
-
-```python
-from dmcs_sdk import classification
 from pathlib import Path
+from dmcs_sdk import classification
 
-# Load from a custom JSON file
-custom_path = Path('/path/to/custom/classification.json')
-dmcs = classification(data_path=custom_path)
-
-print(dmcs.stats())
+custom = classification(data_path=Path('/path/to/classification.json'))
+print(custom.stats())
 ```
+
+Custom files should follow the canonical DMCS JSON schema and hierarchy rules.
 
 ## Development
 
-### Run tests
+From the repository root, synchronize SDK data after canonical taxonomy changes:
+
 ```bash
-pip install -e ".[dev]"
-pytest
+python scripts/sync_sdk_data.py
+python scripts/validate_release.py
 ```
 
-### Type checking
+Run Python tests:
+
+```bash
+pip install -e "./python-sdk[dev]"
+pytest python-sdk/tests
+```
+
+Type checking and formatting can be run from `python-sdk/`:
+
 ```bash
 mypy dmcs_sdk
+black dmcs_sdk tests
 ```
 
-### Code formatting
-```bash
-black dmcs_sdk
-```
+The package version is derived from the bundled `classification.json`, preventing a separate hard-coded Python package version from drifting away from the taxonomy it ships.
 
 ## License
 
-Apache 2.0 License - see [LICENSE](../LICENSE)
+Apache 2.0 License — see [LICENSE](../LICENSE).
